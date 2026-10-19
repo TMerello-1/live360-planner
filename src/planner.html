@@ -143,6 +143,9 @@ main { padding-block: 4px 48px; }
 .slot-empty .go { font-size: 0.82rem; color: var(--accent); font-weight: 600; white-space: nowrap; }
 .card.only { border-style: dashed; }
 .tag.only { background: var(--accent-soft); color: var(--accent); }
+.day-head { font-family: var(--font-display); font-size: 1.05rem; margin: 22px 0 6px; }
+.day-head:first-child { margin-top: 4px; }
+.search-note { font-size: 0.82rem; color: var(--muted); margin: 0 0 8px; }
 .covered { font-size: 0.82rem; color: var(--muted); padding: 10px 14px; border-left: 2px dotted var(--line); }
 .slot-link { display: inline-block; margin-top: 4px; border: 0; background: none; padding: 0; color: var(--accent); font-size: 0.75rem; font-family: var(--font-body); font-weight: 600; }
 .slot-link:hover { text-decoration: underline; }
@@ -634,7 +637,7 @@ function applyUpdates(data) {
 const I18N = {
   de: {
     sub: "15.–20. November · alle Zeiten Ortszeit (EST)", view: "Ansicht", program: "Programm", myPlan: "Mein Plan", day: "Tag",
-    search: "Titel, Sprecher oder Code suchen …", searchLbl: "Suchen", slotLbl: "Zeitslot", formatLbl: "Format",
+    search: "Alle Tage durchsuchen: Titel, Sprecher, Inhalt …", searchLbl: "Suchen", slotLbl: "Zeitslot", formatLbl: "Format",
     allFormats: "Alle Formate", breaksEvents: "Pausen & Events", onlyPicked: "Nur gemerkte", hideBreaks: "Pausen ausblenden", reset: "Filter zurücksetzen",
     conference: "Konferenz", allConf: "Live! 360 gesamt", allSlots: "Alle Zeitslots", from: m => "ab " + m, until: m => "bis " + m, items: n => n + (n === 1 ? " Punkt" : " Punkte"),
     copy: "Plan als Text kopieren", clearAll: "Alles entfernen", clearQ: "Wirklich alle gemerkten Sessions entfernen?", clearYes: "Ja, entfernen", cancel: "Abbrechen", planText: "Plan als Text",
@@ -646,7 +649,7 @@ const I18N = {
     overlapWith: x => "Überschneidung mit " + x, collidesSel: "Kollidiert mit deiner Auswahl", collidesWith: x => "Kollidiert mit " + x,
     picked: "Gemerkt", pick: "Merken", removed: "Entfernt", pickedOverlap: x => "Gemerkt, überschneidet sich mit " + x,
     overlaps: n => n + (n === 1 ? " Überschneidung" : " Überschneidungen"), onThisDay: "an diesem Tag",
-    noHits: "Keine Treffer", noHitsText: "Für diese Filter gibt es an diesem Tag nichts. Setz die Filter zurück oder wähle einen anderen Tag.",
+    noHits: "Keine Treffer", searchAll: (n, d) => n + " Treffer an " + d + (d === 1 ? " Tag" : " Tagen") + " · Suche läuft über alle Tage", noHitsAll: "Die Suche findet an keinem Tag etwas. Versuch einen anderen Begriff oder setz die Filter zurück.", noHitsText: "Für diese Filter gibt es an diesem Tag nichts. Setz die Filter zurück oder wähle einen anderen Tag.",
     compare: "Vergleichen →", options: n => n + " Optionen →",
     statPicked: "gemerkt", statHours: "Stunden Inhalt", statOverlaps: n => n === 1 ? "Überschneidung" : "Überschneidungen",
     emptyPlan: "Noch nichts gemerkt", emptyPlanText: "Tippe im Programm bei einer Session auf „Merken“. Dein Plan erscheint dann hier, Tag für Tag, mit Warnung bei Überschneidungen.", toProgram: "Zum Programm",
@@ -670,7 +673,7 @@ const I18N = {
   },
   en: {
     sub: "November 15–20 · all times local (EST)", view: "View", program: "Program", myPlan: "My Plan", day: "Day",
-    search: "Search title, speaker or code …", searchLbl: "Search", slotLbl: "Time slot", formatLbl: "Format",
+    search: "Search all days: title, speaker, content …", searchLbl: "Search", slotLbl: "Time slot", formatLbl: "Format",
     allFormats: "All formats", breaksEvents: "Breaks & events", onlyPicked: "Saved only", hideBreaks: "Hide breaks", reset: "Reset filters",
     conference: "Conference", allConf: "Live! 360 (all)", allSlots: "All time slots", from: m => "from " + m, until: m => "until " + m, items: n => n + (n === 1 ? " item" : " items"),
     copy: "Copy plan as text", clearAll: "Remove all", clearQ: "Remove all saved sessions?", clearYes: "Yes, remove", cancel: "Cancel", planText: "Plan as text",
@@ -682,7 +685,7 @@ const I18N = {
     overlapWith: x => "Overlaps with " + x, collidesSel: "Clashes with your picks", collidesWith: x => "Clashes with " + x,
     picked: "Saved", pick: "Save", removed: "Removed", pickedOverlap: x => "Saved, overlaps with " + x,
     overlaps: n => n + (n === 1 ? " overlap" : " overlaps"), onThisDay: "on this day",
-    noHits: "No matches", noHitsText: "Nothing matches these filters on this day. Reset the filters or pick another day.",
+    noHits: "No matches", searchAll: (n, d) => n + (n === 1 ? " match" : " matches") + " on " + d + (d === 1 ? " day" : " days") + " · searching all days", noHitsAll: "Nothing matches on any day. Try another word or reset the filters.", noHitsText: "Nothing matches these filters on this day. Reset the filters or pick another day.",
     compare: "Compare →", options: n => n + " options →",
     statPicked: "saved", statHours: "hours of content", statOverlaps: n => n === 1 ? "overlap" : "overlaps",
     emptyPlan: "Nothing saved yet", emptyPlanText: "Tap “Save” on a session in the program. Your plan shows up here day by day, with a warning when sessions overlap.", toProgram: "Go to program",
@@ -808,33 +811,39 @@ function cardHTML(s, opts = {}) {
 
 function filtered() {
   const q = state.q.trim().toLowerCase();
-  return SESSIONS.filter(s => s.day === state.day
-    && (!state.slot || s.start === +state.slot)
+  // Mit Suchbegriff: über alle Tage suchen
+  return SESSIONS.filter(s => (q || s.day === state.day)
+    && (q || !state.slot || s.start === +state.slot)
     && (!state.kind || s.kind === state.kind)
     && (!state.tracks.length || state.tracks.includes(s.track))
     && (!state.onlyPicked || picked.has(s.id))
     && (!s.removed || picked.has(s.id))
     && (!state.hideEvents || s.kind !== "Event")
-    && (!q || (s.title + " " + s.speakers + " " + s.code + " " + TRACKS[s.track].name).toLowerCase().includes(q)));
+    && (!q || (s.title + " " + s.speakers + " " + s.code + " " + TRACKS[s.track].name + " " + (s.room || "") + " " + ((DESC[s.id] || {}).summary || "") + " " + ((DESC[s.id] || {}).learn || "")).toLowerCase().includes(q)));
 }
 
 function renderProgram() {
   const list = filtered();
-  const pairs = conflictPairs(state.day);
-  $("#day-banner").innerHTML = pairs.length ? `<div class="banner"><span><b>${t("overlaps", pairs.length)}</b> ${t("onThisDay")}: ${pairs.map(([a, b]) => `${esc(a.code || a.title)} ↔ ${esc(b.code || b.title)}`).join(" · ")}</span></div>` : "";
+  const global = !!state.q.trim();
+  const pairs = global ? [] : conflictPairs(state.day);
+  $("#day-banner").innerHTML = global ? `<div class="search-note">${t("searchAll", list.length, new Set(list.map(s => s.day)).size)}</div>` : pairs.length ? `<div class="banner"><span><b>${t("overlaps", pairs.length)}</b> ${t("onThisDay")}: ${pairs.map(([a, b]) => `${esc(a.code || a.title)} ↔ ${esc(b.code || b.title)}`).join(" · ")}</span></div>` : "";
   if (!list.length) {
-    $("#list").innerHTML = `<div class="empty"><h2>${t("noHits")}</h2><p>${t("noHitsText")}</p></div>`;
+    $("#list").innerHTML = `<div class="empty"><h2>${t("noHits")}</h2><p>${t(global ? "noHitsAll" : "noHitsText")}</p></div>`;
     return;
   }
   const groups = new Map();
-  for (const s of list) { if (!groups.has(s.start)) groups.set(s.start, []); groups.get(s.start).push(s); }
+  for (const s of list) { const k = s.day * 10000 + s.start; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(s); }
   const order = { Keynote: 0, Panel: 1, Workshop: 2, Lab: 2, Session: 3, "Fast Focus": 3, Event: 4 };
   const trackOrder = Object.keys(TRACKS);
-  $("#list").innerHTML = [...groups.entries()].sort((a, b) => a[0] - b[0]).map(([start, items]) => {
+  let lastDay = null;
+  $("#list").innerHTML = [...groups.entries()].sort((a, b) => a[0] - b[0]).map(([k, items]) => {
+    const day = Math.floor(k / 10000), start = k % 10000;
+    const head = global && day !== lastDay ? `<h2 class="day-head">${DAY_NAME[day]}, ${t("dateLong", day)}</h2>` : "";
+    lastDay = day;
     items.sort((a, b) => order[a.kind] - order[b.kind] || trackOrder.indexOf(a.track) - trackOrder.indexOf(b.track) || a.code.localeCompare(b.code));
     const ends = [...new Set(items.map(i => i.end))];
-    const sl = slotAt(state.day, start);
-    return `<section class="slot"><div class="slot-time">${fmt(start)}<small>${ends.length === 1 ? t("until", fmt(ends[0])) : t("items", items.length)}</small>${sl && sl.items.length > 1 ? `<button class="slot-link" data-slot="${state.day}:${start}">${t("compare")}</button>` : ""}</div>
+    const sl = slotAt(day, start);
+    return `${head}<section class="slot"><div class="slot-time">${fmt(start)}<small>${ends.length === 1 ? t("until", fmt(ends[0])) : t("items", items.length)}</small>${sl && sl.items.length > 1 ? `<button class="slot-link" data-slot="${day}:${start}">${t("compare")}</button>` : ""}</div>
       <div class="cards">${items.map(s => cardHTML(s)).join("")}</div></section>`;
   }).join("");
 }
