@@ -88,6 +88,7 @@ header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; b
 .search { flex: 1 1 220px; min-width: 0; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
 select { padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
 .chip { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 11px; font-size: 0.83rem; display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
+.chip.topic small { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); }
 .chip .sw { width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
 .chip[aria-pressed="true"] { border-color: var(--c, var(--accent)); color: var(--fg); background: color-mix(in srgb, var(--c, var(--accent)) 12%, var(--surface)); }
 .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; margin-right: 4px; }
@@ -269,6 +270,7 @@ footer a { color: var(--muted); }
         </select>
       </div>
       <div class="row" id="tracks"><span class="label">Konferenz</span></div>
+      <div class="row" id="topics"></div>
       <div class="row">
         <label class="chip" style="--c: var(--accent)"><input id="only-picked" type="checkbox"> <span data-i18n="onlyPicked"></span></label>
         <label class="chip" style="--c: var(--accent)"><input id="hide-events" type="checkbox"> <span data-i18n="hideBreaks"></span></label>
@@ -680,7 +682,7 @@ const I18N = {
     coveredBy: x => "Belegt durch " + x, free: "Noch frei", choices: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " zur Auswahl", look: "Ansehen →", onlyOpt: "Einzige Option",
     dayStats: (p, f) => `${p} gemerkt · ${f} frei`,
     nItems: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte"), ends: x => "Ende " + x,
-    pickedHere: "Gemerkt in diesem Slot:", showNope: "„Kein Interesse“ zeigen", nopeTag: "Kein Interesse", nopeSet: "Kein Interesse", nopeUndo: "Doch interessant", nopeUndoShort: "↺ Doch interessant", nopeOn: "Als „Kein Interesse“ markiert und ausgeblendet", nopeOff: "Wieder sichtbar", nopeHidden: n => n + " mit „Kein Interesse“ ausgeblendet · zeigen", noneLeft: "Alle Optionen mit „Kein Interesse“ markiert", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
+    pickedHere: "Gemerkt in diesem Slot:", topics: "Themen", moreN: n => "+" + n + " weitere", fewer: "weniger", showNope: "„Kein Interesse“ zeigen", nopeTag: "Kein Interesse", nopeSet: "Kein Interesse", nopeUndo: "Doch interessant", nopeUndoShort: "↺ Doch interessant", nopeOn: "Als „Kein Interesse“ markiert und ausgeblendet", nopeOff: "Wieder sichtbar", nopeHidden: n => n + " mit „Kein Interesse“ ausgeblendet · zeigen", noneLeft: "Alle Optionen mit „Kein Interesse“ markiert", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
     about: "Worum es geht", learn: "Du lernst", noDescEvent: "Für diesen Programmpunkt gibt es keine Beschreibung.", noDesc: "Zu dieser Session gibt es noch keine Beschreibung.",
     close: "Schließen", official: "Offizielle Seite öffnen ↗", summaryNote: "Kurzfassung der offiziellen Beschreibung (englisch), Stand 19.10.2026.",
     nothingYet: "Noch nichts gemerkt.", cleared: "Plan geleert", selectCopy: "Text markiert, jetzt kopieren", copied: "Plan kopiert", overlapMark: "⚠ Überschneidung",
@@ -716,7 +718,7 @@ const I18N = {
     coveredBy: x => "Taken by " + x, free: "Still free", choices: n => n + (n === 1 ? " item" : " items") + " to choose from", look: "View →", onlyOpt: "Only option",
     dayStats: (p, f) => `${p} saved · ${f} free`,
     nItems: n => n + (n === 1 ? " item" : " items"), ends: x => "ends " + x,
-    pickedHere: "Saved in this slot:", showNope: "Show not interested", nopeTag: "Not interested", nopeSet: "Not interested", nopeUndo: "Interested again", nopeUndoShort: "↺ Interested again", nopeOn: "Marked as not interested and hidden", nopeOff: "Visible again", nopeHidden: n => n + " not interested hidden · show", noneLeft: "All options marked not interested", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
+    pickedHere: "Saved in this slot:", topics: "Topics", moreN: n => "+" + n + " more", fewer: "fewer", showNope: "Show not interested", nopeTag: "Not interested", nopeSet: "Not interested", nopeUndo: "Interested again", nopeUndoShort: "↺ Interested again", nopeOn: "Marked as not interested and hidden", nopeOff: "Visible again", nopeHidden: n => n + " not interested hidden · show", noneLeft: "All options marked not interested", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
     about: "What it's about", learn: "You'll learn", noDescEvent: "There is no description for this item.", noDesc: "There is no description for this session yet.",
     close: "Close", official: "Open official page ↗", summaryNote: "Summary of the official description, as of Oct 19, 2026.",
     nothingYet: "Nothing saved yet.", cleared: "Plan cleared", selectCopy: "Text selected, copy it now", copied: "Plan copied", overlapMark: "⚠ overlap",
@@ -809,6 +811,44 @@ function renderTrackChips() {
     `<button class="chip" style="--c: var(${tr.c})" data-track="${k}" aria-pressed="${state.tracks.includes(k)}"><span class="sw"></span>${tr.name}</button>`).join("");
 }
 
+// Die 25 häufigsten Begriffe aus den Session-Titeln (jede Session zählt einmal), Füllwörter ausgenommen
+const STOP = new Set(("a an and are as at be beyond build building by can day did do does don't for from get go guide how i in into is it its keynote lab live make "
+  + "minutes my new not of on or our panel discussion practical real really smarter that the their them this to up use using vs we what when where who why will with "
+  + "without workshop you your actually reality world tips tricks introduction mastering modern next part one two three way ways need know developer developers development app apps application applications platform feature features securing professionals team dev hero success designing").split(" "));
+function topTerms(n = 25) {
+  const list = SESSIONS.filter(s => s.kind !== "Event" && !s.removed && !/^to be announced/i.test(s.title));
+  const words = new Map(), pairs = new Map();
+  const add = (m, k, form) => { const e = m.get(k) || { n: 0, forms: new Map() }; e.n++; e.forms.set(form, (e.forms.get(form) || 0) + 1); m.set(k, e); };
+  for (const s of list) {
+    const toks = (s.title.match(/\.?[A-Za-z][A-Za-z0-9#+.]*[A-Za-z0-9#+]|[A-Za-z]{2,}/g) || []).filter(w => !STOP.has(w.toLowerCase()));
+    const seen = new Set(), seenP = new Set();
+    toks.forEach((w, i) => {
+      const k = w.toLowerCase().replace(/(?<=..[^s])s$/, "");
+      if (!seen.has(k)) { seen.add(k); add(words, k, w); }
+      const nx = toks[i + 1];
+      if (nx) { const pk = k + " " + nx.toLowerCase().replace(/(?<=..[^s])s$/, ""); if (!seenP.has(pk)) { seenP.add(pk); add(pairs, pk, w + " " + nx); } }
+    });
+  }
+  // Feste Wortpaare (z. B. "SQL Server", "Active Directory") ersetzen ihre Einzelwörter
+  for (const [pk, e] of pairs) {
+    if (e.n < 3) continue;
+    const [a, b] = pk.split(" ");
+    const wa = words.get(a), wb = words.get(b);
+    if (!wa || !wb || (e.n < 0.6 * wa.n && e.n < 0.6 * wb.n)) continue;
+    wa.n -= e.n; wb.n -= e.n;
+    words.set(pk, e);
+  }
+  const label = e => [...e.forms].sort((x, y) => y[1] - x[1])[0][0].replace(/^NET$/, ".NET");
+  return [...words.values()].filter(e => e.n >= 2).sort((a, b) => b.n - a.n).slice(0, n).map(e => ({ term: label(e), n: e.n }));
+}
+function renderTopics() {
+  const terms = topTerms(), open = state.topicsOpen, shown = open ? terms : terms.slice(0, 10);
+  const q = state.q.trim().toLowerCase();
+  $("#topics").innerHTML = `<span class="label">${t("topics")}</span>` + shown.map(x =>
+    `<button class="chip topic" data-topic="${esc(x.term)}" aria-pressed="${q === x.term.toLowerCase()}">${esc(x.term)}<small>${x.n}</small></button>`).join("")
+    + (terms.length > 10 ? `<button class="link-btn" data-topics-more>${open ? t("fewer") : t("moreN", terms.length - 10)}</button>` : "");
+}
+
 function renderSlotSelect() {
   const starts = [...new Set(SESSIONS.filter(s => s.day === state.day).map(s => s.start))].sort((a, b) => a - b);
   if (state.slot && !starts.includes(+state.slot)) state.slot = "";
@@ -841,6 +881,8 @@ function cardHTML(s, opts = {}) {
 
 function filtered() {
   const q = state.q.trim().toLowerCase();
+  // Treffer am Wortanfang, damit z. B. "AI" nicht in "maintain" gefunden wird
+  const qre = new RegExp("(^|[^a-z0-9])" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
   // Mit Suchbegriff: über alle Tage suchen
   return SESSIONS.filter(s => (q || s.day === state.day)
     && (q || !state.slot || s.start === +state.slot)
@@ -850,10 +892,11 @@ function filtered() {
     && (!s.removed || picked.has(s.id))
     && (!state.hideEvents || s.kind !== "Event")
     && (state.showNope || !nope.has(s.id))
-    && (!q || (s.title + " " + s.speakers + " " + s.code + " " + TRACKS[s.track].name + " " + (s.room || "") + " " + ((DESC[s.id] || {}).summary || "") + " " + ((DESC[s.id] || {}).learn || "")).toLowerCase().includes(q)));
+    && (!q || (s.title + " " + s.speakers + " " + s.code + " " + TRACKS[s.track].name + " " + (s.room || "") + " " + ((DESC[s.id] || {}).summary || "") + " " + ((DESC[s.id] || {}).learn || "")).toLowerCase().search(qre) >= 0));
 }
 
 function renderProgram() {
+  renderTopics();
   const list = filtered();
   $("#nope-count").textContent = nope.size ? ` (${nope.size})` : "";
   const global = !!state.q.trim();
@@ -1023,6 +1066,9 @@ document.addEventListener("click", e => {
     else { picked.add(id); nope.delete(id); const c = conflictsOf(BY_ID[id]); toast(c.length ? t("pickedOverlap", c[0].code || c[0].title) : t("picked")); }
     savePicked(); render(); if (openInfo.current) openInfo(openInfo.current); return;
   }
+  const topic = e.target.closest("[data-topic]");
+  if (topic) { const v = topic.dataset.topic; state.q = state.q.trim().toLowerCase() === v.toLowerCase() ? "" : v; syncInputs(); saveUI(); renderProgram(); return; }
+  if (e.target.closest("[data-topics-more]")) { state.topicsOpen = !state.topicsOpen; saveUI(); renderTopics(); return; }
   const nopeEl = e.target.closest("[data-nope]");
   if (nopeEl) {
     const id = nopeEl.dataset.nope;
