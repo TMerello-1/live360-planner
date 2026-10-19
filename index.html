@@ -130,6 +130,12 @@ main { padding-block: 4px 48px; }
 .conf-link.warn-text { color: var(--danger); font-size: 0.78rem; font-weight: 600; }
 .pick { border: 1px solid var(--line); background: var(--surface-2); border-radius: 999px; padding: 4px 12px; font-size: 0.82rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-left: auto; white-space: nowrap; }
 .pick svg { width: 14px; height: 14px; }
+.foot-btns { display: inline-flex; gap: 6px; align-items: center; margin-left: auto; }
+.nope-btn { border: 1px solid var(--line); background: transparent; border-radius: 999px; min-width: 28px; height: 28px; padding: 0 8px; font-size: 0.78rem; font-weight: 600; color: var(--muted); }
+.nope-btn:hover { color: var(--danger); border-color: var(--danger); }
+.nope-btn[aria-pressed="true"] { color: var(--fg); }
+.card.nope { opacity: 0.55; }
+.card.nope:hover { opacity: 0.85; }
 .pick[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 
 .empty { text-align: center; color: var(--muted); padding: 48px 16px; display: grid; gap: 8px; justify-items: center; }
@@ -266,6 +272,7 @@ footer a { color: var(--muted); }
       <div class="row">
         <label class="chip" style="--c: var(--accent)"><input id="only-picked" type="checkbox"> <span data-i18n="onlyPicked"></span></label>
         <label class="chip" style="--c: var(--accent)"><input id="hide-events" type="checkbox"> <span data-i18n="hideBreaks"></span></label>
+        <label class="chip" style="--c: var(--accent)"><input id="show-nope" type="checkbox"> <span data-i18n="showNope"></span><span id="nope-count"></span></label>
         <button class="link-btn" id="reset" data-i18n="reset"></button>
       </div>
       <div id="day-banner"></div>
@@ -673,7 +680,7 @@ const I18N = {
     coveredBy: x => "Belegt durch " + x, free: "Noch frei", choices: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " zur Auswahl", look: "Ansehen →", onlyOpt: "Einzige Option",
     dayStats: (p, f) => `${p} gemerkt · ${f} frei`,
     nItems: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte"), ends: x => "Ende " + x,
-    pickedHere: "Gemerkt in diesem Slot:", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
+    pickedHere: "Gemerkt in diesem Slot:", showNope: "„Kein Interesse“ zeigen", nopeTag: "Kein Interesse", nopeSet: "Kein Interesse", nopeUndo: "Doch interessant", nopeUndoShort: "↺ Doch interessant", nopeOn: "Als „Kein Interesse“ markiert und ausgeblendet", nopeOff: "Wieder sichtbar", nopeHidden: n => n + " mit „Kein Interesse“ ausgeblendet · zeigen", noneLeft: "Alle Optionen mit „Kein Interesse“ markiert", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
     about: "Worum es geht", learn: "Du lernst", noDescEvent: "Für diesen Programmpunkt gibt es keine Beschreibung.", noDesc: "Zu dieser Session gibt es noch keine Beschreibung.",
     close: "Schließen", official: "Offizielle Seite öffnen ↗", summaryNote: "Kurzfassung der offiziellen Beschreibung (englisch), Stand 19.10.2026.",
     nothingYet: "Noch nichts gemerkt.", cleared: "Plan geleert", selectCopy: "Text markiert, jetzt kopieren", copied: "Plan kopiert", overlapMark: "⚠ Überschneidung",
@@ -709,7 +716,7 @@ const I18N = {
     coveredBy: x => "Taken by " + x, free: "Still free", choices: n => n + (n === 1 ? " item" : " items") + " to choose from", look: "View →", onlyOpt: "Only option",
     dayStats: (p, f) => `${p} saved · ${f} free`,
     nItems: n => n + (n === 1 ? " item" : " items"), ends: x => "ends " + x,
-    pickedHere: "Saved in this slot:", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
+    pickedHere: "Saved in this slot:", showNope: "Show not interested", nopeTag: "Not interested", nopeSet: "Not interested", nopeUndo: "Interested again", nopeUndoShort: "↺ Interested again", nopeOn: "Marked as not interested and hidden", nopeOff: "Visible again", nopeHidden: n => n + " not interested hidden · show", noneLeft: "All options marked not interested", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
     about: "What it's about", learn: "You'll learn", noDescEvent: "There is no description for this item.", noDesc: "There is no description for this session yet.",
     close: "Close", official: "Open official page ↗", summaryNote: "Summary of the official description, as of Oct 19, 2026.",
     nothingYet: "Nothing saved yet.", cleared: "Plan cleared", selectCopy: "Text selected, copy it now", copied: "Plan copied", overlapMark: "⚠ overlap",
@@ -753,7 +760,8 @@ const store = {
 const cachedData = store.get("data", null);
 if (cachedData) applyUpdates(cachedData);
 let picked = new Set(store.get("picked", []).filter(id => BY_ID[id]));
-let state = Object.assign({ view: "prog", day: 17, cmpDay: 17, cmpStart: null, back: "prog", q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false }, store.get("ui", {}));
+let nope = new Set(store.get("nope", []).filter(id => BY_ID[id])); // "Kein Interesse"
+let state = Object.assign({ view: "prog", day: 17, cmpDay: 17, cmpStart: null, back: "prog", q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false, showNope: false }, store.get("ui", {}));
 if (!state.lang) state.lang = /^de\b/i.test(navigator.language || "") ? "de" : "en";
 LANG = state.lang === "en" ? "en" : "de";
 function saveUI() { store.set("ui", state); }
@@ -767,7 +775,7 @@ function applyLang() {
   window.dispatchEvent(new CustomEvent("planner-lang", { detail: LANG }));
 }
 function setLang(l) { LANG = state.lang = l; saveUI(); applyLang(); renderTrackChips(); render(); if (openInfo.current) openInfo(openInfo.current); }
-function savePicked() { store.set("picked", [...picked]); }
+function savePicked() { store.set("picked", [...picked]); store.set("nope", [...nope]); }
 
 function overlaps(a, b) { return a.day === b.day && !a.removed && !b.removed && a.start < b.end && b.start < a.end; }
 function conflictsOf(s) { const out = []; for (const id of picked) { const o = BY_ID[id]; if (o.id !== s.id && overlaps(o, s)) out.push(o); } return out; }
@@ -807,22 +815,27 @@ function renderSlotSelect() {
   $("#slot").innerHTML = `<option value="">${t("allSlots")}</option>` + starts.map(m => `<option value="${m}" ${+state.slot === m && state.slot !== "" ? "selected" : ""}>${t("from", fmt(m))}</option>`).join("");
 }
 
+function nopeBtn(s) {
+  if (s.kind === "Event") return "";
+  const on = nope.has(s.id);
+  return `<button class="nope-btn" data-nope="${s.id}" aria-pressed="${on}" title="${t(on ? "nopeUndo" : "nopeSet")}" aria-label="${t(on ? "nopeUndo" : "nopeSet")}">${on ? t("nopeUndoShort") : "✕"}</button>`;
+}
 function cardHTML(s, opts = {}) {
   const tr = TRACKS[s.track];
   const isPicked = picked.has(s.id);
   const conf = isPicked ? conflictsOf(s) : [];
   const wouldConf = !isPicked ? conflictsOf(s) : [];
-  const cls = ["card", s.kind === "Event" ? "event" : "", s.removed ? "gone" : "", isPicked ? "picked" : "", conf.length ? "conflict" : "", opts.only ? "only" : ""].join(" ");
+  const cls = ["card", s.kind === "Event" ? "event" : "", s.removed ? "gone" : "", isPicked ? "picked" : "", conf.length ? "conflict" : "", opts.only ? "only" : "", nope.has(s.id) ? "nope" : ""].join(" ");
   const titleHTML = `<button class="ttl" data-info="${s.id}">${esc(s.title)}</button>`;
   let warn = "";
   if (conf.length) warn = `<button class="warn-text conf-link" data-conf="${[s, ...conf].map(c => c.id).join(",")}">${t("overlapWith", conf.map(c => esc(c.code || c.title.slice(0, 24) + "…")).join(", "))} →</button>`;
   else if (wouldConf.length && !opts.plan) warn = `<span class="warn-text" style="color:var(--muted);font-weight:500">${t("collidesSel")}</span>`;
   return `<article class="${cls}" style="--c: var(${tr.c})">
-    <div class="meta">${s.code ? `<span class="code">${s.code}</span>` : ""}<span class="tag">${KIND_LABEL[s.kind]}</span>${opts.only ? `<span class="tag only">${t("onlyOpt")}</span>` : ""}${s.removed ? `<span class="tag gone">${t("removedTag")}</span>` : ""}<span>${tr.short}</span>${opts.plan ? "" : `<span class="dur">· ${durText(s.end - s.start)}</span>`}${s.room ? `<span class="room">${esc(s.room)}</span>` : ""}</div>
+    <div class="meta">${s.code ? `<span class="code">${s.code}</span>` : ""}<span class="tag">${KIND_LABEL[s.kind]}</span>${opts.only ? `<span class="tag only">${t("onlyOpt")}</span>` : ""}${nope.has(s.id) ? `<span class="tag">${t("nopeTag")}</span>` : ""}${s.removed ? `<span class="tag gone">${t("removedTag")}</span>` : ""}<span>${tr.short}</span>${opts.plan ? "" : `<span class="dur">· ${durText(s.end - s.start)}</span>`}${s.room ? `<span class="room">${esc(s.room)}</span>` : ""}</div>
     <h3>${titleHTML}</h3>
     ${s.speakers ? `<div class="spk">${esc(s.speakers)}</div>` : ""}
     ${opts.desc ? descHTML(s) : ""}
-    <div class="card-foot">${warn}<button class="pick" data-pick="${s.id}" aria-pressed="${isPicked}">${isPicked ? STAR + t("picked") : PLUS + t("pick")}</button></div>
+    <div class="card-foot">${warn}<span class="foot-btns">${nopeBtn(s)}<button class="pick" data-pick="${s.id}" aria-pressed="${isPicked}">${isPicked ? STAR + t("picked") : PLUS + t("pick")}</button></span></div>
   </article>`;
 }
 
@@ -836,11 +849,13 @@ function filtered() {
     && (!state.onlyPicked || picked.has(s.id))
     && (!s.removed || picked.has(s.id))
     && (!state.hideEvents || s.kind !== "Event")
+    && (state.showNope || !nope.has(s.id))
     && (!q || (s.title + " " + s.speakers + " " + s.code + " " + TRACKS[s.track].name + " " + (s.room || "") + " " + ((DESC[s.id] || {}).summary || "") + " " + ((DESC[s.id] || {}).learn || "")).toLowerCase().includes(q)));
 }
 
 function renderProgram() {
   const list = filtered();
+  $("#nope-count").textContent = nope.size ? ` (${nope.size})` : "";
   const global = !!state.q.trim();
   const pairs = global ? [] : conflictPairs(state.day);
   $("#day-banner").innerHTML = global ? `<div class="search-note">${t("searchAll", list.length, new Set(list.map(s => s.day)).size)}</div>` : pairs.length ? `<div class="banner"><span><b>${t("overlaps", pairs.length)}</b> ${t("onThisDay")}: ${pairs.map(([a, b]) => `<button class="conf-link" data-conf="${a.id},${b.id}">${esc(a.code || a.title)} ↔ ${esc(b.code || b.title)}</button>`).join(" · ")}</span></div>` : "";
@@ -887,11 +902,12 @@ function renderPlan() {
       const sl = r.sl;
       const here = mine.filter(s => s.kind !== "Event" && s.start === sl.start);
       const cover = mine.filter(s => s.kind !== "Event" && s.start !== sl.start && s.start < sl.end && sl.start < s.end);
-      const time = `<div class="tl-time">${fmt(sl.start)}<small>${t("until", fmt(sl.end))}</small>${sl.items.length > 1 ? `<button class="slot-link" data-slot="${d.num}:${sl.start}">${t("options", sl.items.length)}</button>` : ""}</div>`;
+      const opts = sl.items.filter(s => !nope.has(s.id));
+      const time = `<div class="tl-time">${fmt(sl.start)}<small>${t("until", fmt(sl.end))}</small>${opts.length > 1 ? `<button class="slot-link" data-slot="${d.num}:${sl.start}">${t("options", opts.length)}</button>` : ""}</div>`;
       if (here.length) return here.map((s, i) => `<div class="tl-item">${i ? "<div></div>" : time}${cardHTML(s, { plan: true })}</div>`).join("");
       if (cover.length) return `<div class="tl-item">${time}<div class="covered">${t("coveredBy", cover.map(c => esc(c.code || c.title)).join(", "))}</div></div>`;
-      if (sl.items.length === 1) return `<div class="tl-item">${time}${cardHTML(sl.items[0], { plan: true, only: true })}</div>`;
-      return `<div class="tl-item">${time}<button class="slot-empty" data-slot="${d.num}:${sl.start}"><span><b>${t("free")}</b><br>${t("choices", sl.items.length)}</span><span class="go">${t("look")}</span></button></div>`;
+      if (opts.length === 1) return `<div class="tl-item">${time}${cardHTML(opts[0], { plan: true, only: true })}</div>`;
+      return `<div class="tl-item">${time}<button class="slot-empty" data-slot="${d.num}:${sl.start}"><span><b>${t("free")}</b><br>${opts.length ? t("choices", opts.length) : t("noneLeft")}</span><span class="go">${t("look")}</span></button></div>`;
     }).join("");
     return `<section class="plan-day${mine.length ? "" : " no-pick"}"><h2>${DAY_NAME[d.num]}, ${t("dateLong", d.num)} <small>${t("dayStats", mine.length, freeCount)}${dp.length ? ` · <button class="conf-link" style="color:var(--danger)" data-conf="${[...new Set(dp.flat().map(x => x.id))].join(",")}">${t("overlaps", dp.length)} →</button>` : ""}</small></h2><div class="tl">${html}</div></section>`;
   }).join("");
@@ -912,13 +928,15 @@ function renderCompare() {
   if (idx < 0) { idx = 0; state.cmpStart = list[0].start; }
   const sl = list[idx];
   const trackOrder = Object.keys(TRACKS);
-  const items = [...sl.items].sort((a, b) => trackOrder.indexOf(a.track) - trackOrder.indexOf(b.track) || a.code.localeCompare(b.code));
+  const hiddenN = state.showNope ? 0 : sl.items.filter(s => nope.has(s.id)).length;
+  const items = sl.items.filter(s => state.showNope || !nope.has(s.id)).sort((a, b) => trackOrder.indexOf(a.track) - trackOrder.indexOf(b.track) || a.code.localeCompare(b.code));
   const ends = [...new Set(items.map(i => i.end))].sort((a, b) => a - b);
   $("#cmp-title").innerHTML = `${DAY_NAME[sl.day]}, ${t("dateShort", sl.day)} · ${fmt(sl.start)}<small>${t("nItems", items.length)} · ${t("ends", ends.map(fmt).join(" / "))}</small>`;
   const mineHere = items.filter(s => picked.has(s.id));
   const blockers = [...picked].map(id => BY_ID[id]).filter(o => !sl.items.includes(o) && o.day === sl.day && o.start < sl.end && sl.start < o.end);
   $("#cmp-status").innerHTML = mineHere.length ? `${t("pickedHere")} <b>${mineHere.map(s => esc(s.code || s.title)).join(", ")}</b>${mineHere.length > 1 ? ` <span style="color:var(--danger)">${t("overlapParen")}</span>` : ""}`
     : blockers.length ? t("blockedBy", blockers.map(b => esc(b.code || b.title)).join(", ")) : t("nothingHere");
+  if (hiddenN) $("#cmp-status").innerHTML += ` <button class="link-btn" data-shownope>${t("nopeHidden", hiddenN)}</button>`;
   $("#cmp-list").className = "compare" + (items.length > 4 ? " many" : "");
   const desc = state.cmpMode === "desc";
   $("#cmp-titles").setAttribute("aria-pressed", !desc); $("#cmp-desc").setAttribute("aria-pressed", desc);
@@ -984,7 +1002,7 @@ function openInfo(id) {
     <div class="facts">${facts.map(f => `<span>${esc(f)}</span>`).join("")}</div>
     ${body}
     ${conf.length && isPicked ? `<div><button class="warn-text conf-link" data-conf="${[s, ...conf].map(c => c.id).join(",")}">${t("overlapWith", conf.map(c => esc(c.code || c.title)).join(", "))} →</button></div>` : !isPicked && conf.length ? `<div class="warn-text" style="color:var(--muted);font-weight:500">${t("collidesWith", conf.map(c => esc(c.code || c.title)).join(", "))}</div>` : ""}
-    <div class="pop-foot">${s.url ? `<a href="${s.url}" target="_blank" rel="noopener">${t("official")}</a>` : "<span></span>"}<button class="pick" data-pick="${s.id}" aria-pressed="${isPicked}">${isPicked ? STAR + t("picked") : PLUS + t("pick")}</button></div>
+    <div class="pop-foot">${s.url ? `<a href="${s.url}" target="_blank" rel="noopener">${t("official")}</a>` : "<span></span>"}<span class="foot-btns">${nopeBtn(s)}<button class="pick" data-pick="${s.id}" aria-pressed="${isPicked}">${isPicked ? STAR + t("picked") : PLUS + t("pick")}</button></span></div>
     ${d && d.summary && d.summary !== "-" ? `<div class="note">${t("summaryNote")}</div>` : ""}`;
   openInfo.current = id;
   $("#pop-bg").hidden = false; document.body.classList.add("noscroll");
@@ -1002,9 +1020,17 @@ document.addEventListener("click", e => {
   if (pick) {
     const id = pick.dataset.pick;
     if (picked.has(id)) { picked.delete(id); toast(t("removed")); }
-    else { picked.add(id); const c = conflictsOf(BY_ID[id]); toast(c.length ? t("pickedOverlap", c[0].code || c[0].title) : t("picked")); }
+    else { picked.add(id); nope.delete(id); const c = conflictsOf(BY_ID[id]); toast(c.length ? t("pickedOverlap", c[0].code || c[0].title) : t("picked")); }
     savePicked(); render(); if (openInfo.current) openInfo(openInfo.current); return;
   }
+  const nopeEl = e.target.closest("[data-nope]");
+  if (nopeEl) {
+    const id = nopeEl.dataset.nope;
+    if (nope.has(id)) { nope.delete(id); toast(t("nopeOff")); }
+    else { nope.add(id); picked.delete(id); toast(t("nopeOn")); }
+    savePicked(); render(); if (openInfo.current) openInfo(openInfo.current); return;
+  }
+  if (e.target.closest("[data-shownope]")) { state.showNope = true; syncInputs(); saveUI(); render(); return; }
   const confBtn = e.target.closest("[data-conf]");
   if (confBtn) {
     const ids = confBtn.dataset.conf.split(",").filter(id => BY_ID[id]);
@@ -1063,7 +1089,8 @@ $("#slot").onchange = e => { state.slot = e.target.value; saveUI(); renderProgra
 $("#kind").onchange = e => { state.kind = e.target.value; saveUI(); renderProgram(); };
 $("#only-picked").onchange = e => { state.onlyPicked = e.target.checked; saveUI(); renderProgram(); };
 $("#hide-events").onchange = e => { state.hideEvents = e.target.checked; saveUI(); renderProgram(); };
-$("#reset").onclick = () => { Object.assign(state, { q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false }); syncInputs(); saveUI(); renderTrackChips(); render(); };
+$("#show-nope").onchange = e => { state.showNope = e.target.checked; saveUI(); renderProgram(); };
+$("#reset").onclick = () => { Object.assign(state, { q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false, showNope: false }); syncInputs(); saveUI(); renderTrackChips(); render(); };
 $("#clear").onclick = () => { $("#clear-confirm").hidden = false; };
 $("#clear-no").onclick = () => { $("#clear-confirm").hidden = true; };
 $("#clear-yes").onclick = () => { picked.clear(); savePicked(); $("#clear-confirm").hidden = true; toast(t("cleared")); render(); };
@@ -1074,7 +1101,7 @@ $("#copy").onclick = () => {
 };
 function syncInputs() {
   $("#q").value = state.q; $("#kind").value = state.kind;
-  $("#only-picked").checked = state.onlyPicked; $("#hide-events").checked = state.hideEvents;
+  $("#only-picked").checked = state.onlyPicked; $("#hide-events").checked = state.hideEvents; $("#show-nope").checked = !!state.showNope;
 }
 $("#lang-de").onclick = () => setLang("de");
 $("#lang-en").onclick = () => setLang("en");

@@ -28,20 +28,21 @@
   const FILE = "live360-orlando-2026-plan.json";
   const TOKEN_URL = "https://github.com/settings/tokens/new?scopes=gist&description=Live360%20Planner%20sync";
   let cfg = store.get("sync", null); // { token, gist }
-  let log = store.get("syncLog", {}); // id -> [1|0, ms]
+  let log = store.get("syncLog", {}); // id -> [1|0, ms] für Gemerkte, "x:"+id für "Kein Interesse"
   let lastSync = store.get("syncAt", 0), busy = false, failed = false, timer = 0;
 
-  // Lokale Änderungen mitschreiben: savePicked wird bei jeder Änderung aufgerufen
-  let snap = new Set(picked);
-  for (const id of picked) if (!log[id]) log[id] = [1, 1];
+  // Lokale Änderungen mitschreiben: savePicked wird bei jeder Änderung (auch "Kein Interesse") aufgerufen
+  const keys = () => new Set([...picked, ...[...nope].map(id => "x:" + id)]);
+  let snap = keys();
+  for (const k of snap) if (!log[k]) log[k] = [1, 1];
   store.set("syncLog", log);
   const origSave = savePicked;
   savePicked = function () {
     origSave();
-    const now = Date.now();
-    for (const id of picked) if (!snap.has(id)) log[id] = [1, now];
-    for (const id of snap) if (!picked.has(id)) log[id] = [0, now];
-    snap = new Set(picked);
+    const now = Date.now(), cur = keys();
+    for (const k of cur) if (!snap.has(k)) log[k] = [1, now];
+    for (const k of snap) if (!cur.has(k)) log[k] = [0, now];
+    snap = cur;
     store.set("syncLog", log);
     if (cfg) { clearTimeout(timer); timer = setTimeout(sync, 1200); }
   };
@@ -80,12 +81,14 @@
       // Pro Session gewinnt die jüngere Änderung
       const merged = { ...remote };
       for (const [id, v] of Object.entries(log)) if (!merged[id] || v[1] > merged[id][1]) merged[id] = v;
-      const before = [...picked].sort().join();
+      const before = [...keys()].sort().join();
       log = merged; store.set("syncLog", log);
-      picked = new Set(Object.keys(log).filter(id => log[id][0] && BY_ID[id]));
-      snap = new Set(picked);
+      const on = Object.keys(log).filter(k => log[k][0]);
+      picked = new Set(on.filter(k => BY_ID[k]));
+      nope = new Set(on.filter(k => k.startsWith("x:") && BY_ID[k.slice(2)]).map(k => k.slice(2)));
+      snap = keys();
       origSave();
-      if ([...picked].sort().join() !== before) { render(); toast(t("syncPlanUpdated")); }
+      if ([...snap].sort().join() !== before) { render(); toast(t("syncPlanUpdated")); }
       if (JSON.stringify(merged) !== JSON.stringify(remote)) {
         await api("/gists/" + cfg.gist, { method: "PATCH", body: JSON.stringify({ files: { [FILE]: { content: JSON.stringify({ v: 1, items: merged }) } } }) });
       }
