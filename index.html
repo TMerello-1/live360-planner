@@ -1008,6 +1008,7 @@ document.addEventListener("click", e => {
   const confBtn = e.target.closest("[data-conf]");
   if (confBtn) {
     const ids = confBtn.dataset.conf.split(",").filter(id => BY_ID[id]);
+    if (state.view !== "cmp") rememberAnchor(confBtn);
     if (openInfo.current) closeInfo();
     state.back = state.view === "cmp" ? state.back : state.view;
     Object.assign(state, { view: "cmp", cmpIds: ids, cmpDay: BY_ID[ids[0]].day }); saveUI(); render(); window.scrollTo(0, 0); return;
@@ -1015,6 +1016,7 @@ document.addEventListener("click", e => {
   const slotBtn = e.target.closest("[data-slot]");
   if (slotBtn) {
     const [d, st] = slotBtn.dataset.slot.split(":").map(Number);
+    if (state.view !== "cmp") rememberAnchor(slotBtn);
     state.back = state.view === "cmp" ? state.back : state.view;
     Object.assign(state, { view: "cmp", cmpDay: d, cmpStart: st, cmpIds: null }); saveUI(); render(); window.scrollTo(0, 0); return;
   }
@@ -1027,7 +1029,27 @@ document.addEventListener("click", e => {
 });
 $("#v-prog").onclick = () => { state.view = "prog"; saveUI(); render(); };
 $("#v-plan").onclick = () => { state.view = "plan"; saveUI(); render(); window.scrollTo(0, 0); };
-$("#cmp-back").onclick = () => { state.view = state.back || "plan"; state.cmpIds = null; saveUI(); render(); };
+$("#cmp-back").onclick = () => { state.view = state.back || "plan"; state.cmpIds = null; saveUI(); render(); restoreAnchor(); };
+
+// Rücksprung an die Stelle, von der aus der Vergleich geöffnet wurde
+let anchor = null;
+function rememberAnchor(el) {
+  // Bezugspunkt, der nach dem Neuzeichnen wiederzufinden ist: Session-Titel, Slot-Knopf oder Tagesüberschrift
+  const card = el.closest(".card"), day = el.closest(".plan-day");
+  const id = openInfo.current || (card && card.querySelector("[data-info]") || {}).dataset?.info;
+  const sel = id ? `[data-info="${CSS.escape(id)}"]` : el.dataset.slot ? `[data-slot="${CSS.escape(el.dataset.slot)}"]` : null;
+  const ref = (sel && [...document.querySelectorAll(sel)].find(x => x.offsetParent)) || (day && day.querySelector("h2")) || el;
+  anchor = { y: window.scrollY, sel, day: day ? day.querySelector("h2").firstChild.textContent : null, top: ref.getBoundingClientRect().top };
+}
+function restoreAnchor() {
+  if (!anchor) return;
+  const a = anchor; anchor = null;
+  const view = state.view === "plan" ? $("#plan") : $("#prog");
+  let el = a.sel && [...view.querySelectorAll(a.sel)].find(x => x.offsetParent);
+  if (!el && a.day) el = [...view.querySelectorAll(".plan-day h2")].find(h => h.firstChild.textContent === a.day);
+  if (el) window.scrollTo(0, window.scrollY + el.getBoundingClientRect().top - a.top);
+  else window.scrollTo(0, a.y);
+}
 function stepSlot(dir) {
   const list = SLOTS[state.cmpDay]; const i = list.findIndex(x => x.start === state.cmpStart) + dir;
   if (list[i]) { state.cmpStart = list[i].start; saveUI(); render(); }
