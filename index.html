@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Live! 360 Orlando Planer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: kompakte Kopfleiste mit Tages-Reitern, darunter ein Zeitstrahl nach Startzeit; "Mein Plan" als zweite Ansicht */
+:root {
+  --bg: #f3f5f8;
+  --surface: #ffffff;
+  --surface-2: #e9edf3;
+  --fg: #141a24;
+  --muted: #5b6577;
+  --line: #d6dce6;
+  --accent: #0b6e8a;
+  --accent-ink: #ffffff;
+  --accent-soft: #d9eef4;
+  --danger: #c2372b;
+  --danger-soft: #fbe3e0;
+  --ok: #2f7d4f;
+  --vs: #6a3fb5; --dp: #1f63c6; --tm: #c46a10; --ai: #0f8a79; --ea: #b0347c; --cr: #c2372b; --l3: #59647a;
+  --font-display: "Familjen Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f141c; --surface: #171e29; --surface-2: #212a37; --fg: #e8edf4; --muted: #9aa5b8; --line: #2c3645;
+  --accent: #4fc0dc; --accent-ink: #06222b; --accent-soft: #143440; --danger: #ff7a6b; --danger-soft: #3a1c1a; --ok: #6fcf97;
+  --vs: #a98af0; --dp: #6ea5ff; --tm: #f0a252; --ai: #4fd1bd; --ea: #ec7fbd; --cr: #ff7a6b; --l3: #9aa5b8;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0f141c; --surface: #171e29; --surface-2: #212a37; --fg: #e8edf4; --muted: #9aa5b8; --line: #2c3645;
+  --accent: #4fc0dc; --accent-ink: #06222b; --accent-soft: #143440; --danger: #ff7a6b; --danger-soft: #3a1c1a; --ok: #6fcf97;
+  --vs: #a98af0; --dp: #6ea5ff; --tm: #f0a252; --ai: #4fd1bd; --ea: #ec7fbd; --cr: #ff7a6b; --l3: #9aa5b8;
+  color-scheme: dark }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.45; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+.top .wrap { padding-block: 14px 0; display: grid; gap: 12px; }
+.brand { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.brand h1 { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.brand .sub { color: var(--muted); font-size: 0.85rem; }
+.views { display: inline-flex; background: var(--surface-2); border-radius: 999px; padding: 3px; gap: 2px; }
+.views button { border: 0; background: transparent; padding: 6px 14px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; color: var(--muted); }
+.views button[aria-pressed="true"] { background: var(--surface); color: var(--fg); box-shadow: 0 1px 2px rgb(0 0 0 / 0.12); }
+.views .count { font-family: var(--font-mono); font-size: 0.78rem; margin-left: 4px; color: var(--accent); }
+
+.days { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; margin-bottom: -1px; }
+.days::-webkit-scrollbar { display: none; }
+.days button { flex: 1 0 auto; min-width: 64px; border: 0; border-bottom: 3px solid transparent; background: transparent; padding: 6px 10px 9px; text-align: center; color: var(--muted); }
+.days button .d { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1rem; color: inherit; }
+.days button .n { display: block; font-family: var(--font-mono); font-size: 0.72rem; }
+.days button[aria-selected="true"] { color: var(--fg); border-bottom-color: var(--accent); }
+.days button .dot { display: inline-block; min-width: 18px; padding: 0 5px; border-radius: 9px; font-size: 0.7rem; font-family: var(--font-mono); background: var(--accent); color: var(--accent-ink); margin-left: 4px; vertical-align: 2px; }
+.days button .dot.warn { background: var(--danger); color: #fff; }
+
+.filters { padding-block: 14px; display: grid; gap: 10px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.search { flex: 1 1 220px; min-width: 0; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+select { padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+.chip { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 11px; font-size: 0.83rem; display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
+.chip .sw { width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
+.chip[aria-pressed="true"] { border-color: var(--c, var(--accent)); color: var(--fg); background: color-mix(in srgb, var(--c, var(--accent)) 12%, var(--surface)); }
+.label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; margin-right: 4px; }
+.link-btn { border: 0; background: none; color: var(--accent); font-size: 0.85rem; padding: 4px 2px; }
+
+.banner { display: flex; gap: 10px; align-items: flex-start; background: var(--danger-soft); color: var(--fg); border: 1px solid color-mix(in srgb, var(--danger) 40%, transparent); border-radius: var(--radius); padding: 10px 14px; font-size: 0.9rem; }
+.banner b { color: var(--danger); }
+
+main { padding-block: 4px 48px; }
+.slot { display: grid; grid-template-columns: 76px 1fr; gap: 14px; padding-block: 14px; border-top: 1px solid var(--line); }
+.slot:first-child { border-top: 0; }
+.slot-time { font-family: var(--font-mono); font-weight: 500; font-size: 0.95rem; position: sticky; top: 150px; align-self: start; font-variant-numeric: tabular-nums; }
+.slot-time small { display: block; color: var(--muted); font-size: 0.72rem; font-weight: 400; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; min-width: 0; }
+
+.card { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 12px 12px 16px; display: grid; gap: 6px; min-width: 0; overflow: hidden; }
+.card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--c); }
+.card.event { background: transparent; border-style: dashed; }
+.card.picked { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.card.conflict { border-color: var(--danger); box-shadow: 0 0 0 1px var(--danger) inset; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 0.75rem; color: var(--muted); }
+.code { font-family: var(--font-mono); font-weight: 500; color: var(--c); }
+.tag { border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.dur { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.card h3 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 1.02rem; line-height: 1.25; text-wrap: balance; overflow-wrap: anywhere; }
+.card h3 a { color: inherit; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; text-decoration-color: var(--c); }
+.spk { font-size: 0.85rem; color: var(--muted); overflow-wrap: anywhere; }
+.card-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 2px; }
+.warn-text { font-size: 0.78rem; color: var(--danger); font-weight: 600; }
+.pick { border: 1px solid var(--line); background: var(--surface-2); border-radius: 999px; padding: 4px 12px; font-size: 0.82rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-left: auto; white-space: nowrap; }
+.pick svg { width: 14px; height: 14px; }
+.pick[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+.empty { text-align: center; color: var(--muted); padding: 48px 16px; display: grid; gap: 8px; justify-items: center; }
+.empty h2 { font-family: var(--font-display); color: var(--fg); margin: 0; font-size: 1.25rem; }
+.empty p { margin: 0; max-width: 46ch; }
+
+/* Mein Plan */
+.plan-head { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; padding-block: 16px 6px; }
+.stats { display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); }
+.stats b { font-family: var(--font-mono); color: var(--fg); font-size: 1.05rem; margin-right: 4px; }
+.stats .bad b { color: var(--danger); }
+.btn { border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 7px 12px; font-size: 0.85rem; font-weight: 600; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn.ghost-danger { color: var(--danger); }
+.plan-day { padding-block: 12px; }
+.plan-day h2 { font-family: var(--font-display); font-size: 1.15rem; margin: 6px 0 10px; display: flex; gap: 10px; align-items: baseline; }
+.plan-day h2 small { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); font-weight: 400; }
+.tl { display: grid; gap: 8px; }
+.tl-item { display: grid; grid-template-columns: 96px 1fr; gap: 12px; align-items: start; }
+.tl-time { font-family: var(--font-mono); font-size: 0.85rem; font-variant-numeric: tabular-nums; padding-top: 12px; }
+.tl-time small { display: block; color: var(--muted); }
+.gap { grid-column: 2; font-size: 0.78rem; color: var(--muted); padding: 2px 0 2px 16px; border-left: 2px dotted var(--line); margin-left: 6px; }
+.toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--fg); color: var(--bg); padding: 8px 14px; border-radius: 8px; font-size: 0.88rem; z-index: 20; }
+/* Leere Slots im Plan */
+.slot-empty { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; text-align: left; border: 1.5px dashed var(--line); border-radius: var(--radius); background: transparent; padding: 12px 14px; color: var(--muted); }
+.slot-empty:hover { border-color: var(--accent); color: var(--fg); background: var(--accent-soft); }
+.slot-empty b { font-family: var(--font-display); font-weight: 600; color: var(--fg); font-size: 0.98rem; }
+.slot-empty .go { font-size: 0.82rem; color: var(--accent); font-weight: 600; white-space: nowrap; }
+.covered { font-size: 0.82rem; color: var(--muted); padding: 10px 14px; border-left: 2px dotted var(--line); }
+.slot-link { display: inline-block; margin-top: 4px; border: 0; background: none; padding: 0; color: var(--accent); font-size: 0.75rem; font-family: var(--font-body); font-weight: 600; }
+.slot-link:hover { text-decoration: underline; }
+.tl-time button.slot-link { margin-top: 2px; }
+.plan-day.no-pick h2 { color: var(--muted); }
+
+/* Slot-Vergleich */
+.cmp-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding-block: 16px 10px; }
+.cmp-head h2 { margin: 0; font-family: var(--font-display); font-size: 1.3rem; text-wrap: balance; flex: 1 1 260px; }
+.cmp-head h2 small { display: block; font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 2px; }
+.cmp-nav { display: flex; gap: 6px; }
+.cmp-status { font-size: 0.88rem; color: var(--muted); padding-bottom: 10px; }
+.cmp-status b { color: var(--fg); }
+.compare { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; padding-bottom: 14px; align-items: stretch; }
+@media (max-width: 560px) { .compare { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 82%; overflow-x: auto; scroll-snap-type: x mandatory; } }
+.compare > .card { scroll-snap-align: start; align-content: start; grid-template-rows: auto auto 1fr auto; }
+.compare .card h3 { font-size: 1.05rem; }
+.compare .card-foot { align-self: end; }
+
+textarea.copybox { width: 100%; min-height: 160px; font-family: var(--font-mono); font-size: 0.8rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); padding: 10px; }
+footer { color: var(--muted); font-size: 0.78rem; padding-block: 0 32px; }
+footer a { color: var(--muted); }
+
+@media (max-width: 560px) {
+  .slot { grid-template-columns: 1fr; gap: 8px; }
+  .slot-time { position: static; display: flex; gap: 8px; align-items: baseline; }
+  .tl-item { grid-template-columns: 1fr; gap: 4px; }
+  .tl-time { padding-top: 0; display: flex; gap: 8px; }
+  .gap { grid-column: 1; }
+  .cards { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <div>
+        <h1>Live! 360 Orlando 2026</h1>
+        <div class="sub">15.–20. November · alle Zeiten Ortszeit (EST)</div>
+      </div>
+      <div class="views" role="group" aria-label="Ansicht">
+        <button id="v-prog" aria-pressed="true">Programm</button>
+        <button id="v-plan" aria-pressed="false">Mein Plan<span class="count" id="plan-count">0</span></button>
+      </div>
+    </div>
+    <nav class="days" id="days" role="tablist" aria-label="Tag"></nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <section id="prog">
+    <div class="filters">
+      <div class="row">
+        <input id="q" class="search" type="search" placeholder="Titel, Sprecher oder Code suchen …" aria-label="Suchen">
+        <select id="slot" aria-label="Zeitslot"></select>
+        <select id="kind" aria-label="Format">
+          <option value="">Alle Formate</option>
+          <option value="Session">Sessions</option>
+          <option value="Fast Focus">Fast Focus</option>
+          <option value="Workshop">Workshops</option>
+          <option value="Lab">Hands-On Labs</option>
+          <option value="Keynote">Keynotes</option>
+          <option value="Panel">Panels</option>
+          <option value="Event">Pausen &amp; Events</option>
+        </select>
+      </div>
+      <div class="row" id="tracks"><span class="label">Konferenz</span></div>
+      <div class="row">
+        <label class="chip" style="--c: var(--accent)"><input id="only-picked" type="checkbox"> Nur gemerkte</label>
+        <label class="chip" style="--c: var(--accent)"><input id="hide-events" type="checkbox"> Pausen ausblenden</label>
+        <button class="link-btn" id="reset">Filter zurücksetzen</button>
+      </div>
+      <div id="day-banner"></div>
+    </div>
+    <main id="list"></main>
+  </section>
+
+  <section id="plan" hidden>
+    <div class="plan-head">
+      <div class="stats" id="stats"></div>
+      <div class="row">
+        <button class="btn" id="copy">Plan als Text kopieren</button>
+        <button class="btn ghost-danger" id="clear">Alles entfernen</button>
+      </div>
+    </div>
+    <div id="clear-confirm" hidden class="banner" style="margin-block: 6px">
+      <span>Wirklich alle gemerkten Sessions entfernen?</span>
+      <span class="row" style="margin-left:auto"><button class="btn ghost-danger" id="clear-yes">Ja, entfernen</button><button class="btn" id="clear-no">Abbrechen</button></span>
+    </div>
+    <div id="copy-fallback" hidden><textarea class="copybox" id="copy-text" readonly aria-label="Plan als Text"></textarea></div>
+    <main id="plan-list"></main>
+  </section>
+
+  <section id="cmp" hidden>
+    <div class="cmp-head">
+      <button class="btn" id="cmp-back">← Zurück</button>
+      <h2 id="cmp-title"></h2>
+      <div class="cmp-nav"><button class="btn" id="cmp-prev" aria-label="Vorheriger Slot">← Früher</button><button class="btn" id="cmp-next" aria-label="Nächster Slot">Später →</button></div>
+    </div>
+    <div class="cmp-status" id="cmp-status"></div>
+    <div class="compare" id="cmp-list"></div>
+  </section>
+
+  <footer>Quelle: <a href="https://live360events.com/events/orlando-2026/sessions/session-list.aspx" target="_blank" rel="noopener">offizielle Sessionliste</a>, Stand 19.10.2026. Räume stehen noch nicht fest. Deine Auswahl bleibt nur in diesem Browser gespeichert.</footer>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const RAW = `
+#15 Sunday So
+DPHOL01|Hands-On Lab: Building Modern Applications with SQL Server 2025 - AI and New Developer Features|9:00am-6:00pm|Leonard Lobel|dphol01-hol-modern-apps-with-sql
+VSHOL01|Hands-On Lab: Building Production-Ready Modern APIs with .NET|9:00am-6:00pm|Tony Champion|vshol01-modern-apis
+TMHOL01|Hands-On Lab: Building Enterprise PKI from Scratch: A Hands-On Lab for IT Pros|9:00am-6:00pm|John O'Neill, Sr.|tmhol01-hol-pki-from-scratch
+AIHOL01|2-Day Hands-On Lab: Elevate Your Career with Python and AI - Day 1: Getting Started with Python|9:00am-6:00pm|Eric D. Boyd|aihol01-hol-python-ai1
+VSHOL02|Hands-On Lab: Build an ASP.NET Core MVC App and EF Core with Copilot in a Day|9:00am-6:00pm|Philip Japikse|vshol02-hol-build-an-asp,-d-,net-core-mvc-app
+AIHOL02|Hands-On Lab: Unlock the Potential of AI in Your Applications with Microsoft Agent Framework|9:00am-6:00pm|Marcel de Vries, Roy Cornelissen|aihol02-hol-ms-agent-framework
+VSHOL03|Hands-On Lab: Essential C# for .NET Devs|9:00am-6:00pm|Ted Neward|vshol03-hol-essential-c
+CRHOL01|Hands-On Lab: Incident Response - with Defender Boys|9:00am-6:00pm|Mattias Borg, Stefan Schörling|crhol01-hol-incident-response
+EAHOL01|Hands-On Lab: Unlocking Strategic Advantage - A Full-Day Workshop on AI Agents|9:00am-6:00pm|Prashant G Bhoyar|eahol01-hol-ai-agents
+#16 Monday Mo
+-|Registration • Coffee and Morning Pastries|7:00am-8:30am||registration|L3
+VSM01|Workshop: Microsoft Blazor Zero to Success|8:30am-5:30pm|Allen Conway, Rockford Lhotka|vsm01-workshop-microsoft-blazor
+VSM02|Workshop: Design Thinking and UX Design Jumpstart for Developers and Managers|8:30am-5:30pm|Billy Hollis, Gary Bailey|vsm02-workshop-design
+VSM03|Workshop: Team Development for the Future with Agentic AI & GitHub|8:30am-5:30pm|Mickey Gousset, Ken Muse|vsm03-workshop-team-development
+VSM04|Workshop: Mastering AI Development & Building AI Apps with GitHub Copilot|8:30am-5:30pm|Kayla Cinnamon, Jon Galloway|vsm04-workshop-mastering-ai-development
+DPM01|Workshop: Microsoft Fabric for the Data Professional|8:30am-5:30pm|Bradley Ball, Thomas LaRock, Josh Luedeman, Bradley Schacht, Daniel Taylor|dpm01-wksp-microsoft-fabric
+DPM02|Workshop: SQL Server and Azure SQL - Architecting for High Availability|8:30am-5:30pm|Denny Cherry|dpm02-wksp-sql-and-azure-sql
+TMM01|Workshop: Conquering Active Directory in a Hybrid World|8:30am-5:30pm|Sander Berkouwer, Michael Van Horenbeeck|tmm01-workshop-conquering-ad
+TMM02|Workshop: Securing On-Premises Servers with Defender for Cloud and Azure Arc|8:30am-5:30pm|Aidan Finn|tmm02-workshop-defender-for-cloud-and-azure-arc
+AIHOL01-2|2-Day Hands-On Lab: Elevate Your Career with Python and AI - Day 2: Introduction to Artificial Intelligence Using Python|8:30am-5:30pm|Eric D. Boyd|aihol01-hol-python-ai2
+AIM01|Workshop: Hitchhiker's Guide to Building an AI Solution Now|8:30am-5:30pm|Brian A. Randell, Matt Nunn|aim01-wksp-building-ai
+EAM01|Workshop: Building Stuff with GenAI - The Open-Minded Workshop Beyond OpenAI|8:30am-5:30pm|Andreas Erben|eam01-wksp-building-stuff-with-genai
+CRM01|Workshop: Red Teaming and Blue Teaming with Defender XDR|8:30am-5:30pm|Émile Cabot, Dave Kawula|crm01-workshop-defender-xdr
+CRM02|Workshop: An Introduction to Quantum Cryptography for IT & Security Professionals|8:30am-5:30pm|Andy Malone|crm02-workshop-quantum-cryptography
+-|Live! 360 First Timers Forum: A New Attendees Guide|5:45pm-6:15pm||first-timers-forum|L3
+-|Mix and Mingle @ Hard Rock Cafe Universal CityWalk|6:30pm-8:00pm||mix-and-mingle|L3
+#17 Tuesday Di
+-|Lace Up & Link Up!|6:45am-7:15am|Philip Japikse|lace-up|L3
+-|Registration • Coffee and Morning Pastries|7:00am-8:00am||registration|L3
+-|Visual Studio Live! Keynote: You, Visual Studio, and AI: Building What Comes Next|8:00am-9:00am|Mads Kristensen|vsl-key-vs-ai|VS
+-|Data Platform Live! Keynote: Microsoft Fabric - The Foundation for Enterprise AI and Data|8:00am-9:00am|Arthi Ramasubramanian Iyer|dpl-keynote|DP
+-|TechMentor & Cybersecurity & Ransomware Live! Keynote: I Teach Security—and Then My Account Was Compromised|8:00am-9:00am|John O'Neill, Sr.|tm-key-account-compromised|TM
+-|Artificial Intelligence Live! & AI Enterprise Architecture Live! Keynote: Death by Tool Calls - Solving the #1 Problem in Agentic AI|8:00am-9:00am|Jeff Prosise|ail_aieal-keynote|AI
+VST01|Building Web Applications with ASP.NET Core|9:15am-10:30am|Philip Japikse|vst01-building-web-applications
+VST02|A Structured Technique for Observing and Learning from Users|9:15am-10:30am|Billy Hollis|vst02-observing-and-learning-from-users
+VST03|Branches That Don’t Suck: Smarter Strategies for Modern Dev Teams|9:15am-10:30am|Benjamin Day|vst03-branches-that-dont-suck
+VST04|Busy Developer's Guide to Python|9:15am-10:30am|Ted Neward|vst04-python
+DPT01|From Ingestion to Consumption: Preparing Data for Seamless AI|9:15am-10:30am|Matt Nunn|dpt01-data-for-ai
+DPT02|Cloud Cost Optimization for Dev & Database Professionals|9:15am-10:30am|Tee Dargie, Kevin Kline|dpt02-cloud-cost-optimization
+TMT01|A Passwordless Reality Check: What Actually Happens When You Kill Passwords|9:15am-10:30am|John O'Neill, Sr.|tmt01-passwordless
+TMT02|Beyond Azure: Extending Defender for Cloud to Hybrid and Multi-Cloud Workloads|9:15am-10:30am|Aidan Finn|tmt02-beyond-azure
+TMT03|From Chaotic Nightmare to Enterprise Governance: Building an IGA Foundation with Active Directory|9:15am-10:30am|Josh Karnes, AJ Linder|tmt03-from-nightmare-to-enterprise-governance
+AIT01|State of the AI Developer Nation|9:15am-10:30am|Brian A. Randell|ait01-ai-dev-nation
+AIT02|Practical AI Integration: From API Call to Production Feature|9:15am-10:30am|Kevin Feasel|ait02-ai-integration
+EAT01|The Architecture of Agents|9:15am-10:30am|Rockford Lhotka|eat01-architecture-agents
+CRT01|What's New in Defender XDR - with Defender Boys|9:15am-10:30am|Mattias Borg, Stefan Schörling|crt01-defender-xdr
+CRT02|The Day the Hacker Stood Still – Microsoft Entra ID Security Deep Dive|9:15am-10:30am|Andy Malone|crt02-microsoft-entra-id
+-|Networking Break • Visit the EXPO Lounge|10:30am-11:00am||am-break|L3
+-|Live! 360 Keynotes: Anybody Can Use Agents & AI to Build Anything & The Last Mile: From Idea to Usable App|11:00am-12:15pm|Kayla Cinnamon, Jon Galloway, Jason Beres|l360keynote-agents-ai|L3
+-|Lunch • Visit the EXPO Lounge|12:15pm-1:00pm||lunch|L3
+-|Dessert Break • Visit the EXPO Lounge|1:00pm-1:45pm||dessert-break|L3
+VST05|Fast Focus: Git Tips & Tricks in 20 Minutes|1:45pm-2:05pm|Mickey Gousset|vst05-ff-git-tips
+VST06|Fast Focus: API Documentation|1:45pm-2:05pm|Philip Japikse|vst06-ff-api-documentation
+VST07|Fast Focus: What's New in EF Core|1:45pm-2:05pm|Jim Wooley|vst07-ff-ef-core
+VST08|Fast Focus: Mocking with Moq: A Quick Guide to Smarter Unit Tests|1:45pm-2:05pm|Benjamin Day|vst08-ff-mocking-with-moq
+DPT03|Fast Focus: A DBA's Guide to LLM's|1:45pm-2:05pm|Bradley Ball|dpt03-ff-dba-guide
+DPT04|Fast Focus: Fabric Mirroring for SQL Server 2025 - What You Need to Know|1:45pm-2:05pm|Meagan Longoria|dpt04-ff-fabric-mirroring-for-sql
+TMT04|Fast Focus: Intune App Deployment Methods and When to Use Them|1:45pm-2:05pm|Émile Cabot|tmt04-ff-intune
+TMT05|Fast Focus: Windows Admin Center Virtualization Mode: Simplifying VM Management|1:45pm-2:05pm|Greg Altman|tmt05-ff-simplifying-vm
+AIT03|Fast Focus: Microsoft Foundry Agent Service 101|1:45pm-2:05pm|Prashant G Bhoyar|ait03-ff-microsoft-foundry
+EAT02|An Interactive Whiteboard Session — Three Real-World AI Scenarios|1:45pm-2:35pm|Eric D. Boyd, Rockford Lhotka, Ashley Rivera|eat02-interactive
+CRT03|Fast Focus: Five Checks in Five Minutes - A PKI Health Assessment You Can Run Monday Morning|1:45pm-2:05pm|John O'Neill, Sr.|crt03-ff-five-checks-in-five-minutes
+CRT04|Fast Focus: Cyber Security Awareness for Executives and C-Suite|1:45pm-2:05pm|Dave Kawula|crt04-ff-cyber-security-awareness
+VST09|Fast Focus: Azure DevOps vs. GitHub - Which Do You Choose|2:15pm-2:35pm|Brian A. Randell|vst09-ff-azure-devops-v-github
+VST10|Fast Focus: Modern Web UI Showdown|2:15pm-2:35pm|Allen Conway|vst10-ff-modern-web-ui
+VST11|Fast Focus: Visibility Is a Technical Skill|2:15pm-2:35pm|Tony Champion|vst11-ff-visibility
+VST12|Fast Focus: Doing Fun Things with Unsafe Code|2:15pm-2:35pm|Jason Bock|vst12-ff-unsafe-code
+DPT05|Fast Focus: Time Traveling Data - SQL Server Temporal Tables|2:15pm-2:35pm|Leonard Lobel|dpt05-ff-sql-temporal-tables
+DPT06|Fast Focus: Making SQL Server use Multiple Indexes per Table|2:15pm-2:35pm|Denny Cherry|dpt06-ff-sql-multiple-indexes
+TMT06|Fast Focus: 10 Tips for Better Task Management with Microsoft 365|2:15pm-2:35pm|Heather Severino|tmt06-ff-task-management
+TMT07|Fast Focus: Step into Azure Storage on Secure Footing|2:15pm-2:35pm|Karinne Bessette|tmt07-ff-azure-storage
+AIT04|Fast Focus: AI Prompting and Context Engineering|2:15pm-2:35pm|Buck Woody|ait04-ff-ai-prompting
+CRT05|Fast Focus: Feel the Burn: Staying Sane in a 24/7 IT World|2:15pm-2:35pm|Derek Michals|crt05-ff-feel-the-burn
+CRT06|Fast Focus: Configuring Cross-Tenant Access for Secure Collaboration|2:15pm-2:35pm|Myron Helgering|crt06-ff-cross-tenant-access
+-|Networking Break • Visit the EXPO Lounge|2:35pm-3:00pm||pm-break|L3
+VST13|Agentic DevOps with GitHub and Azure DevOps: What Actually Works in 2026|3:00pm-4:15pm|Brian A. Randell|vst13-agentic-devops
+VST14|Build a UI for Your AI Chat Bot|3:00pm-4:15pm|Rockford Lhotka|vst14-build-a-ui
+VST15|Visual Studio Tips & Tricks|3:00pm-4:15pm|Mads Kristensen|vst15-visual-studio-tips
+VST16|Busy Developer's Guide to Go|3:00pm-4:15pm|Ted Neward|vst16-guide-to-go
+DPT07|What's New for Developers in SQL Server 2025|3:00pm-4:15pm|Leonard Lobel|dpt07-devs-in-sql
+DPT08|To Be Announced|3:00pm-4:15pm||dpt08-tbd
+TMT08|What's New with Microsoft 365 (and M365 Copilot)?|3:00pm-4:15pm|Heather Severino|tmt08-new-microsoft-365
+TMT09|From the Trenches: A Real-world Approach to Transitioning Domain Controllers to Windows Server 2025|3:00pm-4:15pm|Sander Berkouwer|tmt09-windows-server-2025
+TMT10|Modernizing Hyper-V for Resilience in 2027|3:00pm-4:15pm|Tony Joy|tmt10-modernizing-hyperv
+AIT05|To Be Announced|3:00pm-4:15pm||ait05-tbd
+AIT06|Don’t Panic: A Hitchhiker’s Guide to the Changing Universe of Software Development|3:00pm-4:15pm|Matt Nunn|ait06-universe-software-dev
+EAT03|AI, Data, Automation, and Digital Transformation in Manufacturing Industries|3:00pm-4:15pm|Ponilango Ponraj, Anjali Ramalingam, Shoubith Rajeswaran, Rajeswaran Sababathy|eat03-ai-data-automation
+CRT07|Agents in 2026 - Security Copilot with Defender Boys|3:00pm-4:15pm|Mattias Borg, Stefan Schörling|crt07-agents-in-2026
+CRT08|Protecting Critical ICS & SCADA Infrastructure with Microsoft Defender|3:00pm-4:15pm|Maarten Goet|crt08-microsoft-defender
+VST17|What's New in C#|4:30pm-5:45pm|Jason Bock|vst17-new-in-c
+VST18|Fear and (Self) Loathing in IT – A Healthy Discussion on Imposter Syndrome|4:30pm-5:45pm|Angela Dugan|vst18-imposter-syndrome
+VST19|Too Late for TDD? Start Test Eventually Development Now|4:30pm-5:45pm|Jim Wooley|vst19-too-late-for-tdd
+VST20|Advanced UI in the Browser with the Uno Platform|4:30pm-5:45pm|Billy Hollis|vst20-advanced-ui
+DPT09|Enhancing Power BI with Copilot|4:30pm-5:45pm|Thomas LeBlanc|dpt09-enhancing-power-bi
+DPT10|Mastering Fabric Security: Safeguarding Your Analytics|4:30pm-5:45pm|Bradley Schacht, Daniel Taylor|dpt10-mastering-fabric-security
+TMT11|What's New in New Outlook|4:30pm-5:45pm|Heather Severino|tmt11-new-outlook
+TMT12|Avoiding Sticker Shock in Azure|4:30pm-5:45pm|Aidan Finn|tmt12-azure
+TMT13|Securing Active Directory: Examples from the Field|4:30pm-5:45pm|Derek Melber|tmt13-securing-ad
+AIT07|Microsoft Foundry for the Skeptical Developer|4:30pm-5:45pm|Kevin Feasel|ait07-foundry-for-dev
+AIT08|Talk to AI Better: Advanced Prompt Engineering in Action|4:30pm-5:45pm|Mayuri Lahane|ait08-adv-prompt-engineering
+EAT04|Designing Data and AI Systems That Leadership Can Trust|4:30pm-5:45pm|Ashley Rivera|eat04-designing-data
+CRT09|AD is NOT the Problem: Security and Incident Response for Active Directory|4:30pm-5:45pm|Michael Van Horenbeeck|crt09-ad-is-not-the-problem
+CRT10|Forward to the Past and Back to the Future - Cybercrime in 2025 and Beyond|4:30pm-5:45pm|Sami Laiho|crt10-cybercrime
+-|Live! 360 Welcome Reception|5:45pm-7:00pm||welcome-reception|L3
+#18 Wednesday Mi
+-|Registration • Coffee and Morning Pastries|7:00am-8:00am||registration|L3
+VSW01|TypeScript: Moving Beyond the Basics|8:00am-9:15am|Allen Conway|vsw01-typescript
+VSW02|Human Skills in an AI World: How Technologists Stay Essential|8:00am-9:15am|Angela Dugan|vsw02-human-skills-in-an-ai-world
+VSW03|Improving Performance in .NET Applications|8:00am-9:15am|Jason Bock|vsw03--net-applications
+VSW04|Agile-ish: Lightweight Project Management with GitHub Projects|8:00am-9:15am|Benjamin Day|vsw04-agileish
+DPW01|Building The Fabric Well-Architected Framework|8:00am-9:15am|Joseph D'Antoni|dpw01-fabric-architected-framework
+DPW02|Choose Wisely Between PostgreSQL, CosmosDB, SQL Server and Azure AI Search for Vectorization|8:00am-9:15am|Lino Tadros|dpw02-vectorization
+TMW01|How to (Not) Fail as a Public Speaker|8:00am-9:15am|Greg Altman, Cristal Kawula|tmw01-public-speaker
+TMW02|Old-time OS Deployment for the "Modern" Customer|8:00am-9:15am|Michael Niehaus|tmw02-os-deployment
+TMW03|Brand, Format, Ship: Your Microsoft 365 Newsletter Playbook|8:00am-9:15am|Karinne Bessette|tmw03-newsletter-playbook
+AIW01|Build Intelligent Agents with Work IQ, Foundry IQ, Fabric IQ, and Microsoft Agents Stack|8:00am-9:15am|Prashant G Bhoyar|aiw01-intelligent-agents
+AIW02|GitHub Copilot Everywhere: CLI, VS Code, Visual Studio, and the Cloud|8:00am-9:15am|Kayla Cinnamon|aiw02-github-copilot
+EAW01|Observability Redefined for Cloud-native Architectures in an Agentic Landscape|8:00am-9:15am|Alex Thissen|eaw01-cloudnative-architectures
+CRW01|ZeroTrust Networking Access - Why Everyone Needs to Adopt It|8:00am-9:15am|Sami Laiho|crw01-zerotrust-networking-access
+CRW02|Building a Secure & Disaster-Attested Network (SADAN): Designing Ransomware-Proof Infrastructure|8:00am-9:15am|Dave Kawula|crw02-building-a-secure-disaster-attested-network
+VSW05|Mastering Angular Signals and the Resource API|9:30am-10:45am|Deborah Kurata|vsw05-mastering-angular-signals
+VSW06|In Defense of Microservices|9:30am-10:45am|Chad Green|vsw06-microservices
+VSW07|Opening Up Your App to AI Agents: A Practical Guide to MCP with .NET|9:30am-10:45am|Marcel de Vries|vsw07-mcp-with-net
+VSW08|To Be Announced|9:30am-10:45am||
+DPW03|Upgrading Skills from DataFlows to Notebooks|9:30am-10:45am|Thomas LeBlanc|dpw03-dataflows
+DPW04|PaaS, SaaS, or VMs? How to Modernize Your Database Without Regret|9:30am-10:45am|Josh Luedeman, Daniel Taylor|dpw04-paas-saas-vms
+TMW04|The Human Side of PowerShell Scripting|9:30am-10:45am|Jeffery Hicks|tmw04-powershell-scripting
+TMW05|Active Directory Basics, But Not the Easy Stuff!|9:30am-10:45am|Derek Melber|tmw05-ad-basics
+TMW06|Windows 11: Using Local AI Silicon|9:30am-10:45am|Michael Niehaus|tmw06-windows-11
+AIW03|Multi-Agent Without the Bloat: Designing Lean AI Systems on Azure|9:30am-10:45am|Carey Payette|aiw03-ai-systems-azure
+AIW04|Claude Code for .NET Developers: Agentic Coding in the Enterprise|9:30am-10:45am|Mark Perry|aiw04-claude-code
+EAW02|From AI Pilots to Platforms: Designing Enterprise-Grade Agentic AI|9:30am-10:45am|Samantha St-Louis|eaw02-ai-pilots-to-platforms
+CRW03|11 Ways to Hack Windows 11|9:30am-10:45am|Sami Laiho|crw03-hack-windows
+CRW04|Service Desk: The Security Gotcha|9:30am-10:45am|Derek Michals|crw04-service-desk
+-|Networking Break • Visit the EXPO Lounge|10:45am-11:30am||am-break|L3
+-|Live! 360 Keynote: When AI Goes On Air|11:30am-12:30pm|Tim Huckaby|l360-keynote-ai-on-air|L3
+-|Table Topics Lunch|12:30pm-1:30pm||lunch|L3
+VSW09|Angular's Signal Forms and Model-first Validation|2:00pm-3:15pm|Deborah Kurata|vsw09-angulars-signal-forms
+VSW10|Crack the Code of Serverless Design|2:00pm-3:15pm|Chad Green|vsw10-serverless-design
+VSW11|The Irresponsible AI Initiative|2:00pm-3:15pm|Mickey Gousset, Ken Muse|vsw11-irresponsible-ai
+VSW12|From Prompt to Product: AI-Powered Design to Code|2:00pm-3:15pm|Jason Beres|vsw12-ai-powered-design
+DPW05|Challenges and Opportunities in Using AI for Power BI Report Development|2:00pm-3:15pm|Meagan Longoria|dpw05-using-ai-for-power-bi
+DPW06|Git Good: GitHub and GitHub Actions for Data Professionals|2:00pm-3:15pm|Joseph D'Antoni|dpw06-git-good
+TMW07|Comprehensive Guide to Windows Autopilot Scenarios|2:00pm-3:15pm|Michael Niehaus|tmw07-windows-autopilot
+TMW08|Scripting with pwshSpectreConsole|2:00pm-3:15pm|Jeffery Hicks|tmw08-scripting
+TMW09|The Purview Power Hour: Master Microsoft's Data Governance in 75 Minutes|2:00pm-3:15pm|Alex de Jong|tmw09-purview
+AIW05|Securing Enterprise AI: Copilot, Agents, and Operations|2:00pm-3:15pm|Prashant G Bhoyar|aiw05-securing-ai
+AIW06|Make Copilot Predictable: Instructions, Skills, and Custom Agents You Can Reuse|2:00pm-3:15pm|Kayla Cinnamon|aiw06-copilot-predictable
+EAW03|AI in Enterprise Architectures: Choosing the Right Capability for the Right Job|2:00pm-3:15pm|Eric D. Boyd|eaw03-ai-in-ea
+CRW05|Applying DLP Controls to Cloud Apps Using Edge for Business|2:00pm-3:15pm|Myron Helgering|crw05-dlp-controls
+CRW06|Mastering Purview Data Security Solution Design: Lessons from Years of Deployments|2:00pm-3:15pm|Tatu Seppälä|crw06-purview-data-security
+-|Networking Break • Visit the EXPO Lounge • Expo Raffle @ 3:20 p.m.|3:15pm-4:15pm||pm-break|L3
+VSW13|Zero to Hero: Blazor Web Apps|4:15pm-5:30pm|Allen Conway|vsw13-blazor-web-apps
+VSW14|Creating an Observable Cloud Platform and Application Landscape with Azure|4:15pm-5:30pm|Alex Thissen|vsw14-creating-an-observable-cloud-platform
+VSW15|Build Hybrid Apps with .NET|4:15pm-5:30pm|Sam Basu|vsw15-hybrid-apps
+VSW16|Top 10 SQL Features for Developers you Might Have Missed|4:15pm-5:30pm|Jerry Nixon|vsw16-sql-features
+DPW07|How AI Can Improve Accessibility in Your Power BI Report Designs|4:15pm-5:30pm|Meagan Longoria|dpw07-ai-improve-accessibility
+DPW08|Locking, Blocking, and Deadlocks|4:15pm-5:30pm|Thomas LaRock|dpw08-locking-blocking
+TMW10|Migrating to PowerShell 7|4:15pm-5:30pm|Michael Niehaus|tmw10-powershell-7
+TMW11|The AI-Powered SOC: Reinventing the SOC with Defender XDR, Sentinel, and Security Copilot|4:15pm-5:30pm|Alex de Jong|tmw11-the-ai-powered-soc
+TMW12|When Attacks Move at Machine Speed: Project Perception and Microsoft's New Security Stack|4:15pm-5:30pm|Maarten Goet|tmw12-project-perception
+AIW07|Vibe Coding in Action: Practical AI Tips for Smarter Development|4:15pm-5:30pm|Mayuri Lahane|aiw07-vibe-coding
+AIW08|Building Intelligent .NET Applications: From AI Features to Agentic System|4:15pm-5:30pm|Jon Galloway|aiw08-ai-features
+EAW04|Architecting AI Into the Enterprise - From Pilot to Production Without the GenAI Divide|4:15pm-5:30pm|Alex Kaziuka|eaw04-architecting-ai
+CRW07|How to Protect your Business from the Threat of Unmanaged Devices|4:15pm-5:30pm|Myron Helgering|crw07-unmanaged-devices
+CRW08|Mind the Gap: Data-driven Hardening Against Insider Threat in Workforce Transitions|4:15pm-5:30pm|Tatu Seppälä|crw08-mind-the-gap
+-|Live! 360 Dessert Luau|7:30pm-9:00pm||dessert-luau|L3
+#19 Thursday Do
+-|Registration • Coffee and Morning Pastries|7:00am-8:00am||registration|L3
+VSH01|Design & Develop X-Platform .NET Apps with Uno Platform & AI|8:00am-9:15am|Sam Basu|vsh01-uno-platform-and-ai
+VSH02|AI in Leadership: Practical Playbooks for Better Decisions and Team Collaboration|8:00am-9:15am|Amber Vanderburg|vsh02-ai-in-leadership
+VSH03|The AI-Powered Software Development Lifecycle|8:00am-9:15am|René van Osnabrugge|vsh03-ai-powered-software-dev-lifecycle
+VSH04|C# Roslyn and You|8:00am-9:15am|Jim Wooley|vsh04-c-roslyn
+DPH01|Getting Started with MCP Servers|8:00am-9:15am|Ginger Grant|dph01-mcp-servers
+DPH02|Microsoft Fabric: Data Pipelines Error Handling 101|8:00am-9:15am|Bradley Ball|dph02-microsoft-fabric
+TMH01|Mastering Microsoft CoPilot: Enhancing Productivity and Collaboration for IT Pros|8:00am-9:15am|John O'Neill, Sr.|tmh01-mastering-microsoft-copilot
+TMH02|PowerShell: Function It Up, Module It Out.|8:00am-9:15am|Mike O'Neill|tmh02-powershell-function
+TMH03|Do this, Not That! 5 Common PKI Implementation Mistakes (And How to Correct Them)|8:00am-9:15am|Richard Hicks|tmh03-pki-implementation
+AIH01|Building the Perfect Beast: Customizing Your AI For Maximum Impact|8:00am-9:15am|Mickey Gousset, Ken Muse|aih01-customizing-ai
+AIH02|AgentOps: Running AI Agents in Production|8:00am-9:15am|Don Shin|aih02-agentops
+EAH01|From Spider-Sense to Systems Sense: Navigating Ethical AI|8:00am-9:15am|Sarah Wimberley|eah01-ethical-ai
+CRH01|Death of the VPN: Zero Trust Connectivity with Global Secure Access|8:00am-9:15am|Markus Lintuala|crh01-death-of-the-vpn
+CRH02|Closing the Loop: How a Small Security Team Refined an Enterprise-grade DLP solution|8:00am-9:15am|Tatu Seppälä|crh02-dlp-solution
+VSH05|Aspire Beyond the Introduction|9:30am-10:45am|Chris Klug|vsh05-aspire
+VSH06|Successful Workflow Automation with Agentic AI Using Patterns|9:30am-10:45am|Robert Bogue|vsh06-workflow-automation
+VSH07|Learning to Program in .NET in an AI World|9:30am-10:45am|Mark Michaelis|vsh07-learning-to-program
+VSH08|Maintainable and Scalable Test Automation with Playwright Cloud Services|9:30am-10:45am|Marcel de Vries|vsh08-maintainable-and-scalable-test-automation
+DPH03|Making Fabric Data Ready for Every AI Surface|9:30am-10:45am|Andrew Brust|dph03-making-fabric-data-ai
+DPH04|High Performance Azure SQL Virtual Machine with Premium Storage|9:30am-10:45am|David Pless|dph04-azure-sql-virtual-machine
+TMH04|From Data Chaos to Copilot Clarity: Real Customer Journeys to Successful Adoption|9:30am-10:45am|Stephen L. Rose|tmh04-copilot-clarity
+TMH05|PKI Is Not Dead: Why Your Enterprise Still Runs on Certificates & What Breaks When You Ignore Them|9:30am-10:45am|John O'Neill, Sr.|tmh05-pki-is-not-dead
+TMH06|Moving To Zero Trust: Entra Private Access for Always On VPN Administrators|9:30am-10:45am|Richard Hicks|tmh06-moving-to-zero-trust
+AIH03|Evaluate Your Model and Prompt using Microsoft Foundry|9:30am-10:45am|Veronika Kolesnikova|aih03-microsoft-foundry
+AIH04|Local-First AI Development: Sovereignty, Silicon, and the Private Dev Loop|9:30am-10:45am|Brian A. Randell|aih04-local-ai-dev
+EAH02|Agentic AI Integration Architectures That Actually Ship|9:30am-10:45am|Don Shin|eah02-agentic-ai-integration
+CRH03|From Chaos to Control: Mastering the Joiner-Mover-Leaver Lifecycle with Entra ID|9:30am-10:45am|Markus Lintuala|crh03-from-chaos-to-control
+CRH04|Hardening CI/CD Pipelines Against Supply-Chain Attacks|9:30am-10:45am|Guillermo Fisher|crh04-hardening-ci-cd-pipelines
+-|Visual Studio Live! Panel Discussion: Careers in the Age of AI - Rewriting Roles, Rethinking Hiring, and Retaining What Matters|11:00am-12:00pm|Robert Bogue, Marcel de Vries, Amber Vanderburg, Angela Dugan (Moderation)|vsl-panel-careers-in-the-age-of-ai|VS
+-|Data Platform Live! Panel Discussion: AI Is Coming for the Data Team: Which Roles Change First?|11:00am-12:00pm|Bradley Ball, Ginger Grant, Buck Woody, Thomas LaRock (Moderation)|dpl-panel|DP
+-|TechMentor Panel Discussion: Will AI Take My Job?|11:00am-12:00pm|Karinne Bessette, Émile Cabot, John O'Neill, Sr., Dave Kawula (Moderation)|tm-panel-will-ai-take-my-job|TM
+-|Artificial Intelligence Live! Panel Discussion: Governance for Agentic AI|11:00am-12:00pm|Veronika Kolesnikova, Ken Muse, Carey Payette, Andrew Brust (Moderation)|ail-panel|AI
+-|AI Enterprise Architecture Live! Panel Discussion: From Pilots to Platforms - The Architecture Decisions That Make AI Work|11:00am-12:00pm|Tony Champion, Jocelynn Hartwig, Samantha St-Louis, Sarah Wimberley, Rockford Lhotka (Moderation)|aiea-panel|EA
+-|Cybersecurity & Ransomware Live! Panel Discussion: The AI Security Arms Race: Attackers, Defenders, and the Supply Chain|11:00am-12:00pm|Guillermo Fisher, Myron Helgering, Stephen L. Rose, Tatu Seppälä, Sami Laiho (Moderation)|cyber-panel-ai-security-arms-race|CR
+-|Live! 360 DJ Lunch|12:00pm-1:00pm||lunch|L3
+-|Women in Tech Networking Lunch|12:00pm-1:00pm||wit-lunch|L3
+VSH09|Everything You Wanted to Know About Azure Auth (But Were Too Afraid to Ask Support About)|1:00pm-2:15pm|Chris Klug|vsh09-azure-auth
+VSH10|Elevate Your EQ: Practical Skills to Strengthen Relationships, Regulation, and Leadership Impact|1:00pm-2:15pm|Amber Vanderburg|vsh10-elevate-your-eq
+VSH11|Agentic DevOps: How I Use Claude Code and Azure DevOps to Ship Code While I Sleep|1:00pm-2:15pm|Mark Perry|vsh11-agentic-devops
+VSH12|Building Practical Zero Trust APIs with .NET 10 and Azure|1:00pm-2:15pm|Roy Cornelissen|vsh12-practical-zero-trust-apis
+DPH05|Fabric Real‑Time Intelligence: What, Why, and How It Helps with AI|1:00pm-2:15pm|Andrew Brust|dph05-fabric-intelligence
+DPH06|SQL Server Performance Monitoring: A Deep Dive with Tips and Tricks|1:00pm-2:15pm|David Pless|dph06-sql-server-performance-monitoring
+TMH07|Build-a-Bot Workshop: Unleash Your Own Autonomous Agent with Microsoft Copilot|1:00pm-2:15pm|Alex de Jong|tmh07-buildabot-workshop
+TMH08|MS Graph API: Where “Just Add Permissions” Meets RBAC Reality|1:00pm-2:15pm|Mike O'Neill|tmh08-ms-graph-api
+TMH09|A Decade of Ransomware|1:00pm-2:15pm|Maarten Goet|tmh09-decade-ransomware
+AIH05|Building Fast and Useful Multimodal AI Solutions: A Visual Document Helper from Idea to Product|1:00pm-2:15pm|Veronika Kolesnikova|aih05-multimodal-ai-solutions
+AIH06|The Silent Question: What If Technology Disrupts My Role?|1:00pm-2:15pm|René van Osnabrugge|aih06-technology-disrupts
+EAH03|Architecting AI-Ready Enterprises on Azure|1:00pm-2:15pm|Tony Champion|eah03-architecting-azure
+CRH05|Copilot- A Guide to Hacking, Managing, Securing Your Data|1:00pm-2:15pm|Stephen L. Rose|crh05-copilot
+CRH06|Practical Security Controls Developers Won’t Fight|1:00pm-2:15pm|Guillermo Fisher|crh06-security-controls
+VSH13|Database-as-Code: Beyond the ORM|2:30pm-3:45pm|Jerry Nixon|vsh13-database-as-code
+VSH14|Versioning and Documenting ASP.NET Core Services|2:30pm-3:45pm|Philip Japikse|vsh14-asp-net-core-services
+VSH15|From Business Problems to AI Success: Closing the Gap Between Promise and Reality|2:30pm-3:45pm|Robert Bogue|vsh15-business-problems-to-ai-success
+VSH16|Beyond the DOM: Auto-Generating AI Skills from Hidden APIs|2:30pm-3:45pm|Mark Michaelis|vsh16-beyond-the-dom
+DPH07|T‑SQL Notebooks in Microsoft Fabric|2:30pm-3:45pm|Ginger Grant|dph07-tsql-notebooks
+DPH08|SQL Server 2025 in the Real World: New Features, Real Tradeoffs|2:30pm-3:45pm|Thomas LaRock|dph08-sql-server-2025
+TMH10|No Code, Big Impact: Create Copilot Agents in Minutes (For non-devs!)|2:30pm-3:45pm|Stephen L. Rose|tmh10-create-copilot-agents
+TMH11|Clarity in the Chaos: Managing Type 2 Diabetes, Career Stress, and Life—with AI as My Copilot|2:30pm-3:45pm|Daniel Taylor|tmh11-clarity-in-the-chaos
+TMH12|From Prompts to Agents: Unlocking the Full Power of Security Copilot|2:30pm-3:45pm|Bi Yue Xu|tmh12-prompts-to-agents
+AIH07|Designing AI Systems for a Global Audience on Azure|2:30pm-3:45pm|Carey Payette|aih07-ai-on-azure
+AIH08|From Vibe Coding to Spec-Driven Development with Spec Kit|2:30pm-3:45pm|Eric D. Boyd|aih08-spec-kit
+EAH04|Agentic Design Patterns: When, Why, and How to Use Them|2:30pm-3:45pm|Jocelynn Hartwig|eah04-agentic-design-patterns
+CRH07|Securing Cloud-Native Applications: Secrets, Dependencies, and Trust Boundaries|2:30pm-3:45pm|Guillermo Fisher|crh07-securing-cloud-native-apps
+CRH08|Creating Classifiers from Scratch to Identify Sensitive Data with Microsoft Purview|2:30pm-3:45pm|Myron Helgering|crh08-creating-classifiers
+-|Live! 360 Wrap Party|4:00pm-5:00pm||wrap-party|L3
+#20 Friday Fr
+-|Registration • Coffee and Morning Pastries|7:00am-8:00am||registration|L3
+VSF01|Workshop: Microsoft Web Development Masterclass|8:00am-5:00pm|Chris Klug|vsf01-workshop-web-development
+VSF02|Workshop: Secure AI Engineering and DevOps for .NET Developers on Azure|8:00am-5:00pm|Brian A. Randell|vsf02-workshop-azure
+DPF01|Hands-On Workshop: PostgreSQL for the SQL Server Professional|8:00am-5:00pm|David Seis, Buck Woody|dpf01-hol-wksp-postgresql
+TMF01|Hands-on Workshop: Building Agents with Copilot Studio|8:00am-5:00pm|Dewain Robinson, Gary Pretty|tmf01-workshop-building-agents
+AIF01|Hands-On Workshop: End-to-End MCP Server Development in .NET: From Local Debugging to Azure|8:00am-5:00pm|Loek Duys, Alex Thissen|aif01-howksp-mcp-server-dev
+EAF01|Hands-On Workshop: Building Enterprise-Grade AI Agents with the Microsoft Agent|8:00am-5:00pm|Lino Tadros|eaf01-hol-wrks-microsoft-agent
+CRF01|Workshop: Level Up to Identity Architect - Mastering the Entra ID Ecosystem|8:00am-5:00pm|Markus Lintuala|crf01-workshop-entra-id-ecosystem
+`;
+
+const TRACKS = {
+  VS: { name: "Visual Studio Live!", short: "VS Live!", c: "--vs" },
+  DP: { name: "Data Platform Live!", short: "Data Platform", c: "--dp" },
+  TM: { name: "TechMentor", short: "TechMentor", c: "--tm" },
+  AI: { name: "Artificial Intelligence Live!", short: "AI Live!", c: "--ai" },
+  EA: { name: "AI Enterprise Architecture Live!", short: "AI Architecture", c: "--ea" },
+  CR: { name: "Cybersecurity & Ransomware Live!", short: "Cyber Live!", c: "--cr" },
+  L3: { name: "Live! 360 gesamt", short: "Live! 360", c: "--l3" },
+};
+const KIND_LABEL = { Session: "Session", "Fast Focus": "Fast Focus", Workshop: "Workshop", Lab: "Hands-On Lab", Keynote: "Keynote", Panel: "Panel", Event: "Event" };
+const BASE = "https://live360events.com/events/orlando-2026/sessions/";
+
+function toMin(t) {
+  const m = t.trim().match(/^(\d{1,2}):(\d{2})(am|pm)$/i);
+  let h = +m[1] % 12; if (m[3].toLowerCase() === "pm") h += 12;
+  return h * 60 + +m[2];
+}
+function fmt(min) { return String(Math.floor(min / 60)).padStart(2, "0") + ":" + String(min % 60).padStart(2, "0"); }
+function durText(d) { const h = Math.floor(d / 60), m = d % 60; return (h ? h + " h" : "") + (h && m ? " " : "") + (m ? m + " min" : ""); }
+
+const DAYS = [];
+const SESSIONS = [];
+(function parse() {
+  let day = null;
+  for (const line of RAW.split("\n")) {
+    if (!line.trim()) continue;
+    if (line.startsWith("#")) {
+      const [num, en, short] = line.slice(1).split(" ");
+      day = { num: +num, en, short, slug: en.toLowerCase() };
+      DAYS.push(day); continue;
+    }
+    const [code, rawTitle, time, spk, slug, trackHint] = line.split("|");
+    const [s, e] = time.split("-");
+    let kind;
+    if (/^(2-Day )?Hands-On Lab/i.test(rawTitle)) kind = "Lab";
+    else if (/^(Hands-on )?Workshop:/i.test(rawTitle) || /^Hands-On Workshop:/i.test(rawTitle)) kind = "Workshop";
+    else if (/^Fast Focus:/i.test(rawTitle)) kind = "Fast Focus";
+    else if (/Keynote/i.test(rawTitle)) kind = "Keynote";
+    else if (/Panel Discussion/i.test(rawTitle)) kind = "Panel";
+    else if (code === "-") kind = "Event";
+    else kind = "Session";
+    const title = rawTitle.replace(/^(2-Day )?Hands-On Lab:\s*/i, m => m.startsWith("2-Day") ? "2-Tage-Lab: " : "")
+      .replace(/^(Hands-on )?Workshop:\s*/i, "").replace(/^Fast Focus:\s*/i, "");
+    const track = code === "-" ? (trackHint || "L3") : code.slice(0, 2);
+    const shownCode = code === "-" ? "" : code.replace(/-2$/, "");
+    const id = day.num + ":" + (code === "-" ? slug : code);
+    SESSIONS.push({
+      id, day: day.num, code: shownCode, title, kind, track,
+      start: toMin(s), end: toMin(e),
+      speakers: spk || "",
+      url: slug ? BASE + day.slug + "/" + slug + ".aspx" : "",
+    });
+  }
+})();
+const BY_ID = Object.fromEntries(SESSIONS.map(s => [s.id, s]));
+const DAY_NAME = { 15: "Sonntag", 16: "Montag", 17: "Dienstag", 18: "Mittwoch", 19: "Donnerstag", 20: "Freitag" };
+
+// Ein Slot = alle Programmpunkte (ohne Pausen/Events) mit derselben Startzeit an einem Tag
+function slotsOf(day) {
+  const m = new Map();
+  for (const s of SESSIONS) if (s.day === day && s.kind !== "Event") { if (!m.has(s.start)) m.set(s.start, []); m.get(s.start).push(s); }
+  return [...m.entries()].sort((a, b) => a[0] - b[0]).map(([start, items]) => {
+    const counts = {}; items.forEach(i => counts[i.end] = (counts[i.end] || 0) + 1);
+    const end = +Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+    return { day, start, end, items };
+  });
+}
+const SLOTS = Object.fromEntries([15, 16, 17, 18, 19, 20].map(d => [d, slotsOf(d)]));
+function slotAt(day, start) { return SLOTS[day].find(x => x.start === start); }
+
+// Zustand
+const store = {
+  get(k, d) { try { const v = localStorage.getItem("l360or26:" + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem("l360or26:" + k, JSON.stringify(v)); } catch {} },
+};
+let picked = new Set(store.get("picked", []).filter(id => BY_ID[id]));
+let state = Object.assign({ view: "prog", day: 17, cmpDay: 17, cmpStart: null, back: "prog", q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false }, store.get("ui", {}));
+function saveUI() { store.set("ui", state); }
+function savePicked() { store.set("picked", [...picked]); }
+
+function overlaps(a, b) { return a.day === b.day && a.start < b.end && b.start < a.end; }
+function conflictsOf(s) { const out = []; for (const id of picked) { const o = BY_ID[id]; if (o.id !== s.id && overlaps(o, s)) out.push(o); } return out; }
+function conflictPairs(day) {
+  const list = [...picked].map(id => BY_ID[id]).filter(s => day == null || s.day === day).sort((a, b) => a.start - b.start);
+  const pairs = [];
+  for (let i = 0; i < list.length; i++) for (let j = i + 1; j < list.length; j++) if (overlaps(list[i], list[j])) pairs.push([list[i], list[j]]);
+  return pairs;
+}
+
+const $ = sel => document.querySelector(sel);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const STAR = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.2l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17.2l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>';
+const PLUS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
+
+function toast(msg) { const t = $("#toast"); t.textContent = msg; t.hidden = false; clearTimeout(toast.h); toast.h = setTimeout(() => t.hidden = true, 2200); }
+
+function renderDays() {
+  $("#days").innerHTML = DAYS.map(d => {
+    const n = [...picked].filter(id => BY_ID[id].day === d.num).length;
+    const bad = conflictPairs(d.num).length > 0;
+    return `<button role="tab" aria-selected="${state.day === d.num}" data-day="${d.num}">
+      <span class="d">${d.short}${n ? `<span class="dot${bad ? " warn" : ""}">${n}</span>` : ""}</span><span class="n">${d.num}. Nov</span></button>`;
+  }).join("");
+  $("#plan-count").textContent = picked.size;
+}
+
+function renderTrackChips() {
+  const wrap = $("#tracks");
+  wrap.innerHTML = '<span class="label">Konferenz</span>' + Object.entries(TRACKS).map(([k, t]) =>
+    `<button class="chip" style="--c: var(${t.c})" data-track="${k}" aria-pressed="${state.tracks.includes(k)}"><span class="sw"></span>${t.name}</button>`).join("");
+}
+
+function renderSlotSelect() {
+  const starts = [...new Set(SESSIONS.filter(s => s.day === state.day).map(s => s.start))].sort((a, b) => a - b);
+  if (state.slot && !starts.includes(+state.slot)) state.slot = "";
+  $("#slot").innerHTML = '<option value="">Alle Zeitslots</option>' + starts.map(m => `<option value="${m}" ${+state.slot === m && state.slot !== "" ? "selected" : ""}>ab ${fmt(m)}</option>`).join("");
+}
+
+function cardHTML(s, opts = {}) {
+  const t = TRACKS[s.track];
+  const isPicked = picked.has(s.id);
+  const conf = isPicked ? conflictsOf(s) : [];
+  const wouldConf = !isPicked ? conflictsOf(s) : [];
+  const cls = ["card", s.kind === "Event" ? "event" : "", isPicked ? "picked" : "", conf.length ? "conflict" : ""].join(" ");
+  const titleHTML = s.url ? `<a href="${s.url}" target="_blank" rel="noopener">${esc(s.title)}</a>` : esc(s.title);
+  let warn = "";
+  if (conf.length) warn = `<span class="warn-text">Überschneidung mit ${conf.map(c => esc(c.code || c.title.slice(0, 24) + "…")).join(", ")}</span>`;
+  else if (wouldConf.length && !opts.plan) warn = `<span class="warn-text" style="color:var(--muted);font-weight:500">Kollidiert mit deiner Auswahl</span>`;
+  return `<article class="${cls}" style="--c: var(${t.c})">
+    <div class="meta">${s.code ? `<span class="code">${s.code}</span>` : ""}<span class="tag">${KIND_LABEL[s.kind]}</span><span>${t.short}</span>${opts.plan ? "" : `<span class="dur">· ${durText(s.end - s.start)}</span>`}</div>
+    <h3>${titleHTML}</h3>
+    ${s.speakers ? `<div class="spk">${esc(s.speakers)}</div>` : ""}
+    <div class="card-foot">${warn}<button class="pick" data-pick="${s.id}" aria-pressed="${isPicked}">${isPicked ? STAR + "Gemerkt" : PLUS + "Merken"}</button></div>
+  </article>`;
+}
+
+function filtered() {
+  const q = state.q.trim().toLowerCase();
+  return SESSIONS.filter(s => s.day === state.day
+    && (!state.slot || s.start === +state.slot)
+    && (!state.kind || s.kind === state.kind)
+    && (!state.tracks.length || state.tracks.includes(s.track))
+    && (!state.onlyPicked || picked.has(s.id))
+    && (!state.hideEvents || s.kind !== "Event")
+    && (!q || (s.title + " " + s.speakers + " " + s.code + " " + TRACKS[s.track].name).toLowerCase().includes(q)));
+}
+
+function renderProgram() {
+  const list = filtered();
+  const pairs = conflictPairs(state.day);
+  $("#day-banner").innerHTML = pairs.length ? `<div class="banner"><span><b>${pairs.length} Überschneidung${pairs.length > 1 ? "en" : ""}</b> an diesem Tag: ${pairs.map(([a, b]) => `${esc(a.code || a.title)} ↔ ${esc(b.code || b.title)}`).join(" · ")}</span></div>` : "";
+  if (!list.length) {
+    $("#list").innerHTML = `<div class="empty"><h2>Keine Treffer</h2><p>Für diese Filter gibt es an diesem Tag nichts. Setz die Filter zurück oder wähle einen anderen Tag.</p></div>`;
+    return;
+  }
+  const groups = new Map();
+  for (const s of list) { if (!groups.has(s.start)) groups.set(s.start, []); groups.get(s.start).push(s); }
+  const order = { Keynote: 0, Panel: 1, Workshop: 2, Lab: 2, Session: 3, "Fast Focus": 3, Event: 4 };
+  const trackOrder = Object.keys(TRACKS);
+  $("#list").innerHTML = [...groups.entries()].sort((a, b) => a[0] - b[0]).map(([start, items]) => {
+    items.sort((a, b) => order[a.kind] - order[b.kind] || trackOrder.indexOf(a.track) - trackOrder.indexOf(b.track) || a.code.localeCompare(b.code));
+    const ends = [...new Set(items.map(i => i.end))];
+    const sl = slotAt(state.day, start);
+    return `<section class="slot"><div class="slot-time">${fmt(start)}<small>${ends.length === 1 ? "bis " + fmt(ends[0]) : items.length + " Punkte"}</small>${sl && sl.items.length > 1 ? `<button class="slot-link" data-slot="${state.day}:${start}">Vergleichen →</button>` : ""}</div>
+      <div class="cards">${items.map(s => cardHTML(s)).join("")}</div></section>`;
+  }).join("");
+}
+
+function renderPlan() {
+  const all = [...picked].map(id => BY_ID[id]);
+  const pairs = conflictPairs(null);
+  const minutes = all.filter(s => s.kind !== "Event").reduce((a, s) => a + s.end - s.start, 0);
+  $("#stats").innerHTML = `<span><b>${all.length}</b>gemerkt</span><span><b>${(minutes / 60).toLocaleString("de-DE", { maximumFractionDigits: 1 })}</b>Stunden Inhalt</span><span class="${pairs.length ? "bad" : ""}"><b>${pairs.length}</b>Überschneidung${pairs.length === 1 ? "" : "en"}</span>`;
+  if (!all.length) {
+    $("#plan-list").innerHTML = `<div class="empty"><h2>Noch nichts gemerkt</h2><p>Tippe im Programm bei einer Session auf „Merken“. Dein Plan erscheint dann hier, Tag für Tag, mit Warnung bei Überschneidungen.</p><button class="btn primary" data-go="prog">Zum Programm</button></div>`;
+    return;
+  }
+  $("#plan-list").innerHTML = DAYS.map(d => {
+    const mine = all.filter(s => s.day === d.num);
+    const dp = conflictPairs(d.num);
+    // Zeilen: jeder Slot des Tages, plus gemerkte Pausen/Events
+    const rows = SLOTS[d.num].map(sl => ({ t: sl.start, sl }));
+    mine.filter(s => s.kind === "Event").forEach(s => rows.push({ t: s.start, ev: s }));
+    rows.sort((a, b) => a.t - b.t || (a.ev ? 1 : -1));
+    const freeCount = SLOTS[d.num].filter(sl => !mine.some(s => s.kind !== "Event" && s.start < sl.end && sl.start < s.end)).length;
+    const html = rows.map(r => {
+      if (r.ev) return `<div class="tl-item"><div class="tl-time">${fmt(r.ev.start)}<small>bis ${fmt(r.ev.end)}</small></div>${cardHTML(r.ev, { plan: true })}</div>`;
+      const sl = r.sl;
+      const here = mine.filter(s => s.kind !== "Event" && s.start === sl.start);
+      const cover = mine.filter(s => s.kind !== "Event" && s.start !== sl.start && s.start < sl.end && sl.start < s.end);
+      const time = `<div class="tl-time">${fmt(sl.start)}<small>bis ${fmt(sl.end)}</small>${sl.items.length > 1 ? `<button class="slot-link" data-slot="${d.num}:${sl.start}">${sl.items.length} Optionen →</button>` : ""}</div>`;
+      if (here.length) return here.map((s, i) => `<div class="tl-item">${i ? "<div></div>" : time}${cardHTML(s, { plan: true })}</div>`).join("");
+      if (cover.length) return `<div class="tl-item">${time}<div class="covered">Belegt durch ${cover.map(c => esc(c.code || c.title)).join(", ")}</div></div>`;
+      return `<div class="tl-item">${time}<button class="slot-empty" data-slot="${d.num}:${sl.start}"><span><b>Noch frei</b><br>${sl.items.length} ${sl.items.length === 1 ? "Programmpunkt" : "Programmpunkte"} zur Auswahl</span><span class="go">Ansehen →</span></button></div>`;
+    }).join("");
+    return `<section class="plan-day${mine.length ? "" : " no-pick"}"><h2>${DAY_NAME[d.num]}, ${d.num}. November <small>${mine.length} gemerkt · ${freeCount} frei${dp.length ? ` · <span style="color:var(--danger)">${dp.length} Überschneidung${dp.length > 1 ? "en" : ""}</span>` : ""}</small></h2><div class="tl">${html}</div></section>`;
+  }).join("");
+}
+
+function renderCompare() {
+  const list = SLOTS[state.cmpDay];
+  let idx = list.findIndex(x => x.start === state.cmpStart);
+  if (idx < 0) { idx = 0; state.cmpStart = list[0].start; }
+  const sl = list[idx];
+  const trackOrder = Object.keys(TRACKS);
+  const items = [...sl.items].sort((a, b) => trackOrder.indexOf(a.track) - trackOrder.indexOf(b.track) || a.code.localeCompare(b.code));
+  const ends = [...new Set(items.map(i => i.end))].sort((a, b) => a - b);
+  $("#cmp-title").innerHTML = `${DAY_NAME[sl.day]}, ${sl.day}. Nov · ${fmt(sl.start)}<small>${items.length} ${items.length === 1 ? "Programmpunkt" : "Programmpunkte"} · Ende ${ends.map(fmt).join(" / ")}</small>`;
+  const mineHere = items.filter(s => picked.has(s.id));
+  const blockers = [...picked].map(id => BY_ID[id]).filter(o => !sl.items.includes(o) && o.day === sl.day && o.start < sl.end && sl.start < o.end);
+  $("#cmp-status").innerHTML = mineHere.length ? `Gemerkt in diesem Slot: <b>${mineHere.map(s => esc(s.code || s.title)).join(", ")}</b>${mineHere.length > 1 ? ' <span style="color:var(--danger)">(Überschneidung)</span>' : ""}`
+    : blockers.length ? `Dieser Slot ist bereits belegt durch <b>${blockers.map(b => esc(b.code || b.title)).join(", ")}</b>.` : "Für diesen Slot hast du noch nichts gemerkt.";
+  $("#cmp-list").className = "compare" + (items.length > 4 ? " many" : "");
+  $("#cmp-list").innerHTML = items.map(s => cardHTML(s, { cmp: true })).join("");
+  $("#cmp-prev").disabled = idx === 0;
+  $("#cmp-next").disabled = idx === list.length - 1;
+}
+
+function render() {
+  if (state.view === "cmp" && state.cmpStart == null) state.view = "prog";
+  const base = state.view === "cmp" ? state.back : state.view;
+  $("#v-prog").setAttribute("aria-pressed", base === "prog");
+  $("#v-plan").setAttribute("aria-pressed", base === "plan");
+  $("#prog").hidden = state.view !== "prog";
+  $("#plan").hidden = state.view !== "plan";
+  $("#cmp").hidden = state.view !== "cmp";
+  $("#days").hidden = state.view !== "prog";
+  renderDays();
+  if (state.view === "prog") { renderSlotSelect(); renderProgram(); }
+  else if (state.view === "plan") renderPlan();
+  else renderCompare();
+}
+
+function planText() {
+  const de = { Sunday: "So", Monday: "Mo", Tuesday: "Di", Wednesday: "Mi", Thursday: "Do", Friday: "Fr" };
+  return DAYS.map(d => {
+    const items = [...picked].map(id => BY_ID[id]).filter(s => s.day === d.num).sort((a, b) => a.start - b.start);
+    if (!items.length) return "";
+    return `${de[d.en]} ${d.num}.11.\n` + items.map(s => `  ${fmt(s.start)}–${fmt(s.end)}  ${s.code ? s.code + "  " : ""}${s.title}${s.speakers ? " (" + s.speakers + ")" : ""}${conflictsOf(s).length ? "  ⚠ Überschneidung" : ""}`).join("\n");
+  }).filter(Boolean).join("\n\n");
+}
+
+// Ereignisse
+document.addEventListener("click", e => {
+  const pick = e.target.closest("[data-pick]");
+  if (pick) {
+    const id = pick.dataset.pick;
+    if (picked.has(id)) { picked.delete(id); toast("Entfernt"); }
+    else { picked.add(id); const c = conflictsOf(BY_ID[id]); toast(c.length ? "Gemerkt, überschneidet sich mit " + (c[0].code || c[0].title) : "Gemerkt"); }
+    savePicked(); render(); return;
+  }
+  const slotBtn = e.target.closest("[data-slot]");
+  if (slotBtn) {
+    const [d, st] = slotBtn.dataset.slot.split(":").map(Number);
+    state.back = state.view === "cmp" ? state.back : state.view;
+    Object.assign(state, { view: "cmp", cmpDay: d, cmpStart: st }); saveUI(); render(); window.scrollTo(0, 0); return;
+  }
+  const day = e.target.closest("[data-day]");
+  if (day) { state.day = +day.dataset.day; state.slot = ""; saveUI(); render(); return; }
+  const tr = e.target.closest("[data-track]");
+  if (tr) { const k = tr.dataset.track; state.tracks = state.tracks.includes(k) ? state.tracks.filter(x => x !== k) : [...state.tracks, k]; saveUI(); renderTrackChips(); render(); return; }
+  const go = e.target.closest("[data-go]");
+  if (go) { state.view = go.dataset.go; saveUI(); render(); }
+});
+$("#v-prog").onclick = () => { state.view = "prog"; saveUI(); render(); };
+$("#v-plan").onclick = () => { state.view = "plan"; saveUI(); render(); window.scrollTo(0, 0); };
+$("#cmp-back").onclick = () => { state.view = state.back || "plan"; saveUI(); render(); };
+function stepSlot(dir) {
+  const list = SLOTS[state.cmpDay]; const i = list.findIndex(x => x.start === state.cmpStart) + dir;
+  if (list[i]) { state.cmpStart = list[i].start; saveUI(); render(); }
+}
+$("#cmp-prev").onclick = () => stepSlot(-1);
+$("#cmp-next").onclick = () => stepSlot(1);
+$("#q").oninput = e => { state.q = e.target.value; saveUI(); renderProgram(); };
+$("#slot").onchange = e => { state.slot = e.target.value; saveUI(); renderProgram(); };
+$("#kind").onchange = e => { state.kind = e.target.value; saveUI(); renderProgram(); };
+$("#only-picked").onchange = e => { state.onlyPicked = e.target.checked; saveUI(); renderProgram(); };
+$("#hide-events").onchange = e => { state.hideEvents = e.target.checked; saveUI(); renderProgram(); };
+$("#reset").onclick = () => { Object.assign(state, { q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false }); syncInputs(); saveUI(); renderTrackChips(); render(); };
+$("#clear").onclick = () => { $("#clear-confirm").hidden = false; };
+$("#clear-no").onclick = () => { $("#clear-confirm").hidden = true; };
+$("#clear-yes").onclick = () => { picked.clear(); savePicked(); $("#clear-confirm").hidden = true; toast("Plan geleert"); render(); };
+$("#copy").onclick = () => {
+  const text = planText() || "Noch nichts gemerkt.";
+  const fallback = () => { $("#copy-fallback").hidden = false; const ta = $("#copy-text"); ta.value = text; ta.focus(); ta.select(); toast("Text markiert, jetzt kopieren"); };
+  try { navigator.clipboard.writeText(text).then(() => toast("Plan kopiert"), fallback); } catch { fallback(); }
+};
+function syncInputs() {
+  $("#q").value = state.q; $("#kind").value = state.kind;
+  $("#only-picked").checked = state.onlyPicked; $("#hide-events").checked = state.hideEvents;
+}
+syncInputs(); renderTrackChips(); render();
+</script>
+
+</body>
+</html>
