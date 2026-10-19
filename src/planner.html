@@ -592,6 +592,7 @@ function applyUpdates(data) {
   for (const n of data.sessions) {
     if (!n || !n.url || n.start == null || n.end == null) continue;
     let s = byUrl.get(n.url.toLowerCase());
+    if (!s && n.code && BY_ID[n.day + ":" + n.code] && !BY_ID[n.day + ":" + n.code].url) { s = BY_ID[n.day + ":" + n.code]; s.url = n.url; }
     const speakers = (n.speakers || []).join(", ");
     if (!s) {
       const code = n.code || "";
