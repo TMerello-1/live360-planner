@@ -23,3 +23,7 @@ The site is a PWA. On Chrome, Edge or Android, use the **Installieren** button i
 ## Session updates
 
 A GitHub Action (`.github/workflows/update-sessions.yml`) re-reads the official session list every day at 06:17 UTC and commits changes to `data/sessions.json` (rooms once they're published, time or title changes, new or cancelled sessions). In the app, **Check for updates** loads that file and shows what changed. You can also run the action by hand from the Actions tab.
+
+## Sync across devices
+
+`sync.js` keeps saved sessions in a secret GitHub Gist (`live360-orlando-2026-plan.json`) using a personal token with only the `gist` scope. Each session's latest change wins, so edits on several devices merge. Other devices connect by QR code or by pasting the connect link. The QR code uses the vendored `vendor/qrcode.js` (qrcode-generator 1.4.4, MIT).

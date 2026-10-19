@@ -21,6 +21,7 @@ head = """<!doctype html>
 """
 tail = """
 <script src="updates.js"></script>
+<script src="sync.js"></script>
 <script src="pwa.js"></script>
 </body>
 </html>
