@@ -11,7 +11,6 @@
   css.textContent = `
     .install-btn { border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); border-radius: 999px; padding: 6px 14px; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px; }
     .install-btn svg { width: 15px; height: 15px; }
-    .brand-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
     .ios-steps { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; line-height: 1.5; }
   `;
   document.head.appendChild(css);
@@ -20,12 +19,11 @@
   btn.className = "install-btn";
   btn.id = "install";
   btn.hidden = true;
-  btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>Installieren';
-  const views = document.querySelector(".views");
-  const wrap = document.createElement("div");
-  wrap.className = "brand-actions";
-  views.replaceWith(wrap);
-  wrap.append(btn, views);
+  btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg><span></span>';
+  const label = () => { btn.querySelector("span").textContent = t("install"); };
+  label();
+  window.addEventListener("planner-lang", label);
+  document.querySelector(".head-actions").prepend(btn);
 
   let deferred = null;
   window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); deferred = e; btn.hidden = false; });
@@ -46,14 +44,10 @@
     }
     const pop = document.getElementById("pop");
     pop.style.setProperty("--c", "var(--accent)");
-    pop.innerHTML = `<button class="x" id="pop-x" aria-label="Schließen">×</button>
-      <h2 id="pop-title">Auf den Home-Bildschirm</h2>
-      <ol class="ios-steps">
-        <li>Tippe in Safari unten auf <b>Teilen</b> (das Quadrat mit dem Pfeil nach oben).</li>
-        <li>Wähle <b>Zum Home-Bildschirm</b>.</li>
-        <li>Tippe auf <b>Hinzufügen</b>.</li>
-      </ol>
-      <div class="note">Danach startet der Planer wie eine App, auch ohne Internet.</div>`;
+    pop.innerHTML = `<button class="x" id="pop-x" aria-label="${t("close")}">×</button>
+      <h2 id="pop-title">${t("iosTitle")}</h2>
+      <ol class="ios-steps">${t("iosSteps").map(x => `<li>${x}</li>`).join("")}</ol>
+      <div class="note">${t("iosNote")}</div>`;
     document.getElementById("pop-bg").hidden = false;
     document.body.classList.add("noscroll");
     document.getElementById("pop-x").focus();

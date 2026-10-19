@@ -53,6 +53,10 @@ header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; b
 .views { display: inline-flex; background: var(--surface-2); border-radius: 999px; padding: 3px; gap: 2px; }
 .views button { border: 0; background: transparent; padding: 6px 14px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; color: var(--muted); }
 .views button[aria-pressed="true"] { background: var(--surface); color: var(--fg); box-shadow: 0 1px 2px rgb(0 0 0 / 0.12); }
+.head-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.lang button { border: 0; background: transparent; padding: 6px 9px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); }
+.lang button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
 .views .count { font-family: var(--font-mono); font-size: 0.78rem; margin-left: 4px; color: var(--accent); }
 
 .days { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; margin-bottom: -1px; }
@@ -187,14 +191,17 @@ footer a { color: var(--muted); }
     <div class="brand">
       <div>
         <h1>Live! 360 Orlando 2026</h1>
-        <div class="sub">15.–20. November · alle Zeiten Ortszeit (EST)</div>
+        <div class="sub" data-i18n="sub"></div>
       </div>
-      <div class="views" role="group" aria-label="Ansicht">
-        <button id="v-prog" aria-pressed="true">Programm</button>
-        <button id="v-plan" aria-pressed="false">Mein Plan<span class="count" id="plan-count">0</span></button>
+      <div class="head-actions">
+        <div class="views" role="group" data-i18n-aria="view">
+          <button id="v-prog" aria-pressed="true" data-i18n="program"></button>
+          <button id="v-plan" aria-pressed="false"><span data-i18n="myPlan"></span><span class="count" id="plan-count">0</span></button>
+        </div>
+        <div class="lang" role="group" aria-label="Language / Sprache"><button id="lang-de" lang="de">DE</button><button id="lang-en" lang="en">EN</button></div>
       </div>
     </div>
-    <nav class="days" id="days" role="tablist" aria-label="Tag"></nav>
+    <nav class="days" id="days" role="tablist" data-i18n-aria="day"></nav>
   </div>
 </header>
 
@@ -202,24 +209,24 @@ footer a { color: var(--muted); }
   <section id="prog">
     <div class="filters">
       <div class="row">
-        <input id="q" class="search" type="search" placeholder="Titel, Sprecher oder Code suchen …" aria-label="Suchen">
-        <select id="slot" aria-label="Zeitslot"></select>
-        <select id="kind" aria-label="Format">
-          <option value="">Alle Formate</option>
+        <input id="q" class="search" type="search" data-i18n-ph="search" data-i18n-aria="searchLbl">
+        <select id="slot" data-i18n-aria="slotLbl"></select>
+        <select id="kind" data-i18n-aria="formatLbl">
+          <option value="" data-i18n="allFormats"></option>
           <option value="Session">Sessions</option>
           <option value="Fast Focus">Fast Focus</option>
           <option value="Workshop">Workshops</option>
           <option value="Lab">Hands-On Labs</option>
           <option value="Keynote">Keynotes</option>
           <option value="Panel">Panels</option>
-          <option value="Event">Pausen &amp; Events</option>
+          <option value="Event" data-i18n="breaksEvents"></option>
         </select>
       </div>
       <div class="row" id="tracks"><span class="label">Konferenz</span></div>
       <div class="row">
-        <label class="chip" style="--c: var(--accent)"><input id="only-picked" type="checkbox"> Nur gemerkte</label>
-        <label class="chip" style="--c: var(--accent)"><input id="hide-events" type="checkbox"> Pausen ausblenden</label>
-        <button class="link-btn" id="reset">Filter zurücksetzen</button>
+        <label class="chip" style="--c: var(--accent)"><input id="only-picked" type="checkbox"> <span data-i18n="onlyPicked"></span></label>
+        <label class="chip" style="--c: var(--accent)"><input id="hide-events" type="checkbox"> <span data-i18n="hideBreaks"></span></label>
+        <button class="link-btn" id="reset" data-i18n="reset"></button>
       </div>
       <div id="day-banner"></div>
     </div>
@@ -230,29 +237,29 @@ footer a { color: var(--muted); }
     <div class="plan-head">
       <div class="stats" id="stats"></div>
       <div class="row">
-        <button class="btn" id="copy">Plan als Text kopieren</button>
-        <button class="btn ghost-danger" id="clear">Alles entfernen</button>
+        <button class="btn" id="copy" data-i18n="copy"></button>
+        <button class="btn ghost-danger" id="clear" data-i18n="clearAll"></button>
       </div>
     </div>
     <div id="clear-confirm" hidden class="banner" style="margin-block: 6px">
-      <span>Wirklich alle gemerkten Sessions entfernen?</span>
-      <span class="row" style="margin-left:auto"><button class="btn ghost-danger" id="clear-yes">Ja, entfernen</button><button class="btn" id="clear-no">Abbrechen</button></span>
+      <span data-i18n="clearQ"></span>
+      <span class="row" style="margin-left:auto"><button class="btn ghost-danger" id="clear-yes" data-i18n="clearYes"></button><button class="btn" id="clear-no" data-i18n="cancel"></button></span>
     </div>
-    <div id="copy-fallback" hidden><textarea class="copybox" id="copy-text" readonly aria-label="Plan als Text"></textarea></div>
+    <div id="copy-fallback" hidden><textarea class="copybox" id="copy-text" readonly data-i18n-aria="planText"></textarea></div>
     <main id="plan-list"></main>
   </section>
 
   <section id="cmp" hidden>
     <div class="cmp-head">
-      <button class="btn" id="cmp-back">← Zurück</button>
+      <button class="btn" id="cmp-back" data-i18n="back"></button>
       <h2 id="cmp-title"></h2>
-      <div class="cmp-nav"><button class="btn" id="cmp-prev" aria-label="Vorheriger Slot">← Früher</button><button class="btn" id="cmp-next" aria-label="Nächster Slot">Später →</button></div>
+      <div class="cmp-nav"><button class="btn" id="cmp-prev" data-i18n="earlier" data-i18n-aria="prevSlot"></button><button class="btn" id="cmp-next" data-i18n="later" data-i18n-aria="nextSlot"></button></div>
     </div>
     <div class="cmp-status" id="cmp-status"></div>
     <div class="compare" id="cmp-list"></div>
   </section>
 
-  <footer>Quelle: <a href="https://live360events.com/events/orlando-2026/sessions/session-list.aspx" target="_blank" rel="noopener">offizielle Sessionliste</a>, Stand 19.10.2026. Räume stehen noch nicht fest. Deine Auswahl bleibt nur in diesem Browser gespeichert.</footer>
+  <footer><span data-i18n="src1"></span> <a href="https://live360events.com/events/orlando-2026/sessions/session-list.aspx" target="_blank" rel="noopener" data-i18n="src2"></a><span data-i18n="src3"></span></footer>
 </div>
 <div class="toast" id="toast" hidden></div>
 <div class="pop-backdrop" id="pop-bg" hidden><div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="pop-title"></div></div>
@@ -547,7 +554,7 @@ const SESSIONS = [];
     else if (/Panel Discussion/i.test(rawTitle)) kind = "Panel";
     else if (code === "-") kind = "Event";
     else kind = "Session";
-    const title = rawTitle.replace(/^(2-Day )?Hands-On Lab:\s*/i, m => m.startsWith("2-Day") ? "2-Tage-Lab: " : "")
+    const title = rawTitle.replace(/^(2-Day )?Hands-On Lab:\s*/i, m => m.startsWith("2-Day") ? "2-Day Lab: " : "")
       .replace(/^(Hands-on )?Workshop:\s*/i, "").replace(/^Fast Focus:\s*/i, "");
     const track = code === "-" ? (trackHint || "L3") : code.slice(0, 2);
     const shownCode = code === "-" ? "" : code.replace(/-2$/, "");
@@ -561,7 +568,70 @@ const SESSIONS = [];
   }
 })();
 const BY_ID = Object.fromEntries(SESSIONS.map(s => [s.id, s]));
-const DAY_NAME = { 15: "Sonntag", 16: "Montag", 17: "Dienstag", 18: "Mittwoch", 19: "Donnerstag", 20: "Freitag" };
+// Texte der Oberfläche in Deutsch und Englisch
+const I18N = {
+  de: {
+    sub: "15.–20. November · alle Zeiten Ortszeit (EST)", view: "Ansicht", program: "Programm", myPlan: "Mein Plan", day: "Tag",
+    search: "Titel, Sprecher oder Code suchen …", searchLbl: "Suchen", slotLbl: "Zeitslot", formatLbl: "Format",
+    allFormats: "Alle Formate", breaksEvents: "Pausen & Events", onlyPicked: "Nur gemerkte", hideBreaks: "Pausen ausblenden", reset: "Filter zurücksetzen",
+    conference: "Konferenz", allConf: "Live! 360 gesamt", allSlots: "Alle Zeitslots", from: m => "ab " + m, until: m => "bis " + m, items: n => n + (n === 1 ? " Punkt" : " Punkte"),
+    copy: "Plan als Text kopieren", clearAll: "Alles entfernen", clearQ: "Wirklich alle gemerkten Sessions entfernen?", clearYes: "Ja, entfernen", cancel: "Abbrechen", planText: "Plan als Text",
+    back: "← Zurück", earlier: "← Früher", later: "Später →", prevSlot: "Vorheriger Slot", nextSlot: "Nächster Slot",
+    src1: "Quelle:", src2: "offizielle Sessionliste", src3: ", Stand 19.10.2026. Räume stehen noch nicht fest. Deine Auswahl bleibt nur in diesem Browser gespeichert.",
+    days: { 15: "Sonntag", 16: "Montag", 17: "Dienstag", 18: "Mittwoch", 19: "Donnerstag", 20: "Freitag" },
+    short: { 15: "So", 16: "Mo", 17: "Di", 18: "Mi", 19: "Do", 20: "Fr" },
+    dateLong: d => `${d}. November`, dateShort: d => `${d}. Nov`, dateNum: d => `${d}.11.`,
+    overlapWith: x => "Überschneidung mit " + x, collidesSel: "Kollidiert mit deiner Auswahl", collidesWith: x => "Kollidiert mit " + x,
+    picked: "Gemerkt", pick: "Merken", removed: "Entfernt", pickedOverlap: x => "Gemerkt, überschneidet sich mit " + x,
+    overlaps: n => n + (n === 1 ? " Überschneidung" : " Überschneidungen"), onThisDay: "an diesem Tag",
+    noHits: "Keine Treffer", noHitsText: "Für diese Filter gibt es an diesem Tag nichts. Setz die Filter zurück oder wähle einen anderen Tag.",
+    compare: "Vergleichen →", options: n => n + " Optionen →",
+    statPicked: "gemerkt", statHours: "Stunden Inhalt", statOverlaps: n => n === 1 ? "Überschneidung" : "Überschneidungen",
+    emptyPlan: "Noch nichts gemerkt", emptyPlanText: "Tippe im Programm bei einer Session auf „Merken“. Dein Plan erscheint dann hier, Tag für Tag, mit Warnung bei Überschneidungen.", toProgram: "Zum Programm",
+    coveredBy: x => "Belegt durch " + x, free: "Noch frei", choices: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " zur Auswahl", look: "Ansehen →",
+    dayStats: (p, f) => `${p} gemerkt · ${f} frei`,
+    nItems: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte"), ends: x => "Ende " + x,
+    pickedHere: "Gemerkt in diesem Slot:", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
+    about: "Worum es geht", learn: "Du lernst", noDescEvent: "Für diesen Programmpunkt gibt es keine Beschreibung.", noDesc: "Zu dieser Session gibt es noch keine Beschreibung.",
+    close: "Schließen", official: "Offizielle Seite öffnen ↗", summaryNote: "Kurzfassung der offiziellen Beschreibung (englisch), Stand 19.10.2026.",
+    nothingYet: "Noch nichts gemerkt.", cleared: "Plan geleert", selectCopy: "Text markiert, jetzt kopieren", copied: "Plan kopiert", overlapMark: "⚠ Überschneidung",
+    install: "Installieren", iosTitle: "Auf den Home-Bildschirm",
+    iosSteps: ["Tippe in Safari unten auf <b>Teilen</b> (das Quadrat mit dem Pfeil nach oben).", "Wähle <b>Zum Home-Bildschirm</b>.", "Tippe auf <b>Hinzufügen</b>."],
+    iosNote: "Danach startet der Planer wie eine App, auch ohne Internet.", decimal: "de-DE",
+  },
+  en: {
+    sub: "November 15–20 · all times local (EST)", view: "View", program: "Program", myPlan: "My Plan", day: "Day",
+    search: "Search title, speaker or code …", searchLbl: "Search", slotLbl: "Time slot", formatLbl: "Format",
+    allFormats: "All formats", breaksEvents: "Breaks & events", onlyPicked: "Saved only", hideBreaks: "Hide breaks", reset: "Reset filters",
+    conference: "Conference", allConf: "Live! 360 (all)", allSlots: "All time slots", from: m => "from " + m, until: m => "until " + m, items: n => n + (n === 1 ? " item" : " items"),
+    copy: "Copy plan as text", clearAll: "Remove all", clearQ: "Remove all saved sessions?", clearYes: "Yes, remove", cancel: "Cancel", planText: "Plan as text",
+    back: "← Back", earlier: "← Earlier", later: "Later →", prevSlot: "Previous slot", nextSlot: "Next slot",
+    src1: "Source:", src2: "official session list", src3: ", as of Oct 19, 2026. Rooms are not announced yet. Your picks are saved in this browser only.",
+    days: { 15: "Sunday", 16: "Monday", 17: "Tuesday", 18: "Wednesday", 19: "Thursday", 20: "Friday" },
+    short: { 15: "Sun", 16: "Mon", 17: "Tue", 18: "Wed", 19: "Thu", 20: "Fri" },
+    dateLong: d => `November ${d}`, dateShort: d => `Nov ${d}`, dateNum: d => `11/${d}`,
+    overlapWith: x => "Overlaps with " + x, collidesSel: "Clashes with your picks", collidesWith: x => "Clashes with " + x,
+    picked: "Saved", pick: "Save", removed: "Removed", pickedOverlap: x => "Saved, overlaps with " + x,
+    overlaps: n => n + (n === 1 ? " overlap" : " overlaps"), onThisDay: "on this day",
+    noHits: "No matches", noHitsText: "Nothing matches these filters on this day. Reset the filters or pick another day.",
+    compare: "Compare →", options: n => n + " options →",
+    statPicked: "saved", statHours: "hours of content", statOverlaps: n => n === 1 ? "overlap" : "overlaps",
+    emptyPlan: "Nothing saved yet", emptyPlanText: "Tap “Save” on a session in the program. Your plan shows up here day by day, with a warning when sessions overlap.", toProgram: "Go to program",
+    coveredBy: x => "Taken by " + x, free: "Still free", choices: n => n + (n === 1 ? " item" : " items") + " to choose from", look: "View →",
+    dayStats: (p, f) => `${p} saved · ${f} free`,
+    nItems: n => n + (n === 1 ? " item" : " items"), ends: x => "ends " + x,
+    pickedHere: "Saved in this slot:", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
+    about: "What it's about", learn: "You'll learn", noDescEvent: "There is no description for this item.", noDesc: "There is no description for this session yet.",
+    close: "Close", official: "Open official page ↗", summaryNote: "Summary of the official description, as of Oct 19, 2026.",
+    nothingYet: "Nothing saved yet.", cleared: "Plan cleared", selectCopy: "Text selected, copy it now", copied: "Plan copied", overlapMark: "⚠ overlap",
+    install: "Install", iosTitle: "Add to Home Screen",
+    iosSteps: ["In Safari, tap <b>Share</b> at the bottom (the square with the arrow pointing up).", "Choose <b>Add to Home Screen</b>.", "Tap <b>Add</b>."],
+    iosNote: "The planner then opens like an app, even offline.", decimal: "en-US",
+  },
+};
+let LANG = "de";
+function t(k, ...a) { const v = I18N[LANG][k]; return typeof v === "function" ? v(...a) : v; }
+const DAY_NAME = new Proxy({}, { get: (_, d) => I18N[LANG].days[d] });
 
 // Ein Slot = alle Programmpunkte (ohne Pausen/Events) mit derselben Startzeit an einem Tag
 function slotsOf(day) {
@@ -583,7 +653,19 @@ const store = {
 };
 let picked = new Set(store.get("picked", []).filter(id => BY_ID[id]));
 let state = Object.assign({ view: "prog", day: 17, cmpDay: 17, cmpStart: null, back: "prog", q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false }, store.get("ui", {}));
+if (!state.lang) state.lang = /^de\b/i.test(navigator.language || "") ? "de" : "en";
+LANG = state.lang === "en" ? "en" : "de";
 function saveUI() { store.set("ui", state); }
+function applyLang() {
+  document.documentElement.lang = LANG;
+  document.querySelectorAll("[data-i18n]").forEach(el => el.textContent = t(el.dataset.i18n));
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => el.placeholder = t(el.dataset.i18nPh));
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
+  $("#lang-de").setAttribute("aria-pressed", LANG === "de"); $("#lang-en").setAttribute("aria-pressed", LANG === "en");
+  TRACKS.L3.name = t("allConf");
+  window.dispatchEvent(new CustomEvent("planner-lang", { detail: LANG }));
+}
+function setLang(l) { LANG = state.lang = l; saveUI(); applyLang(); renderTrackChips(); render(); if (openInfo.current) openInfo(openInfo.current); }
 function savePicked() { store.set("picked", [...picked]); }
 
 function overlaps(a, b) { return a.day === b.day && a.start < b.end && b.start < a.end; }
@@ -600,45 +682,45 @@ const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;"
 const STAR = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.2l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17.2l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>';
 const PLUS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
 
-function toast(msg) { const t = $("#toast"); t.textContent = msg; t.hidden = false; clearTimeout(toast.h); toast.h = setTimeout(() => t.hidden = true, 2200); }
+function toast(msg) { const el = $("#toast"); el.textContent = msg; el.hidden = false; clearTimeout(toast.h); toast.h = setTimeout(() => el.hidden = true, 2200); }
 
 function renderDays() {
   $("#days").innerHTML = DAYS.map(d => {
     const n = [...picked].filter(id => BY_ID[id].day === d.num).length;
     const bad = conflictPairs(d.num).length > 0;
     return `<button role="tab" aria-selected="${state.day === d.num}" data-day="${d.num}">
-      <span class="d">${d.short}${n ? `<span class="dot${bad ? " warn" : ""}">${n}</span>` : ""}</span><span class="n">${d.num}. Nov</span></button>`;
+      <span class="d">${I18N[LANG].short[d.num]}${n ? `<span class="dot${bad ? " warn" : ""}">${n}</span>` : ""}</span><span class="n">${t("dateShort", d.num)}</span></button>`;
   }).join("");
   $("#plan-count").textContent = picked.size;
 }
 
 function renderTrackChips() {
   const wrap = $("#tracks");
-  wrap.innerHTML = '<span class="label">Konferenz</span>' + Object.entries(TRACKS).map(([k, t]) =>
-    `<button class="chip" style="--c: var(${t.c})" data-track="${k}" aria-pressed="${state.tracks.includes(k)}"><span class="sw"></span>${t.name}</button>`).join("");
+  wrap.innerHTML = `<span class="label">${t("conference")}</span>` + Object.entries(TRACKS).map(([k, tr]) =>
+    `<button class="chip" style="--c: var(${tr.c})" data-track="${k}" aria-pressed="${state.tracks.includes(k)}"><span class="sw"></span>${tr.name}</button>`).join("");
 }
 
 function renderSlotSelect() {
   const starts = [...new Set(SESSIONS.filter(s => s.day === state.day).map(s => s.start))].sort((a, b) => a - b);
   if (state.slot && !starts.includes(+state.slot)) state.slot = "";
-  $("#slot").innerHTML = '<option value="">Alle Zeitslots</option>' + starts.map(m => `<option value="${m}" ${+state.slot === m && state.slot !== "" ? "selected" : ""}>ab ${fmt(m)}</option>`).join("");
+  $("#slot").innerHTML = `<option value="">${t("allSlots")}</option>` + starts.map(m => `<option value="${m}" ${+state.slot === m && state.slot !== "" ? "selected" : ""}>${t("from", fmt(m))}</option>`).join("");
 }
 
 function cardHTML(s, opts = {}) {
-  const t = TRACKS[s.track];
+  const tr = TRACKS[s.track];
   const isPicked = picked.has(s.id);
   const conf = isPicked ? conflictsOf(s) : [];
   const wouldConf = !isPicked ? conflictsOf(s) : [];
   const cls = ["card", s.kind === "Event" ? "event" : "", isPicked ? "picked" : "", conf.length ? "conflict" : ""].join(" ");
   const titleHTML = `<button class="ttl" data-info="${s.id}">${esc(s.title)}</button>`;
   let warn = "";
-  if (conf.length) warn = `<span class="warn-text">Überschneidung mit ${conf.map(c => esc(c.code || c.title.slice(0, 24) + "…")).join(", ")}</span>`;
-  else if (wouldConf.length && !opts.plan) warn = `<span class="warn-text" style="color:var(--muted);font-weight:500">Kollidiert mit deiner Auswahl</span>`;
-  return `<article class="${cls}" style="--c: var(${t.c})">
-    <div class="meta">${s.code ? `<span class="code">${s.code}</span>` : ""}<span class="tag">${KIND_LABEL[s.kind]}</span><span>${t.short}</span>${opts.plan ? "" : `<span class="dur">· ${durText(s.end - s.start)}</span>`}</div>
+  if (conf.length) warn = `<span class="warn-text">${t("overlapWith", conf.map(c => esc(c.code || c.title.slice(0, 24) + "…")).join(", "))}</span>`;
+  else if (wouldConf.length && !opts.plan) warn = `<span class="warn-text" style="color:var(--muted);font-weight:500">${t("collidesSel")}</span>`;
+  return `<article class="${cls}" style="--c: var(${tr.c})">
+    <div class="meta">${s.code ? `<span class="code">${s.code}</span>` : ""}<span class="tag">${KIND_LABEL[s.kind]}</span><span>${tr.short}</span>${opts.plan ? "" : `<span class="dur">· ${durText(s.end - s.start)}</span>`}</div>
     <h3>${titleHTML}</h3>
     ${s.speakers ? `<div class="spk">${esc(s.speakers)}</div>` : ""}
-    <div class="card-foot">${warn}<button class="pick" data-pick="${s.id}" aria-pressed="${isPicked}">${isPicked ? STAR + "Gemerkt" : PLUS + "Merken"}</button></div>
+    <div class="card-foot">${warn}<button class="pick" data-pick="${s.id}" aria-pressed="${isPicked}">${isPicked ? STAR + t("picked") : PLUS + t("pick")}</button></div>
   </article>`;
 }
 
@@ -656,9 +738,9 @@ function filtered() {
 function renderProgram() {
   const list = filtered();
   const pairs = conflictPairs(state.day);
-  $("#day-banner").innerHTML = pairs.length ? `<div class="banner"><span><b>${pairs.length} Überschneidung${pairs.length > 1 ? "en" : ""}</b> an diesem Tag: ${pairs.map(([a, b]) => `${esc(a.code || a.title)} ↔ ${esc(b.code || b.title)}`).join(" · ")}</span></div>` : "";
+  $("#day-banner").innerHTML = pairs.length ? `<div class="banner"><span><b>${t("overlaps", pairs.length)}</b> ${t("onThisDay")}: ${pairs.map(([a, b]) => `${esc(a.code || a.title)} ↔ ${esc(b.code || b.title)}`).join(" · ")}</span></div>` : "";
   if (!list.length) {
-    $("#list").innerHTML = `<div class="empty"><h2>Keine Treffer</h2><p>Für diese Filter gibt es an diesem Tag nichts. Setz die Filter zurück oder wähle einen anderen Tag.</p></div>`;
+    $("#list").innerHTML = `<div class="empty"><h2>${t("noHits")}</h2><p>${t("noHitsText")}</p></div>`;
     return;
   }
   const groups = new Map();
@@ -669,7 +751,7 @@ function renderProgram() {
     items.sort((a, b) => order[a.kind] - order[b.kind] || trackOrder.indexOf(a.track) - trackOrder.indexOf(b.track) || a.code.localeCompare(b.code));
     const ends = [...new Set(items.map(i => i.end))];
     const sl = slotAt(state.day, start);
-    return `<section class="slot"><div class="slot-time">${fmt(start)}<small>${ends.length === 1 ? "bis " + fmt(ends[0]) : items.length + " Punkte"}</small>${sl && sl.items.length > 1 ? `<button class="slot-link" data-slot="${state.day}:${start}">Vergleichen →</button>` : ""}</div>
+    return `<section class="slot"><div class="slot-time">${fmt(start)}<small>${ends.length === 1 ? t("until", fmt(ends[0])) : t("items", items.length)}</small>${sl && sl.items.length > 1 ? `<button class="slot-link" data-slot="${state.day}:${start}">${t("compare")}</button>` : ""}</div>
       <div class="cards">${items.map(s => cardHTML(s)).join("")}</div></section>`;
   }).join("");
 }
@@ -678,9 +760,9 @@ function renderPlan() {
   const all = [...picked].map(id => BY_ID[id]);
   const pairs = conflictPairs(null);
   const minutes = all.filter(s => s.kind !== "Event").reduce((a, s) => a + s.end - s.start, 0);
-  $("#stats").innerHTML = `<span><b>${all.length}</b>gemerkt</span><span><b>${(minutes / 60).toLocaleString("de-DE", { maximumFractionDigits: 1 })}</b>Stunden Inhalt</span><span class="${pairs.length ? "bad" : ""}"><b>${pairs.length}</b>Überschneidung${pairs.length === 1 ? "" : "en"}</span>`;
+  $("#stats").innerHTML = `<span><b>${all.length}</b>${t("statPicked")}</span><span><b>${(minutes / 60).toLocaleString(t("decimal"), { maximumFractionDigits: 1 })}</b>${t("statHours")}</span><span class="${pairs.length ? "bad" : ""}"><b>${pairs.length}</b>${t("statOverlaps", pairs.length)}</span>`;
   if (!all.length) {
-    $("#plan-list").innerHTML = `<div class="empty"><h2>Noch nichts gemerkt</h2><p>Tippe im Programm bei einer Session auf „Merken“. Dein Plan erscheint dann hier, Tag für Tag, mit Warnung bei Überschneidungen.</p><button class="btn primary" data-go="prog">Zum Programm</button></div>`;
+    $("#plan-list").innerHTML = `<div class="empty"><h2>${t("emptyPlan")}</h2><p>${t("emptyPlanText")}</p><button class="btn primary" data-go="prog">${t("toProgram")}</button></div>`;
     return;
   }
   $("#plan-list").innerHTML = DAYS.map(d => {
@@ -692,16 +774,16 @@ function renderPlan() {
     rows.sort((a, b) => a.t - b.t || (a.ev ? 1 : -1));
     const freeCount = SLOTS[d.num].filter(sl => !mine.some(s => s.kind !== "Event" && s.start < sl.end && sl.start < s.end)).length;
     const html = rows.map(r => {
-      if (r.ev) return `<div class="tl-item"><div class="tl-time">${fmt(r.ev.start)}<small>bis ${fmt(r.ev.end)}</small></div>${cardHTML(r.ev, { plan: true })}</div>`;
+      if (r.ev) return `<div class="tl-item"><div class="tl-time">${fmt(r.ev.start)}<small>${t("until", fmt(r.ev.end))}</small></div>${cardHTML(r.ev, { plan: true })}</div>`;
       const sl = r.sl;
       const here = mine.filter(s => s.kind !== "Event" && s.start === sl.start);
       const cover = mine.filter(s => s.kind !== "Event" && s.start !== sl.start && s.start < sl.end && sl.start < s.end);
-      const time = `<div class="tl-time">${fmt(sl.start)}<small>bis ${fmt(sl.end)}</small>${sl.items.length > 1 ? `<button class="slot-link" data-slot="${d.num}:${sl.start}">${sl.items.length} Optionen →</button>` : ""}</div>`;
+      const time = `<div class="tl-time">${fmt(sl.start)}<small>${t("until", fmt(sl.end))}</small>${sl.items.length > 1 ? `<button class="slot-link" data-slot="${d.num}:${sl.start}">${t("options", sl.items.length)}</button>` : ""}</div>`;
       if (here.length) return here.map((s, i) => `<div class="tl-item">${i ? "<div></div>" : time}${cardHTML(s, { plan: true })}</div>`).join("");
-      if (cover.length) return `<div class="tl-item">${time}<div class="covered">Belegt durch ${cover.map(c => esc(c.code || c.title)).join(", ")}</div></div>`;
-      return `<div class="tl-item">${time}<button class="slot-empty" data-slot="${d.num}:${sl.start}"><span><b>Noch frei</b><br>${sl.items.length} ${sl.items.length === 1 ? "Programmpunkt" : "Programmpunkte"} zur Auswahl</span><span class="go">Ansehen →</span></button></div>`;
+      if (cover.length) return `<div class="tl-item">${time}<div class="covered">${t("coveredBy", cover.map(c => esc(c.code || c.title)).join(", "))}</div></div>`;
+      return `<div class="tl-item">${time}<button class="slot-empty" data-slot="${d.num}:${sl.start}"><span><b>${t("free")}</b><br>${t("choices", sl.items.length)}</span><span class="go">${t("look")}</span></button></div>`;
     }).join("");
-    return `<section class="plan-day${mine.length ? "" : " no-pick"}"><h2>${DAY_NAME[d.num]}, ${d.num}. November <small>${mine.length} gemerkt · ${freeCount} frei${dp.length ? ` · <span style="color:var(--danger)">${dp.length} Überschneidung${dp.length > 1 ? "en" : ""}</span>` : ""}</small></h2><div class="tl">${html}</div></section>`;
+    return `<section class="plan-day${mine.length ? "" : " no-pick"}"><h2>${DAY_NAME[d.num]}, ${t("dateLong", d.num)} <small>${t("dayStats", mine.length, freeCount)}${dp.length ? ` · <span style="color:var(--danger)">${t("overlaps", dp.length)}</span>` : ""}</small></h2><div class="tl">${html}</div></section>`;
   }).join("");
 }
 
@@ -713,11 +795,11 @@ function renderCompare() {
   const trackOrder = Object.keys(TRACKS);
   const items = [...sl.items].sort((a, b) => trackOrder.indexOf(a.track) - trackOrder.indexOf(b.track) || a.code.localeCompare(b.code));
   const ends = [...new Set(items.map(i => i.end))].sort((a, b) => a - b);
-  $("#cmp-title").innerHTML = `${DAY_NAME[sl.day]}, ${sl.day}. Nov · ${fmt(sl.start)}<small>${items.length} ${items.length === 1 ? "Programmpunkt" : "Programmpunkte"} · Ende ${ends.map(fmt).join(" / ")}</small>`;
+  $("#cmp-title").innerHTML = `${DAY_NAME[sl.day]}, ${t("dateShort", sl.day)} · ${fmt(sl.start)}<small>${t("nItems", items.length)} · ${t("ends", ends.map(fmt).join(" / "))}</small>`;
   const mineHere = items.filter(s => picked.has(s.id));
   const blockers = [...picked].map(id => BY_ID[id]).filter(o => !sl.items.includes(o) && o.day === sl.day && o.start < sl.end && sl.start < o.end);
-  $("#cmp-status").innerHTML = mineHere.length ? `Gemerkt in diesem Slot: <b>${mineHere.map(s => esc(s.code || s.title)).join(", ")}</b>${mineHere.length > 1 ? ' <span style="color:var(--danger)">(Überschneidung)</span>' : ""}`
-    : blockers.length ? `Dieser Slot ist bereits belegt durch <b>${blockers.map(b => esc(b.code || b.title)).join(", ")}</b>.` : "Für diesen Slot hast du noch nichts gemerkt.";
+  $("#cmp-status").innerHTML = mineHere.length ? `${t("pickedHere")} <b>${mineHere.map(s => esc(s.code || s.title)).join(", ")}</b>${mineHere.length > 1 ? ` <span style="color:var(--danger)">${t("overlapParen")}</span>` : ""}`
+    : blockers.length ? t("blockedBy", blockers.map(b => esc(b.code || b.title)).join(", ")) : t("nothingHere");
   $("#cmp-list").className = "compare" + (items.length > 4 ? " many" : "");
   $("#cmp-list").innerHTML = items.map(s => cardHTML(s, { cmp: true })).join("");
   $("#cmp-prev").disabled = idx === 0;
@@ -740,34 +822,33 @@ function render() {
 }
 
 function planText() {
-  const de = { Sunday: "So", Monday: "Mo", Tuesday: "Di", Wednesday: "Mi", Thursday: "Do", Friday: "Fr" };
   return DAYS.map(d => {
     const items = [...picked].map(id => BY_ID[id]).filter(s => s.day === d.num).sort((a, b) => a.start - b.start);
     if (!items.length) return "";
-    return `${de[d.en]} ${d.num}.11.\n` + items.map(s => `  ${fmt(s.start)}–${fmt(s.end)}  ${s.code ? s.code + "  " : ""}${s.title}${s.speakers ? " (" + s.speakers + ")" : ""}${conflictsOf(s).length ? "  ⚠ Überschneidung" : ""}`).join("\n");
+    return `${I18N[LANG].short[d.num]} ${t("dateNum", d.num)}\n` + items.map(s => `  ${fmt(s.start)}–${fmt(s.end)}  ${s.code ? s.code + "  " : ""}${s.title}${s.speakers ? " (" + s.speakers + ")" : ""}${conflictsOf(s).length ? "  " + t("overlapMark") : ""}`).join("\n");
   }).filter(Boolean).join("\n\n");
 }
 
 function openInfo(id) {
   const s = BY_ID[id]; if (!s) return;
-  const t = TRACKS[s.track]; const d = DESC[id];
-  const pop = $("#pop"); pop.style.setProperty("--c", `var(${t.c})`);
+  const tr = TRACKS[s.track]; const d = DESC[id];
+  const pop = $("#pop"); pop.style.setProperty("--c", `var(${tr.c})`);
   const isPicked = picked.has(s.id); const conf = conflictsOf(s);
-  const facts = [KIND_LABEL[s.kind], t.name, d && d.level && d.level !== "-" ? d.level : "", d && d.track && d.track !== "-" ? d.track : ""].filter(Boolean);
+  const facts = [KIND_LABEL[s.kind], tr.name, d && d.level && d.level !== "-" ? d.level : "", d && d.track && d.track !== "-" ? d.track : ""].filter(Boolean);
   let body;
   if (d && d.summary && d.summary !== "-") {
-    body = `<div><div class="lbl">Worum es geht</div><p>${esc(d.summary)}</p></div>` +
-      (d.learn && d.learn !== "-" ? `<div><div class="lbl">Du lernst</div><ul>${d.learn.split(/\s*;\s*/).filter(Boolean).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : "");
-  } else body = `<p style="color:var(--muted)">${s.kind === "Event" ? "Für diesen Programmpunkt gibt es keine Beschreibung." : "Zu dieser Session gibt es noch keine Beschreibung."}</p>`;
-  pop.innerHTML = `<button class="x" id="pop-x" aria-label="Schließen">×</button>
-    <div class="when">${DAY_NAME[s.day]}, ${s.day}. Nov · ${fmt(s.start)}–${fmt(s.end)}${s.code ? " · " + s.code : ""}</div>
+    body = `<div><div class="lbl">${t("about")}</div><p>${esc(d.summary)}</p></div>` +
+      (d.learn && d.learn !== "-" ? `<div><div class="lbl">${t("learn")}</div><ul>${d.learn.split(/\s*;\s*/).filter(Boolean).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : "");
+  } else body = `<p style="color:var(--muted)">${s.kind === "Event" ? t("noDescEvent") : t("noDesc")}</p>`;
+  pop.innerHTML = `<button class="x" id="pop-x" aria-label="${t("close")}">×</button>
+    <div class="when">${DAY_NAME[s.day]}, ${t("dateShort", s.day)} · ${fmt(s.start)}–${fmt(s.end)}${s.code ? " · " + s.code : ""}</div>
     <h2 id="pop-title">${esc(s.title)}</h2>
     ${s.speakers ? `<div class="spk">${esc(s.speakers)}</div>` : ""}
     <div class="facts">${facts.map(f => `<span>${esc(f)}</span>`).join("")}</div>
     ${body}
-    ${conf.length && isPicked ? `<div class="warn-text">Überschneidung mit ${conf.map(c => esc(c.code || c.title)).join(", ")}</div>` : !isPicked && conf.length ? `<div class="warn-text" style="color:var(--muted);font-weight:500">Kollidiert mit ${conf.map(c => esc(c.code || c.title)).join(", ")}</div>` : ""}
-    <div class="pop-foot">${s.url ? `<a href="${s.url}" target="_blank" rel="noopener">Offizielle Seite öffnen ↗</a>` : "<span></span>"}<button class="pick" data-pick="${s.id}" aria-pressed="${isPicked}">${isPicked ? STAR + "Gemerkt" : PLUS + "Merken"}</button></div>
-    ${d && d.summary && d.summary !== "-" ? `<div class="note">Kurzfassung der offiziellen Beschreibung, Stand 19.10.2026.</div>` : ""}`;
+    ${conf.length && isPicked ? `<div class="warn-text">${t("overlapWith", conf.map(c => esc(c.code || c.title)).join(", "))}</div>` : !isPicked && conf.length ? `<div class="warn-text" style="color:var(--muted);font-weight:500">${t("collidesWith", conf.map(c => esc(c.code || c.title)).join(", "))}</div>` : ""}
+    <div class="pop-foot">${s.url ? `<a href="${s.url}" target="_blank" rel="noopener">${t("official")}</a>` : "<span></span>"}<button class="pick" data-pick="${s.id}" aria-pressed="${isPicked}">${isPicked ? STAR + t("picked") : PLUS + t("pick")}</button></div>
+    ${d && d.summary && d.summary !== "-" ? `<div class="note">${t("summaryNote")}</div>` : ""}`;
   openInfo.current = id;
   $("#pop-bg").hidden = false; document.body.classList.add("noscroll");
   $("#pop-x").focus();
@@ -783,8 +864,8 @@ document.addEventListener("click", e => {
   const pick = e.target.closest("[data-pick]");
   if (pick) {
     const id = pick.dataset.pick;
-    if (picked.has(id)) { picked.delete(id); toast("Entfernt"); }
-    else { picked.add(id); const c = conflictsOf(BY_ID[id]); toast(c.length ? "Gemerkt, überschneidet sich mit " + (c[0].code || c[0].title) : "Gemerkt"); }
+    if (picked.has(id)) { picked.delete(id); toast(t("removed")); }
+    else { picked.add(id); const c = conflictsOf(BY_ID[id]); toast(c.length ? t("pickedOverlap", c[0].code || c[0].title) : t("picked")); }
     savePicked(); render(); if (openInfo.current) openInfo(openInfo.current); return;
   }
   const slotBtn = e.target.closest("[data-slot]");
@@ -817,15 +898,17 @@ $("#hide-events").onchange = e => { state.hideEvents = e.target.checked; saveUI(
 $("#reset").onclick = () => { Object.assign(state, { q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false }); syncInputs(); saveUI(); renderTrackChips(); render(); };
 $("#clear").onclick = () => { $("#clear-confirm").hidden = false; };
 $("#clear-no").onclick = () => { $("#clear-confirm").hidden = true; };
-$("#clear-yes").onclick = () => { picked.clear(); savePicked(); $("#clear-confirm").hidden = true; toast("Plan geleert"); render(); };
+$("#clear-yes").onclick = () => { picked.clear(); savePicked(); $("#clear-confirm").hidden = true; toast(t("cleared")); render(); };
 $("#copy").onclick = () => {
-  const text = planText() || "Noch nichts gemerkt.";
-  const fallback = () => { $("#copy-fallback").hidden = false; const ta = $("#copy-text"); ta.value = text; ta.focus(); ta.select(); toast("Text markiert, jetzt kopieren"); };
-  try { navigator.clipboard.writeText(text).then(() => toast("Plan kopiert"), fallback); } catch { fallback(); }
+  const text = planText() || t("nothingYet");
+  const fallback = () => { $("#copy-fallback").hidden = false; const ta = $("#copy-text"); ta.value = text; ta.focus(); ta.select(); toast(t("selectCopy")); };
+  try { navigator.clipboard.writeText(text).then(() => toast(t("copied")), fallback); } catch { fallback(); }
 };
 function syncInputs() {
   $("#q").value = state.q; $("#kind").value = state.kind;
   $("#only-picked").checked = state.onlyPicked; $("#hide-events").checked = state.hideEvents;
 }
-syncInputs(); renderTrackChips(); render();
+$("#lang-de").onclick = () => setLang("de");
+$("#lang-en").onclick = () => setLang("en");
+applyLang(); syncInputs(); renderTrackChips(); render();
 </script>

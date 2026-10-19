@@ -1,5 +1,5 @@
 // Offline-Unterstützung: App-Dateien vorab cachen, Seite "network first", Schriften "stale while revalidate"
-const VERSION = "v1";
+const VERSION = "v2";
 const APP = `planner-${VERSION}`;
 const FONTS = "planner-fonts";
 const ASSETS = ["./", "./index.html", "./manifest.webmanifest", "./pwa.js", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png"];
