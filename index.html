@@ -192,7 +192,13 @@ main { padding-block: 4px 48px; }
 .cmp-status b { color: var(--fg); }
 .compare { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; padding-bottom: 14px; align-items: stretch; }
 @media (max-width: 560px) { .compare { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 82%; overflow-x: auto; scroll-snap-type: x mandatory; } }
-.compare > .card { scroll-snap-align: start; align-content: start; grid-template-rows: auto auto 1fr auto; }
+/* Karten im Vergleich teilen sich die Zeilen (Subgrid): Titel, Sprecher und Beschreibung stehen auf gleicher Höhe */
+.compare > .card { scroll-snap-align: start; grid-row: span 4; grid-template-rows: subgrid; row-gap: 6px; }
+.compare.desc > .card { grid-row: span 7; }
+.compare.desc .cdesc { display: contents; }
+.compare.desc .cdesc ul, .compare.desc .cdesc p { align-self: start; align-content: start; }
+.compare .card-foot { flex-wrap: wrap; }
+.compare .card-foot .warn-text { flex: 1 1 100%; }
 .compare .card h3 { font-size: 1.05rem; }
 .cmp-bar { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; padding-bottom: 10px; }
 .cmp-bar .cmp-status { padding-bottom: 0; }
@@ -203,7 +209,6 @@ main { padding-block: 4px 48px; }
 .cdesc p { margin: 0; }
 .cdesc ul { margin: 0; padding-left: 1.1em; display: grid; gap: 3px; color: var(--muted); }
 .cdesc .lvl { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 600; }
-.compare.desc { align-items: start; }
 .compare .card-foot { align-self: end; }
 
 /* Beschreibungs-Popup */
@@ -883,7 +888,7 @@ function cardHTML(s, opts = {}) {
   return `<article class="${cls}" style="--c: var(${tr.c})">
     <div class="meta">${s.code ? `<span class="code">${s.code}</span>` : ""}<span class="tag">${KIND_LABEL[s.kind]}</span>${opts.only ? `<span class="tag only">${t("onlyOpt")}</span>` : ""}${nope.has(s.id) ? `<span class="tag">${t("nopeTag")}</span>` : ""}${must.has(s.id) ? `<span class="tag must">${t("mustTag")}</span>` : ""}${s.removed ? `<span class="tag gone">${t("removedTag")}</span>` : ""}<span>${tr.short}</span>${opts.plan ? "" : `<span class="dur">· ${durText(s.end - s.start)}</span>`}${s.room ? `<span class="room">${esc(s.room)}</span>` : ""}</div>
     <h3>${titleHTML}</h3>
-    ${s.speakers ? `<div class="spk">${esc(s.speakers)}</div>` : ""}
+    ${s.speakers || opts.cmp ? `<div class="spk">${esc(s.speakers || "")}</div>` : ""}
     ${opts.desc ? descHTML(s) : ""}
     <div class="card-foot">${warn}<span class="foot-btns">${nopeBtn(s)}<button class="pick" data-pick="${s.id}" aria-pressed="${isPicked}">${isPicked ? STAR + t("picked") : PLUS + t("pick")}</button></span></div>
   </article>`;
@@ -973,9 +978,9 @@ function renderPlan() {
 
 function descHTML(s) {
   const d = DESC[s.id];
-  if (!d || !d.summary || d.summary === "-") return `<div class="cdesc"><p style="color:var(--muted)">${s.kind === "Event" ? t("noDescEvent") : t("noDesc")}</p></div>`;
+  if (!d || !d.summary || d.summary === "-") return `<div class="cdesc"><div class="lvl"></div><p style="color:var(--muted)">${s.kind === "Event" ? t("noDescEvent") : t("noDesc")}</p><ul></ul></div>`;
   const learn = d.learn && d.learn !== "-" ? d.learn.split(/\s*;\s*/).filter(Boolean) : [];
-  return `<div class="cdesc">${d.level && d.level !== "-" ? `<div class="lvl">${esc(d.level)}</div>` : ""}<p>${esc(d.summary)}</p>${learn.length ? `<ul>${learn.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</div>`;
+  return `<div class="cdesc"><div class="lvl">${d.level && d.level !== "-" ? esc(d.level) : ""}</div><p>${esc(d.summary)}</p><ul>${learn.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>`;
 }
 function renderCompare() {
   const conflict = (state.cmpIds || []).map(id => BY_ID[id]).filter(Boolean);
