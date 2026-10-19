@@ -10,3 +10,11 @@ Personal session planner for Live! 360 Orlando (November 15–20, 2026), built f
 Live site: https://tmerello-1.github.io/live360-planner/
 
 Your picks are stored in your browser's local storage only.
+
+## Install as an app
+
+The site is a PWA. On Chrome, Edge or Android, use the **Installieren** button in the header. On iPhone or iPad, the same button shows how to add it from Safari's Share menu. Once installed, the planner also works offline.
+
+## Updating
+
+`src/planner.html` holds the planner itself. Run `python3 build.py` to rebuild `index.html` with the PWA head and install script. Bump `VERSION` in `sw.js` when you change cached files.

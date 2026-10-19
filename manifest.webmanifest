@@ -1,0 +1,16 @@
+{
+  "name": "Live! 360 Orlando 2026 Planer",
+  "short_name": "Live360 Plan",
+  "description": "Persönlicher Sessionplaner für Live! 360 Orlando 2026",
+  "lang": "de",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f5f8",
+  "theme_color": "#0b6e8a",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
