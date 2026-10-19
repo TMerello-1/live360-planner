@@ -279,6 +279,7 @@ footer a { color: var(--muted); }
     <div class="plan-head">
       <div class="stats" id="stats"></div>
       <div class="row">
+        <label class="chip" style="--c: var(--accent)"><input id="only-free" type="checkbox"> <span data-i18n="onlyFree"></span></label>
         <button class="btn" id="copy" data-i18n="copy"></button>
         <button class="btn ghost-danger" id="clear" data-i18n="clearAll"></button>
       </div>
@@ -675,7 +676,7 @@ const I18N = {
     coveredBy: x => "Belegt durch " + x, free: "Noch frei", choices: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " zur Auswahl", look: "Ansehen →", onlyOpt: "Einzige Option",
     dayStats: (p, f) => `${p} gemerkt · ${f} frei`,
     nItems: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte"), ends: x => "Ende " + x,
-    pickedHere: "Gemerkt in diesem Slot:", topics: "Themen", onlyMust: "Nur „Muss ich sehen“", mustTag: "Muss ich sehen", mustSet: "Muss ich sehen", mustUndo: "Nicht mehr „Muss ich sehen“", mustOn: "Als „Muss ich sehen“ markiert", mustOff: "Markierung entfernt", moreN: n => "+" + n + " weitere", fewer: "weniger", showNope: "„Kein Interesse“ zeigen", nopeTag: "Kein Interesse", nopeSet: "Kein Interesse", nopeUndo: "Doch interessant", nopeUndoShort: "↺ Doch interessant", nopeOn: "Als „Kein Interesse“ markiert und ausgeblendet", nopeOff: "Wieder sichtbar", nopeHidden: n => n + " mit „Kein Interesse“ ausgeblendet · zeigen", noneLeft: "Alle Optionen mit „Kein Interesse“ markiert", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
+    pickedHere: "Gemerkt in diesem Slot:", topics: "Themen", onlyFree: "Nur freie Slots", allFilled: "Alle Slots an diesem Tag sind belegt.", onlyMust: "Nur „Muss ich sehen“", mustTag: "Muss ich sehen", mustSet: "Muss ich sehen", mustUndo: "Nicht mehr „Muss ich sehen“", mustOn: "Als „Muss ich sehen“ markiert", mustOff: "Markierung entfernt", moreN: n => "+" + n + " weitere", fewer: "weniger", showNope: "„Kein Interesse“ zeigen", nopeTag: "Kein Interesse", nopeSet: "Kein Interesse", nopeUndo: "Doch interessant", nopeUndoShort: "↺ Doch interessant", nopeOn: "Als „Kein Interesse“ markiert und ausgeblendet", nopeOff: "Wieder sichtbar", nopeHidden: n => n + " mit „Kein Interesse“ ausgeblendet · zeigen", noneLeft: "Alle Optionen mit „Kein Interesse“ markiert", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
     about: "Worum es geht", learn: "Du lernst", noDescEvent: "Für diesen Programmpunkt gibt es keine Beschreibung.", noDesc: "Zu dieser Session gibt es noch keine Beschreibung.",
     close: "Schließen", official: "Offizielle Seite öffnen ↗", summaryNote: "Kurzfassung der offiziellen Beschreibung (englisch), Stand 19.10.2026.",
     nothingYet: "Noch nichts gemerkt.", cleared: "Plan geleert", selectCopy: "Text markiert, jetzt kopieren", copied: "Plan kopiert", overlapMark: "⚠ Überschneidung",
@@ -711,7 +712,7 @@ const I18N = {
     coveredBy: x => "Taken by " + x, free: "Still free", choices: n => n + (n === 1 ? " item" : " items") + " to choose from", look: "View →", onlyOpt: "Only option",
     dayStats: (p, f) => `${p} saved · ${f} free`,
     nItems: n => n + (n === 1 ? " item" : " items"), ends: x => "ends " + x,
-    pickedHere: "Saved in this slot:", topics: "Topics", onlyMust: "Must see only", mustTag: "Must see", mustSet: "Must see", mustUndo: "Remove must see", mustOn: "Marked as must see", mustOff: "Must see removed", moreN: n => "+" + n + " more", fewer: "fewer", showNope: "Show not interested", nopeTag: "Not interested", nopeSet: "Not interested", nopeUndo: "Interested again", nopeUndoShort: "↺ Interested again", nopeOn: "Marked as not interested and hidden", nopeOff: "Visible again", nopeHidden: n => n + " not interested hidden · show", noneLeft: "All options marked not interested", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
+    pickedHere: "Saved in this slot:", topics: "Topics", onlyFree: "Free slots only", allFilled: "Every slot on this day is filled.", onlyMust: "Must see only", mustTag: "Must see", mustSet: "Must see", mustUndo: "Remove must see", mustOn: "Marked as must see", mustOff: "Must see removed", moreN: n => "+" + n + " more", fewer: "fewer", showNope: "Show not interested", nopeTag: "Not interested", nopeSet: "Not interested", nopeUndo: "Interested again", nopeUndoShort: "↺ Interested again", nopeOn: "Marked as not interested and hidden", nopeOff: "Visible again", nopeHidden: n => n + " not interested hidden · show", noneLeft: "All options marked not interested", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
     about: "What it's about", learn: "You'll learn", noDescEvent: "There is no description for this item.", noDesc: "There is no description for this session yet.",
     close: "Close", official: "Open official page ↗", summaryNote: "Summary of the official description, as of Oct 19, 2026.",
     nothingYet: "Nothing saved yet.", cleared: "Plan cleared", selectCopy: "Text selected, copy it now", copied: "Plan copied", overlapMark: "⚠ overlap",
@@ -757,7 +758,7 @@ if (cachedData) applyUpdates(cachedData);
 let picked = new Set(store.get("picked", []).filter(id => BY_ID[id]));
 let nope = new Set(store.get("nope", []).filter(id => BY_ID[id])); // "Kein Interesse"
 let must = new Set(store.get("must", []).filter(id => BY_ID[id])); // "Muss ich sehen"
-let state = Object.assign({ view: "prog", day: 17, cmpDay: 17, cmpStart: null, back: "prog", q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false, showNope: false, onlyMust: false }, store.get("ui", {}));
+let state = Object.assign({ view: "prog", day: 17, cmpDay: 17, cmpStart: null, back: "prog", q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false, showNope: false, onlyMust: false, onlyFree: false }, store.get("ui", {}));
 if (!state.lang) state.lang = /^de\b/i.test(navigator.language || "") ? "de" : "en";
 LANG = state.lang === "en" ? "en" : "de";
 function saveUI() { store.set("ui", state); }
@@ -936,19 +937,22 @@ function renderPlan() {
     mine.filter(s => s.kind === "Event").forEach(s => rows.push({ t: s.start, ev: s }));
     rows.sort((a, b) => a.t - b.t || (a.ev ? 1 : -1));
     const freeCount = SLOTS[d.num].filter(sl => !mine.some(s => s.kind !== "Event" && s.start < sl.end && sl.start < s.end)).length;
+    const free = state.onlyFree;
     const html = rows.map(r => {
+      if (r.ev && free) return "";
       if (r.ev) return `<div class="tl-item"><div class="tl-time">${fmt(r.ev.start)}<small>${t("until", fmt(r.ev.end))}</small></div>${cardHTML(r.ev, { plan: true })}</div>`;
       const sl = r.sl;
       const here = mine.filter(s => s.kind !== "Event" && s.start === sl.start);
       const cover = mine.filter(s => s.kind !== "Event" && s.start !== sl.start && s.start < sl.end && sl.start < s.end);
       const opts = sl.items.filter(s => !nope.has(s.id));
       const time = `<div class="tl-time">${fmt(sl.start)}<small>${t("until", fmt(sl.end))}</small>${opts.length > 1 ? `<button class="slot-link" data-slot="${d.num}:${sl.start}">${t("options", opts.length)}</button>` : ""}</div>`;
+      if (free && (here.length || cover.length)) return "";
       if (here.length) return here.map((s, i) => `<div class="tl-item">${i ? "<div></div>" : time}${cardHTML(s, { plan: true })}</div>`).join("");
       if (cover.length) return `<div class="tl-item">${time}<div class="covered">${t("coveredBy", cover.map(c => esc(c.code || c.title)).join(", "))}</div></div>`;
       if (opts.length === 1) return `<div class="tl-item">${time}${cardHTML(opts[0], { plan: true, only: true })}</div>`;
       return `<div class="tl-item">${time}<button class="slot-empty" data-slot="${d.num}:${sl.start}"><span><b>${t("free")}</b><br>${opts.length ? t("choices", opts.length) : t("noneLeft")}${opts.some(s => must.has(s.id)) ? `<br><span class="must-note">! ${t("mustTag")}: ${opts.filter(s => must.has(s.id)).map(s => esc(s.code || s.title)).join(", ")}</span>` : ""}</span><span class="go">${t("look")}</span></button></div>`;
     }).join("");
-    return `<section class="plan-day${mine.length ? "" : " no-pick"}"><h2>${DAY_NAME[d.num]}, ${t("dateLong", d.num)} <small>${t("dayStats", mine.length, freeCount)}${dp.length ? ` · <button class="conf-link" style="color:var(--danger)" data-conf="${[...new Set(dp.flat().map(x => x.id))].join(",")}">${t("overlaps", dp.length)} →</button>` : ""}</small></h2><div class="tl">${html}</div></section>`;
+    return `<section class="plan-day${mine.length ? "" : " no-pick"}"><h2>${DAY_NAME[d.num]}, ${t("dateLong", d.num)} <small>${t("dayStats", mine.length, freeCount)}${dp.length ? ` · <button class="conf-link" style="color:var(--danger)" data-conf="${[...new Set(dp.flat().map(x => x.id))].join(",")}">${t("overlaps", dp.length)} →</button>` : ""}</small></h2><div class="tl">${html || `<div class="covered">${t("allFilled")}</div>`}</div></section>`;
   }).join("");
 }
 
@@ -1138,6 +1142,7 @@ $("#slot").onchange = e => { state.slot = e.target.value; saveUI(); renderProgra
 $("#kind").onchange = e => { state.kind = e.target.value; saveUI(); renderProgram(); };
 $("#only-picked").onchange = e => { state.onlyPicked = e.target.checked; saveUI(); renderProgram(); };
 $("#hide-events").onchange = e => { state.hideEvents = e.target.checked; saveUI(); renderProgram(); };
+$("#only-free").onchange = e => { state.onlyFree = e.target.checked; saveUI(); renderPlan(); };
 $("#only-must").onchange = e => { state.onlyMust = e.target.checked; saveUI(); renderProgram(); };
 $("#show-nope").onchange = e => { state.showNope = e.target.checked; saveUI(); renderProgram(); };
 $("#reset").onclick = () => { Object.assign(state, { q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false, showNope: false, onlyMust: false }); syncInputs(); saveUI(); renderTrackChips(); render(); };
@@ -1151,7 +1156,7 @@ $("#copy").onclick = () => {
 };
 function syncInputs() {
   $("#q").value = state.q; $("#kind").value = state.kind;
-  $("#only-picked").checked = state.onlyPicked; $("#hide-events").checked = state.hideEvents; $("#show-nope").checked = !!state.showNope; $("#only-must").checked = !!state.onlyMust;
+  $("#only-picked").checked = state.onlyPicked; $("#hide-events").checked = state.hideEvents; $("#show-nope").checked = !!state.showNope; $("#only-must").checked = !!state.onlyMust; $("#only-free").checked = !!state.onlyFree;
 }
 $("#lang-de").onclick = () => setLang("de");
 $("#lang-en").onclick = () => setLang("en");
