@@ -141,6 +141,8 @@ main { padding-block: 4px 48px; }
 .slot-empty:hover { border-color: var(--accent); color: var(--fg); background: var(--accent-soft); }
 .slot-empty b { font-family: var(--font-display); font-weight: 600; color: var(--fg); font-size: 0.98rem; }
 .slot-empty .go { font-size: 0.82rem; color: var(--accent); font-weight: 600; white-space: nowrap; }
+.card.only { border-style: dashed; }
+.tag.only { background: var(--accent-soft); color: var(--accent); }
 .covered { font-size: 0.82rem; color: var(--muted); padding: 10px 14px; border-left: 2px dotted var(--line); }
 .slot-link { display: inline-block; margin-top: 4px; border: 0; background: none; padding: 0; color: var(--accent); font-size: 0.75rem; font-family: var(--font-body); font-weight: 600; }
 .slot-link:hover { text-decoration: underline; }
@@ -648,7 +650,7 @@ const I18N = {
     compare: "Vergleichen →", options: n => n + " Optionen →",
     statPicked: "gemerkt", statHours: "Stunden Inhalt", statOverlaps: n => n === 1 ? "Überschneidung" : "Überschneidungen",
     emptyPlan: "Noch nichts gemerkt", emptyPlanText: "Tippe im Programm bei einer Session auf „Merken“. Dein Plan erscheint dann hier, Tag für Tag, mit Warnung bei Überschneidungen.", toProgram: "Zum Programm",
-    coveredBy: x => "Belegt durch " + x, free: "Noch frei", choices: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " zur Auswahl", look: "Ansehen →",
+    coveredBy: x => "Belegt durch " + x, free: "Noch frei", choices: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " zur Auswahl", look: "Ansehen →", onlyOpt: "Einzige Option",
     dayStats: (p, f) => `${p} gemerkt · ${f} frei`,
     nItems: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte"), ends: x => "Ende " + x,
     pickedHere: "Gemerkt in diesem Slot:", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
@@ -684,7 +686,7 @@ const I18N = {
     compare: "Compare →", options: n => n + " options →",
     statPicked: "saved", statHours: "hours of content", statOverlaps: n => n === 1 ? "overlap" : "overlaps",
     emptyPlan: "Nothing saved yet", emptyPlanText: "Tap “Save” on a session in the program. Your plan shows up here day by day, with a warning when sessions overlap.", toProgram: "Go to program",
-    coveredBy: x => "Taken by " + x, free: "Still free", choices: n => n + (n === 1 ? " item" : " items") + " to choose from", look: "View →",
+    coveredBy: x => "Taken by " + x, free: "Still free", choices: n => n + (n === 1 ? " item" : " items") + " to choose from", look: "View →", onlyOpt: "Only option",
     dayStats: (p, f) => `${p} saved · ${f} free`,
     nItems: n => n + (n === 1 ? " item" : " items"), ends: x => "ends " + x,
     pickedHere: "Saved in this slot:", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
@@ -790,13 +792,13 @@ function cardHTML(s, opts = {}) {
   const isPicked = picked.has(s.id);
   const conf = isPicked ? conflictsOf(s) : [];
   const wouldConf = !isPicked ? conflictsOf(s) : [];
-  const cls = ["card", s.kind === "Event" ? "event" : "", s.removed ? "gone" : "", isPicked ? "picked" : "", conf.length ? "conflict" : ""].join(" ");
+  const cls = ["card", s.kind === "Event" ? "event" : "", s.removed ? "gone" : "", isPicked ? "picked" : "", conf.length ? "conflict" : "", opts.only ? "only" : ""].join(" ");
   const titleHTML = `<button class="ttl" data-info="${s.id}">${esc(s.title)}</button>`;
   let warn = "";
   if (conf.length) warn = `<span class="warn-text">${t("overlapWith", conf.map(c => esc(c.code || c.title.slice(0, 24) + "…")).join(", "))}</span>`;
   else if (wouldConf.length && !opts.plan) warn = `<span class="warn-text" style="color:var(--muted);font-weight:500">${t("collidesSel")}</span>`;
   return `<article class="${cls}" style="--c: var(${tr.c})">
-    <div class="meta">${s.code ? `<span class="code">${s.code}</span>` : ""}<span class="tag">${KIND_LABEL[s.kind]}</span>${s.removed ? `<span class="tag gone">${t("removedTag")}</span>` : ""}<span>${tr.short}</span>${opts.plan ? "" : `<span class="dur">· ${durText(s.end - s.start)}</span>`}${s.room ? `<span class="room">${esc(s.room)}</span>` : ""}</div>
+    <div class="meta">${s.code ? `<span class="code">${s.code}</span>` : ""}<span class="tag">${KIND_LABEL[s.kind]}</span>${opts.only ? `<span class="tag only">${t("onlyOpt")}</span>` : ""}${s.removed ? `<span class="tag gone">${t("removedTag")}</span>` : ""}<span>${tr.short}</span>${opts.plan ? "" : `<span class="dur">· ${durText(s.end - s.start)}</span>`}${s.room ? `<span class="room">${esc(s.room)}</span>` : ""}</div>
     <h3>${titleHTML}</h3>
     ${s.speakers ? `<div class="spk">${esc(s.speakers)}</div>` : ""}
     ${opts.desc ? descHTML(s) : ""}
@@ -862,6 +864,7 @@ function renderPlan() {
       const time = `<div class="tl-time">${fmt(sl.start)}<small>${t("until", fmt(sl.end))}</small>${sl.items.length > 1 ? `<button class="slot-link" data-slot="${d.num}:${sl.start}">${t("options", sl.items.length)}</button>` : ""}</div>`;
       if (here.length) return here.map((s, i) => `<div class="tl-item">${i ? "<div></div>" : time}${cardHTML(s, { plan: true })}</div>`).join("");
       if (cover.length) return `<div class="tl-item">${time}<div class="covered">${t("coveredBy", cover.map(c => esc(c.code || c.title)).join(", "))}</div></div>`;
+      if (sl.items.length === 1) return `<div class="tl-item">${time}${cardHTML(sl.items[0], { plan: true, only: true })}</div>`;
       return `<div class="tl-item">${time}<button class="slot-empty" data-slot="${d.num}:${sl.start}"><span><b>${t("free")}</b><br>${t("choices", sl.items.length)}</span><span class="go">${t("look")}</span></button></div>`;
     }).join("");
     return `<section class="plan-day${mine.length ? "" : " no-pick"}"><h2>${DAY_NAME[d.num]}, ${t("dateLong", d.num)} <small>${t("dayStats", mine.length, freeCount)}${dp.length ? ` · <span style="color:var(--danger)">${t("overlaps", dp.length)}</span>` : ""}</small></h2><div class="tl">${html}</div></section>`;
