@@ -20,6 +20,7 @@ head = """<!doctype html>
 <body>
 """
 tail = """
+<script src="updates.js"></script>
 <script src="pwa.js"></script>
 </body>
 </html>

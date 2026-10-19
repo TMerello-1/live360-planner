@@ -19,3 +19,7 @@ The site is a PWA. On Chrome, Edge or Android, use the **Installieren** button i
 ## Updating
 
 `src/planner.html` holds the planner itself. Run `python3 build.py` to rebuild `index.html` with the PWA head and install script. Bump `VERSION` in `sw.js` when you change cached files.
+
+## Session updates
+
+A GitHub Action (`.github/workflows/update-sessions.yml`) re-reads the official session list every day at 06:17 UTC and commits changes to `data/sessions.json` (rooms once they're published, time or title changes, new or cancelled sessions). In the app, **Check for updates** loads that file and shows what changed. You can also run the action by hand from the Actions tab.

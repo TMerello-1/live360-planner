@@ -96,6 +96,14 @@ main { padding-block: 4px 48px; }
 .meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 0.75rem; color: var(--muted); }
 .code { font-family: var(--font-mono); font-weight: 500; color: var(--c); }
 .tag { border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.room { font-weight: 600; color: var(--fg); }
+.room::before { content: "· "; color: var(--muted); font-weight: 400; }
+.tag.gone { border-color: var(--danger); color: var(--danger); }
+.card.gone h3 { text-decoration: line-through; text-decoration-color: var(--danger); }
+.update-row { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+.update-row .link-btn { padding: 0; font-size: 0.8rem; font-weight: 600; }
+.update-row .asof { font-size: 0.75rem; color: var(--muted); }
+.chg { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; font-size: 0.9rem; }
 .dur { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 .card h3 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 1.02rem; line-height: 1.25; text-wrap: balance; overflow-wrap: anywhere; }
 .card h3 a { color: inherit; text-decoration: none; }
@@ -535,6 +543,18 @@ function durText(d) { const h = Math.floor(d / 60), m = d % 60; return (h ? h + 
 
 const DAYS = [];
 const SESSIONS = [];
+function kindOf(code, rawTitle) {
+  if (/^(2-Day )?Hands-On Lab/i.test(rawTitle)) return "Lab";
+  if (/^(Hands-on )?Workshop:/i.test(rawTitle) || /^Hands-On Workshop:/i.test(rawTitle)) return "Workshop";
+  if (/^Fast Focus:/i.test(rawTitle)) return "Fast Focus";
+  if (/Keynote/i.test(rawTitle)) return "Keynote";
+  if (/Panel Discussion/i.test(rawTitle)) return "Panel";
+  return code === "-" || !code ? "Event" : "Session";
+}
+function cleanTitle(rawTitle) {
+  return rawTitle.replace(/^(2-Day )?Hands-On Lab:\s*/i, m => m.startsWith("2-Day") ? "2-Day Lab: " : "")
+    .replace(/^(Hands-on )?Workshop:\s*/i, "").replace(/^Fast Focus:\s*/i, "");
+}
 (function parse() {
   let day = null;
   for (const line of RAW.split("\n")) {
@@ -546,28 +566,56 @@ const SESSIONS = [];
     }
     const [code, rawTitle, time, spk, slug, trackHint] = line.split("|");
     const [s, e] = time.split("-");
-    let kind;
-    if (/^(2-Day )?Hands-On Lab/i.test(rawTitle)) kind = "Lab";
-    else if (/^(Hands-on )?Workshop:/i.test(rawTitle) || /^Hands-On Workshop:/i.test(rawTitle)) kind = "Workshop";
-    else if (/^Fast Focus:/i.test(rawTitle)) kind = "Fast Focus";
-    else if (/Keynote/i.test(rawTitle)) kind = "Keynote";
-    else if (/Panel Discussion/i.test(rawTitle)) kind = "Panel";
-    else if (code === "-") kind = "Event";
-    else kind = "Session";
-    const title = rawTitle.replace(/^(2-Day )?Hands-On Lab:\s*/i, m => m.startsWith("2-Day") ? "2-Day Lab: " : "")
-      .replace(/^(Hands-on )?Workshop:\s*/i, "").replace(/^Fast Focus:\s*/i, "");
+    const kind = kindOf(code, rawTitle);
+    const title = cleanTitle(rawTitle);
     const track = code === "-" ? (trackHint || "L3") : code.slice(0, 2);
     const shownCode = code === "-" ? "" : code.replace(/-2$/, "");
     const id = day.num + ":" + (code === "-" ? slug : code);
     SESSIONS.push({
       id, day: day.num, code: shownCode, title, kind, track,
       start: toMin(s), end: toMin(e),
-      speakers: spk || "",
+      speakers: spk || "", room: "",
       url: slug ? BASE + day.slug + "/" + slug + ".aspx" : "",
     });
   }
 })();
 const BY_ID = Object.fromEntries(SESSIONS.map(s => [s.id, s]));
+const BASE_DATE = "2026-10-19";
+
+// Übernimmt neue Daten aus data/sessions.json (Räume, Zeiten, Titel, neue/entfallene Punkte).
+// Gibt zurück, was sich gegenüber dem aktuellen Stand geändert hat.
+function applyUpdates(data) {
+  const ch = { rooms: [], times: [], titles: [], speakers: [], added: [], removed: [] };
+  if (!data || !Array.isArray(data.sessions)) return ch;
+  const byUrl = new Map(SESSIONS.filter(s => s.url).map(s => [s.url.toLowerCase(), s]));
+  const seen = new Set();
+  for (const n of data.sessions) {
+    if (!n || !n.url || n.start == null || n.end == null) continue;
+    let s = byUrl.get(n.url.toLowerCase());
+    const speakers = (n.speakers || []).join(", ");
+    if (!s) {
+      const code = n.code || "";
+      let id = n.day + ":" + (code || n.slug);
+      while (BY_ID[id]) id += "+";
+      const tr = code ? code.slice(0, 2) : "L3";
+      s = { id, day: n.day, code, title: cleanTitle(n.title), kind: kindOf(code || "-", n.title), track: TRACKS[tr] ? tr : "L3",
+            start: n.start, end: n.end, speakers, room: n.room || "", url: n.url };
+      SESSIONS.push(s); BY_ID[id] = s; byUrl.set(n.url.toLowerCase(), s); ch.added.push(s);
+    } else {
+      if (s.removed) { s.removed = false; }
+      if ((n.room || "") !== (s.room || "") && n.room) { s.room = n.room; ch.rooms.push(s); }
+      if (n.start !== s.start || n.end !== s.end) { s.start = n.start; s.end = n.end; ch.times.push(s); }
+      const nt = cleanTitle(n.title || "");
+      if (nt && nt !== s.title) { s.title = nt; s.kind = kindOf(s.code || "-", n.title); ch.titles.push(s); }
+      if (speakers && speakers !== s.speakers) { s.speakers = speakers; ch.speakers.push(s); }
+    }
+    seen.add(s.url.toLowerCase());
+  }
+  const covered = new Set(data.sessions.map(n => n.day));
+  for (const s of SESSIONS) if (s.url && covered.has(s.day) && !seen.has(s.url.toLowerCase()) && !s.removed) { s.removed = true; ch.removed.push(s); }
+  rebuildSlots();
+  return ch;
+}
 // Texte der Oberfläche in Deutsch und Englisch
 const I18N = {
   de: {
@@ -598,6 +646,12 @@ const I18N = {
     install: "Installieren", iosTitle: "Auf den Home-Bildschirm",
     iosSteps: ["Tippe in Safari unten auf <b>Teilen</b> (das Quadrat mit dem Pfeil nach oben).", "Wähle <b>Zum Home-Bildschirm</b>.", "Tippe auf <b>Hinzufügen</b>."],
     iosNote: "Danach startet der Planer wie eine App, auch ohne Internet.", decimal: "de-DE",
+    checkUpdates: "Nach Updates suchen", checking: "Suche nach Updates …", asOf: d => "Datenstand " + d, upToDate: "Alles aktuell. Seit der letzten Prüfung hat sich nichts geändert.",
+    updateFailed: "Updates konnten nicht geladen werden. Bist du online?", updatesTitle: "Neu im Programm", removedTag: "Entfällt",
+    chRooms: n => n + (n === 1 ? " Raum neu oder geändert" : " Räume neu oder geändert"), chTimes: n => n + (n === 1 ? " Zeit geändert" : " Zeiten geändert"),
+    chTitles: n => n + (n === 1 ? " Titel geändert" : " Titel geändert"), chSpeakers: n => n + " × Sprecher geändert",
+    chAdded: n => n + (n === 1 ? " neuer Programmpunkt" : " neue Programmpunkte"), chRemoved: n => n + (n === 1 ? " Programmpunkt entfällt" : " Programmpunkte entfallen"),
+    roomLbl: r => "Raum: " + r, noRoomsYet: "Räume sind noch nicht veröffentlicht.", roomsCount: n => n + " Programmpunkte haben schon einen Raum.", yourPicks: "Betrifft deine Auswahl:",
   },
   en: {
     sub: "November 15–20 · all times local (EST)", view: "View", program: "Program", myPlan: "My Plan", day: "Day",
@@ -627,6 +681,12 @@ const I18N = {
     install: "Install", iosTitle: "Add to Home Screen",
     iosSteps: ["In Safari, tap <b>Share</b> at the bottom (the square with the arrow pointing up).", "Choose <b>Add to Home Screen</b>.", "Tap <b>Add</b>."],
     iosNote: "The planner then opens like an app, even offline.", decimal: "en-US",
+    checkUpdates: "Check for updates", checking: "Checking for updates …", asOf: d => "Data as of " + d, upToDate: "You're up to date. Nothing has changed since the last check.",
+    updateFailed: "Couldn't load updates. Are you online?", updatesTitle: "What's new", removedTag: "Cancelled",
+    chRooms: n => n + (n === 1 ? " room added or changed" : " rooms added or changed"), chTimes: n => n + (n === 1 ? " time changed" : " times changed"),
+    chTitles: n => n + (n === 1 ? " title changed" : " titles changed"), chSpeakers: n => n + (n === 1 ? " speaker change" : " speaker changes"),
+    chAdded: n => n + (n === 1 ? " new item" : " new items"), chRemoved: n => n + (n === 1 ? " item cancelled" : " items cancelled"),
+    roomLbl: r => "Room: " + r, noRoomsYet: "Rooms haven't been published yet.", roomsCount: n => n + " items already have a room.", yourPicks: "Affects your picks:",
   },
 };
 let LANG = "de";
@@ -636,14 +696,16 @@ const DAY_NAME = new Proxy({}, { get: (_, d) => I18N[LANG].days[d] });
 // Ein Slot = alle Programmpunkte (ohne Pausen/Events) mit derselben Startzeit an einem Tag
 function slotsOf(day) {
   const m = new Map();
-  for (const s of SESSIONS) if (s.day === day && s.kind !== "Event") { if (!m.has(s.start)) m.set(s.start, []); m.get(s.start).push(s); }
+  for (const s of SESSIONS) if (s.day === day && s.kind !== "Event" && !s.removed) { if (!m.has(s.start)) m.set(s.start, []); m.get(s.start).push(s); }
   return [...m.entries()].sort((a, b) => a[0] - b[0]).map(([start, items]) => {
     const counts = {}; items.forEach(i => counts[i.end] = (counts[i.end] || 0) + 1);
     const end = +Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
     return { day, start, end, items };
   });
 }
-const SLOTS = Object.fromEntries([15, 16, 17, 18, 19, 20].map(d => [d, slotsOf(d)]));
+let SLOTS = {};
+function rebuildSlots() { SLOTS = Object.fromEntries([15, 16, 17, 18, 19, 20].map(d => [d, slotsOf(d)])); }
+rebuildSlots();
 function slotAt(day, start) { return SLOTS[day].find(x => x.start === start); }
 
 // Zustand
@@ -651,6 +713,9 @@ const store = {
   get(k, d) { try { const v = localStorage.getItem("l360or26:" + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
   set(k, v) { try { localStorage.setItem("l360or26:" + k, JSON.stringify(v)); } catch {} },
 };
+// Zuletzt geladene Programm-Updates (nur in der installierbaren Version) gleich anwenden
+const cachedData = store.get("data", null);
+if (cachedData) applyUpdates(cachedData);
 let picked = new Set(store.get("picked", []).filter(id => BY_ID[id]));
 let state = Object.assign({ view: "prog", day: 17, cmpDay: 17, cmpStart: null, back: "prog", q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false }, store.get("ui", {}));
 if (!state.lang) state.lang = /^de\b/i.test(navigator.language || "") ? "de" : "en";
@@ -668,7 +733,7 @@ function applyLang() {
 function setLang(l) { LANG = state.lang = l; saveUI(); applyLang(); renderTrackChips(); render(); if (openInfo.current) openInfo(openInfo.current); }
 function savePicked() { store.set("picked", [...picked]); }
 
-function overlaps(a, b) { return a.day === b.day && a.start < b.end && b.start < a.end; }
+function overlaps(a, b) { return a.day === b.day && !a.removed && !b.removed && a.start < b.end && b.start < a.end; }
 function conflictsOf(s) { const out = []; for (const id of picked) { const o = BY_ID[id]; if (o.id !== s.id && overlaps(o, s)) out.push(o); } return out; }
 function conflictPairs(day) {
   const list = [...picked].map(id => BY_ID[id]).filter(s => day == null || s.day === day).sort((a, b) => a.start - b.start);
@@ -711,13 +776,13 @@ function cardHTML(s, opts = {}) {
   const isPicked = picked.has(s.id);
   const conf = isPicked ? conflictsOf(s) : [];
   const wouldConf = !isPicked ? conflictsOf(s) : [];
-  const cls = ["card", s.kind === "Event" ? "event" : "", isPicked ? "picked" : "", conf.length ? "conflict" : ""].join(" ");
+  const cls = ["card", s.kind === "Event" ? "event" : "", s.removed ? "gone" : "", isPicked ? "picked" : "", conf.length ? "conflict" : ""].join(" ");
   const titleHTML = `<button class="ttl" data-info="${s.id}">${esc(s.title)}</button>`;
   let warn = "";
   if (conf.length) warn = `<span class="warn-text">${t("overlapWith", conf.map(c => esc(c.code || c.title.slice(0, 24) + "…")).join(", "))}</span>`;
   else if (wouldConf.length && !opts.plan) warn = `<span class="warn-text" style="color:var(--muted);font-weight:500">${t("collidesSel")}</span>`;
   return `<article class="${cls}" style="--c: var(${tr.c})">
-    <div class="meta">${s.code ? `<span class="code">${s.code}</span>` : ""}<span class="tag">${KIND_LABEL[s.kind]}</span><span>${tr.short}</span>${opts.plan ? "" : `<span class="dur">· ${durText(s.end - s.start)}</span>`}</div>
+    <div class="meta">${s.code ? `<span class="code">${s.code}</span>` : ""}<span class="tag">${KIND_LABEL[s.kind]}</span>${s.removed ? `<span class="tag gone">${t("removedTag")}</span>` : ""}<span>${tr.short}</span>${opts.plan ? "" : `<span class="dur">· ${durText(s.end - s.start)}</span>`}${s.room ? `<span class="room">${esc(s.room)}</span>` : ""}</div>
     <h3>${titleHTML}</h3>
     ${s.speakers ? `<div class="spk">${esc(s.speakers)}</div>` : ""}
     <div class="card-foot">${warn}<button class="pick" data-pick="${s.id}" aria-pressed="${isPicked}">${isPicked ? STAR + t("picked") : PLUS + t("pick")}</button></div>
@@ -731,6 +796,7 @@ function filtered() {
     && (!state.kind || s.kind === state.kind)
     && (!state.tracks.length || state.tracks.includes(s.track))
     && (!state.onlyPicked || picked.has(s.id))
+    && (!s.removed || picked.has(s.id))
     && (!state.hideEvents || s.kind !== "Event")
     && (!q || (s.title + " " + s.speakers + " " + s.code + " " + TRACKS[s.track].name).toLowerCase().includes(q)));
 }
@@ -825,7 +891,7 @@ function planText() {
   return DAYS.map(d => {
     const items = [...picked].map(id => BY_ID[id]).filter(s => s.day === d.num).sort((a, b) => a.start - b.start);
     if (!items.length) return "";
-    return `${I18N[LANG].short[d.num]} ${t("dateNum", d.num)}\n` + items.map(s => `  ${fmt(s.start)}–${fmt(s.end)}  ${s.code ? s.code + "  " : ""}${s.title}${s.speakers ? " (" + s.speakers + ")" : ""}${conflictsOf(s).length ? "  " + t("overlapMark") : ""}`).join("\n");
+    return `${I18N[LANG].short[d.num]} ${t("dateNum", d.num)}\n` + items.map(s => `  ${fmt(s.start)}–${fmt(s.end)}  ${s.code ? s.code + "  " : ""}${s.title}${s.speakers ? " (" + s.speakers + ")" : ""}${s.room ? " · " + s.room : ""}${s.removed ? "  [" + t("removedTag") + "]" : ""}${conflictsOf(s).length ? "  " + t("overlapMark") : ""}`).join("\n");
   }).filter(Boolean).join("\n\n");
 }
 
@@ -834,7 +900,7 @@ function openInfo(id) {
   const tr = TRACKS[s.track]; const d = DESC[id];
   const pop = $("#pop"); pop.style.setProperty("--c", `var(${tr.c})`);
   const isPicked = picked.has(s.id); const conf = conflictsOf(s);
-  const facts = [KIND_LABEL[s.kind], tr.name, d && d.level && d.level !== "-" ? d.level : "", d && d.track && d.track !== "-" ? d.track : ""].filter(Boolean);
+  const facts = [s.room ? t("roomLbl", s.room) : "", s.removed ? t("removedTag") : "", KIND_LABEL[s.kind], tr.name, d && d.level && d.level !== "-" ? d.level : "", d && d.track && d.track !== "-" ? d.track : ""].filter(Boolean);
   let body;
   if (d && d.summary && d.summary !== "-") {
     body = `<div><div class="lbl">${t("about")}</div><p>${esc(d.summary)}</p></div>` +

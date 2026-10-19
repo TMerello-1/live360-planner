@@ -1,8 +1,8 @@
 // Offline-Unterstützung: App-Dateien vorab cachen, Seite "network first", Schriften "stale while revalidate"
-const VERSION = "v2";
+const VERSION = "v3";
 const APP = `planner-${VERSION}`;
 const FONTS = "planner-fonts";
-const ASSETS = ["./", "./index.html", "./manifest.webmanifest", "./pwa.js", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png"];
+const ASSETS = ["./", "./index.html", "./manifest.webmanifest", "./pwa.js", "./updates.js", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(APP).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
@@ -28,6 +28,7 @@ self.addEventListener("fetch", e => {
     return;
   }
   if (url.origin !== location.origin) return;
+  if (url.pathname.includes("/data/")) return; // Programmdaten immer frisch aus dem Netz
 
   if (req.mode === "navigate") {
     e.respondWith(fetch(req)
