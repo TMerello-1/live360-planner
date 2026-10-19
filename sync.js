@@ -28,11 +28,11 @@
   const FILE = "live360-orlando-2026-plan.json";
   const TOKEN_URL = "https://github.com/settings/tokens/new?scopes=gist&description=Live360%20Planner%20sync";
   let cfg = store.get("sync", null); // { token, gist }
-  let log = store.get("syncLog", {}); // id -> [1|0, ms] für Gemerkte, "x:"+id für "Kein Interesse"
+  let log = store.get("syncLog", {}); // id -> [1|0, ms] für Gemerkte, "x:"+id für "Kein Interesse", "m:"+id für "Muss ich sehen"
   let lastSync = store.get("syncAt", 0), busy = false, failed = false, timer = 0;
 
   // Lokale Änderungen mitschreiben: savePicked wird bei jeder Änderung (auch "Kein Interesse") aufgerufen
-  const keys = () => new Set([...picked, ...[...nope].map(id => "x:" + id)]);
+  const keys = () => new Set([...picked, ...[...nope].map(id => "x:" + id), ...[...must].map(id => "m:" + id)]);
   let snap = keys();
   for (const k of snap) if (!log[k]) log[k] = [1, 1];
   store.set("syncLog", log);
@@ -86,6 +86,7 @@
       const on = Object.keys(log).filter(k => log[k][0]);
       picked = new Set(on.filter(k => BY_ID[k]));
       nope = new Set(on.filter(k => k.startsWith("x:") && BY_ID[k.slice(2)]).map(k => k.slice(2)));
+      must = new Set(on.filter(k => k.startsWith("m:") && BY_ID[k.slice(2)]).map(k => k.slice(2)));
       snap = keys();
       origSave();
       if ([...snap].sort().join() !== before) { render(); toast(t("syncPlanUpdated")); }
