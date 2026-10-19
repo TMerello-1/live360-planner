@@ -126,6 +126,8 @@ main { padding-block: 4px 48px; }
 .spk { font-size: 0.85rem; color: var(--muted); overflow-wrap: anywhere; }
 .card-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 2px; }
 .warn-text { font-size: 0.78rem; color: var(--danger); font-weight: 600; }
+.conf-link { border: 0; background: none; padding: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
+.conf-link.warn-text { color: var(--danger); font-size: 0.78rem; font-weight: 600; }
 .pick { border: 1px solid var(--line); background: var(--surface-2); border-radius: 999px; padding: 4px 12px; font-size: 0.82rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-left: auto; white-space: nowrap; }
 .pick svg { width: 14px; height: 14px; }
 .pick[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
@@ -671,7 +673,7 @@ const I18N = {
     coveredBy: x => "Belegt durch " + x, free: "Noch frei", choices: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " zur Auswahl", look: "Ansehen →", onlyOpt: "Einzige Option",
     dayStats: (p, f) => `${p} gemerkt · ${f} frei`,
     nItems: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte"), ends: x => "Ende " + x,
-    pickedHere: "Gemerkt in diesem Slot:", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
+    pickedHere: "Gemerkt in diesem Slot:", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
     about: "Worum es geht", learn: "Du lernst", noDescEvent: "Für diesen Programmpunkt gibt es keine Beschreibung.", noDesc: "Zu dieser Session gibt es noch keine Beschreibung.",
     close: "Schließen", official: "Offizielle Seite öffnen ↗", summaryNote: "Kurzfassung der offiziellen Beschreibung (englisch), Stand 19.10.2026.",
     nothingYet: "Noch nichts gemerkt.", cleared: "Plan geleert", selectCopy: "Text markiert, jetzt kopieren", copied: "Plan kopiert", overlapMark: "⚠ Überschneidung",
@@ -707,7 +709,7 @@ const I18N = {
     coveredBy: x => "Taken by " + x, free: "Still free", choices: n => n + (n === 1 ? " item" : " items") + " to choose from", look: "View →", onlyOpt: "Only option",
     dayStats: (p, f) => `${p} saved · ${f} free`,
     nItems: n => n + (n === 1 ? " item" : " items"), ends: x => "ends " + x,
-    pickedHere: "Saved in this slot:", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
+    pickedHere: "Saved in this slot:", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
     about: "What it's about", learn: "You'll learn", noDescEvent: "There is no description for this item.", noDesc: "There is no description for this session yet.",
     close: "Close", official: "Open official page ↗", summaryNote: "Summary of the official description, as of Oct 19, 2026.",
     nothingYet: "Nothing saved yet.", cleared: "Plan cleared", selectCopy: "Text selected, copy it now", copied: "Plan copied", overlapMark: "⚠ overlap",
@@ -813,7 +815,7 @@ function cardHTML(s, opts = {}) {
   const cls = ["card", s.kind === "Event" ? "event" : "", s.removed ? "gone" : "", isPicked ? "picked" : "", conf.length ? "conflict" : "", opts.only ? "only" : ""].join(" ");
   const titleHTML = `<button class="ttl" data-info="${s.id}">${esc(s.title)}</button>`;
   let warn = "";
-  if (conf.length) warn = `<span class="warn-text">${t("overlapWith", conf.map(c => esc(c.code || c.title.slice(0, 24) + "…")).join(", "))}</span>`;
+  if (conf.length) warn = `<button class="warn-text conf-link" data-conf="${[s, ...conf].map(c => c.id).join(",")}">${t("overlapWith", conf.map(c => esc(c.code || c.title.slice(0, 24) + "…")).join(", "))} →</button>`;
   else if (wouldConf.length && !opts.plan) warn = `<span class="warn-text" style="color:var(--muted);font-weight:500">${t("collidesSel")}</span>`;
   return `<article class="${cls}" style="--c: var(${tr.c})">
     <div class="meta">${s.code ? `<span class="code">${s.code}</span>` : ""}<span class="tag">${KIND_LABEL[s.kind]}</span>${opts.only ? `<span class="tag only">${t("onlyOpt")}</span>` : ""}${s.removed ? `<span class="tag gone">${t("removedTag")}</span>` : ""}<span>${tr.short}</span>${opts.plan ? "" : `<span class="dur">· ${durText(s.end - s.start)}</span>`}${s.room ? `<span class="room">${esc(s.room)}</span>` : ""}</div>
@@ -841,7 +843,7 @@ function renderProgram() {
   const list = filtered();
   const global = !!state.q.trim();
   const pairs = global ? [] : conflictPairs(state.day);
-  $("#day-banner").innerHTML = global ? `<div class="search-note">${t("searchAll", list.length, new Set(list.map(s => s.day)).size)}</div>` : pairs.length ? `<div class="banner"><span><b>${t("overlaps", pairs.length)}</b> ${t("onThisDay")}: ${pairs.map(([a, b]) => `${esc(a.code || a.title)} ↔ ${esc(b.code || b.title)}`).join(" · ")}</span></div>` : "";
+  $("#day-banner").innerHTML = global ? `<div class="search-note">${t("searchAll", list.length, new Set(list.map(s => s.day)).size)}</div>` : pairs.length ? `<div class="banner"><span><b>${t("overlaps", pairs.length)}</b> ${t("onThisDay")}: ${pairs.map(([a, b]) => `<button class="conf-link" data-conf="${a.id},${b.id}">${esc(a.code || a.title)} ↔ ${esc(b.code || b.title)}</button>`).join(" · ")}</span></div>` : "";
   if (!list.length) {
     $("#list").innerHTML = `<div class="empty"><h2>${t("noHits")}</h2><p>${t(global ? "noHitsAll" : "noHitsText")}</p></div>`;
     return;
@@ -891,7 +893,7 @@ function renderPlan() {
       if (sl.items.length === 1) return `<div class="tl-item">${time}${cardHTML(sl.items[0], { plan: true, only: true })}</div>`;
       return `<div class="tl-item">${time}<button class="slot-empty" data-slot="${d.num}:${sl.start}"><span><b>${t("free")}</b><br>${t("choices", sl.items.length)}</span><span class="go">${t("look")}</span></button></div>`;
     }).join("");
-    return `<section class="plan-day${mine.length ? "" : " no-pick"}"><h2>${DAY_NAME[d.num]}, ${t("dateLong", d.num)} <small>${t("dayStats", mine.length, freeCount)}${dp.length ? ` · <span style="color:var(--danger)">${t("overlaps", dp.length)}</span>` : ""}</small></h2><div class="tl">${html}</div></section>`;
+    return `<section class="plan-day${mine.length ? "" : " no-pick"}"><h2>${DAY_NAME[d.num]}, ${t("dateLong", d.num)} <small>${t("dayStats", mine.length, freeCount)}${dp.length ? ` · <button class="conf-link" style="color:var(--danger)" data-conf="${[...new Set(dp.flat().map(x => x.id))].join(",")}">${t("overlaps", dp.length)} →</button>` : ""}</small></h2><div class="tl">${html}</div></section>`;
   }).join("");
 }
 
@@ -902,6 +904,9 @@ function descHTML(s) {
   return `<div class="cdesc">${d.level && d.level !== "-" ? `<div class="lvl">${esc(d.level)}</div>` : ""}<p>${esc(d.summary)}</p>${learn.length ? `<ul>${learn.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</div>`;
 }
 function renderCompare() {
+  const conflict = (state.cmpIds || []).map(id => BY_ID[id]).filter(Boolean);
+  if (conflict.length) return renderConflict(conflict);
+  $("#cmp-prev").hidden = $("#cmp-next").hidden = false;
   const list = SLOTS[state.cmpDay];
   let idx = list.findIndex(x => x.start === state.cmpStart);
   if (idx < 0) { idx = 0; state.cmpStart = list[0].start; }
@@ -923,8 +928,23 @@ function renderCompare() {
   $("#cmp-next").disabled = idx === list.length - 1;
 }
 
+// Vergleich der sich überschneidenden Sessions (aus einer roten Überschneidungs-Zeile)
+function renderConflict(items) {
+  items = [...items].sort((a, b) => a.start - b.start || a.code.localeCompare(b.code));
+  const from = Math.min(...items.map(s => s.start)), to = Math.max(...items.map(s => s.end));
+  $("#cmp-title").innerHTML = `${DAY_NAME[items[0].day]}, ${t("dateShort", items[0].day)} · ${fmt(from)}–${fmt(to)}<small>${t("cmpConflictTitle", items.length)}</small>`;
+  const left = items.filter(s => picked.has(s.id));
+  const still = left.some((a, i) => left.some((b, j) => j > i && overlaps(a, b)));
+  $("#cmp-status").innerHTML = still ? `<span style="color:var(--danger)">${t("cmpConflictHint")}</span>` : t("cmpConflictDone");
+  const desc = state.cmpMode === "desc";
+  $("#cmp-titles").setAttribute("aria-pressed", !desc); $("#cmp-desc").setAttribute("aria-pressed", desc);
+  $("#cmp-list").className = "compare" + (items.length > 4 ? " many" : "") + (desc ? " desc" : "");
+  $("#cmp-list").innerHTML = items.map(s => cardHTML(s, { cmp: true, desc })).join("");
+  $("#cmp-prev").hidden = $("#cmp-next").hidden = true;
+}
+
 function render() {
-  if (state.view === "cmp" && state.cmpStart == null) state.view = "prog";
+  if (state.view === "cmp" && state.cmpStart == null && !(state.cmpIds || []).length) state.view = "prog";
   const base = state.view === "cmp" ? state.back : state.view;
   $("#v-prog").setAttribute("aria-pressed", base === "prog");
   $("#v-plan").setAttribute("aria-pressed", base === "plan");
@@ -963,7 +983,7 @@ function openInfo(id) {
     ${s.speakers ? `<div class="spk">${esc(s.speakers)}</div>` : ""}
     <div class="facts">${facts.map(f => `<span>${esc(f)}</span>`).join("")}</div>
     ${body}
-    ${conf.length && isPicked ? `<div class="warn-text">${t("overlapWith", conf.map(c => esc(c.code || c.title)).join(", "))}</div>` : !isPicked && conf.length ? `<div class="warn-text" style="color:var(--muted);font-weight:500">${t("collidesWith", conf.map(c => esc(c.code || c.title)).join(", "))}</div>` : ""}
+    ${conf.length && isPicked ? `<div><button class="warn-text conf-link" data-conf="${[s, ...conf].map(c => c.id).join(",")}">${t("overlapWith", conf.map(c => esc(c.code || c.title)).join(", "))} →</button></div>` : !isPicked && conf.length ? `<div class="warn-text" style="color:var(--muted);font-weight:500">${t("collidesWith", conf.map(c => esc(c.code || c.title)).join(", "))}</div>` : ""}
     <div class="pop-foot">${s.url ? `<a href="${s.url}" target="_blank" rel="noopener">${t("official")}</a>` : "<span></span>"}<button class="pick" data-pick="${s.id}" aria-pressed="${isPicked}">${isPicked ? STAR + t("picked") : PLUS + t("pick")}</button></div>
     ${d && d.summary && d.summary !== "-" ? `<div class="note">${t("summaryNote")}</div>` : ""}`;
   openInfo.current = id;
@@ -985,11 +1005,18 @@ document.addEventListener("click", e => {
     else { picked.add(id); const c = conflictsOf(BY_ID[id]); toast(c.length ? t("pickedOverlap", c[0].code || c[0].title) : t("picked")); }
     savePicked(); render(); if (openInfo.current) openInfo(openInfo.current); return;
   }
+  const confBtn = e.target.closest("[data-conf]");
+  if (confBtn) {
+    const ids = confBtn.dataset.conf.split(",").filter(id => BY_ID[id]);
+    if (openInfo.current) closeInfo();
+    state.back = state.view === "cmp" ? state.back : state.view;
+    Object.assign(state, { view: "cmp", cmpIds: ids, cmpDay: BY_ID[ids[0]].day }); saveUI(); render(); window.scrollTo(0, 0); return;
+  }
   const slotBtn = e.target.closest("[data-slot]");
   if (slotBtn) {
     const [d, st] = slotBtn.dataset.slot.split(":").map(Number);
     state.back = state.view === "cmp" ? state.back : state.view;
-    Object.assign(state, { view: "cmp", cmpDay: d, cmpStart: st }); saveUI(); render(); window.scrollTo(0, 0); return;
+    Object.assign(state, { view: "cmp", cmpDay: d, cmpStart: st, cmpIds: null }); saveUI(); render(); window.scrollTo(0, 0); return;
   }
   const day = e.target.closest("[data-day]");
   if (day) { state.day = +day.dataset.day; state.slot = ""; saveUI(); render(); return; }
@@ -1000,7 +1027,7 @@ document.addEventListener("click", e => {
 });
 $("#v-prog").onclick = () => { state.view = "prog"; saveUI(); render(); };
 $("#v-plan").onclick = () => { state.view = "plan"; saveUI(); render(); window.scrollTo(0, 0); };
-$("#cmp-back").onclick = () => { state.view = state.back || "plan"; saveUI(); render(); };
+$("#cmp-back").onclick = () => { state.view = state.back || "plan"; state.cmpIds = null; saveUI(); render(); };
 function stepSlot(dir) {
   const list = SLOTS[state.cmpDay]; const i = list.findIndex(x => x.start === state.cmpStart) + dir;
   if (list[i]) { state.cmpStart = list[i].start; saveUI(); render(); }
