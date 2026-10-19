@@ -173,6 +173,16 @@ main { padding-block: 4px 48px; }
 @media (max-width: 560px) { .compare { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 82%; overflow-x: auto; scroll-snap-type: x mandatory; } }
 .compare > .card { scroll-snap-align: start; align-content: start; grid-template-rows: auto auto 1fr auto; }
 .compare .card h3 { font-size: 1.05rem; }
+.cmp-bar { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; padding-bottom: 10px; }
+.cmp-bar .cmp-status { padding-bottom: 0; }
+.seg { display: inline-flex; background: var(--surface-2); border-radius: 999px; padding: 3px; gap: 2px; }
+.seg button { border: 0; background: transparent; padding: 5px 12px; border-radius: 999px; font-weight: 600; font-size: 0.82rem; color: var(--muted); }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--fg); box-shadow: 0 1px 2px rgb(0 0 0 / 0.12); }
+.cdesc { display: grid; gap: 8px; font-size: 0.86rem; line-height: 1.5; }
+.cdesc p { margin: 0; }
+.cdesc ul { margin: 0; padding-left: 1.1em; display: grid; gap: 3px; color: var(--muted); }
+.cdesc .lvl { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 600; }
+.compare.desc { align-items: start; }
 .compare .card-foot { align-self: end; }
 
 /* Beschreibungs-Popup */
@@ -278,7 +288,8 @@ footer a { color: var(--muted); }
       <h2 id="cmp-title"></h2>
       <div class="cmp-nav"><button class="btn" id="cmp-prev" data-i18n="earlier" data-i18n-aria="prevSlot"></button><button class="btn" id="cmp-next" data-i18n="later" data-i18n-aria="nextSlot"></button></div>
     </div>
-    <div class="cmp-status" id="cmp-status"></div>
+    <div class="cmp-bar"><div class="cmp-status" id="cmp-status"></div>
+      <div class="seg" role="group" data-i18n-aria="cmpShow"><button id="cmp-titles" data-i18n="showTitles"></button><button id="cmp-desc" data-i18n="showDesc"></button></div></div>
     <div class="compare" id="cmp-list"></div>
   </section>
 
@@ -661,6 +672,7 @@ const I18N = {
     nothingYet: "Noch nichts gemerkt.", cleared: "Plan geleert", selectCopy: "Text markiert, jetzt kopieren", copied: "Plan kopiert", overlapMark: "⚠ Überschneidung",
     install: "Installieren", iosTitle: "Auf den Home-Bildschirm",
     iosSteps: ["Tippe in Safari unten auf <b>Teilen</b> (das Quadrat mit dem Pfeil nach oben).", "Wähle <b>Zum Home-Bildschirm</b>.", "Tippe auf <b>Hinzufügen</b>."],
+    cmpShow: "Anzeige", showTitles: "Titel", showDesc: "Beschreibungen",
     iosNote: "Danach startet der Planer wie eine App, auch ohne Internet.", decimal: "de-DE",
     checkUpdates: "Nach Updates suchen", checking: "Suche nach Updates …", asOf: d => "Datenstand " + d, upToDate: "Alles aktuell. Seit der letzten Prüfung hat sich nichts geändert.",
     updateFailed: "Updates konnten nicht geladen werden. Bist du online?", updatesTitle: "Neu im Programm", removedTag: "Entfällt",
@@ -696,6 +708,7 @@ const I18N = {
     nothingYet: "Nothing saved yet.", cleared: "Plan cleared", selectCopy: "Text selected, copy it now", copied: "Plan copied", overlapMark: "⚠ overlap",
     install: "Install", iosTitle: "Add to Home Screen",
     iosSteps: ["In Safari, tap <b>Share</b> at the bottom (the square with the arrow pointing up).", "Choose <b>Add to Home Screen</b>.", "Tap <b>Add</b>."],
+    cmpShow: "Show", showTitles: "Titles", showDesc: "Descriptions",
     iosNote: "The planner then opens like an app, even offline.", decimal: "en-US",
     checkUpdates: "Check for updates", checking: "Checking for updates …", asOf: d => "Data as of " + d, upToDate: "You're up to date. Nothing has changed since the last check.",
     updateFailed: "Couldn't load updates. Are you online?", updatesTitle: "What's new", removedTag: "Cancelled",
@@ -801,6 +814,7 @@ function cardHTML(s, opts = {}) {
     <div class="meta">${s.code ? `<span class="code">${s.code}</span>` : ""}<span class="tag">${KIND_LABEL[s.kind]}</span>${s.removed ? `<span class="tag gone">${t("removedTag")}</span>` : ""}<span>${tr.short}</span>${opts.plan ? "" : `<span class="dur">· ${durText(s.end - s.start)}</span>`}${s.room ? `<span class="room">${esc(s.room)}</span>` : ""}</div>
     <h3>${titleHTML}</h3>
     ${s.speakers ? `<div class="spk">${esc(s.speakers)}</div>` : ""}
+    ${opts.desc ? descHTML(s) : ""}
     <div class="card-foot">${warn}<button class="pick" data-pick="${s.id}" aria-pressed="${isPicked}">${isPicked ? STAR + t("picked") : PLUS + t("pick")}</button></div>
   </article>`;
 }
@@ -869,6 +883,12 @@ function renderPlan() {
   }).join("");
 }
 
+function descHTML(s) {
+  const d = DESC[s.id];
+  if (!d || !d.summary || d.summary === "-") return `<div class="cdesc"><p style="color:var(--muted)">${s.kind === "Event" ? t("noDescEvent") : t("noDesc")}</p></div>`;
+  const learn = d.learn && d.learn !== "-" ? d.learn.split(/\s*;\s*/).filter(Boolean) : [];
+  return `<div class="cdesc">${d.level && d.level !== "-" ? `<div class="lvl">${esc(d.level)}</div>` : ""}<p>${esc(d.summary)}</p>${learn.length ? `<ul>${learn.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</div>`;
+}
 function renderCompare() {
   const list = SLOTS[state.cmpDay];
   let idx = list.findIndex(x => x.start === state.cmpStart);
@@ -883,7 +903,10 @@ function renderCompare() {
   $("#cmp-status").innerHTML = mineHere.length ? `${t("pickedHere")} <b>${mineHere.map(s => esc(s.code || s.title)).join(", ")}</b>${mineHere.length > 1 ? ` <span style="color:var(--danger)">${t("overlapParen")}</span>` : ""}`
     : blockers.length ? t("blockedBy", blockers.map(b => esc(b.code || b.title)).join(", ")) : t("nothingHere");
   $("#cmp-list").className = "compare" + (items.length > 4 ? " many" : "");
-  $("#cmp-list").innerHTML = items.map(s => cardHTML(s, { cmp: true })).join("");
+  const desc = state.cmpMode === "desc";
+  $("#cmp-titles").setAttribute("aria-pressed", !desc); $("#cmp-desc").setAttribute("aria-pressed", desc);
+  if (desc) $("#cmp-list").classList.add("desc");
+  $("#cmp-list").innerHTML = items.map(s => cardHTML(s, { cmp: true, desc })).join("");
   $("#cmp-prev").disabled = idx === 0;
   $("#cmp-next").disabled = idx === list.length - 1;
 }
@@ -970,6 +993,8 @@ function stepSlot(dir) {
   const list = SLOTS[state.cmpDay]; const i = list.findIndex(x => x.start === state.cmpStart) + dir;
   if (list[i]) { state.cmpStart = list[i].start; saveUI(); render(); }
 }
+$("#cmp-titles").onclick = () => { state.cmpMode = "titles"; saveUI(); render(); };
+$("#cmp-desc").onclick = () => { state.cmpMode = "desc"; saveUI(); render(); };
 $("#cmp-prev").onclick = () => stepSlot(-1);
 $("#cmp-next").onclick = () => stepSlot(1);
 $("#q").oninput = e => { state.q = e.target.value; saveUI(); renderProgram(); };
