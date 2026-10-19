@@ -1,0 +1,3357 @@
+{
+ "updated": "2026-10-19T17:10Z",
+ "sessions": [
+  {
+   "day": 15,
+   "slug": "registration",
+   "title": "Hands-On Lab Registration • Coffee and Morning Pastries",
+   "code": "",
+   "start": 420,
+   "end": 540,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/registration.aspx",
+   "id": "15:registration"
+  },
+  {
+   "day": 15,
+   "slug": "dphol01-hol-modern-apps-with-sql",
+   "title": "Hands-On Lab: Building Modern Applications with SQL Server 2025 - AI and New Developer Features",
+   "code": "DPHOL01",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Leonard Lobel"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/dphol01-hol-modern-apps-with-sql.aspx",
+   "id": "15:DPHOL01"
+  },
+  {
+   "day": 15,
+   "slug": "vshol01-modern-apis",
+   "title": "Hands-On Lab: Building Production-Ready Modern APIs with .NET",
+   "code": "VSHOL01",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Tony Champion"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/vshol01-modern-apis.aspx",
+   "id": "15:VSHOL01"
+  },
+  {
+   "day": 15,
+   "slug": "tmhol01-hol-pki-from-scratch",
+   "title": "Hands-On Lab: Building Enterprise PKI from Scratch: A Hands-On Lab for IT Pros",
+   "code": "TMHOL01",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "John O'Neill, Sr."
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/tmhol01-hol-pki-from-scratch.aspx",
+   "id": "15:TMHOL01"
+  },
+  {
+   "day": 15,
+   "slug": "aihol01-hol-python-ai1",
+   "title": "2-Day Hands-On Lab: Elevate Your Career with Python and AI - Day 1: Getting Started with Python",
+   "code": "AIHOL01",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Eric D. Boyd"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/aihol01-hol-python-ai1.aspx",
+   "id": "15:AIHOL01"
+  },
+  {
+   "day": 15,
+   "slug": "vshol02-hol-build-an-asp,-d-,net-core-mvc-app",
+   "title": "Hands-On Lab: Build an ASP.NET Core MVC App and EF Core with Copilot in a Day",
+   "code": "VSHOL02",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Philip Japikse"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/vshol02-hol-build-an-asp,-d-,net-core-mvc-app.aspx",
+   "id": "15:VSHOL02"
+  },
+  {
+   "day": 15,
+   "slug": "aihol02-hol-ms-agent-framework",
+   "title": "Hands-On Lab: Unlock the Potential of AI in Your Applications with Microsoft Agent Framework",
+   "code": "AIHOL02",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Marcel de Vries",
+    "Roy Cornelissen"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/aihol02-hol-ms-agent-framework.aspx",
+   "id": "15:AIHOL02"
+  },
+  {
+   "day": 15,
+   "slug": "vshol03-hol-essential-c",
+   "title": "Hands-On Lab: Essential C# for .NET Devs",
+   "code": "VSHOL03",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Ted Neward"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/vshol03-hol-essential-c.aspx",
+   "id": "15:VSHOL03"
+  },
+  {
+   "day": 15,
+   "slug": "crhol01-hol-incident-response",
+   "title": "Hands-On Lab: Incident Response - with Defender Boys",
+   "code": "CRHOL01",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Mattias Borg",
+    "Stefan Schörling"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/crhol01-hol-incident-response.aspx",
+   "id": "15:CRHOL01"
+  },
+  {
+   "day": 15,
+   "slug": "eahol01-hol-ai-agents",
+   "title": "Hands-On Lab: Unlocking Strategic Advantage - A Full-Day Workshop on AI Agents",
+   "code": "EAHOL01",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Prashant G Bhoyar"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/eahol01-hol-ai-agents.aspx",
+   "id": "15:EAHOL01"
+  },
+  {
+   "day": 16,
+   "slug": "registration",
+   "title": "Registration • Coffee and Morning Pastries",
+   "code": "",
+   "start": 420,
+   "end": 510,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/registration.aspx",
+   "id": "16:registration"
+  },
+  {
+   "day": 16,
+   "slug": "vsm01-workshop-microsoft-blazor",
+   "title": "Workshop: Microsoft Blazor Zero to Success",
+   "code": "VSM01",
+   "start": 510,
+   "end": 1050,
+   "speakers": [
+    "Allen Conway",
+    "Rockford Lhotka"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/vsm01-workshop-microsoft-blazor.aspx",
+   "id": "16:VSM01"
+  },
+  {
+   "day": 16,
+   "slug": "vsm02-workshop-design",
+   "title": "Workshop: Design Thinking and UX Design Jumpstart for Developers and Managers",
+   "code": "VSM02",
+   "start": 510,
+   "end": 1050,
+   "speakers": [
+    "Billy Hollis",
+    "Gary Bailey"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/vsm02-workshop-design.aspx",
+   "id": "16:VSM02"
+  },
+  {
+   "day": 16,
+   "slug": "vsm03-workshop-team-development",
+   "title": "Workshop: Team Development for the Future with Agentic AI & GitHub",
+   "code": "VSM03",
+   "start": 510,
+   "end": 1050,
+   "speakers": [
+    "Mickey Gousset",
+    "Ken Muse"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/vsm03-workshop-team-development.aspx",
+   "id": "16:VSM03"
+  },
+  {
+   "day": 16,
+   "slug": "vsm04-workshop-mastering-ai-development",
+   "title": "Workshop: Mastering AI Development & Building AI Apps with GitHub Copilot",
+   "code": "VSM04",
+   "start": 510,
+   "end": 1050,
+   "speakers": [
+    "Kayla Cinnamon",
+    "Jon Galloway"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/vsm04-workshop-mastering-ai-development.aspx",
+   "id": "16:VSM04"
+  },
+  {
+   "day": 16,
+   "slug": "dpm01-wksp-microsoft-fabric",
+   "title": "Workshop: Microsoft Fabric for the Data Professional",
+   "code": "DPM01",
+   "start": 510,
+   "end": 1050,
+   "speakers": [
+    "Bradley Ball",
+    "Thomas LaRock",
+    "Josh Luedeman",
+    "Bradley Schacht",
+    "Daniel Taylor"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/dpm01-wksp-microsoft-fabric.aspx",
+   "id": "16:DPM01"
+  },
+  {
+   "day": 16,
+   "slug": "dpm02-wksp-sql-and-azure-sql",
+   "title": "Workshop: SQL Server and Azure SQL - Architecting for High Availability",
+   "code": "DPM02",
+   "start": 510,
+   "end": 1050,
+   "speakers": [
+    "Denny Cherry"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/dpm02-wksp-sql-and-azure-sql.aspx",
+   "id": "16:DPM02"
+  },
+  {
+   "day": 16,
+   "slug": "tmm01-workshop-conquering-ad",
+   "title": "Workshop: Conquering Active Directory in a Hybrid World",
+   "code": "TMM01",
+   "start": 510,
+   "end": 1050,
+   "speakers": [
+    "Sander Berkouwer",
+    "Michael Van Horenbeeck"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/tmm01-workshop-conquering-ad.aspx",
+   "id": "16:TMM01"
+  },
+  {
+   "day": 16,
+   "slug": "tmm02-workshop-defender-for-cloud-and-azure-arc",
+   "title": "Workshop: Securing On-Premises Servers with Defender for Cloud and Azure Arc",
+   "code": "TMM02",
+   "start": 510,
+   "end": 1050,
+   "speakers": [
+    "Aidan Finn"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/tmm02-workshop-defender-for-cloud-and-azure-arc.aspx",
+   "id": "16:TMM02"
+  },
+  {
+   "day": 16,
+   "slug": "aihol01-hol-python-ai2",
+   "title": "2-Day Hands-On Lab: Elevate Your Career with Python and AI - Day 2: Introduction to Artificial Intelligence Using Python",
+   "code": "AIHOL01",
+   "start": 510,
+   "end": 1050,
+   "speakers": [
+    "Eric D. Boyd"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/aihol01-hol-python-ai2.aspx",
+   "id": "16:AIHOL01"
+  },
+  {
+   "day": 16,
+   "slug": "aim01-wksp-building-ai",
+   "title": "Workshop: Hitchhiker's Guide to Building an AI Solution Now",
+   "code": "AIM01",
+   "start": 510,
+   "end": 1050,
+   "speakers": [
+    "Brian A. Randell",
+    "Matt Nunn"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/aim01-wksp-building-ai.aspx",
+   "id": "16:AIM01"
+  },
+  {
+   "day": 16,
+   "slug": "eam01-wksp-building-stuff-with-genai",
+   "title": "Workshop: Building Stuff with GenAI - The Open-Minded Workshop Beyond OpenAI",
+   "code": "EAM01",
+   "start": 510,
+   "end": 1050,
+   "speakers": [
+    "Andreas Erben"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/eam01-wksp-building-stuff-with-genai.aspx",
+   "id": "16:EAM01"
+  },
+  {
+   "day": 16,
+   "slug": "crm01-workshop-defender-xdr",
+   "title": "Workshop: Red Teaming and Blue Teaming with Defender XDR",
+   "code": "CRM01",
+   "start": 510,
+   "end": 1050,
+   "speakers": [
+    "Émile Cabot",
+    "Dave Kawula"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/crm01-workshop-defender-xdr.aspx",
+   "id": "16:CRM01"
+  },
+  {
+   "day": 16,
+   "slug": "crm02-workshop-quantum-cryptography",
+   "title": "Workshop: An Introduction to Quantum Cryptography for IT & Security Professionals",
+   "code": "CRM02",
+   "start": 510,
+   "end": 1050,
+   "speakers": [
+    "Andy Malone"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/crm02-workshop-quantum-cryptography.aspx",
+   "id": "16:CRM02"
+  },
+  {
+   "day": 16,
+   "slug": "first-timers-forum",
+   "title": "Live! 360 First Timers Forum: A New Attendees Guide",
+   "code": "",
+   "start": 1065,
+   "end": 1095,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/first-timers-forum.aspx",
+   "id": "16:first-timers-forum"
+  },
+  {
+   "day": 16,
+   "slug": "mix-and-mingle",
+   "title": "Mix and Mingle @ Hard Rock Cafe Universal CityWalk",
+   "code": "",
+   "start": 1110,
+   "end": 1200,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/monday/mix-and-mingle.aspx",
+   "id": "16:mix-and-mingle"
+  },
+  {
+   "day": 17,
+   "slug": "lace-up",
+   "title": "Lace Up & Link Up!",
+   "code": "",
+   "start": 405,
+   "end": 435,
+   "speakers": [
+    "Philip Japikse"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/lace-up.aspx",
+   "id": "17:lace-up"
+  },
+  {
+   "day": 17,
+   "slug": "registration",
+   "title": "Registration • Coffee and Morning Pastries",
+   "code": "",
+   "start": 420,
+   "end": 480,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/registration.aspx",
+   "id": "17:registration"
+  },
+  {
+   "day": 17,
+   "slug": "vsl-key-vs-ai",
+   "title": "Visual Studio Live! Keynote: You, Visual Studio, and AI: Building What Comes Next",
+   "code": "",
+   "start": 480,
+   "end": 540,
+   "speakers": [
+    "Mads Kristensen"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vsl-key-vs-ai.aspx",
+   "id": "17:vsl-key-vs-ai"
+  },
+  {
+   "day": 17,
+   "slug": "dpl-keynote",
+   "title": "Data Platform Live! Keynote: Microsoft Fabric - The Foundation for Enterprise AI and Data",
+   "code": "",
+   "start": 480,
+   "end": 540,
+   "speakers": [
+    "Arthi Ramasubramanian Iyer"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpl-keynote.aspx",
+   "id": "17:dpl-keynote"
+  },
+  {
+   "day": 17,
+   "slug": "tm-key-account-compromised",
+   "title": "TechMentor & Cyberecurity & Ransomware Live! Keynote: I Teach Security—and Then My Account Was Compromised",
+   "code": "",
+   "start": 480,
+   "end": 540,
+   "speakers": [
+    "John O'Neill, Sr."
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tm-key-account-compromised.aspx",
+   "id": "17:tm-key-account-compromised"
+  },
+  {
+   "day": 17,
+   "slug": "ail_aieal-keynote",
+   "title": "Artificial Intelligence Live! & AI Enterprise Architecture Live! Keynote: Death by Tool Calls - Solving the #1 Problem in Agentic AI",
+   "code": "",
+   "start": 480,
+   "end": 540,
+   "speakers": [
+    "Jeff Prosise"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ail_aieal-keynote.aspx",
+   "id": "17:ail_aieal-keynote"
+  },
+  {
+   "day": 17,
+   "slug": "vst01-building-web-applications",
+   "title": "Building Web Applications with ASP.NET Core",
+   "code": "VST01",
+   "start": 555,
+   "end": 630,
+   "speakers": [
+    "Philip Japikse"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst01-building-web-applications.aspx",
+   "id": "17:VST01"
+  },
+  {
+   "day": 17,
+   "slug": "vst02-observing-and-learning-from-users",
+   "title": "A Structured Technique for Observing and Learning from Users",
+   "code": "VST02",
+   "start": 555,
+   "end": 630,
+   "speakers": [
+    "Billy Hollis"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst02-observing-and-learning-from-users.aspx",
+   "id": "17:VST02"
+  },
+  {
+   "day": 17,
+   "slug": "vst03-branches-that-dont-suck",
+   "title": "Branches That Don’t Suck: Smarter Strategies for Modern Dev Teams",
+   "code": "VST03",
+   "start": 555,
+   "end": 630,
+   "speakers": [
+    "Benjamin Day"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst03-branches-that-dont-suck.aspx",
+   "id": "17:VST03"
+  },
+  {
+   "day": 17,
+   "slug": "vst04-python",
+   "title": "Busy Developer's Guide to Python",
+   "code": "VST04",
+   "start": 555,
+   "end": 630,
+   "speakers": [
+    "Ted Neward"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst04-python.aspx",
+   "id": "17:VST04"
+  },
+  {
+   "day": 17,
+   "slug": "dpt01-data-for-ai",
+   "title": "From Ingestion to Consumption: Preparing Data for Seamless AI",
+   "code": "DPT01",
+   "start": 555,
+   "end": 630,
+   "speakers": [
+    "Matt Nunn"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt01-data-for-ai.aspx",
+   "id": "17:DPT01"
+  },
+  {
+   "day": 17,
+   "slug": "dpt02-cloud-cost-optimization",
+   "title": "Cloud Cost Optimization for Dev & Database Professionals",
+   "code": "DPT02",
+   "start": 555,
+   "end": 630,
+   "speakers": [
+    "Tee Dargie",
+    "Kevin Kline"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt02-cloud-cost-optimization.aspx",
+   "id": "17:DPT02"
+  },
+  {
+   "day": 17,
+   "slug": "tmt01-passwordless",
+   "title": "A Passwordless Reality Check: What Actually Happens When You Kill Passwords",
+   "code": "TMT01",
+   "start": 555,
+   "end": 630,
+   "speakers": [
+    "John O'Neill, Sr."
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt01-passwordless.aspx",
+   "id": "17:TMT01"
+  },
+  {
+   "day": 17,
+   "slug": "tmt02-beyond-azure",
+   "title": "Beyond Azure: Extending Defender for Cloud to Hybrid and Multi-Cloud Workloads",
+   "code": "TMT02",
+   "start": 555,
+   "end": 630,
+   "speakers": [
+    "Aidan Finn"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt02-beyond-azure.aspx",
+   "id": "17:TMT02"
+  },
+  {
+   "day": 17,
+   "slug": "tmt03-from-nightmare-to-enterprise-governance",
+   "title": "From Chaotic Nightmare to Enterprise Governance: Building an IGA Foundation with Active Directory",
+   "code": "TMT03",
+   "start": 555,
+   "end": 630,
+   "speakers": [
+    "AJ Linder",
+    "Robert Kraczek"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt03-from-nightmare-to-enterprise-governance.aspx",
+   "id": "17:TMT03"
+  },
+  {
+   "day": 17,
+   "slug": "ait01-ai-dev-nation",
+   "title": "State of the AI Developer Nation",
+   "code": "AIT01",
+   "start": 555,
+   "end": 630,
+   "speakers": [
+    "Brian A. Randell"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait01-ai-dev-nation.aspx",
+   "id": "17:AIT01"
+  },
+  {
+   "day": 17,
+   "slug": "ait02-ai-integration",
+   "title": "Practical AI Integration: From API Call to Production Feature",
+   "code": "AIT02",
+   "start": 555,
+   "end": 630,
+   "speakers": [
+    "Kevin Feasel"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait02-ai-integration.aspx",
+   "id": "17:AIT02"
+  },
+  {
+   "day": 17,
+   "slug": "eat01-architecture-agents",
+   "title": "The Architecture of Agents",
+   "code": "EAT01",
+   "start": 555,
+   "end": 630,
+   "speakers": [
+    "Rockford Lhotka"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/eat01-architecture-agents.aspx",
+   "id": "17:EAT01"
+  },
+  {
+   "day": 17,
+   "slug": "crt01-defender-xdr",
+   "title": "What's New in Defender XDR - with Defender Boys",
+   "code": "CRT01",
+   "start": 555,
+   "end": 630,
+   "speakers": [
+    "Mattias Borg",
+    "Stefan Schörling"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt01-defender-xdr.aspx",
+   "id": "17:CRT01"
+  },
+  {
+   "day": 17,
+   "slug": "crt02-microsoft-entra-id",
+   "title": "The Day the Hacker Stood Still – Microsoft Entra ID Security Deep Dive",
+   "code": "CRT02",
+   "start": 555,
+   "end": 630,
+   "speakers": [
+    "Andy Malone"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt02-microsoft-entra-id.aspx",
+   "id": "17:CRT02"
+  },
+  {
+   "day": 17,
+   "slug": "am-break",
+   "title": "Networking Break • Visit the EXPO Lounge",
+   "code": "",
+   "start": 630,
+   "end": 660,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/am-break.aspx",
+   "id": "17:am-break"
+  },
+  {
+   "day": 17,
+   "slug": "l360keynote-agents-ai",
+   "title": "Live! 360 Keynotes: Anybody Can Use Agents & AI to Build Anything & The Last Mile: From Idea to Usable App",
+   "code": "",
+   "start": 660,
+   "end": 735,
+   "speakers": [
+    "Kayla Cinnamon",
+    "Jon Galloway",
+    "Jason Beres"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/l360keynote-agents-ai.aspx",
+   "id": "17:l360keynote-agents-ai"
+  },
+  {
+   "day": 17,
+   "slug": "lunch",
+   "title": "Lunch • Visit the EXPO Lounge",
+   "code": "",
+   "start": 735,
+   "end": 780,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/lunch.aspx",
+   "id": "17:lunch"
+  },
+  {
+   "day": 17,
+   "slug": "dessert-break",
+   "title": "Dessert Break • Visit the EXPO Lounge",
+   "code": "",
+   "start": 780,
+   "end": 825,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dessert-break.aspx",
+   "id": "17:dessert-break"
+  },
+  {
+   "day": 17,
+   "slug": "vst05-ff-git-tips",
+   "title": "Fast Focus: Git Tips & Tricks in 20 Minutes",
+   "code": "VST05",
+   "start": 825,
+   "end": 845,
+   "speakers": [
+    "Mickey Gousset"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst05-ff-git-tips.aspx",
+   "id": "17:VST05"
+  },
+  {
+   "day": 17,
+   "slug": "vst06-ff-api-documentation",
+   "title": "Fast Focus: API Documentation",
+   "code": "VST06",
+   "start": 825,
+   "end": 845,
+   "speakers": [
+    "Philip Japikse"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst06-ff-api-documentation.aspx",
+   "id": "17:VST06"
+  },
+  {
+   "day": 17,
+   "slug": "vst07-ff-ef-core",
+   "title": "Fast Focus: What's New in EF Core",
+   "code": "VST07",
+   "start": 825,
+   "end": 845,
+   "speakers": [
+    "Jim Wooley"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst07-ff-ef-core.aspx",
+   "id": "17:VST07"
+  },
+  {
+   "day": 17,
+   "slug": "vst08-ff-mocking-with-moq",
+   "title": "Fast Focus: Mocking with Moq: A Quick Guide to Smarter Unit Tests",
+   "code": "VST08",
+   "start": 825,
+   "end": 845,
+   "speakers": [
+    "Benjamin Day"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst08-ff-mocking-with-moq.aspx",
+   "id": "17:VST08"
+  },
+  {
+   "day": 17,
+   "slug": "dpt03-ff-dba-guide",
+   "title": "Fast Focus: A DBA's Guide to LLM's",
+   "code": "DPT03",
+   "start": 825,
+   "end": 845,
+   "speakers": [
+    "Bradley Ball"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt03-ff-dba-guide.aspx",
+   "id": "17:DPT03"
+  },
+  {
+   "day": 17,
+   "slug": "dpt04-ff-fabric-mirroring-for-sql",
+   "title": "Fast Focus: Fabric Mirroring for SQL Server 2025 - What You Need to Know",
+   "code": "DPT04",
+   "start": 825,
+   "end": 845,
+   "speakers": [
+    "Meagan Longoria"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt04-ff-fabric-mirroring-for-sql.aspx",
+   "id": "17:DPT04"
+  },
+  {
+   "day": 17,
+   "slug": "tmt04-ff-intune",
+   "title": "Fast Focus: Intune App Deployment Methods and When to Use Them",
+   "code": "TMT04",
+   "start": 825,
+   "end": 845,
+   "speakers": [
+    "Émile Cabot"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt04-ff-intune.aspx",
+   "id": "17:TMT04"
+  },
+  {
+   "day": 17,
+   "slug": "tmt05-ff-simplifying-vm",
+   "title": "Fast Focus: Windows Admin Center Virtualization Mode: Simplifying VM Management",
+   "code": "TMT05",
+   "start": 825,
+   "end": 845,
+   "speakers": [
+    "Greg Altman"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt05-ff-simplifying-vm.aspx",
+   "id": "17:TMT05"
+  },
+  {
+   "day": 17,
+   "slug": "ait03-ff-microsoft-foundry",
+   "title": "Fast Focus: Microsoft Foundry Agent Service 101",
+   "code": "AIT03",
+   "start": 825,
+   "end": 845,
+   "speakers": [
+    "Prashant G Bhoyar"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait03-ff-microsoft-foundry.aspx",
+   "id": "17:AIT03"
+  },
+  {
+   "day": 17,
+   "slug": "eat02-interactive",
+   "title": "An Interactive Whiteboard Session — Three Real-World AI Scenarios",
+   "code": "EAT02",
+   "start": 825,
+   "end": 875,
+   "speakers": [
+    "Eric D. Boyd",
+    "Rockford Lhotka",
+    "Ashley Rivera"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/eat02-interactive.aspx",
+   "id": "17:EAT02"
+  },
+  {
+   "day": 17,
+   "slug": "crt03-ff-five-checks-in-five-minutes",
+   "title": "Fast Focus: Five Checks in Five Minutes - A PKI Health Assessment You Can Run Monday Morning",
+   "code": "CRT03",
+   "start": 825,
+   "end": 845,
+   "speakers": [
+    "John O'Neill, Sr."
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt03-ff-five-checks-in-five-minutes.aspx",
+   "id": "17:CRT03"
+  },
+  {
+   "day": 17,
+   "slug": "crt04-ff-cyber-security-awareness",
+   "title": "Fast Focus: Cyber Security Awareness for Executives and C-Suite",
+   "code": "CRT04",
+   "start": 825,
+   "end": 845,
+   "speakers": [
+    "Dave Kawula"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt04-ff-cyber-security-awareness.aspx",
+   "id": "17:CRT04"
+  },
+  {
+   "day": 17,
+   "slug": "vst09-ff-azure-devops-v-github",
+   "title": "Fast Focus: Azure DevOps vs. GitHub - Which Do You Choose",
+   "code": "VST09",
+   "start": 855,
+   "end": 875,
+   "speakers": [
+    "Brian A. Randell"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst09-ff-azure-devops-v-github.aspx",
+   "id": "17:VST09"
+  },
+  {
+   "day": 17,
+   "slug": "vst10-ff-modern-web-ui",
+   "title": "Fast Focus: Modern Web UI Showdown",
+   "code": "VST10",
+   "start": 855,
+   "end": 875,
+   "speakers": [
+    "Allen Conway"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst10-ff-modern-web-ui.aspx",
+   "id": "17:VST10"
+  },
+  {
+   "day": 17,
+   "slug": "vst11-ff-visibility",
+   "title": "Fast Focus: Visibility Is a Technical Skill",
+   "code": "VST11",
+   "start": 855,
+   "end": 875,
+   "speakers": [
+    "Tony Champion"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst11-ff-visibility.aspx",
+   "id": "17:VST11"
+  },
+  {
+   "day": 17,
+   "slug": "vst12-ff-unsafe-code",
+   "title": "Fast Focus: Doing Fun Things with Unsafe Code",
+   "code": "VST12",
+   "start": 855,
+   "end": 875,
+   "speakers": [
+    "Jason Bock"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst12-ff-unsafe-code.aspx",
+   "id": "17:VST12"
+  },
+  {
+   "day": 17,
+   "slug": "dpt05-ff-sql-temporal-tables",
+   "title": "Fast Focus: Time Traveling Data - SQL Server Temporal Tables",
+   "code": "DPT05",
+   "start": 855,
+   "end": 875,
+   "speakers": [
+    "Leonard Lobel"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt05-ff-sql-temporal-tables.aspx",
+   "id": "17:DPT05"
+  },
+  {
+   "day": 17,
+   "slug": "dpt06-ff-sql-multiple-indexes",
+   "title": "Fast Focus: Making SQL Server use Multiple Indexes per Table",
+   "code": "DPT06",
+   "start": 855,
+   "end": 875,
+   "speakers": [
+    "Denny Cherry"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt06-ff-sql-multiple-indexes.aspx",
+   "id": "17:DPT06"
+  },
+  {
+   "day": 17,
+   "slug": "tmt06-ff-task-management",
+   "title": "Fast Focus: 10 Tips for Better Task Management with Microsoft 365",
+   "code": "TMT06",
+   "start": 855,
+   "end": 875,
+   "speakers": [
+    "Heather Severino"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt06-ff-task-management.aspx",
+   "id": "17:TMT06"
+  },
+  {
+   "day": 17,
+   "slug": "tmt07-ff-azure-storage",
+   "title": "Fast Focus: Step into Azure Storage on Secure Footing",
+   "code": "TMT07",
+   "start": 855,
+   "end": 875,
+   "speakers": [
+    "Karinne Bessette"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt07-ff-azure-storage.aspx",
+   "id": "17:TMT07"
+  },
+  {
+   "day": 17,
+   "slug": "ait04-ff-ai-prompting",
+   "title": "Fast Focus: AI Prompting and Context Engineering",
+   "code": "AIT04",
+   "start": 855,
+   "end": 875,
+   "speakers": [
+    "Buck Woody"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait04-ff-ai-prompting.aspx",
+   "id": "17:AIT04"
+  },
+  {
+   "day": 17,
+   "slug": "crt05-ff-feel-the-burn",
+   "title": "Fast Focus: Feel the Burn: Staying Sane in a 24/7 IT World",
+   "code": "CRT05",
+   "start": 855,
+   "end": 875,
+   "speakers": [
+    "Derek Michals"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt05-ff-feel-the-burn.aspx",
+   "id": "17:CRT05"
+  },
+  {
+   "day": 17,
+   "slug": "crt06-ff-cross-tenant-access",
+   "title": "Fast Focus: Configuring Cross-Tenant Access for Secure Collaboration",
+   "code": "CRT06",
+   "start": 855,
+   "end": 875,
+   "speakers": [
+    "Myron Helgering"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt06-ff-cross-tenant-access.aspx",
+   "id": "17:CRT06"
+  },
+  {
+   "day": 17,
+   "slug": "pm-break",
+   "title": "Networking Break • Visit the EXPO Lounge",
+   "code": "",
+   "start": 875,
+   "end": 900,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/pm-break.aspx",
+   "id": "17:pm-break"
+  },
+  {
+   "day": 17,
+   "slug": "vst13-agentic-devops",
+   "title": "Agentic DevOps with GitHub and Azure DevOps: What Actually Works in 2026",
+   "code": "VST13",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Brian A. Randell"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst13-agentic-devops.aspx",
+   "id": "17:VST13"
+  },
+  {
+   "day": 17,
+   "slug": "vst14-build-a-ui",
+   "title": "Build a UI for Your AI Chat Bot",
+   "code": "VST14",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Rockford Lhotka"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst14-build-a-ui.aspx",
+   "id": "17:VST14"
+  },
+  {
+   "day": 17,
+   "slug": "vst15-visual-studio-tips",
+   "title": "Visual Studio Tips & Tricks",
+   "code": "VST15",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Mads Kristensen"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst15-visual-studio-tips.aspx",
+   "id": "17:VST15"
+  },
+  {
+   "day": 17,
+   "slug": "vst16-guide-to-go",
+   "title": "Busy Developer's Guide to Go",
+   "code": "VST16",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Ted Neward"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst16-guide-to-go.aspx",
+   "id": "17:VST16"
+  },
+  {
+   "day": 17,
+   "slug": "dpt07-devs-in-sql",
+   "title": "What's New for Developers in SQL Server 2025",
+   "code": "DPT07",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Leonard Lobel"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt07-devs-in-sql.aspx",
+   "id": "17:DPT07"
+  },
+  {
+   "day": 17,
+   "slug": "dpt08-tbd",
+   "title": "To Be Announced",
+   "code": "DPT08",
+   "start": 900,
+   "end": 975,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt08-tbd.aspx",
+   "id": "17:DPT08"
+  },
+  {
+   "day": 17,
+   "slug": "tmt08-new-microsoft-365",
+   "title": "What's New with Microsoft 365 (and M365 Copilot)?",
+   "code": "TMT08",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Heather Severino"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt08-new-microsoft-365.aspx",
+   "id": "17:TMT08"
+  },
+  {
+   "day": 17,
+   "slug": "tmt09-windows-server-2025",
+   "title": "From the Trenches: A Real-world Approach to Transitioning Domain Controllers to Windows Server 2025",
+   "code": "TMT09",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Sander Berkouwer"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt09-windows-server-2025.aspx",
+   "id": "17:TMT09"
+  },
+  {
+   "day": 17,
+   "slug": "tmt10-modernizing-hyperv",
+   "title": "Modernizing Hyper-V for Resilience in 2027",
+   "code": "TMT10",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Tony Joy"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt10-modernizing-hyperv.aspx",
+   "id": "17:TMT10"
+  },
+  {
+   "day": 17,
+   "slug": "ait05-tbd",
+   "title": "To Be Announced",
+   "code": "AIT05",
+   "start": 900,
+   "end": 975,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait05-tbd.aspx",
+   "id": "17:AIT05"
+  },
+  {
+   "day": 17,
+   "slug": "ait06-universe-software-dev",
+   "title": "Don’t Panic: A Hitchhiker’s Guide to the Changing Universe of Software Development",
+   "code": "AIT06",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Matt Nunn"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait06-universe-software-dev.aspx",
+   "id": "17:AIT06"
+  },
+  {
+   "day": 17,
+   "slug": "eat03-ai-data-automation",
+   "title": "AI, Data, Automation, and Digital Transformation in Manufacturing Industries",
+   "code": "EAT03",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Ponilango Ponraj",
+    "Anjali Ramalingam",
+    "Shoubith Rajeswaran",
+    "Rajeswaran Sababathy"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/eat03-ai-data-automation.aspx",
+   "id": "17:EAT03"
+  },
+  {
+   "day": 17,
+   "slug": "crt07-agents-in-2026",
+   "title": "Agents in 2026 - Security Copilot with Defender Boys",
+   "code": "CRT07",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Mattias Borg",
+    "Stefan Schörling"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt07-agents-in-2026.aspx",
+   "id": "17:CRT07"
+  },
+  {
+   "day": 17,
+   "slug": "crt08-microsoft-defender",
+   "title": "Protecting Critical ICS & SCADA Infrastructure with Microsoft Defender",
+   "code": "CRT08",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Maarten Goet"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt08-microsoft-defender.aspx",
+   "id": "17:CRT08"
+  },
+  {
+   "day": 17,
+   "slug": "vst17-new-in-c",
+   "title": "What's New in C#",
+   "code": "VST17",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Jason Bock"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst17-new-in-c.aspx",
+   "id": "17:VST17"
+  },
+  {
+   "day": 17,
+   "slug": "vst18-imposter-syndrome",
+   "title": "Fear and (Self) Loathing in IT – A Healthy Discussion on Imposter Syndrome",
+   "code": "VST18",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Angela Dugan"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst18-imposter-syndrome.aspx",
+   "id": "17:VST18"
+  },
+  {
+   "day": 17,
+   "slug": "vst19-too-late-for-tdd",
+   "title": "Too Late for TDD? Start Test Eventually Development Now",
+   "code": "VST19",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Jim Wooley"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst19-too-late-for-tdd.aspx",
+   "id": "17:VST19"
+  },
+  {
+   "day": 17,
+   "slug": "vst20-advanced-ui",
+   "title": "Advanced UI in the Browser with the Uno Platform",
+   "code": "VST20",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Billy Hollis"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst20-advanced-ui.aspx",
+   "id": "17:VST20"
+  },
+  {
+   "day": 17,
+   "slug": "dpt09-enhancing-power-bi",
+   "title": "Enhancing Power BI with Copilot",
+   "code": "DPT09",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Thomas LeBlanc"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt09-enhancing-power-bi.aspx",
+   "id": "17:DPT09"
+  },
+  {
+   "day": 17,
+   "slug": "dpt10-mastering-fabric-security",
+   "title": "Mastering Fabric Security: Safeguarding Your Analytics",
+   "code": "DPT10",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Bradley Schacht",
+    "Daniel Taylor"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt10-mastering-fabric-security.aspx",
+   "id": "17:DPT10"
+  },
+  {
+   "day": 17,
+   "slug": "tmt11-new-outlook",
+   "title": "What's New in New Outlook",
+   "code": "TMT11",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Heather Severino"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt11-new-outlook.aspx",
+   "id": "17:TMT11"
+  },
+  {
+   "day": 17,
+   "slug": "tmt12-azure",
+   "title": "Avoiding Sticker Shock in Azure",
+   "code": "TMT12",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Aidan Finn"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt12-azure.aspx",
+   "id": "17:TMT12"
+  },
+  {
+   "day": 17,
+   "slug": "tmt13-securing-ad",
+   "title": "Securing Active Directory: Examples from the Field",
+   "code": "TMT13",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Derek Melber"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt13-securing-ad.aspx",
+   "id": "17:TMT13"
+  },
+  {
+   "day": 17,
+   "slug": "ait07-foundry-for-dev",
+   "title": "Microsoft Foundry for the Skeptical Developer",
+   "code": "AIT07",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Kevin Feasel"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait07-foundry-for-dev.aspx",
+   "id": "17:AIT07"
+  },
+  {
+   "day": 17,
+   "slug": "ait08-adv-prompt-engineering",
+   "title": "Talk to AI Better: Advanced Prompt Engineering in Action",
+   "code": "AIT08",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Mayuri Lahane"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait08-adv-prompt-engineering.aspx",
+   "id": "17:AIT08"
+  },
+  {
+   "day": 17,
+   "slug": "eat04-designing-data",
+   "title": "Designing Data and AI Systems That Leadership Can Trust",
+   "code": "EAT04",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Ashley Rivera"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/eat04-designing-data.aspx",
+   "id": "17:EAT04"
+  },
+  {
+   "day": 17,
+   "slug": "crt09-ad-is-not-the-problem",
+   "title": "AD is NOT the Problem: Security and Incident Response for Active Directory",
+   "code": "CRT09",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Michael Van Horenbeeck"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt09-ad-is-not-the-problem.aspx",
+   "id": "17:CRT09"
+  },
+  {
+   "day": 17,
+   "slug": "crt10-cybercrime",
+   "title": "Forward to the Past and Back to the Future - Cybercrime in 2025 and Beyond",
+   "code": "CRT10",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Sami Laiho"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt10-cybercrime.aspx",
+   "id": "17:CRT10"
+  },
+  {
+   "day": 17,
+   "slug": "welcome-reception",
+   "title": "Live! 360 Welcome Reception",
+   "code": "",
+   "start": 1065,
+   "end": 1140,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/welcome-reception.aspx",
+   "id": "17:welcome-reception"
+  },
+  {
+   "day": 18,
+   "slug": "registration",
+   "title": "Registration • Coffee and Morning Pastries",
+   "code": "",
+   "start": 420,
+   "end": 480,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/registration.aspx",
+   "id": "18:registration"
+  },
+  {
+   "day": 18,
+   "slug": "vsw01-typescript",
+   "title": "TypeScript: Moving Beyond the Basics",
+   "code": "VSW01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Allen Conway"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw01-typescript.aspx",
+   "id": "18:VSW01"
+  },
+  {
+   "day": 18,
+   "slug": "vsw02-human-skills-in-an-ai-world",
+   "title": "Human Skills in an AI World: How Technologists Stay Essential",
+   "code": "VSW02",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Angela Dugan"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw02-human-skills-in-an-ai-world.aspx",
+   "id": "18:VSW02"
+  },
+  {
+   "day": 18,
+   "slug": "vsw03--net-applications",
+   "title": "Improving Performance in .NET Applications",
+   "code": "VSW03",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Jason Bock"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw03--net-applications.aspx",
+   "id": "18:VSW03"
+  },
+  {
+   "day": 18,
+   "slug": "vsw04-agileish",
+   "title": "Agile-ish: Lightweight Project Management with GitHub Projects",
+   "code": "VSW04",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Benjamin Day"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw04-agileish.aspx",
+   "id": "18:VSW04"
+  },
+  {
+   "day": 18,
+   "slug": "dpw01-fabric-architected-framework",
+   "title": "Building The Fabric Well-Architected Framework",
+   "code": "DPW01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Joseph D'Antoni"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw01-fabric-architected-framework.aspx",
+   "id": "18:DPW01"
+  },
+  {
+   "day": 18,
+   "slug": "dpw02-vectorization",
+   "title": "Choose Wisely Between PostgreSQL, CosmosDB, SQL Server and Azure AI Search for Vectorization",
+   "code": "DPW02",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Lino Tadros"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw02-vectorization.aspx",
+   "id": "18:DPW02"
+  },
+  {
+   "day": 18,
+   "slug": "tmw01-public-speaker",
+   "title": "How to (Not) Fail as a Public Speaker",
+   "code": "TMW01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Greg Altman",
+    "Cristal Kawula"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw01-public-speaker.aspx",
+   "id": "18:TMW01"
+  },
+  {
+   "day": 18,
+   "slug": "tmw02-os-deployment",
+   "title": "Old-time OS Deployment for the \"Modern\" Customer",
+   "code": "TMW02",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Michael Niehaus"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw02-os-deployment.aspx",
+   "id": "18:TMW02"
+  },
+  {
+   "day": 18,
+   "slug": "tmw03-newsletter-playbook",
+   "title": "Brand, Format, Ship: Your Microsoft 365 Newsletter Playbook",
+   "code": "TMW03",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Karinne Bessette"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw03-newsletter-playbook.aspx",
+   "id": "18:TMW03"
+  },
+  {
+   "day": 18,
+   "slug": "aiw01-intelligent-agents",
+   "title": "Build Intelligent Agents with Work IQ, Foundry IQ, Fabric IQ, and Microsoft Agents Stack",
+   "code": "AIW01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Prashant G Bhoyar"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw01-intelligent-agents.aspx",
+   "id": "18:AIW01"
+  },
+  {
+   "day": 18,
+   "slug": "aiw02-github-copilot",
+   "title": "GitHub Copilot Everywhere: CLI, VS Code, Visual Studio, and the Cloud",
+   "code": "AIW02",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Kayla Cinnamon"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw02-github-copilot.aspx",
+   "id": "18:AIW02"
+  },
+  {
+   "day": 18,
+   "slug": "eaw01-cloudnative-architectures",
+   "title": "Observability Redefined for Cloud-native Architectures in an Agentic Landscape",
+   "code": "EAW01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Alex Thissen"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/eaw01-cloudnative-architectures.aspx",
+   "id": "18:EAW01"
+  },
+  {
+   "day": 18,
+   "slug": "crw01-zerotrust-networking-access",
+   "title": "ZeroTrust Networking Access - Why Everyone Needs to Adopt It",
+   "code": "CRW01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Sami Laiho"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw01-zerotrust-networking-access.aspx",
+   "id": "18:CRW01"
+  },
+  {
+   "day": 18,
+   "slug": "crw02-building-a-secure-disaster-attested-network",
+   "title": "Building a Secure & Disaster-Attested Network (SADAN): Designing Ransomware-Proof Infrastructure",
+   "code": "CRW02",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Dave Kawula"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw02-building-a-secure-disaster-attested-network.aspx",
+   "id": "18:CRW02"
+  },
+  {
+   "day": 18,
+   "slug": "vsw05-mastering-angular-signals",
+   "title": "Mastering Angular Signals and the Resource API",
+   "code": "VSW05",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Deborah Kurata"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw05-mastering-angular-signals.aspx",
+   "id": "18:VSW05"
+  },
+  {
+   "day": 18,
+   "slug": "vsw06-microservices",
+   "title": "In Defense of Microservices",
+   "code": "VSW06",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Chad Green"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw06-microservices.aspx",
+   "id": "18:VSW06"
+  },
+  {
+   "day": 18,
+   "slug": "vsw07-mcp-with-net",
+   "title": "Opening Up Your App to AI Agents: A Practical Guide to MCP with .NET",
+   "code": "VSW07",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Marcel de Vries"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw07-mcp-with-net.aspx",
+   "id": "18:VSW07"
+  },
+  {
+   "day": 18,
+   "slug": "vsw08-to-be-announced",
+   "title": "To Be Announced",
+   "code": "VSW08",
+   "start": 570,
+   "end": 645,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw08-to-be-announced.aspx",
+   "id": "18:VSW08"
+  },
+  {
+   "day": 18,
+   "slug": "dpw03-dataflows",
+   "title": "Upgrading Skills from DataFlows to Notebooks",
+   "code": "DPW03",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Thomas LeBlanc"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw03-dataflows.aspx",
+   "id": "18:DPW03"
+  },
+  {
+   "day": 18,
+   "slug": "dpw04-paas-saas-vms",
+   "title": "PaaS, SaaS, or VMs? How to Modernize Your Database Without Regret",
+   "code": "DPW04",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Josh Luedeman",
+    "Daniel Taylor"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw04-paas-saas-vms.aspx",
+   "id": "18:DPW04"
+  },
+  {
+   "day": 18,
+   "slug": "tmw04-powershell-scripting",
+   "title": "The Human Side of PowerShell Scripting",
+   "code": "TMW04",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Jeffery Hicks"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw04-powershell-scripting.aspx",
+   "id": "18:TMW04"
+  },
+  {
+   "day": 18,
+   "slug": "tmw05-ad-basics",
+   "title": "Active Directory Basics, But Not the Easy Stuff!",
+   "code": "TMW05",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Derek Melber"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw05-ad-basics.aspx",
+   "id": "18:TMW05"
+  },
+  {
+   "day": 18,
+   "slug": "tmw06-windows-11",
+   "title": "Windows 11: Using Local AI Silicon",
+   "code": "TMW06",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Michael Niehaus"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw06-windows-11.aspx",
+   "id": "18:TMW06"
+  },
+  {
+   "day": 18,
+   "slug": "aiw03-ai-systems-azure",
+   "title": "Multi-Agent Without the Bloat: Designing Lean AI Systems on Azure",
+   "code": "AIW03",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Carey Payette"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw03-ai-systems-azure.aspx",
+   "id": "18:AIW03"
+  },
+  {
+   "day": 18,
+   "slug": "aiw04-claude-code",
+   "title": "Claude Code for .NET Developers: Agentic Coding in the Enterprise",
+   "code": "AIW04",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Mark Perry"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw04-claude-code.aspx",
+   "id": "18:AIW04"
+  },
+  {
+   "day": 18,
+   "slug": "eaw02-ai-pilots-to-platforms",
+   "title": "From AI Pilots to Platforms: Designing Enterprise-Grade Agentic AI",
+   "code": "EAW02",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Samantha St-Louis"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/eaw02-ai-pilots-to-platforms.aspx",
+   "id": "18:EAW02"
+  },
+  {
+   "day": 18,
+   "slug": "crw03-hack-windows",
+   "title": "11 Ways to Hack Windows 11",
+   "code": "CRW03",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Sami Laiho"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw03-hack-windows.aspx",
+   "id": "18:CRW03"
+  },
+  {
+   "day": 18,
+   "slug": "crw04-service-desk",
+   "title": "Service Desk: The Security Gotcha",
+   "code": "CRW04",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Derek Michals"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw04-service-desk.aspx",
+   "id": "18:CRW04"
+  },
+  {
+   "day": 18,
+   "slug": "am-break",
+   "title": "Networking Break • Visit the EXPO Lounge",
+   "code": "",
+   "start": 645,
+   "end": 690,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/am-break.aspx",
+   "id": "18:am-break"
+  },
+  {
+   "day": 18,
+   "slug": "l360-keynote-ai-on-air",
+   "title": "Live! 360 Keynote: When AI Goes On Air",
+   "code": "",
+   "start": 690,
+   "end": 750,
+   "speakers": [
+    "Tim Huckaby"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/l360-keynote-ai-on-air.aspx",
+   "id": "18:l360-keynote-ai-on-air"
+  },
+  {
+   "day": 18,
+   "slug": "lunch",
+   "title": "Table Topics Lunch",
+   "code": "",
+   "start": 750,
+   "end": 810,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/lunch.aspx",
+   "id": "18:lunch"
+  },
+  {
+   "day": 18,
+   "slug": "vsw09-angulars-signal-forms",
+   "title": "Angular’s Signal Forms and Model-first Validation",
+   "code": "VSW09",
+   "start": 840,
+   "end": 915,
+   "speakers": [
+    "Deborah Kurata"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw09-angulars-signal-forms.aspx",
+   "id": "18:VSW09"
+  },
+  {
+   "day": 18,
+   "slug": "vsw10-serverless-design",
+   "title": "Crack the Code of Serverless Design",
+   "code": "VSW10",
+   "start": 840,
+   "end": 915,
+   "speakers": [
+    "Chad Green"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw10-serverless-design.aspx",
+   "id": "18:VSW10"
+  },
+  {
+   "day": 18,
+   "slug": "vsw11-irresponsible-ai",
+   "title": "The Irresponsible AI Initiative",
+   "code": "VSW11",
+   "start": 840,
+   "end": 915,
+   "speakers": [
+    "Mickey Gousset",
+    "Ken Muse"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw11-irresponsible-ai.aspx",
+   "id": "18:VSW11"
+  },
+  {
+   "day": 18,
+   "slug": "vsw12-ai-powered-design",
+   "title": "From Prompt to Product: AI-Powered Design to Code",
+   "code": "VSW12",
+   "start": 840,
+   "end": 915,
+   "speakers": [
+    "Jason Beres"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw12-ai-powered-design.aspx",
+   "id": "18:VSW12"
+  },
+  {
+   "day": 18,
+   "slug": "dpw05-using-ai-for-power-bi",
+   "title": "Challenges and Opportunities in Using AI for Power BI Report Development",
+   "code": "DPW05",
+   "start": 840,
+   "end": 915,
+   "speakers": [
+    "Meagan Longoria"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw05-using-ai-for-power-bi.aspx",
+   "id": "18:DPW05"
+  },
+  {
+   "day": 18,
+   "slug": "dpw06-git-good",
+   "title": "Git Good: GitHub and GitHub Actions for Data Professionals",
+   "code": "DPW06",
+   "start": 840,
+   "end": 915,
+   "speakers": [
+    "Joseph D'Antoni"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw06-git-good.aspx",
+   "id": "18:DPW06"
+  },
+  {
+   "day": 18,
+   "slug": "tmw07-windows-autopilot",
+   "title": "Comprehensive Guide to Windows Autopilot Scenarios",
+   "code": "TMW07",
+   "start": 840,
+   "end": 915,
+   "speakers": [
+    "Michael Niehaus"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw07-windows-autopilot.aspx",
+   "id": "18:TMW07"
+  },
+  {
+   "day": 18,
+   "slug": "tmw08-scripting",
+   "title": "Scripting with pwshSpectreConsole",
+   "code": "TMW08",
+   "start": 840,
+   "end": 915,
+   "speakers": [
+    "Jeffery Hicks"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw08-scripting.aspx",
+   "id": "18:TMW08"
+  },
+  {
+   "day": 18,
+   "slug": "tmw09-purview",
+   "title": "The Purview Power Hour: Master Microsoft’s Data Governance in 75 Minutes",
+   "code": "TMW09",
+   "start": 840,
+   "end": 915,
+   "speakers": [
+    "Alex de Jong"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw09-purview.aspx",
+   "id": "18:TMW09"
+  },
+  {
+   "day": 18,
+   "slug": "aiw05-securing-ai",
+   "title": "Securing Enterprise AI: Copilot, Agents, and Operations",
+   "code": "AIW05",
+   "start": 840,
+   "end": 915,
+   "speakers": [
+    "Prashant G Bhoyar"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw05-securing-ai.aspx",
+   "id": "18:AIW05"
+  },
+  {
+   "day": 18,
+   "slug": "aiw06-copilot-predictable",
+   "title": "Make Copilot Predictable: Instructions, Skills, and Custom Agents You Can Reuse",
+   "code": "AIW06",
+   "start": 840,
+   "end": 915,
+   "speakers": [
+    "Kayla Cinnamon"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw06-copilot-predictable.aspx",
+   "id": "18:AIW06"
+  },
+  {
+   "day": 18,
+   "slug": "eaw03-ai-in-ea",
+   "title": "AI in Enterprise Architectures: Choosing the Right Capability for the Right Job",
+   "code": "EAW03",
+   "start": 840,
+   "end": 915,
+   "speakers": [
+    "Eric D. Boyd"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/eaw03-ai-in-ea.aspx",
+   "id": "18:EAW03"
+  },
+  {
+   "day": 18,
+   "slug": "crw05-dlp-controls",
+   "title": "Applying DLP Controls to Cloud Apps Using Edge for Business",
+   "code": "CRW05",
+   "start": 840,
+   "end": 915,
+   "speakers": [
+    "Myron Helgering"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw05-dlp-controls.aspx",
+   "id": "18:CRW05"
+  },
+  {
+   "day": 18,
+   "slug": "crw06-purview-data-security",
+   "title": "Mastering Purview Data Security Solution Design: Lessons from Years of Deployments",
+   "code": "CRW06",
+   "start": 840,
+   "end": 915,
+   "speakers": [
+    "Tatu Seppälä"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw06-purview-data-security.aspx",
+   "id": "18:CRW06"
+  },
+  {
+   "day": 18,
+   "slug": "pm-break",
+   "title": "Networking Break • Visit the EXPO Lounge • Expo Raffle @ 3:20 p.m.",
+   "code": "",
+   "start": 915,
+   "end": 975,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/pm-break.aspx",
+   "id": "18:pm-break"
+  },
+  {
+   "day": 18,
+   "slug": "vsw13-blazor-web-apps",
+   "title": "Zero to Hero: Blazor Web Apps",
+   "code": "VSW13",
+   "start": 975,
+   "end": 1050,
+   "speakers": [
+    "Allen Conway"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw13-blazor-web-apps.aspx",
+   "id": "18:VSW13"
+  },
+  {
+   "day": 18,
+   "slug": "vsw14-creating-an-observable-cloud-platform",
+   "title": "Creating an Observable Cloud Platform and Application Landscape with Azure",
+   "code": "VSW14",
+   "start": 975,
+   "end": 1050,
+   "speakers": [
+    "Alex Thissen"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw14-creating-an-observable-cloud-platform.aspx",
+   "id": "18:VSW14"
+  },
+  {
+   "day": 18,
+   "slug": "vsw15-hybrid-apps",
+   "title": "Build Hybrid Apps with .NET",
+   "code": "VSW15",
+   "start": 975,
+   "end": 1050,
+   "speakers": [
+    "Sam Basu"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw15-hybrid-apps.aspx",
+   "id": "18:VSW15"
+  },
+  {
+   "day": 18,
+   "slug": "vsw16-sql-features",
+   "title": "Top 10 SQL Features for Developers you Might Have Missed",
+   "code": "VSW16",
+   "start": 975,
+   "end": 1050,
+   "speakers": [
+    "Jerry Nixon"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw16-sql-features.aspx",
+   "id": "18:VSW16"
+  },
+  {
+   "day": 18,
+   "slug": "dpw07-ai-improve-accessibility",
+   "title": "How AI Can Improve Accessibility in Your Power BI Report Designs",
+   "code": "DPW07",
+   "start": 975,
+   "end": 1050,
+   "speakers": [
+    "Meagan Longoria"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw07-ai-improve-accessibility.aspx",
+   "id": "18:DPW07"
+  },
+  {
+   "day": 18,
+   "slug": "dpw08-locking-blocking",
+   "title": "Locking, Blocking, and Deadlocks",
+   "code": "DPW08",
+   "start": 975,
+   "end": 1050,
+   "speakers": [
+    "Thomas LaRock"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw08-locking-blocking.aspx",
+   "id": "18:DPW08"
+  },
+  {
+   "day": 18,
+   "slug": "tmw10-powershell-7",
+   "title": "Migrating to PowerShell 7",
+   "code": "TMW10",
+   "start": 975,
+   "end": 1050,
+   "speakers": [
+    "Michael Niehaus"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw10-powershell-7.aspx",
+   "id": "18:TMW10"
+  },
+  {
+   "day": 18,
+   "slug": "tmw11-the-ai-powered-soc",
+   "title": "The AI-Powered SOC: Reinventing the SOC with Defender XDR, Sentinel, and Security Copilot",
+   "code": "TMW11",
+   "start": 975,
+   "end": 1050,
+   "speakers": [
+    "Alex de Jong"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw11-the-ai-powered-soc.aspx",
+   "id": "18:TMW11"
+  },
+  {
+   "day": 18,
+   "slug": "tmw12-project-perception",
+   "title": "When Attacks Move at Machine Speed: Project Perception and Microsoft’s New Security Stack",
+   "code": "TMW12",
+   "start": 975,
+   "end": 1050,
+   "speakers": [
+    "Maarten Goet"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw12-project-perception.aspx",
+   "id": "18:TMW12"
+  },
+  {
+   "day": 18,
+   "slug": "aiw07-vibe-coding",
+   "title": "Vibe Coding in Action: Practical AI Tips for Smarter Development",
+   "code": "AIW07",
+   "start": 975,
+   "end": 1050,
+   "speakers": [
+    "Mayuri Lahane"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw07-vibe-coding.aspx",
+   "id": "18:AIW07"
+  },
+  {
+   "day": 18,
+   "slug": "aiw08-ai-features",
+   "title": "Building Intelligent .NET Applications: From AI Features to Agentic System",
+   "code": "AIW08",
+   "start": 975,
+   "end": 1050,
+   "speakers": [
+    "Jon Galloway"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw08-ai-features.aspx",
+   "id": "18:AIW08"
+  },
+  {
+   "day": 18,
+   "slug": "eaw04-architecting-ai",
+   "title": "Architecting AI Into the Enterprise - From Pilot to Production Without the GenAI Divide",
+   "code": "EAW04",
+   "start": 975,
+   "end": 1050,
+   "speakers": [
+    "Alex Kaziuka"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/eaw04-architecting-ai.aspx",
+   "id": "18:EAW04"
+  },
+  {
+   "day": 18,
+   "slug": "crw07-unmanaged-devices",
+   "title": "How to Protect your Business from the Threat of Unmanaged Devices",
+   "code": "CRW07",
+   "start": 975,
+   "end": 1050,
+   "speakers": [
+    "Myron Helgering"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw07-unmanaged-devices.aspx",
+   "id": "18:CRW07"
+  },
+  {
+   "day": 18,
+   "slug": "crw08-mind-the-gap",
+   "title": "Mind the Gap: Data-driven Hardening Against Insider Threat in Workforce Transitions",
+   "code": "CRW08",
+   "start": 975,
+   "end": 1050,
+   "speakers": [
+    "Tatu Seppälä"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw08-mind-the-gap.aspx",
+   "id": "18:CRW08"
+  },
+  {
+   "day": 18,
+   "slug": "dessert-luau",
+   "title": "Live! 360 Dessert Luau",
+   "code": "",
+   "start": 1170,
+   "end": 1260,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dessert-luau.aspx",
+   "id": "18:dessert-luau"
+  },
+  {
+   "day": 19,
+   "slug": "registration",
+   "title": "Registration • Coffee and Morning Pastries",
+   "code": "",
+   "start": 420,
+   "end": 480,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/registration.aspx",
+   "id": "19:registration"
+  },
+  {
+   "day": 19,
+   "slug": "vsh01-uno-platform-and-ai",
+   "title": "Design & Develop X-Platform .NET Apps with Uno Platform & AI",
+   "code": "VSH01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Sam Basu"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh01-uno-platform-and-ai.aspx",
+   "id": "19:VSH01"
+  },
+  {
+   "day": 19,
+   "slug": "vsh02-ai-in-leadership",
+   "title": "AI in Leadership: Practical Playbooks for Better Decisions and Team Collaboration",
+   "code": "VSH02",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Amber Vanderburg"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh02-ai-in-leadership.aspx",
+   "id": "19:VSH02"
+  },
+  {
+   "day": 19,
+   "slug": "vsh03-ai-powered-software-dev-lifecycle",
+   "title": "The AI-Powered Software Development Lifecycle",
+   "code": "VSH03",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "René van Osnabrugge"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh03-ai-powered-software-dev-lifecycle.aspx",
+   "id": "19:VSH03"
+  },
+  {
+   "day": 19,
+   "slug": "vsh04-c-roslyn",
+   "title": "C# Roslyn and You",
+   "code": "VSH04",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Jim Wooley"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh04-c-roslyn.aspx",
+   "id": "19:VSH04"
+  },
+  {
+   "day": 19,
+   "slug": "dph01-mcp-servers",
+   "title": "Getting Started with MCP Servers",
+   "code": "DPH01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Ginger Grant"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph01-mcp-servers.aspx",
+   "id": "19:DPH01"
+  },
+  {
+   "day": 19,
+   "slug": "dph02-microsoft-fabric",
+   "title": "Microsoft Fabric: Data Pipelines Error Handling 101",
+   "code": "DPH02",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Bradley Ball"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph02-microsoft-fabric.aspx",
+   "id": "19:DPH02"
+  },
+  {
+   "day": 19,
+   "slug": "tmh01-mastering-microsoft-copilot",
+   "title": "Mastering Microsoft CoPilot: Enhancing Productivity and Collaboration for IT Pros",
+   "code": "TMH01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "John O'Neill, Sr."
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh01-mastering-microsoft-copilot.aspx",
+   "id": "19:TMH01"
+  },
+  {
+   "day": 19,
+   "slug": "tmh02-powershell-function",
+   "title": "PowerShell: Function It Up, Module It Out.",
+   "code": "TMH02",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Mike O'Neill"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh02-powershell-function.aspx",
+   "id": "19:TMH02"
+  },
+  {
+   "day": 19,
+   "slug": "tmh03-pki-implementation",
+   "title": "Do this, Not That! 5 Common PKI Implementation Mistakes (And How to Correct Them)",
+   "code": "TMH03",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Richard Hicks"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh03-pki-implementation.aspx",
+   "id": "19:TMH03"
+  },
+  {
+   "day": 19,
+   "slug": "aih01-customizing-ai",
+   "title": "Building the Perfect Beast: Customizing Your AI For Maximum Impact",
+   "code": "AIH01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Mickey Gousset",
+    "Ken Muse"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih01-customizing-ai.aspx",
+   "id": "19:AIH01"
+  },
+  {
+   "day": 19,
+   "slug": "aih02-agentops",
+   "title": "AgentOps: Running AI Agents in Production",
+   "code": "AIH02",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Don Shin"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih02-agentops.aspx",
+   "id": "19:AIH02"
+  },
+  {
+   "day": 19,
+   "slug": "eah01-ethical-ai",
+   "title": "From Spider-Sense to Systems Sense: Navigating Ethical AI",
+   "code": "EAH01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Sarah Wimberley"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/eah01-ethical-ai.aspx",
+   "id": "19:EAH01"
+  },
+  {
+   "day": 19,
+   "slug": "crh01-death-of-the-vpn",
+   "title": "Death of the VPN: Zero Trust Connectivity with Global Secure Access",
+   "code": "CRH01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Markus Lintuala"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh01-death-of-the-vpn.aspx",
+   "id": "19:CRH01"
+  },
+  {
+   "day": 19,
+   "slug": "crh02-dlp-solution",
+   "title": "Closing the Loop: How a Small Security Team Refined an Enterprise-grade DLP solution",
+   "code": "CRH02",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Tatu Seppälä"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh02-dlp-solution.aspx",
+   "id": "19:CRH02"
+  },
+  {
+   "day": 19,
+   "slug": "vsh05-aspire",
+   "title": "Aspire Beyond the Introduction",
+   "code": "VSH05",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Chris Klug"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh05-aspire.aspx",
+   "id": "19:VSH05"
+  },
+  {
+   "day": 19,
+   "slug": "vsh06-workflow-automation",
+   "title": "Successful Workflow Automation with Agentic AI Using Patterns",
+   "code": "VSH06",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Robert Bogue"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh06-workflow-automation.aspx",
+   "id": "19:VSH06"
+  },
+  {
+   "day": 19,
+   "slug": "vsh07-learning-to-program",
+   "title": "Learning to Program in .NET in an AI World",
+   "code": "VSH07",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Mark Michaelis"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh07-learning-to-program.aspx",
+   "id": "19:VSH07"
+  },
+  {
+   "day": 19,
+   "slug": "vsh08-maintainable-and-scalable-test-automation",
+   "title": "Maintainable and Scalable Test Automation with Playwright Cloud Services",
+   "code": "VSH08",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Marcel de Vries"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh08-maintainable-and-scalable-test-automation.aspx",
+   "id": "19:VSH08"
+  },
+  {
+   "day": 19,
+   "slug": "dph03-making-fabric-data-ai",
+   "title": "Making Fabric Data Ready for Every AI Surface",
+   "code": "DPH03",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Andrew Brust"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph03-making-fabric-data-ai.aspx",
+   "id": "19:DPH03"
+  },
+  {
+   "day": 19,
+   "slug": "dph04-azure-sql-virtual-machine",
+   "title": "High Performance Azure SQL Virtual Machine with Premium Storage",
+   "code": "DPH04",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "David Pless"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph04-azure-sql-virtual-machine.aspx",
+   "id": "19:DPH04"
+  },
+  {
+   "day": 19,
+   "slug": "tmh04-copilot-clarity",
+   "title": "From Data Chaos to Copilot Clarity: Real Customer Journeys to Successful Adoption",
+   "code": "TMH04",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Stephen L. Rose"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh04-copilot-clarity.aspx",
+   "id": "19:TMH04"
+  },
+  {
+   "day": 19,
+   "slug": "tmh05-pki-is-not-dead",
+   "title": "PKI Is Not Dead: Why Your Enterprise Still Runs on Certificates & What Breaks When You Ignore Them",
+   "code": "TMH05",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "John O'Neill, Sr."
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh05-pki-is-not-dead.aspx",
+   "id": "19:TMH05"
+  },
+  {
+   "day": 19,
+   "slug": "tmh06-moving-to-zero-trust",
+   "title": "Moving To Zero Trust: Entra Private Access for Always On VPN Administrators",
+   "code": "TMH06",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Richard Hicks"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh06-moving-to-zero-trust.aspx",
+   "id": "19:TMH06"
+  },
+  {
+   "day": 19,
+   "slug": "aih03-microsoft-foundry",
+   "title": "Evaluate Your Model and Prompt using Microsoft Foundry",
+   "code": "AIH03",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Veronika Kolesnikova"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih03-microsoft-foundry.aspx",
+   "id": "19:AIH03"
+  },
+  {
+   "day": 19,
+   "slug": "aih04-local-ai-dev",
+   "title": "Local-First AI Development: Sovereignty, Silicon, and the Private Dev Loop",
+   "code": "AIH04",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Brian A. Randell"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih04-local-ai-dev.aspx",
+   "id": "19:AIH04"
+  },
+  {
+   "day": 19,
+   "slug": "eah02-agentic-ai-integration",
+   "title": "Agentic AI Integration Architectures That Actually Ship",
+   "code": "EAH02",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Don Shin"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/eah02-agentic-ai-integration.aspx",
+   "id": "19:EAH02"
+  },
+  {
+   "day": 19,
+   "slug": "crh03-from-chaos-to-control",
+   "title": "From Chaos to Control: Mastering the Joiner-Mover-Leaver Lifecycle with Entra ID",
+   "code": "CRH03",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Markus Lintuala"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh03-from-chaos-to-control.aspx",
+   "id": "19:CRH03"
+  },
+  {
+   "day": 19,
+   "slug": "crh04-hardening-ci-cd-pipelines",
+   "title": "Hardening CI/CD Pipelines Against Supply-Chain Attacks",
+   "code": "CRH04",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Guillermo Fisher"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh04-hardening-ci-cd-pipelines.aspx",
+   "id": "19:CRH04"
+  },
+  {
+   "day": 19,
+   "slug": "vsl-panel-careers-in-the-age-of-ai",
+   "title": "Visual Studio Live! Panel Discussion: Careers in the Age of AI - Rewriting Roles, Rethinking Hiring, and Retaining What Matters",
+   "code": "",
+   "start": 660,
+   "end": 720,
+   "speakers": [
+    "Robert Bogue",
+    "Marcel de Vries",
+    "Amber Vanderburg",
+    "Angela Dugan"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsl-panel-careers-in-the-age-of-ai.aspx",
+   "id": "19:vsl-panel-careers-in-the-age-of-ai"
+  },
+  {
+   "day": 19,
+   "slug": "dpl-panel",
+   "title": "Data Platform Live! Panel Discussion: AI Is Coming for the Data Team: Which Roles Change First?",
+   "code": "",
+   "start": 660,
+   "end": 720,
+   "speakers": [
+    "Bradley Ball",
+    "Ginger Grant",
+    "Buck Woody",
+    "Thomas LaRock"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dpl-panel.aspx",
+   "id": "19:dpl-panel"
+  },
+  {
+   "day": 19,
+   "slug": "tm-panel-will-ai-take-my-job",
+   "title": "TechMentor Panel Discussion: Will AI Take My Job?",
+   "code": "",
+   "start": 660,
+   "end": 720,
+   "speakers": [
+    "Karinne Bessette",
+    "Émile Cabot",
+    "John O'Neill, Sr.",
+    "Dave Kawula"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tm-panel-will-ai-take-my-job.aspx",
+   "id": "19:tm-panel-will-ai-take-my-job"
+  },
+  {
+   "day": 19,
+   "slug": "ail-panel",
+   "title": "Artificial Intelligence Live! Panel Discussion: Governance for Agentic AI",
+   "code": "",
+   "start": 660,
+   "end": 720,
+   "speakers": [
+    "Veronika Kolesnikova",
+    "Ken Muse",
+    "Carey Payette",
+    "Andrew Brust"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/ail-panel.aspx",
+   "id": "19:ail-panel"
+  },
+  {
+   "day": 19,
+   "slug": "aiea-panel",
+   "title": "AI Enterprise Architecture Live! Panel Discussion: From Pilots to Platforms - The Architecture Decisions That Make AI Work",
+   "code": "",
+   "start": 660,
+   "end": 720,
+   "speakers": [
+    "Tony Champion",
+    "Jocelynn Hartwig",
+    "Samantha St-Louis",
+    "Sarah Wimberley",
+    "Rockford Lhotka"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aiea-panel.aspx",
+   "id": "19:aiea-panel"
+  },
+  {
+   "day": 19,
+   "slug": "cyber-panel-ai-security-arms-race",
+   "title": "Cybersecurity & Ransomware Live! Panel Discussion: The AI Security Arms Race: Attackers, Defenders, and the Supply Chain",
+   "code": "",
+   "start": 660,
+   "end": 720,
+   "speakers": [
+    "Guillermo Fisher",
+    "Myron Helgering",
+    "Stephen L. Rose",
+    "Tatu Seppälä",
+    "Sami Laiho"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/cyber-panel-ai-security-arms-race.aspx",
+   "id": "19:cyber-panel-ai-security-arms-race"
+  },
+  {
+   "day": 19,
+   "slug": "lunch",
+   "title": "Live! 360 DJ Lunch",
+   "code": "",
+   "start": 720,
+   "end": 780,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/lunch.aspx",
+   "id": "19:lunch"
+  },
+  {
+   "day": 19,
+   "slug": "wit-lunch",
+   "title": "Women in Tech Networking Lunch",
+   "code": "",
+   "start": 720,
+   "end": 780,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/wit-lunch.aspx",
+   "id": "19:wit-lunch"
+  },
+  {
+   "day": 19,
+   "slug": "vsh09-azure-auth",
+   "title": "Everything You Wanted to Know About Azure Auth (But Were Too Afraid to Ask Support About)",
+   "code": "VSH09",
+   "start": 780,
+   "end": 855,
+   "speakers": [
+    "Chris Klug"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh09-azure-auth.aspx",
+   "id": "19:VSH09"
+  },
+  {
+   "day": 19,
+   "slug": "vsh10-elevate-your-eq",
+   "title": "Elevate Your EQ: Practical Skills to Strengthen Relationships, Regulation, and Leadership Impact",
+   "code": "VSH10",
+   "start": 780,
+   "end": 855,
+   "speakers": [
+    "Amber Vanderburg"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh10-elevate-your-eq.aspx",
+   "id": "19:VSH10"
+  },
+  {
+   "day": 19,
+   "slug": "vsh11-agentic-devops",
+   "title": "Agentic DevOps: How I Use Claude Code and Azure DevOps to Ship Code While I Sleep",
+   "code": "VSH11",
+   "start": 780,
+   "end": 855,
+   "speakers": [
+    "Mark Perry"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh11-agentic-devops.aspx",
+   "id": "19:VSH11"
+  },
+  {
+   "day": 19,
+   "slug": "vsh12-practical-zero-trust-apis",
+   "title": "Building Practical Zero Trust APIs with .NET 10 and Azure",
+   "code": "VSH12",
+   "start": 780,
+   "end": 855,
+   "speakers": [
+    "Roy Cornelissen"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh12-practical-zero-trust-apis.aspx",
+   "id": "19:VSH12"
+  },
+  {
+   "day": 19,
+   "slug": "dph05-fabric-intelligence",
+   "title": "Fabric Real‑Time Intelligence: What, Why, and How It Helps with AI",
+   "code": "DPH05",
+   "start": 780,
+   "end": 855,
+   "speakers": [
+    "Andrew Brust"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph05-fabric-intelligence.aspx",
+   "id": "19:DPH05"
+  },
+  {
+   "day": 19,
+   "slug": "dph06-sql-server-performance-monitoring",
+   "title": "SQL Server Performance Monitoring: A Deep Dive with Tips and Tricks",
+   "code": "DPH06",
+   "start": 780,
+   "end": 855,
+   "speakers": [
+    "David Pless"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph06-sql-server-performance-monitoring.aspx",
+   "id": "19:DPH06"
+  },
+  {
+   "day": 19,
+   "slug": "tmh07-buildabot-workshop",
+   "title": "Build-a-Bot Workshop: Unleash Your Own Autonomous Agent with Microsoft Copilot",
+   "code": "TMH07",
+   "start": 780,
+   "end": 855,
+   "speakers": [
+    "Alex de Jong"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh07-buildabot-workshop.aspx",
+   "id": "19:TMH07"
+  },
+  {
+   "day": 19,
+   "slug": "tmh08-ms-graph-api",
+   "title": "MS Graph API: Where “Just Add Permissions” Meets RBAC Reality",
+   "code": "TMH08",
+   "start": 780,
+   "end": 855,
+   "speakers": [
+    "Mike O'Neill"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh08-ms-graph-api.aspx",
+   "id": "19:TMH08"
+  },
+  {
+   "day": 19,
+   "slug": "tmh09-decade-ransomware",
+   "title": "A Decade of Ransomware",
+   "code": "TMH09",
+   "start": 780,
+   "end": 855,
+   "speakers": [
+    "Maarten Goet"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh09-decade-ransomware.aspx",
+   "id": "19:TMH09"
+  },
+  {
+   "day": 19,
+   "slug": "aih05-multimodal-ai-solutions",
+   "title": "Building Fast and Useful Multimodal AI Solutions: A Visual Document Helper from Idea to Product",
+   "code": "AIH05",
+   "start": 780,
+   "end": 855,
+   "speakers": [
+    "Veronika Kolesnikova"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih05-multimodal-ai-solutions.aspx",
+   "id": "19:AIH05"
+  },
+  {
+   "day": 19,
+   "slug": "aih06-technology-disrupts",
+   "title": "The Silent Question: What If Technology Disrupts My Role?",
+   "code": "AIH06",
+   "start": 780,
+   "end": 855,
+   "speakers": [
+    "René van Osnabrugge"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih06-technology-disrupts.aspx",
+   "id": "19:AIH06"
+  },
+  {
+   "day": 19,
+   "slug": "eah03-architecting-azure",
+   "title": "Architecting AI-Ready Enterprises on Azure",
+   "code": "EAH03",
+   "start": 780,
+   "end": 855,
+   "speakers": [
+    "Tony Champion"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/eah03-architecting-azure.aspx",
+   "id": "19:EAH03"
+  },
+  {
+   "day": 19,
+   "slug": "crh05-copilot",
+   "title": "Copilot- A Guide to Hacking, Managing, Securing Your Data",
+   "code": "CRH05",
+   "start": 780,
+   "end": 855,
+   "speakers": [
+    "Stephen L. Rose"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh05-copilot.aspx",
+   "id": "19:CRH05"
+  },
+  {
+   "day": 19,
+   "slug": "crh06-security-controls",
+   "title": "Practical Security Controls Developers Won’t Fight",
+   "code": "CRH06",
+   "start": 780,
+   "end": 855,
+   "speakers": [
+    "Guillermo Fisher"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh06-security-controls.aspx",
+   "id": "19:CRH06"
+  },
+  {
+   "day": 19,
+   "slug": "vsh13-database-as-code",
+   "title": "Database-as-Code: Beyond the ORM",
+   "code": "VSH13",
+   "start": 870,
+   "end": 945,
+   "speakers": [
+    "Jerry Nixon"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh13-database-as-code.aspx",
+   "id": "19:VSH13"
+  },
+  {
+   "day": 19,
+   "slug": "vsh14-asp-net-core-services",
+   "title": "Versioning and Documenting ASP.NET Core Services",
+   "code": "VSH14",
+   "start": 870,
+   "end": 945,
+   "speakers": [
+    "Philip Japikse"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh14-asp-net-core-services.aspx",
+   "id": "19:VSH14"
+  },
+  {
+   "day": 19,
+   "slug": "vsh15-business-problems-to-ai-success",
+   "title": "From Business Problems to AI Success: Closing the Gap Between Promise and Reality",
+   "code": "VSH15",
+   "start": 870,
+   "end": 945,
+   "speakers": [
+    "Robert Bogue"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh15-business-problems-to-ai-success.aspx",
+   "id": "19:VSH15"
+  },
+  {
+   "day": 19,
+   "slug": "vsh16-beyond-the-dom",
+   "title": "Beyond the DOM: Auto-Generating AI Skills from Hidden APIs",
+   "code": "VSH16",
+   "start": 870,
+   "end": 945,
+   "speakers": [
+    "Mark Michaelis"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh16-beyond-the-dom.aspx",
+   "id": "19:VSH16"
+  },
+  {
+   "day": 19,
+   "slug": "dph07-tsql-notebooks",
+   "title": "T‑SQL Notebooks in Microsoft Fabric",
+   "code": "DPH07",
+   "start": 870,
+   "end": 945,
+   "speakers": [
+    "Ginger Grant"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph07-tsql-notebooks.aspx",
+   "id": "19:DPH07"
+  },
+  {
+   "day": 19,
+   "slug": "dph08-sql-server-2025",
+   "title": "SQL Server 2025 in the Real World: New Features, Real Tradeoffs",
+   "code": "DPH08",
+   "start": 870,
+   "end": 945,
+   "speakers": [
+    "Thomas LaRock"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph08-sql-server-2025.aspx",
+   "id": "19:DPH08"
+  },
+  {
+   "day": 19,
+   "slug": "tmh10-create-copilot-agents",
+   "title": "No Code, Big Impact: Create Copilot Agents in Minutes (For non-devs!)",
+   "code": "TMH10",
+   "start": 870,
+   "end": 945,
+   "speakers": [
+    "Stephen L. Rose"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh10-create-copilot-agents.aspx",
+   "id": "19:TMH10"
+  },
+  {
+   "day": 19,
+   "slug": "tmh11-clarity-in-the-chaos",
+   "title": "Clarity in the Chaos: Managing Type 2 Diabetes, Career Stress, and Life—with AI as My Copilot",
+   "code": "TMH11",
+   "start": 870,
+   "end": 945,
+   "speakers": [
+    "Daniel Taylor"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh11-clarity-in-the-chaos.aspx",
+   "id": "19:TMH11"
+  },
+  {
+   "day": 19,
+   "slug": "tmh12-prompts-to-agents",
+   "title": "From Prompts to Agents: Unlocking the Full Power of Security Copilot",
+   "code": "TMH12",
+   "start": 870,
+   "end": 945,
+   "speakers": [
+    "Bi Yue Xu"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh12-prompts-to-agents.aspx",
+   "id": "19:TMH12"
+  },
+  {
+   "day": 19,
+   "slug": "aih07-ai-on-azure",
+   "title": "Designing AI Systems for a Global Audience on Azure",
+   "code": "AIH07",
+   "start": 870,
+   "end": 945,
+   "speakers": [
+    "Carey Payette"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih07-ai-on-azure.aspx",
+   "id": "19:AIH07"
+  },
+  {
+   "day": 19,
+   "slug": "aih08-spec-kit",
+   "title": "From Vibe Coding to Spec-Driven Development with Spec Kit",
+   "code": "AIH08",
+   "start": 870,
+   "end": 945,
+   "speakers": [
+    "Eric D. Boyd"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih08-spec-kit.aspx",
+   "id": "19:AIH08"
+  },
+  {
+   "day": 19,
+   "slug": "eah04-agentic-design-patterns",
+   "title": "Agentic Design Patterns: When, Why, and How to Use Them",
+   "code": "EAH04",
+   "start": 870,
+   "end": 945,
+   "speakers": [
+    "Jocelynn Hartwig"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/eah04-agentic-design-patterns.aspx",
+   "id": "19:EAH04"
+  },
+  {
+   "day": 19,
+   "slug": "crh07-securing-cloud-native-apps",
+   "title": "Securing Cloud-Native Applications: Secrets, Dependencies, and Trust Boundaries",
+   "code": "CRH07",
+   "start": 870,
+   "end": 945,
+   "speakers": [
+    "Guillermo Fisher"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh07-securing-cloud-native-apps.aspx",
+   "id": "19:CRH07"
+  },
+  {
+   "day": 19,
+   "slug": "crh08-creating-classifiers",
+   "title": "Creating Classifiers from Scratch to Identify Sensitive Data with Microsoft Purview",
+   "code": "CRH08",
+   "start": 870,
+   "end": 945,
+   "speakers": [
+    "Myron Helgering"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh08-creating-classifiers.aspx",
+   "id": "19:CRH08"
+  },
+  {
+   "day": 19,
+   "slug": "wrap-party",
+   "title": "Live! 360 Wrap Party",
+   "code": "",
+   "start": 960,
+   "end": 1020,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/wrap-party.aspx",
+   "id": "19:wrap-party"
+  },
+  {
+   "day": 20,
+   "slug": "registration",
+   "title": "Registration • Coffee and Morning Pastries",
+   "code": "",
+   "start": 420,
+   "end": 480,
+   "speakers": [],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/friday/registration.aspx",
+   "id": "20:registration"
+  },
+  {
+   "day": 20,
+   "slug": "vsf01-workshop-web-development",
+   "title": "Workshop: Microsoft Web Development Masterclass",
+   "code": "VSF01",
+   "start": 480,
+   "end": 1020,
+   "speakers": [
+    "Chris Klug"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/friday/vsf01-workshop-web-development.aspx",
+   "id": "20:VSF01"
+  },
+  {
+   "day": 20,
+   "slug": "vsf02-workshop-azure",
+   "title": "Workshop: Secure AI Engineering and DevOps for .NET Developers on Azure",
+   "code": "VSF02",
+   "start": 480,
+   "end": 1020,
+   "speakers": [
+    "Brian A. Randell"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/friday/vsf02-workshop-azure.aspx",
+   "id": "20:VSF02"
+  },
+  {
+   "day": 20,
+   "slug": "dpf01-hol-wksp-postgresql",
+   "title": "Hands-On Workshop: PostgreSQL for the SQL Server Professional",
+   "code": "DPF01",
+   "start": 480,
+   "end": 1020,
+   "speakers": [
+    "David Seis",
+    "Buck Woody"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/friday/dpf01-hol-wksp-postgresql.aspx",
+   "id": "20:DPF01"
+  },
+  {
+   "day": 20,
+   "slug": "tmf01-workshop-building-agents",
+   "title": "Hands-on Workshop: Building Agents with Copilot Studio",
+   "code": "TMF01",
+   "start": 480,
+   "end": 1020,
+   "speakers": [
+    "Dewain Robinson",
+    "Gary Pretty"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/friday/tmf01-workshop-building-agents.aspx",
+   "id": "20:TMF01"
+  },
+  {
+   "day": 20,
+   "slug": "aif01-howksp-mcp-server-dev",
+   "title": "Hands-On Workshop: End-to-End MCP Server Development in .NET: From Local Debugging to Azure",
+   "code": "AIF01",
+   "start": 480,
+   "end": 1020,
+   "speakers": [
+    "Loek Duys",
+    "Alex Thissen"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/friday/aif01-howksp-mcp-server-dev.aspx",
+   "id": "20:AIF01"
+  },
+  {
+   "day": 20,
+   "slug": "eaf01-hol-wrks-microsoft-agent",
+   "title": "Hands-On Workshop: Building Enterprise-Grade AI Agents with the Microsoft Agent",
+   "code": "EAF01",
+   "start": 480,
+   "end": 1020,
+   "speakers": [
+    "Lino Tadros"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/friday/eaf01-hol-wrks-microsoft-agent.aspx",
+   "id": "20:EAF01"
+  },
+  {
+   "day": 20,
+   "slug": "crf01-workshop-entra-id-ecosystem",
+   "title": "Workshop: Level Up to Identity Architect - Mastering the Entra ID Ecosystem",
+   "code": "CRF01",
+   "start": 480,
+   "end": 1020,
+   "speakers": [
+    "Markus Lintuala"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/friday/crf01-workshop-entra-id-ecosystem.aspx",
+   "id": "20:CRF01"
+  }
+ ]
+}
