@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19T17:10Z",
+ "updated": "2026-10-20T11:37Z",
  "sessions": [
   {
    "day": 15,
@@ -1111,14 +1111,16 @@
   },
   {
    "day": 17,
-   "slug": "dpt08-tbd",
-   "title": "To Be Announced",
+   "slug": "dpt08-governance-without-gridlock",
+   "title": "Governance Without the Gridlock: A Lean Data Operating Model for AI-Ready Mid-Sized Companies",
    "code": "DPT08",
    "start": 900,
    "end": 975,
-   "speakers": [],
+   "speakers": [
+    "Buck Woody"
+   ],
    "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt08-tbd.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt08-governance-without-gridlock.aspx",
    "id": "17:DPT08"
   },
   {
@@ -1165,14 +1167,17 @@
   },
   {
    "day": 17,
-   "slug": "ait05-tbd",
-   "title": "To Be Announced",
+   "slug": "ait05-response-from-github-copilot",
+   "title": "What Happens Between Pressing Enter and Getting a Response from GitHub Copilot",
    "code": "AIT05",
    "start": 900,
    "end": 975,
-   "speakers": [],
+   "speakers": [
+    "Ken Muse",
+    "Mickey Gousset"
+   ],
    "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait05-tbd.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait05-response-from-github-copilot.aspx",
    "id": "17:AIT05"
   },
   {
