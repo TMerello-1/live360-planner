@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20T11:37Z",
+ "updated": "2026-10-21T11:50Z",
  "sessions": [
   {
    "day": 15,
@@ -1702,14 +1702,17 @@
   },
   {
    "day": 18,
-   "slug": "vsw08-to-be-announced",
-   "title": "To Be Announced",
+   "slug": "vsw08-ai-from-every-angle",
+   "title": "AI From Every Angle: An Interactive Expert Panel",
    "code": "VSW08",
    "start": 570,
    "end": 645,
-   "speakers": [],
+   "speakers": [
+    "Adam Eldred",
+    "Brandon Bigford"
+   ],
    "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw08-to-be-announced.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw08-ai-from-every-angle.aspx",
    "id": "18:VSW08"
   },
   {
