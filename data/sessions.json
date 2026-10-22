@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T11:50Z",
+ "updated": "2026-10-22T11:53Z",
  "sessions": [
   {
    "day": 15,
@@ -654,7 +654,7 @@
   {
    "day": 17,
    "slug": "am-break",
-   "title": "Networking Break • Visit the EXPO Lounge",
+   "title": "Networking Break • Visit the EXPO Hall",
    "code": "",
    "start": 630,
    "end": 660,
@@ -694,7 +694,7 @@
   {
    "day": 17,
    "slug": "dessert-break",
-   "title": "Dessert Break • Visit the EXPO Lounge",
+   "title": "Dessert Break • Visit the EXPO Hall",
    "code": "",
    "start": 780,
    "end": 825,
@@ -1030,7 +1030,7 @@
   {
    "day": 17,
    "slug": "pm-break",
-   "title": "Networking Break • Visit the EXPO Lounge",
+   "title": "Networking Break • Visit the EXPO Hall",
    "code": "",
    "start": 875,
    "end": 900,
@@ -1327,16 +1327,16 @@
   },
   {
    "day": 17,
-   "slug": "tmt11-new-outlook",
-   "title": "What's New in New Outlook",
+   "slug": "tmt11-securing-ad",
+   "title": "Securing Active Directory: Examples from the Field",
    "code": "TMT11",
    "start": 990,
    "end": 1065,
    "speakers": [
-    "Heather Severino"
+    "Derek Melber"
    ],
    "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt11-new-outlook.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt11-securing-ad.aspx",
    "id": "17:TMT11"
   },
   {
@@ -1355,16 +1355,16 @@
   },
   {
    "day": 17,
-   "slug": "tmt13-securing-ad",
-   "title": "Securing Active Directory: Examples from the Field",
+   "slug": "tmt13-new-outlook",
+   "title": "What's New in New Outlook",
    "code": "TMT13",
    "start": 990,
    "end": 1065,
    "speakers": [
-    "Derek Melber"
+    "Heather Severino"
    ],
    "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt13-securing-ad.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt13-new-outlook.aspx",
    "id": "17:TMT13"
   },
   {
@@ -1746,30 +1746,30 @@
   },
   {
    "day": 18,
-   "slug": "tmw04-powershell-scripting",
-   "title": "The Human Side of PowerShell Scripting",
-   "code": "TMW04",
-   "start": 570,
-   "end": 645,
-   "speakers": [
-    "Jeffery Hicks"
-   ],
-   "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw04-powershell-scripting.aspx",
-   "id": "18:TMW04"
-  },
-  {
-   "day": 18,
-   "slug": "tmw05-ad-basics",
+   "slug": "tmw04-ad-basics",
    "title": "Active Directory Basics, But Not the Easy Stuff!",
-   "code": "TMW05",
+   "code": "TMW04",
    "start": 570,
    "end": 645,
    "speakers": [
     "Derek Melber"
    ],
    "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw05-ad-basics.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw04-ad-basics.aspx",
+   "id": "18:TMW04"
+  },
+  {
+   "day": 18,
+   "slug": "tmw05-powershell-scripting",
+   "title": "The Human Side of PowerShell Scripting",
+   "code": "TMW05",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Jeffery Hicks"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw05-powershell-scripting.aspx",
    "id": "18:TMW05"
   },
   {
@@ -2119,16 +2119,16 @@
   },
   {
    "day": 18,
-   "slug": "vsw14-creating-an-observable-cloud-platform",
-   "title": "Creating an Observable Cloud Platform and Application Landscape with Azure",
+   "slug": "vsw14-sql-features",
+   "title": "Top 10 SQL Features for Developers you Might Have Missed",
    "code": "VSW14",
    "start": 975,
    "end": 1050,
    "speakers": [
-    "Alex Thissen"
+    "Jerry Nixon"
    ],
    "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw14-creating-an-observable-cloud-platform.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw14-sql-features.aspx",
    "id": "18:VSW14"
   },
   {
@@ -2147,16 +2147,16 @@
   },
   {
    "day": 18,
-   "slug": "vsw16-sql-features",
-   "title": "Top 10 SQL Features for Developers you Might Have Missed",
+   "slug": "vsw16-creating-an-observable-cloud-platform",
+   "title": "Creating an Observable Cloud Platform and Application Landscape with Azure",
    "code": "VSW16",
    "start": 975,
    "end": 1050,
    "speakers": [
-    "Jerry Nixon"
+    "Alex Thissen"
    ],
    "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw16-sql-features.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw16-creating-an-observable-cloud-platform.aspx",
    "id": "18:VSW16"
   },
   {
@@ -2189,16 +2189,16 @@
   },
   {
    "day": 18,
-   "slug": "tmw10-powershell-7",
-   "title": "Migrating to PowerShell 7",
+   "slug": "tmw10-project-perception",
+   "title": "When Attacks Move at Machine Speed: Project Perception and Microsoft’s New Security Stack",
    "code": "TMW10",
    "start": 975,
    "end": 1050,
    "speakers": [
-    "Michael Niehaus"
+    "Maarten Goet"
    ],
    "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw10-powershell-7.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw10-project-perception.aspx",
    "id": "18:TMW10"
   },
   {
@@ -2217,16 +2217,16 @@
   },
   {
    "day": 18,
-   "slug": "tmw12-project-perception",
-   "title": "When Attacks Move at Machine Speed: Project Perception and Microsoft’s New Security Stack",
+   "slug": "tmw12-powershell-7",
+   "title": "Migrating to PowerShell 7",
    "code": "TMW12",
    "start": 975,
    "end": 1050,
    "speakers": [
-    "Maarten Goet"
+    "Michael Niehaus"
    ],
    "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw12-project-perception.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw12-powershell-7.aspx",
    "id": "18:TMW12"
   },
   {
