@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-22T11:53Z",
+ "updated": "2026-10-23T11:40Z",
  "sessions": [
   {
    "day": 15,
@@ -418,7 +418,7 @@
    "start": 480,
    "end": 540,
    "speakers": [
-    "Arthi Ramasubramanian Iyer"
+    "Bradley Schacht"
    ],
    "room": "",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpl-keynote.aspx",
@@ -665,6 +665,20 @@
   },
   {
    "day": 17,
+   "slug": "threatlocker-demo",
+   "title": "ThreatLocker Demo Theater: Zero Trust Controls at the Endpoint",
+   "code": "",
+   "start": 635,
+   "end": 650,
+   "speakers": [
+    "Tyler Tomlinson"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/threatlocker-demo.aspx",
+   "id": "17:threatlocker-demo"
+  },
+  {
+   "day": 17,
    "slug": "l360keynote-agents-ai",
    "title": "Live! 360 Keynotes: Anybody Can Use Agents & AI to Build Anything & The Last Mile: From Idea to Usable App",
    "code": "",
@@ -702,6 +716,34 @@
    "room": "",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dessert-break.aspx",
    "id": "17:dessert-break"
+  },
+  {
+   "day": 17,
+   "slug": "progress-demo",
+   "title": "Progress Demo Theater - From Livestream Chaos to Production Ready AI: RAG + Observability with CHARLIE",
+   "code": "",
+   "start": 780,
+   "end": 795,
+   "speakers": [
+    "Jeffrey T. Fritz"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/progress-demo.aspx",
+   "id": "17:progress-demo"
+  },
+  {
+   "day": 17,
+   "slug": "rubrik-demo",
+   "title": "Rubrik Demo Theater -Operational Trust in AI — Control, Integrity, Recovery at Machine Speed",
+   "code": "",
+   "start": 800,
+   "end": 815,
+   "speakers": [
+    "Ben Welton"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/rubrik-demo.aspx",
+   "id": "17:rubrik-demo"
   },
   {
    "day": 17,
@@ -1870,6 +1912,20 @@
   },
   {
    "day": 18,
+   "slug": "exclaimer-demo",
+   "title": "Exclaimer Demo Theater - See Centralized Email Signature Management in Action",
+   "code": "",
+   "start": 650,
+   "end": 665,
+   "speakers": [
+    "Jay Palermo"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/exclaimer-demo.aspx",
+   "id": "18:exclaimer-demo"
+  },
+  {
+   "day": 18,
    "slug": "l360-keynote-ai-on-air",
    "title": "Live! 360 Keynote: When AI Goes On Air",
    "code": "",
@@ -1893,6 +1949,20 @@
    "room": "",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/lunch.aspx",
    "id": "18:lunch"
+  },
+  {
+   "day": 18,
+   "slug": "jetbrains-demo",
+   "title": "JetBrains Demo Theater: Your AI Agent Says It’s Done. Now What?",
+   "code": "",
+   "start": 815,
+   "end": 830,
+   "speakers": [
+    "Sayed Ibrahim Ibrahim"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/jetbrains-demo.aspx",
+   "id": "18:jetbrains-demo"
   },
   {
    "day": 18,
@@ -2119,8 +2189,8 @@
   },
   {
    "day": 18,
-   "slug": "vsw14-sql-features",
-   "title": "Top 10 SQL Features for Developers you Might Have Missed",
+   "slug": "vsw14-database-patterns",
+   "title": "A Developer's Guide to Database Patterns",
    "code": "VSW14",
    "start": 975,
    "end": 1050,
@@ -2128,7 +2198,7 @@
     "Jerry Nixon"
    ],
    "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw14-sql-features.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw14-database-patterns.aspx",
    "id": "18:VSW14"
   },
   {
@@ -2410,7 +2480,7 @@
   {
    "day": 19,
    "slug": "tmh01-mastering-microsoft-copilot",
-   "title": "Mastering Microsoft CoPilot: Enhancing Productivity and Collaboration for IT Pros",
+   "title": "Mastering Microsoft Copilot: Enhancing Productivity and Collaboration for IT Pros",
    "code": "TMH01",
    "start": 480,
    "end": 555,
@@ -2793,7 +2863,6 @@
    "end": 720,
    "speakers": [
     "Tony Champion",
-    "Jocelynn Hartwig",
     "Samantha St-Louis",
     "Sarah Wimberley",
     "Rockford Lhotka"
@@ -3042,8 +3111,8 @@
   },
   {
    "day": 19,
-   "slug": "vsh13-database-as-code",
-   "title": "Database-as-Code: Beyond the ORM",
+   "slug": "vsh13-sql-nosql",
+   "title": "SQL ❤️ NoSQL Databases",
    "code": "VSH13",
    "start": 870,
    "end": 945,
@@ -3051,7 +3120,7 @@
     "Jerry Nixon"
    ],
    "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh13-database-as-code.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh13-sql-nosql.aspx",
    "id": "19:VSH13"
   },
   {
@@ -3201,9 +3270,7 @@
    "code": "EAH04",
    "start": 870,
    "end": 945,
-   "speakers": [
-    "Jocelynn Hartwig"
-   ],
+   "speakers": [],
    "room": "",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/eah04-agentic-design-patterns.aspx",
    "id": "19:EAH04"
