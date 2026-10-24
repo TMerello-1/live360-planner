@@ -698,7 +698,7 @@ const I18N = {
     coveredBy: x => "Belegt durch " + x, free: "Noch frei", choices: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " zur Auswahl", look: "Ansehen →", onlyOpt: "Einzige Option",
     dayStats: (p, f) => `${p} gemerkt · ${f} frei`,
     nItems: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte"), ends: x => "Ende " + x,
-    pickedHere: "Gemerkt in diesem Slot:", topics: "Themen", decidedFor: x => "Entschieden für " + x + " (Muss ich sehen)", chosenOver: x => "Gewählt statt " + x, onlyFree: "Nur freie Slots", allFilled: "Alle Slots an diesem Tag sind belegt.", onlyMust: "Nur „Muss ich sehen“", mustTag: "Muss ich sehen", mustSet: "Muss ich sehen", mustUndo: "Nicht mehr „Muss ich sehen“", mustOn: "Als „Muss ich sehen“ markiert", mustOff: "Markierung entfernt", moreN: n => "+" + n + " weitere", fewer: "weniger", showNope: "„Kein Interesse“ zeigen", nopeTag: "Kein Interesse", nopeSet: "Kein Interesse", nopeUndo: "Doch interessant", nopeUndoShort: "↺ Doch interessant", nopeOn: "Als „Kein Interesse“ markiert und ausgeblendet", nopeOff: "Wieder sichtbar", nopeHidden: n => n + " mit „Kein Interesse“ ausgeblendet · zeigen", noneLeft: "Alle Optionen mit „Kein Interesse“ markiert", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
+    pickedHere: "Gemerkt in diesem Slot:", topics: "Themen", noHitsDay: d => "Keine Treffer am " + d, decidedFor: x => "Entschieden für " + x + " (Muss ich sehen)", chosenOver: x => "Gewählt statt " + x, onlyFree: "Nur freie Slots", allFilled: "Alle Slots an diesem Tag sind belegt.", onlyMust: "Nur „Muss ich sehen“", mustTag: "Muss ich sehen", mustSet: "Muss ich sehen", mustUndo: "Nicht mehr „Muss ich sehen“", mustOn: "Als „Muss ich sehen“ markiert", mustOff: "Markierung entfernt", moreN: n => "+" + n + " weitere", fewer: "weniger", showNope: "„Kein Interesse“ zeigen", nopeTag: "Kein Interesse", nopeSet: "Kein Interesse", nopeUndo: "Doch interessant", nopeUndoShort: "↺ Doch interessant", nopeOn: "Als „Kein Interesse“ markiert und ausgeblendet", nopeOff: "Wieder sichtbar", nopeHidden: n => n + " mit „Kein Interesse“ ausgeblendet · zeigen", noneLeft: "Alle Optionen mit „Kein Interesse“ markiert", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
     about: "Worum es geht", learn: "Du lernst", noDescEvent: "Für diesen Programmpunkt gibt es keine Beschreibung.", noDesc: "Zu dieser Session gibt es noch keine Beschreibung.",
     close: "Schließen", official: "Offizielle Seite öffnen ↗", summaryNote: "Kurzfassung der offiziellen Beschreibung (englisch), Stand 19.10.2026.",
     nothingYet: "Noch nichts gemerkt.", cleared: "Plan geleert", selectCopy: "Text markiert, jetzt kopieren", copied: "Plan kopiert", overlapMark: "⚠ Überschneidung",
@@ -734,7 +734,7 @@ const I18N = {
     coveredBy: x => "Taken by " + x, free: "Still free", choices: n => n + (n === 1 ? " item" : " items") + " to choose from", look: "View →", onlyOpt: "Only option",
     dayStats: (p, f) => `${p} saved · ${f} free`,
     nItems: n => n + (n === 1 ? " item" : " items"), ends: x => "ends " + x,
-    pickedHere: "Saved in this slot:", topics: "Topics", decidedFor: x => "Decided for " + x + " (must see)", chosenOver: x => "Chosen over " + x, onlyFree: "Free slots only", allFilled: "Every slot on this day is filled.", onlyMust: "Must see only", mustTag: "Must see", mustSet: "Must see", mustUndo: "Remove must see", mustOn: "Marked as must see", mustOff: "Must see removed", moreN: n => "+" + n + " more", fewer: "fewer", showNope: "Show not interested", nopeTag: "Not interested", nopeSet: "Not interested", nopeUndo: "Interested again", nopeUndoShort: "↺ Interested again", nopeOn: "Marked as not interested and hidden", nopeOff: "Visible again", nopeHidden: n => n + " not interested hidden · show", noneLeft: "All options marked not interested", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
+    pickedHere: "Saved in this slot:", topics: "Topics", noHitsDay: d => "No matches on " + d, decidedFor: x => "Decided for " + x + " (must see)", chosenOver: x => "Chosen over " + x, onlyFree: "Free slots only", allFilled: "Every slot on this day is filled.", onlyMust: "Must see only", mustTag: "Must see", mustSet: "Must see", mustUndo: "Remove must see", mustOn: "Marked as must see", mustOff: "Must see removed", moreN: n => "+" + n + " more", fewer: "fewer", showNope: "Show not interested", nopeTag: "Not interested", nopeSet: "Not interested", nopeUndo: "Interested again", nopeUndoShort: "↺ Interested again", nopeOn: "Marked as not interested and hidden", nopeOff: "Visible again", nopeHidden: n => n + " not interested hidden · show", noneLeft: "All options marked not interested", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
     about: "What it's about", learn: "You'll learn", noDescEvent: "There is no description for this item.", noDesc: "There is no description for this session yet.",
     close: "Close", official: "Open official page ↗", summaryNote: "Summary of the official description, as of Oct 19, 2026.",
     nothingYet: "Nothing saved yet.", cleared: "Plan cleared", selectCopy: "Text selected, copy it now", copied: "Plan copied", overlapMark: "⚠ overlap",
@@ -944,7 +944,7 @@ function renderProgram() {
   let lastDay = null;
   $("#list").innerHTML = [...groups.entries()].sort((a, b) => a[0] - b[0]).map(([k, items]) => {
     const day = Math.floor(k / 10000), start = k % 10000;
-    const head = global && day !== lastDay ? `<h2 class="day-head">${DAY_NAME[day]}, ${t("dateLong", day)}</h2>` : "";
+    const head = global && day !== lastDay ? `<h2 class="day-head" data-dayhead="${day}">${DAY_NAME[day]}, ${t("dateLong", day)}</h2>` : "";
     lastDay = day;
     items.sort((a, b) => must.has(b.id) - must.has(a.id) || order[a.kind] - order[b.kind] || trackOrder.indexOf(a.track) - trackOrder.indexOf(b.track) || a.code.localeCompare(b.code));
     const ends = [...new Set(items.map(i => i.end))];
@@ -1136,7 +1136,16 @@ document.addEventListener("click", e => {
     Object.assign(state, { view: "cmp", cmpDay: d, cmpStart: st, cmpIds: null }); saveUI(); render(); window.scrollTo(0, 0); return;
   }
   const day = e.target.closest("[data-day]");
-  if (day) { state.day = +day.dataset.day; state.slot = ""; saveUI(); render(); return; }
+  if (day) {
+    state.day = +day.dataset.day; state.slot = ""; saveUI(); render();
+    // Bei aktiver Suche (über alle Tage) zum Tag in den Treffern springen
+    if (state.q.trim()) {
+      const h = $(`#list .day-head[data-dayhead="${state.day}"]`);
+      if (h) window.scrollTo(0, window.scrollY + h.getBoundingClientRect().top - $("header.top").getBoundingClientRect().bottom - 8);
+      else toast(t("noHitsDay", DAY_NAME[state.day]));
+    } else window.scrollTo(0, 0);
+    return;
+  }
   const tr = e.target.closest("[data-track]");
   if (tr) { const k = tr.dataset.track; state.tracks = state.tracks.includes(k) ? state.tracks.filter(x => x !== k) : [...state.tracks, k]; saveUI(); renderTrackChips(); render(); return; }
   const go = e.target.closest("[data-go]");
