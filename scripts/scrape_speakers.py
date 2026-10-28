@@ -18,7 +18,16 @@ LIST_URL = "https://live360events.com/events/orlando-2026/speakers/speaker-list.
 OUT = Path(__file__).resolve().parent.parent / "data" / "speakers.json"
 ID_RE = re.compile(r"SpeakerId=(?:%7B|\{)([0-9A-Fa-f-]{36})(?:%7D|\})", re.I)
 PHOTO_RE = re.compile(r"/-/media/|speakerphoto|speaker-photos", re.I)
+SESSION_RE = re.compile(r"^[A-Z]{2,6}\d{2}$|Live!|Demo Theater|Panel Discussion|Keynote", re.I)
 NOISE_RE = re.compile(r"^(view|more|bio|sessions?|read more|speaker|profile|details|close|×)\b.*$", re.I)
+
+
+def absolute(src):
+    """Sitecore-Medien liegen unter /-/media/ an der Wurzel; Leerzeichen in Links kodieren."""
+    url = urljoin(LIST_URL, src)
+    if "/-/media/" in url:
+        url = urljoin(LIST_URL, "/-/media/" + url.split("/-/media/", 1)[1])
+    return url.replace(" ", "%20")
 
 
 def fetch(url):
@@ -96,13 +105,17 @@ def main():
         texts = list(dict.fromkeys(it["link_text"] + it["text"]))
         if not texts:
             continue
-        name, rest = texts[0], texts[1:]
+        name, rest = texts[0], []
+        for t in texts[1:]:  # Titel/Firma stehen vor den Session-Codes und -Titeln
+            if SESSION_RE.search(t):
+                break
+            rest.append(t)
         speakers.append({
             "id": sid,
             "name": name,
-            "title": " · ".join(rest[:3]),
-            "photo": urljoin(LIST_URL, it["photo"]) if it["photo"] else None,
-            "url": urljoin(LIST_URL, it["href"]),
+            "title": " · ".join(rest[:4]),
+            "photo": absolute(it["photo"]) if it["photo"] else None,
+            "url": absolute(it["href"]),
         })
     print(f"{len(speakers)} speakers")
     for s in speakers[:5] + speakers[-3:]:
