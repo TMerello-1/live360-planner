@@ -17,6 +17,8 @@
   };
   label();
   window.addEventListener("planner-lang", label);
+  const cachedSpk = store.get("speakers", null);
+  if (cachedSpk) { applySpeakers(cachedSpk); render(); }
 
   const total = ch => Object.values(ch).reduce((a, l) => a + l.length, 0);
 
@@ -48,6 +50,11 @@
         store.set("data", data);
         render();
       } else if (r.status !== 404) throw new Error(r.status);
+      // Sprecherliste (Titel, Foto, Profil-Link) gleich mit aktualisieren
+      try {
+        const rs = await fetch("data/speakers.json?t=" + Date.now(), { cache: "no-store" });
+        if (rs.ok) { const sp = await rs.json(); applySpeakers(sp); store.set("speakers", sp); render(); }
+      } catch {}
       label();
       if (!silent) showResult(ch);
       else if (total(ch)) {
