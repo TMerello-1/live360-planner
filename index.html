@@ -859,6 +859,17 @@ function clash(a, b) {
 }
 function overlapGroup(s) { return [s, ...[...picked].map(id => BY_ID[id]).filter(o => o.id !== s.id && overlaps(o, s))]; }
 function decidedBy(s) { return must.has(s.id) ? [] : [...picked].map(id => BY_ID[id]).filter(o => o.id !== s.id && must.has(o.id) && overlaps(o, s)); }
+// Stunden Inhalt: Zeit, die man wirklich in Sessions sitzt. Pausen/Events, entfallene und durch "Muss ich sehen"
+// entschiedene Sessions zählen nicht; Überschneidungen zählen nur einmal (Vereinigung der Zeiten je Tag).
+function contentMinutes(list) {
+  const iv = list.filter(s => s.kind !== "Event" && !s.removed && !decidedBy(s).length)
+    .map(s => [s.day * 10000 + s.start, s.day * 10000 + s.end]).sort((a, b) => a[0] - b[0]);
+  let total = 0, cs = null, ce = null;
+  for (const [st, en] of iv) {
+    if (ce == null || st > ce) { if (ce != null) total += ce - cs; cs = st; ce = en; } else ce = Math.max(ce, en);
+  }
+  return ce == null ? total : total + ce - cs;
+}
 function conflictsOf(s) { const out = []; for (const id of picked) { const o = BY_ID[id]; if (o.id !== s.id && clash(o, s)) out.push(o); } return out; }
 function conflictPairs(day) {
   const list = [...picked].map(id => BY_ID[id]).filter(s => day == null || s.day === day).sort((a, b) => a.start - b.start);
@@ -1021,7 +1032,7 @@ function renderProgram() {
 function renderPlan() {
   const all = [...picked].map(id => BY_ID[id]);
   const pairs = conflictPairs(null);
-  const minutes = all.filter(s => s.kind !== "Event").reduce((a, s) => a + s.end - s.start, 0);
+  const minutes = contentMinutes(all);
   $("#stats").innerHTML = `<span><b>${all.length}</b>${t("statPicked")}</span><span><b>${(minutes / 60).toLocaleString(t("decimal"), { maximumFractionDigits: 1 })}</b>${t("statHours")}</span><span class="${pairs.length ? "bad" : ""}"><b>${pairs.length}</b>${t("statOverlaps", pairs.length)}</span>`;
   if (!all.length) {
     $("#plan-list").innerHTML = `<div class="empty"><h2>${t("emptyPlan")}</h2><p>${t("emptyPlanText")}</p><button class="btn primary" data-go="prog">${t("toProgram")}</button></div>`;
