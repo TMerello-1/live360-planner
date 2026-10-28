@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T11:40Z",
+ "updated": "2026-10-28T06:43Z",
  "sessions": [
   {
    "day": 15,
@@ -40,20 +40,6 @@
    "room": "",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/vshol01-modern-apis.aspx",
    "id": "15:VSHOL01"
-  },
-  {
-   "day": 15,
-   "slug": "tmhol01-hol-pki-from-scratch",
-   "title": "Hands-On Lab: Building Enterprise PKI from Scratch: A Hands-On Lab for IT Pros",
-   "code": "TMHOL01",
-   "start": 540,
-   "end": 1080,
-   "speakers": [
-    "John O'Neill, Sr."
-   ],
-   "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/tmhol01-hol-pki-from-scratch.aspx",
-   "id": "15:TMHOL01"
   },
   {
    "day": 15,
@@ -126,6 +112,20 @@
    "room": "",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/crhol01-hol-incident-response.aspx",
    "id": "15:CRHOL01"
+  },
+  {
+   "day": 15,
+   "slug": "tmhol01-hol-pki-from-scratch",
+   "title": "Hands-On Lab: Building Enterprise PKI from Scratch: A Hands-On Lab for IT Pros",
+   "code": "TMHOL01",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "John O'Neill, Sr."
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/tmhol01-hol-pki-from-scratch.aspx",
+   "id": "15:TMHOL01"
   },
   {
    "day": 15,
