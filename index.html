@@ -116,6 +116,7 @@ main { padding-block: 4px 48px; }
 .room { font-weight: 600; color: var(--fg); }
 .room::before { content: "· "; color: var(--muted); font-weight: 400; }
 .tag.gone { border-color: var(--danger); color: var(--danger); }
+.tag.chg { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 .card.gone h3 { text-decoration: line-through; text-decoration-color: var(--danger); }
 .update-row { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
 .update-row .link-btn { padding: 0; font-size: 0.8rem; font-weight: 600; }
@@ -311,6 +312,7 @@ footer a { color: var(--muted); }
         <label class="chip" style="--c: var(--accent)"><input id="only-picked" type="checkbox"> <span data-i18n="onlyPicked"></span></label>
         <label class="chip" style="--c: var(--accent)"><input id="hide-events" type="checkbox"> <span data-i18n="hideBreaks"></span></label>
         <label class="chip" style="--c: var(--must)"><input id="only-must" type="checkbox"> <span data-i18n="onlyMust"></span><span id="must-count"></span></label>
+        <label class="chip" style="--c: var(--accent)" id="chg-chip" hidden><input id="only-changed" type="checkbox"> <span data-i18n="onlyChanged"></span><span id="chg-count"></span></label>
         <label class="chip" style="--c: var(--accent)"><input id="show-nope" type="checkbox"> <span data-i18n="showNope"></span><span id="nope-count"></span></label>
         <button class="link-btn" id="reset" data-i18n="reset"></button>
       </div>
@@ -724,7 +726,7 @@ const I18N = {
     coveredBy: x => "Belegt durch " + x, free: "Noch frei", choices: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " zur Auswahl", look: "Ansehen →", onlyOpt: "Einzige Option",
     dayStats: (p, f) => `${p} gemerkt · ${f} frei`,
     nItems: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte"), ends: x => "Ende " + x,
-    pickedHere: "Gemerkt in diesem Slot:", topics: "Themen", speakers: "Sprecher", spkSearch: "Sprecher oder Firma suchen …", nSessions: n => n + (n === 1 ? " Session" : " Sessions"), spkSessions: "Sessions auf dieser Konferenz", officialProfile: "Offizielles Profil ↗", noProfile: "Noch kein offizielles Profil gelistet", noHitsDay: d => "Keine Treffer am " + d, decidedFor: x => "Entschieden für " + x + " (Muss ich sehen)", chosenOver: x => "Gewählt statt " + x, onlyFree: "Nur freie Slots", allFilled: "Alle Slots an diesem Tag sind belegt.", onlyMust: "Nur „Muss ich sehen“", mustTag: "Muss ich sehen", mustSet: "Muss ich sehen", mustUndo: "Nicht mehr „Muss ich sehen“", mustOn: "Als „Muss ich sehen“ markiert", mustOff: "Markierung entfernt", moreN: n => "+" + n + " weitere", fewer: "weniger", showNope: "„Kein Interesse“ zeigen", nopeTag: "Kein Interesse", nopeSet: "Kein Interesse", nopeUndo: "Doch interessant", nopeUndoShort: "↺ Doch interessant", nopeOn: "Als „Kein Interesse“ markiert und ausgeblendet", nopeOff: "Wieder sichtbar", nopeHidden: n => n + " mit „Kein Interesse“ ausgeblendet · zeigen", noneLeft: "Alle Optionen mit „Kein Interesse“ markiert", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
+    pickedHere: "Gemerkt in diesem Slot:", topics: "Themen", speakers: "Sprecher", spkSearch: "Sprecher oder Firma suchen …", nSessions: n => n + (n === 1 ? " Session" : " Sessions"), spkSessions: "Sessions auf dieser Konferenz", officialProfile: "Offizielles Profil ↗", noProfile: "Noch kein offizielles Profil gelistet", noHitsDay: d => "Keine Treffer am " + d, decidedFor: x => "Entschieden für " + x + " (Muss ich sehen)", chosenOver: x => "Gewählt statt " + x, onlyFree: "Nur freie Slots", allFilled: "Alle Slots an diesem Tag sind belegt.", onlyMust: "Nur „Muss ich sehen“", onlyChanged: "Geändert", chgNote: n => n + (n === 1 ? " geänderter Programmpunkt" : " geänderte Programmpunkte") + " seit „Gesehen“, alle Tage", chgSeen: "Als gesehen markieren", chgCleared: "Änderungen als gesehen markiert", chgShow: "Geänderte Sessions zeigen", chg_added: "Neu", chg_times: "Neue Zeit", chg_rooms: "Neuer Raum", chg_titles: "Neuer Titel", chg_speakers: "Neue Sprecher", mustTag: "Muss ich sehen", mustSet: "Muss ich sehen", mustUndo: "Nicht mehr „Muss ich sehen“", mustOn: "Als „Muss ich sehen“ markiert", mustOff: "Markierung entfernt", moreN: n => "+" + n + " weitere", fewer: "weniger", showNope: "„Kein Interesse“ zeigen", nopeTag: "Kein Interesse", nopeSet: "Kein Interesse", nopeUndo: "Doch interessant", nopeUndoShort: "↺ Doch interessant", nopeOn: "Als „Kein Interesse“ markiert und ausgeblendet", nopeOff: "Wieder sichtbar", nopeHidden: n => n + " mit „Kein Interesse“ ausgeblendet · zeigen", noneLeft: "Alle Optionen mit „Kein Interesse“ markiert", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
     about: "Worum es geht", learn: "Du lernst", noDescEvent: "Für diesen Programmpunkt gibt es keine Beschreibung.", noDesc: "Zu dieser Session gibt es noch keine Beschreibung.",
     close: "Schließen", official: "Offizielle Seite öffnen ↗", summaryNote: "Kurzfassung der offiziellen Beschreibung (englisch), Stand 19.10.2026.",
     nothingYet: "Noch nichts gemerkt.", cleared: "Plan geleert", selectCopy: "Text markiert, jetzt kopieren", copied: "Plan kopiert", overlapMark: "⚠ Überschneidung",
@@ -737,7 +739,7 @@ const I18N = {
     chRooms: n => n + (n === 1 ? " Raum neu oder geändert" : " Räume neu oder geändert"), chTimes: n => n + (n === 1 ? " Zeit geändert" : " Zeiten geändert"),
     chTitles: n => n + (n === 1 ? " Titel geändert" : " Titel geändert"), chSpeakers: n => n + " × Sprecher geändert",
     chAdded: n => n + (n === 1 ? " neuer Programmpunkt" : " neue Programmpunkte"), chRemoved: n => n + (n === 1 ? " Programmpunkt entfällt" : " Programmpunkte entfallen"),
-    roomLbl: r => "Raum: " + r, noRoomsYet: "Räume sind noch nicht veröffentlicht.", roomsCount: n => n + " Programmpunkte haben schon einen Raum.", yourPicks: "Betrifft deine Auswahl:",
+    roomLbl: r => "Raum: " + r, noRoomsYet: "Räume sind noch nicht veröffentlicht.", roomsCount: n => n + (n === 1 ? " Programmpunkt hat" : " Programmpunkte haben") + " schon einen Raum.", yourPicks: "Betrifft deine Auswahl:",
   },
   en: {
     sub: "November 15–20 · all times local (EST)", view: "View", program: "Program", myPlan: "My Plan", day: "Day",
@@ -760,7 +762,7 @@ const I18N = {
     coveredBy: x => "Taken by " + x, free: "Still free", choices: n => n + (n === 1 ? " item" : " items") + " to choose from", look: "View →", onlyOpt: "Only option",
     dayStats: (p, f) => `${p} saved · ${f} free`,
     nItems: n => n + (n === 1 ? " item" : " items"), ends: x => "ends " + x,
-    pickedHere: "Saved in this slot:", topics: "Topics", speakers: "Speakers", spkSearch: "Search speakers or companies …", nSessions: n => n + (n === 1 ? " session" : " sessions"), spkSessions: "Sessions at this conference", officialProfile: "Official profile ↗", noProfile: "No official profile listed yet", noHitsDay: d => "No matches on " + d, decidedFor: x => "Decided for " + x + " (must see)", chosenOver: x => "Chosen over " + x, onlyFree: "Free slots only", allFilled: "Every slot on this day is filled.", onlyMust: "Must see only", mustTag: "Must see", mustSet: "Must see", mustUndo: "Remove must see", mustOn: "Marked as must see", mustOff: "Must see removed", moreN: n => "+" + n + " more", fewer: "fewer", showNope: "Show not interested", nopeTag: "Not interested", nopeSet: "Not interested", nopeUndo: "Interested again", nopeUndoShort: "↺ Interested again", nopeOn: "Marked as not interested and hidden", nopeOff: "Visible again", nopeHidden: n => n + " not interested hidden · show", noneLeft: "All options marked not interested", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
+    pickedHere: "Saved in this slot:", topics: "Topics", speakers: "Speakers", spkSearch: "Search speakers or companies …", nSessions: n => n + (n === 1 ? " session" : " sessions"), spkSessions: "Sessions at this conference", officialProfile: "Official profile ↗", noProfile: "No official profile listed yet", noHitsDay: d => "No matches on " + d, decidedFor: x => "Decided for " + x + " (must see)", chosenOver: x => "Chosen over " + x, onlyFree: "Free slots only", allFilled: "Every slot on this day is filled.", onlyMust: "Must see only", onlyChanged: "Changed", chgNote: n => n + (n === 1 ? " changed item" : " changed items") + " since you last marked them seen, all days", chgSeen: "Mark as seen", chgCleared: "Changes marked as seen", chgShow: "Show changed sessions", chg_added: "New", chg_times: "New time", chg_rooms: "New room", chg_titles: "New title", chg_speakers: "New speakers", mustTag: "Must see", mustSet: "Must see", mustUndo: "Remove must see", mustOn: "Marked as must see", mustOff: "Must see removed", moreN: n => "+" + n + " more", fewer: "fewer", showNope: "Show not interested", nopeTag: "Not interested", nopeSet: "Not interested", nopeUndo: "Interested again", nopeUndoShort: "↺ Interested again", nopeOn: "Marked as not interested and hidden", nopeOff: "Visible again", nopeHidden: n => n + " not interested hidden · show", noneLeft: "All options marked not interested", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
     about: "What it's about", learn: "You'll learn", noDescEvent: "There is no description for this item.", noDesc: "There is no description for this session yet.",
     close: "Close", official: "Open official page ↗", summaryNote: "Summary of the official description, as of Oct 19, 2026.",
     nothingYet: "Nothing saved yet.", cleared: "Plan cleared", selectCopy: "Text selected, copy it now", copied: "Plan copied", overlapMark: "⚠ overlap",
@@ -773,7 +775,7 @@ const I18N = {
     chRooms: n => n + (n === 1 ? " room added or changed" : " rooms added or changed"), chTimes: n => n + (n === 1 ? " time changed" : " times changed"),
     chTitles: n => n + (n === 1 ? " title changed" : " titles changed"), chSpeakers: n => n + (n === 1 ? " speaker change" : " speaker changes"),
     chAdded: n => n + (n === 1 ? " new item" : " new items"), chRemoved: n => n + (n === 1 ? " item cancelled" : " items cancelled"),
-    roomLbl: r => "Room: " + r, noRoomsYet: "Rooms haven't been published yet.", roomsCount: n => n + " items already have a room.", yourPicks: "Affects your picks:",
+    roomLbl: r => "Room: " + r, noRoomsYet: "Rooms haven't been published yet.", roomsCount: n => n + (n === 1 ? " item already has" : " items already have") + " a room.", yourPicks: "Affects your picks:",
   },
 };
 let LANG = "de";
@@ -805,8 +807,21 @@ const cachedData = store.get("data", null);
 if (cachedData) applyUpdates(cachedData);
 let picked = new Set(store.get("picked", []).filter(id => BY_ID[id]));
 let nope = new Set(store.get("nope", []).filter(id => BY_ID[id])); // "Kein Interesse"
+// Änderungen aus Programm-Updates, die noch nicht als gesehen markiert sind: id -> Arten (added, times, rooms, titles, speakers, removed)
+let changed = store.get("changed", {});
+function noteChanges(ch) {
+  for (const [k, list] of Object.entries(ch)) for (const s of list) {
+    const kinds = changed[s.id] || (changed[s.id] = []);
+    if (!kinds.includes(k)) kinds.push(k);
+    if (k === "added") changed[s.id] = changed[s.id].filter(x => x === "added" || x === "removed");
+  }
+  store.set("changed", changed);
+}
+function clearChanges() { changed = {}; store.set("changed", changed); state.onlyChanged = false; saveUI(); syncInputs(); render(); }
+const isChanged = s => !!(changed[s.id] && changed[s.id].length);
+const chgTags = s => (changed[s.id] || []).filter(k => k !== "removed").map(k => `<span class="tag chg">${t("chg_" + k)}</span>`).join("");
 let must = new Set(store.get("must", []).filter(id => BY_ID[id])); // "Muss ich sehen"
-let state = Object.assign({ view: "prog", day: 17, cmpDay: 17, cmpStart: null, back: "prog", q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false, showNope: false, onlyMust: false, onlyFree: false }, store.get("ui", {}));
+let state = Object.assign({ view: "prog", day: 17, cmpDay: 17, cmpStart: null, back: "prog", q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false, showNope: false, onlyMust: false, onlyFree: false, onlyChanged: false }, store.get("ui", {}));
 if (!state.lang) state.lang = /^de\b/i.test(navigator.language || "") ? "de" : "en";
 LANG = state.lang === "en" ? "en" : "de";
 function saveUI() { store.set("ui", state); }
@@ -926,7 +941,7 @@ function cardHTML(s, opts = {}) {
   else if (isPicked && must.has(s.id) && overlapGroup(s).length > 1) warn = `<button class="warn-text decided conf-link" data-conf="${overlapGroup(s).map(c => c.id).join(",")}">${t("chosenOver", overlapGroup(s).slice(1).map(c => esc(c.code || c.title.slice(0, 24) + "…")).join(", "))} →</button>`;
   else if (wouldConf.length && !opts.plan) warn = `<span class="warn-text" style="color:var(--muted);font-weight:500">${t("collidesSel")}</span>`;
   return `<article class="${cls}" style="--c: var(${tr.c})">
-    <div class="meta">${s.code ? `<span class="code">${s.code}</span>` : ""}<span class="tag">${KIND_LABEL[s.kind]}</span>${opts.only ? `<span class="tag only">${t("onlyOpt")}</span>` : ""}${nope.has(s.id) ? `<span class="tag">${t("nopeTag")}</span>` : ""}${must.has(s.id) ? `<span class="tag must">${t("mustTag")}</span>` : ""}${s.removed ? `<span class="tag gone">${t("removedTag")}</span>` : ""}<span>${tr.short}</span>${opts.plan ? "" : `<span class="dur">· ${durText(s.end - s.start)}</span>`}${s.room ? `<span class="room">${esc(s.room)}</span>` : ""}</div>
+    <div class="meta">${s.code ? `<span class="code">${s.code}</span>` : ""}<span class="tag">${KIND_LABEL[s.kind]}</span>${opts.only ? `<span class="tag only">${t("onlyOpt")}</span>` : ""}${nope.has(s.id) ? `<span class="tag">${t("nopeTag")}</span>` : ""}${must.has(s.id) ? `<span class="tag must">${t("mustTag")}</span>` : ""}${chgTags(s)}${s.removed ? `<span class="tag gone">${t("removedTag")}</span>` : ""}<span>${tr.short}</span>${opts.plan ? "" : `<span class="dur">· ${durText(s.end - s.start)}</span>`}${s.room ? `<span class="room">${esc(s.room)}</span>` : ""}</div>
     <h3>${titleHTML}</h3>
     ${s.speakers || opts.cmp ? `<div class="spk">${spkLinks(s)}</div>` : ""}
     ${opts.desc ? descHTML(s) : ""}
@@ -938,13 +953,15 @@ function filtered() {
   const q = state.q.trim().toLowerCase();
   // Treffer am Wortanfang, damit z. B. "AI" nicht in "maintain" gefunden wird
   const qre = new RegExp("(^|[^a-z0-9])" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
-  // Mit Suchbegriff: über alle Tage suchen
-  return SESSIONS.filter(s => (q || s.day === state.day)
-    && (q || !state.slot || s.start === +state.slot)
+  // Mit Suchbegriff oder "Nur geänderte": über alle Tage
+  const all = q || state.onlyChanged;
+  return SESSIONS.filter(s => (all || s.day === state.day)
+    && (all || !state.slot || s.start === +state.slot)
+    && (!state.onlyChanged || isChanged(s))
     && (!state.kind || s.kind === state.kind)
     && (!state.tracks.length || state.tracks.includes(s.track))
     && (!state.onlyPicked || picked.has(s.id))
-    && (!s.removed || picked.has(s.id))
+    && (!s.removed || picked.has(s.id) || state.onlyChanged)
     && (!state.hideEvents || s.kind !== "Event")
     && (state.showNope || !nope.has(s.id))
     && (!state.onlyMust || must.has(s.id))
@@ -956,9 +973,12 @@ function renderProgram() {
   const list = filtered();
   $("#nope-count").textContent = nope.size ? ` (${nope.size})` : "";
   $("#must-count").textContent = must.size ? ` (${must.size})` : "";
-  const global = !!state.q.trim();
+  const nChg = Object.keys(changed).filter(id => BY_ID[id]).length;
+  $("#chg-chip").hidden = !nChg && !state.onlyChanged;
+  $("#chg-count").textContent = nChg ? ` (${nChg})` : "";
+  const global = !!state.q.trim() || state.onlyChanged;
   const pairs = global ? [] : conflictPairs(state.day);
-  $("#day-banner").innerHTML = global ? `<div class="search-note">${t("searchAll", list.length, new Set(list.map(s => s.day)).size)}</div>` : pairs.length ? `<div class="banner"><span><b>${t("overlaps", pairs.length)}</b> ${t("onThisDay")}: ${pairs.map(([a, b]) => `<button class="conf-link" data-conf="${a.id},${b.id}">${esc(a.code || a.title)} ↔ ${esc(b.code || b.title)}</button>`).join(" · ")}</span></div>` : "";
+  $("#day-banner").innerHTML = state.onlyChanged ? `<div class="search-note">${t("chgNote", list.length)} · <button class="link-btn" data-chg-seen>${t("chgSeen")}</button></div>` : global ? `<div class="search-note">${t("searchAll", list.length, new Set(list.map(s => s.day)).size)}</div>` : pairs.length ? `<div class="banner"><span><b>${t("overlaps", pairs.length)}</b> ${t("onThisDay")}: ${pairs.map(([a, b]) => `<button class="conf-link" data-conf="${a.id},${b.id}">${esc(a.code || a.title)} ↔ ${esc(b.code || b.title)}</button>`).join(" · ")}</span></div>` : "";
   if (!list.length) {
     $("#list").innerHTML = `<div class="empty"><h2>${t("noHits")}</h2><p>${t(global ? "noHitsAll" : "noHitsText")}</p></div>`;
     return;
@@ -1215,11 +1235,13 @@ document.addEventListener("click", e => {
     state.back = state.view === "cmp" ? state.back : state.view;
     Object.assign(state, { view: "cmp", cmpDay: d, cmpStart: st, cmpIds: null }); saveUI(); render(); window.scrollTo(0, 0); return;
   }
+  if (e.target.closest("[data-chg-seen]")) { clearChanges(); toast(t("chgCleared")); return; }
+  if (e.target.closest("[data-chg-show]")) { closeInfo(); state.view = "prog"; state.onlyChanged = true; syncInputs(); saveUI(); render(); window.scrollTo(0, 0); return; }
   const day = e.target.closest("[data-day]");
   if (day) {
     state.day = +day.dataset.day; state.slot = ""; saveUI(); render();
     // Bei aktiver Suche (über alle Tage) zum Tag in den Treffern springen
-    if (state.q.trim()) {
+    if (state.q.trim() || state.onlyChanged) {
       const h = $(`#list .day-head[data-dayhead="${state.day}"]`);
       if (h) window.scrollTo(0, window.scrollY + h.getBoundingClientRect().top - $("header.top").getBoundingClientRect().bottom - 8);
       else toast(t("noHitsDay", DAY_NAME[state.day]));
@@ -1271,8 +1293,9 @@ $("#only-picked").onchange = e => { state.onlyPicked = e.target.checked; saveUI(
 $("#hide-events").onchange = e => { state.hideEvents = e.target.checked; saveUI(); renderProgram(); };
 $("#only-free").onchange = e => { state.onlyFree = e.target.checked; saveUI(); renderPlan(); };
 $("#only-must").onchange = e => { state.onlyMust = e.target.checked; saveUI(); renderProgram(); };
+$("#only-changed").onchange = e => { state.onlyChanged = e.target.checked; saveUI(); renderProgram(); window.scrollTo(0, 0); };
 $("#show-nope").onchange = e => { state.showNope = e.target.checked; saveUI(); renderProgram(); };
-$("#reset").onclick = () => { Object.assign(state, { q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false, showNope: false, onlyMust: false }); syncInputs(); saveUI(); renderTrackChips(); render(); };
+$("#reset").onclick = () => { Object.assign(state, { q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false, showNope: false, onlyMust: false, onlyChanged: false }); syncInputs(); saveUI(); renderTrackChips(); render(); };
 $("#clear").onclick = () => { $("#clear-confirm").hidden = false; };
 $("#clear-no").onclick = () => { $("#clear-confirm").hidden = true; };
 $("#clear-yes").onclick = () => { picked.clear(); savePicked(); $("#clear-confirm").hidden = true; toast(t("cleared")); render(); };
@@ -1283,7 +1306,7 @@ $("#copy").onclick = () => {
 };
 function syncInputs() {
   $("#q").value = state.q; $("#kind").value = state.kind;
-  $("#only-picked").checked = state.onlyPicked; $("#hide-events").checked = state.hideEvents; $("#show-nope").checked = !!state.showNope; $("#only-must").checked = !!state.onlyMust; $("#only-free").checked = !!state.onlyFree;
+  $("#only-picked").checked = state.onlyPicked; $("#hide-events").checked = state.hideEvents; $("#show-nope").checked = !!state.showNope; $("#only-must").checked = !!state.onlyMust; $("#only-changed").checked = !!state.onlyChanged; $("#only-free").checked = !!state.onlyFree;
 }
 $("#lang-de").onclick = () => setLang("de");
 $("#lang-en").onclick = () => setLang("en");

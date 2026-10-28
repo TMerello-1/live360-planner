@@ -33,7 +33,8 @@
       <h2 id="pop-title">${t("updatesTitle")}</h2>
       ${lines.length ? `<ul class="chg">${lines.join("")}</ul>` : `<p>${t("upToDate")}</p>`}
       ${mine.length ? `<div><div class="lbl">${t("yourPicks")}</div><ul class="chg">${mine.map(s => `<li><b>${esc(s.code || s.title)}</b> ${esc(s.code ? s.title : "")}${s.room ? " · " + esc(s.room) : ""}${s.removed ? " · " + t("removedTag") : ""}</li>`).join("")}</ul></div>` : ""}
-      <div class="note">${withRoom ? t("roomsCount", withRoom) : t("noRoomsYet")}</div>`;
+      <div class="note">${withRoom ? t("roomsCount", withRoom) : t("noRoomsYet")}</div>
+      ${Object.keys(changed).length ? `<div class="pop-foot"><button class="btn primary" data-chg-show>${t("chgShow")}</button><span></span></div>` : ""}`;
     document.getElementById("pop-bg").hidden = false;
     document.body.classList.add("noscroll");
     document.getElementById("pop-x").focus();
@@ -47,6 +48,7 @@
       if (r.ok) {
         const data = await r.json();
         ch = applyUpdates(data);
+        noteChanges(ch);  // bleibt markiert, bis "Als gesehen markieren"
         store.set("data", data);
         render();
       } else if (r.status !== 404) throw new Error(r.status);
