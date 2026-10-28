@@ -1,768 +1,768 @@
 {
- "updated": "2026-10-28T06:43Z",
+ "updated": "2026-10-28T06:47Z",
  "speakers": [
   {
    "id": "983A905C-D641-4561-9971-431F9A4DEA44",
    "name": "Greg Altman",
-   "title": "Cloud Engineer · Microsoft · TMT05",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Altman_Greg_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={983A905C-D641-4561-9971-431F9A4DEA44}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Cloud Engineer · Microsoft",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Altman_Greg_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={983A905C-D641-4561-9971-431F9A4DEA44}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "242BC9D6-406F-47AC-B267-017C2DDBF7D0",
    "name": "Gary Bailey",
-   "title": "Co-founder, Chief Architect · NextVersion Systems · VSM02",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Bailey_Gary_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={242BC9D6-406F-47AC-B267-017C2DDBF7D0}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Co-founder, Chief Architect · NextVersion Systems",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Bailey_Gary_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={242BC9D6-406F-47AC-B267-017C2DDBF7D0}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "1F0863B0-0708-4780-9B12-AAE671AB7DF0",
    "name": "Bradley Ball",
-   "title": "Sr. Azure Engineer for the Azure FastTrack CXP PG · Microsoft · Data Platform Live! Panel Discussion: AI Is Coming for the Data Team: Which Roles Change First?",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2021/orlando/Speaker-Photos/Ball_Bradley_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={1F0863B0-0708-4780-9B12-AAE671AB7DF0}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Sr. Azure Engineer for the Azure FastTrack CXP PG · Microsoft",
+   "photo": "https://live360events.com/-/media/ECG/live360/2021/orlando/Speaker-Photos/Ball_Bradley_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={1F0863B0-0708-4780-9B12-AAE671AB7DF0}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "CCF79F2C-A6A7-49F0-B76B-49BF59CC6693",
    "name": "Sam Basu",
-   "title": "Lead Developer Advocate · Uno Platform · VSW15",
+   "title": "Lead Developer Advocate · Uno Platform",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={CCF79F2C-A6A7-49F0-B76B-49BF59CC6693}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={CCF79F2C-A6A7-49F0-B76B-49BF59CC6693}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "EB5DA6F7-D534-4CBC-9D48-5741A765B379",
    "name": "Jason Beres",
-   "title": "Chief Operating Officer · Infragistics · VSW12",
+   "title": "Chief Operating Officer · Infragistics",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={EB5DA6F7-D534-4CBC-9D48-5741A765B379}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={EB5DA6F7-D534-4CBC-9D48-5741A765B379}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "A02BB78D-D358-4538-82AC-3CB96560271D",
    "name": "Sander Berkouwer",
-   "title": "Identity Architect · TMT09 · From the Trenches: A Real-world Approach to Transitioning Domain Controllers to Windows Server 2025",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Berkouwer_Sander_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={A02BB78D-D358-4538-82AC-3CB96560271D}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Identity Architect",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Berkouwer_Sander_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={A02BB78D-D358-4538-82AC-3CB96560271D}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "0A581FB4-49DD-4CCB-A662-6157B6638095",
    "name": "Karinne Bessette",
-   "title": "Technologist, PS · Veeam · TMW03",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2021/orlando/Speaker-Photos/Bessette_Karinne_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={0A581FB4-49DD-4CCB-A662-6157B6638095}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Technologist, PS · Veeam",
+   "photo": "https://live360events.com/-/media/ECG/live360/2021/orlando/Speaker-Photos/Bessette_Karinne_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={0A581FB4-49DD-4CCB-A662-6157B6638095}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "A1CBBE06-7C0E-4F70-9190-CA0F36C5FB04",
    "name": "Prashant G Bhoyar",
-   "title": "AI Architect in the Office of the CTO · AIS · AIW01",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Bhoyar_Prashant_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={A1CBBE06-7C0E-4F70-9190-CA0F36C5FB04}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "AI Architect in the Office of the CTO · AIS",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Bhoyar_Prashant_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={A1CBBE06-7C0E-4F70-9190-CA0F36C5FB04}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "01D9EF86-D254-49F9-970B-6D1B5F096A11",
    "name": "Brandon Bigford",
-   "title": "Solutions Architect · CompuNet · VSW08",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Bigford_Brandon_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={01D9EF86-D254-49F9-970B-6D1B5F096A11}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Solutions Architect · CompuNet",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Bigford_Brandon_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={01D9EF86-D254-49F9-970B-6D1B5F096A11}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "E5E198A0-7C9F-4382-97DD-07DEE85F58B7",
    "name": "Jason Bock",
    "title": "MVP (C#) · Staff Software Engineer · Rocket Mortgage",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Bock_Jason_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={E5E198A0-7C9F-4382-97DD-07DEE85F58B7}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Bock_Jason_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={E5E198A0-7C9F-4382-97DD-07DEE85F58B7}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "340E80C3-5F64-4AA5-BC00-FACC74569AAD",
    "name": "Robert Bogue",
-   "title": "President · Thor Projects LLC · VSH15",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Bogue_Robert_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={340E80C3-5F64-4AA5-BC00-FACC74569AAD}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "President · Thor Projects LLC",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Bogue_Robert_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={340E80C3-5F64-4AA5-BC00-FACC74569AAD}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "ADAF57E2-297A-46CC-9849-9FC7BFCFA8A1",
    "name": "Mattias Borg",
-   "title": "Cybersecurity Researcher · CRT07 · Agents in 2026 - Security Copilot with Defender Boys",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2024/orlando/Speaker-Photos/Borg_Mattias_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={ADAF57E2-297A-46CC-9849-9FC7BFCFA8A1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Cybersecurity Researcher",
+   "photo": "https://live360events.com/-/media/ECG/live360/2024/orlando/Speaker-Photos/Borg_Mattias_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={ADAF57E2-297A-46CC-9849-9FC7BFCFA8A1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "7BD081A0-0AE2-4EB9-857A-260EF06D4D56",
    "name": "Eric D. Boyd",
-   "title": "Founder and CEO · responsiveX · AIHOL01",
+   "title": "Founder and CEO · responsiveX",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={7BD081A0-0AE2-4EB9-857A-260EF06D4D56}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={7BD081A0-0AE2-4EB9-857A-260EF06D4D56}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "A073293A-FDAC-4229-A421-0DC2DF43ED09",
    "name": "Andrew Brust",
-   "title": "Founder and CEO · Blue Badge Insights · Artificial Intelligence Live! Panel Discussion: Governance for Agentic AI",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Brust_Andrew_web.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={A073293A-FDAC-4229-A421-0DC2DF43ED09}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Founder and CEO · Blue Badge Insights",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Brust_Andrew_web.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={A073293A-FDAC-4229-A421-0DC2DF43ED09}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "00127941-2DDE-469E-99C1-B87ECAE96D77",
    "name": "Émile Cabot",
    "title": "Microsoft MVP · Principal Consultant · TriCon Elite Consulting",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Cabot_Emile_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={00127941-2DDE-469E-99C1-B87ECAE96D77}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Cabot_Emile_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={00127941-2DDE-469E-99C1-B87ECAE96D77}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "6E2C63C7-4CE7-4F7F-B6C5-D306749723A1",
    "name": "Tony Champion",
-   "title": "President · Champion DS · AI Enterprise Architecture Live! Panel Discussion: From Pilots to Platforms - The Architecture Decisions That Make AI Work",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Champion-Tony_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={6E2C63C7-4CE7-4F7F-B6C5-D306749723A1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "President · Champion DS",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Champion-Tony_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={6E2C63C7-4CE7-4F7F-B6C5-D306749723A1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "3CF8D375-17EF-45BB-8C49-E3B7F3E7391C",
    "name": "Denny Cherry",
-   "title": "Owner and Principal Consultant · Denny Cherry & Associates Consulting · DPT06",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2018/orlando/Speaker-Photos/Cherry_Denny.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={3CF8D375-17EF-45BB-8C49-E3B7F3E7391C}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Owner and Principal Consultant · Denny Cherry & Associates Consulting",
+   "photo": "https://live360events.com/-/media/ECG/live360/2018/orlando/Speaker-Photos/Cherry_Denny.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={3CF8D375-17EF-45BB-8C49-E3B7F3E7391C}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "7299C03D-C05D-4F4C-A6E2-1A2261428695",
    "name": "Kayla Cinnamon",
-   "title": "Senior AI Developer Tools Advocate · Microsoft · AIW02",
+   "title": "Senior AI Developer Tools Advocate · Microsoft",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={7299C03D-C05D-4F4C-A6E2-1A2261428695}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={7299C03D-C05D-4F4C-A6E2-1A2261428695}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "89536929-0F6E-4F6F-9BD0-310918D7D3D1",
    "name": "Allen Conway",
    "title": "Microsoft MVP · Principal Consultant · Xebia",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2018/orlando/Speaker-Photos/Conway_Allen.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={89536929-0F6E-4F6F-9BD0-310918D7D3D1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "photo": "https://live360events.com/-/media/ECG/live360/2018/orlando/Speaker-Photos/Conway_Allen.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={89536929-0F6E-4F6F-9BD0-310918D7D3D1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "7F767BAC-D254-4F97-8EA1-69ABE67652B0",
    "name": "Roy Cornelissen",
-   "title": "Cloud Solution Architect · Xebia · VSH12",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Cornelissen_Roy_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={7F767BAC-D254-4F97-8EA1-69ABE67652B0}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Cloud Solution Architect · Xebia",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Cornelissen_Roy_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={7F767BAC-D254-4F97-8EA1-69ABE67652B0}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "D5E085F1-5281-44E7-843B-98B73B30431A",
    "name": "Joseph D'Antoni",
-   "title": "Principal Cloud Architect · DPW01 · Building The Fabric Well-Architected Framework",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2019/Speaker-Photos/Joseph_Dantoni.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={D5E085F1-5281-44E7-843B-98B73B30431A}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Principal Cloud Architect",
+   "photo": "https://live360events.com/-/media/ECG/live360/2019/Speaker-Photos/Joseph_Dantoni.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={D5E085F1-5281-44E7-843B-98B73B30431A}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "66D4293C-7CDA-4140-AD47-E8E6A463482E",
    "name": "Tee Dargie",
-   "title": "Solutions Architect · SolarWinds · DPT02",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Dargie_Tee_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={66D4293C-7CDA-4140-AD47-E8E6A463482E}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Solutions Architect · SolarWinds",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Dargie_Tee_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={66D4293C-7CDA-4140-AD47-E8E6A463482E}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "168C06BE-5D40-4ACB-A772-FA46AB8C0E2A",
    "name": "Benjamin Day",
-   "title": "Author, Trainer, Developer · VSW04 · Agile-ish: Lightweight Project Management with GitHub Projects",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Day_Ben_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={168C06BE-5D40-4ACB-A772-FA46AB8C0E2A}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Author, Trainer, Developer",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Day_Ben_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={168C06BE-5D40-4ACB-A772-FA46AB8C0E2A}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "18253C5A-1052-4B82-9438-2309D1E3D7F5",
    "name": "Alex de Jong",
-   "title": "TMH07 · Build-a-Bot Workshop: Unleash Your Own Autonomous Agent with Microsoft Copilot · TMW11",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/DeJong_Alex_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={18253C5A-1052-4B82-9438-2309D1E3D7F5}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/DeJong_Alex_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={18253C5A-1052-4B82-9438-2309D1E3D7F5}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "0B329109-CBDE-4BA7-8269-B264F07F7C3B",
    "name": "Marcel de Vries",
-   "title": "Global MD & CTO · Xebia · AIHOL02",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/de-Vries_Marcel_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={0B329109-CBDE-4BA7-8269-B264F07F7C3B}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Global MD & CTO · Xebia",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/de-Vries_Marcel_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={0B329109-CBDE-4BA7-8269-B264F07F7C3B}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "D7D332B1-0AF7-4B29-993C-527363A9225C",
    "name": "Angela Dugan",
-   "title": "Vice President, Product Delivery · Red Foundry · VST18",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Dugan-Angela_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={D7D332B1-0AF7-4B29-993C-527363A9225C}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Vice President, Product Delivery · Red Foundry",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Dugan-Angela_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={D7D332B1-0AF7-4B29-993C-527363A9225C}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "D7193D78-8098-413F-81BD-20333FBBF65D",
    "name": "Loek Duys",
    "title": "Microsoft MVP · Founder · LoekD Consultancy BV",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Duys_Loek_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={D7193D78-8098-413F-81BD-20333FBBF65D}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Duys_Loek_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={D7193D78-8098-413F-81BD-20333FBBF65D}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "C7F1FD9E-F349-4A57-94A1-02C991668F16",
    "name": "Adam Eldred",
-   "title": "Director of Enterprise Technology Architecture · CompuNet · VSW08",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Eldred_Adam_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={C7F1FD9E-F349-4A57-94A1-02C991668F16}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Director of Enterprise Technology Architecture · CompuNet",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Eldred_Adam_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={C7F1FD9E-F349-4A57-94A1-02C991668F16}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "B9504E06-F007-41D2-A337-8DED872A2886",
    "name": "Andreas Erben",
-   "title": "CTO for MR and Applied AI · daenet · EAM01",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2019/Speaker-Photos/Erben_Andreas.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={B9504E06-F007-41D2-A337-8DED872A2886}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "CTO for MR and Applied AI · daenet",
+   "photo": "https://live360events.com/-/media/ECG/live360/2019/Speaker-Photos/Erben_Andreas.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={B9504E06-F007-41D2-A337-8DED872A2886}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "9D2F027E-AC76-4121-A1BE-5EB6052D9536",
    "name": "Kevin Feasel",
-   "title": "Proprietor · Catallaxy Services, LLC · AIT07",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Feasel_Kevin_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={9D2F027E-AC76-4121-A1BE-5EB6052D9536}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Proprietor · Catallaxy Services, LLC",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Feasel_Kevin_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={9D2F027E-AC76-4121-A1BE-5EB6052D9536}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "9372A590-45FF-41B2-A529-AA043620B3ED",
    "name": "Aidan Finn",
    "title": "Azure MVP · MD, Consultant, Trainer · Cloud Mechanix",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Finn_Aiden_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={9372A590-45FF-41B2-A529-AA043620B3ED}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Finn_Aiden_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={9372A590-45FF-41B2-A529-AA043620B3ED}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "90463169-C8F0-4404-BDBB-71282BADA644",
    "name": "Guillermo Fisher",
-   "title": "Fractional CTO/CISO and Leadership Coach · Cybersecurity & Ransomware Live! Panel Discussion: The AI Security Arms Race: Attackers, Defenders, and the Supply Chain · CRH04",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Fisher_Guillermo_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={90463169-C8F0-4404-BDBB-71282BADA644}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Fractional CTO/CISO and Leadership Coach",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Fisher_Guillermo_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={90463169-C8F0-4404-BDBB-71282BADA644}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "50EF9733-E725-4E83-A1A5-8117150FDF42",
    "name": "Jeffrey T. Fritz",
-   "title": "Principal Developer Advocate · Progress · Progress Demo Theater - From Livestream Chaos to Production Ready AI: RAG + Observability with CHARLIE",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Fritz_Jeffrey_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={50EF9733-E725-4E83-A1A5-8117150FDF42}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Principal Developer Advocate · Progress",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Fritz_Jeffrey_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={50EF9733-E725-4E83-A1A5-8117150FDF42}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "1F8B17B7-89EF-4ABA-A0E2-7C773DD8B186",
    "name": "Jon Galloway",
-   "title": "Principal Program Manager, Developer Division Community Team · Microsoft · AIW08",
+   "title": "Principal Program Manager, Developer Division Community Team · Microsoft",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={1F8B17B7-89EF-4ABA-A0E2-7C773DD8B186}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={1F8B17B7-89EF-4ABA-A0E2-7C773DD8B186}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "FD78AE65-0EF4-48AE-B44E-893E66E524E8",
    "name": "Maarten Goet",
-   "title": "Microsoft MVP & RD · TMH09 · A Decade of Ransomware",
+   "title": "Microsoft MVP & RD",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={FD78AE65-0EF4-48AE-B44E-893E66E524E8}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={FD78AE65-0EF4-48AE-B44E-893E66E524E8}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "BA21854D-0186-42E9-B16A-D0CAE7A4C99E",
    "name": "Mickey Gousset",
-   "title": "Staff DevOps Architect · GitHub · AIH01",
+   "title": "Staff DevOps Architect · GitHub",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={BA21854D-0186-42E9-B16A-D0CAE7A4C99E}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={BA21854D-0186-42E9-B16A-D0CAE7A4C99E}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "D8CC42E9-6C29-43DB-9E63-AD0455058716",
    "name": "Ginger Grant",
-   "title": "Principal Data Geek · Desert Isle Group · Data Platform Live! Panel Discussion: AI Is Coming for the Data Team: Which Roles Change First?",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2018/orlando/Speaker-Photos/Grant_Ginger.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={D8CC42E9-6C29-43DB-9E63-AD0455058716}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Principal Data Geek · Desert Isle Group",
+   "photo": "https://live360events.com/-/media/ECG/live360/2018/orlando/Speaker-Photos/Grant_Ginger.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={D8CC42E9-6C29-43DB-9E63-AD0455058716}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "688D3845-96D7-4256-8212-BDA79CF99191",
    "name": "Chad Green",
-   "title": "Senior Systems Architect · Jasper Engines & Transmissions · VSW10",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Green_Chad_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={688D3845-96D7-4256-8212-BDA79CF99191}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Senior Systems Architect · Jasper Engines & Transmissions",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Green_Chad_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={688D3845-96D7-4256-8212-BDA79CF99191}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "C5B03684-D168-48AB-BF08-5B055A99FED3",
    "name": "Myron Helgering",
    "title": "Microsoft MVP · Technology Lead Security · Pink Elephant",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Helgering_Myron_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={C5B03684-D168-48AB-BF08-5B055A99FED3}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Helgering_Myron_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={C5B03684-D168-48AB-BF08-5B055A99FED3}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "BFBF6F00-7C24-454D-810D-F9C61CB96C64",
    "name": "Jeffery Hicks",
-   "title": "PowerShell Author, Teacher, Mentor · TMW08 · Scripting with pwshSpectreConsole",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Hicks_Jeff.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={BFBF6F00-7C24-454D-810D-F9C61CB96C64}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "PowerShell Author, Teacher, Mentor",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Hicks_Jeff.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={BFBF6F00-7C24-454D-810D-F9C61CB96C64}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "4A94ED19-0680-483A-8CB4-885388CCC1A9",
    "name": "Richard Hicks",
-   "title": "Founder and Principal Consultant · Richard M. Hicks Consulting · TMH03",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Hicks_Richard_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={4A94ED19-0680-483A-8CB4-885388CCC1A9}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Founder and Principal Consultant · Richard M. Hicks Consulting",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Hicks_Richard_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={4A94ED19-0680-483A-8CB4-885388CCC1A9}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "05D14AC2-F231-474A-88D4-5106B18F3852",
    "name": "Billy Hollis",
-   "title": "Developer. Designer. Speaker. Author. · VST02 · A Structured Technique for Observing and Learning from Users",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Hollis_Billy_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={05D14AC2-F231-474A-88D4-5106B18F3852}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Developer. Designer. Speaker. Author.",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Hollis_Billy_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={05D14AC2-F231-474A-88D4-5106B18F3852}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "9C15F2C0-46DC-4575-8909-1B27CBCA79BE",
    "name": "Tim Huckaby",
    "title": "Microsoft Worldwide RD, Microsoft MVP-Artificial Intelligence · Founder, InterKnowlogy & Actus/VSBLTY · CTO, Gopher Hole Productions",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Huckaby_Tim.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={9C15F2C0-46DC-4575-8909-1B27CBCA79BE}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Huckaby_Tim.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={9C15F2C0-46DC-4575-8909-1B27CBCA79BE}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "CF3BD62C-1FDA-4F0C-932D-F0AD52E85FBA",
    "name": "Sayed Ibrahim Ibrahim",
-   "title": "Product Manager · JetBrains · JetBrains Demo Theater: Your AI Agent Says It’s Done. Now What?",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Jetbrains_sayedhaheadshot_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={CF3BD62C-1FDA-4F0C-932D-F0AD52E85FBA}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Product Manager · JetBrains",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Jetbrains_sayedhaheadshot_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={CF3BD62C-1FDA-4F0C-932D-F0AD52E85FBA}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "4C87D26C-B4F0-4929-AAAA-DBCE8389AE3C",
    "name": "Philip Japikse",
    "title": "Microsoft MVP, ASPInsider, MCSD, PSM II, PSD and PST · CTO/Chief Architect, Author, Speaker · Pintas & Mullins",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Japikse_Phil_web.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={4C87D26C-B4F0-4929-AAAA-DBCE8389AE3C}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Japikse_Phil_web.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={4C87D26C-B4F0-4929-AAAA-DBCE8389AE3C}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "17225CD4-8B30-41FB-80E9-C954B6D73530",
    "name": "Tony Joy",
-   "title": "Principal Solution Architect · Summit · TMT10",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/TechMentor/2026/redmond/Speaker-Photos/Joy_Tony_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={17225CD4-8B30-41FB-80E9-C954B6D73530}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Principal Solution Architect · Summit",
+   "photo": "https://live360events.com/-/media/ECG/TechMentor/2026/redmond/Speaker-Photos/Joy_Tony_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={17225CD4-8B30-41FB-80E9-C954B6D73530}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "5A8081E9-E061-4259-A4E1-AA0EE6CDD0E3",
    "name": "Dave Kawula",
-   "title": "Principal Consultant · TriCon Elite Consulting · CRW02",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2018/orlando/Speaker-Photos/Kawula_Dave.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={5A8081E9-E061-4259-A4E1-AA0EE6CDD0E3}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Principal Consultant · TriCon Elite Consulting",
+   "photo": "https://live360events.com/-/media/ECG/live360/2018/orlando/Speaker-Photos/Kawula_Dave.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={5A8081E9-E061-4259-A4E1-AA0EE6CDD0E3}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "5FDE2795-EBB2-4A18-98C0-B5F8E1BEDEF1",
    "name": "Cristal Kawula",
-   "title": "President · TriCon Elite Consulting · TMW01",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2018/orlando/Speaker-Photos/Kawula_Cristal.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={5FDE2795-EBB2-4A18-98C0-B5F8E1BEDEF1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "President · TriCon Elite Consulting",
+   "photo": "https://live360events.com/-/media/ECG/live360/2018/orlando/Speaker-Photos/Kawula_Cristal.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={5FDE2795-EBB2-4A18-98C0-B5F8E1BEDEF1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "48115B0D-BF85-43FD-AB01-E93C49395E2B",
    "name": "Alex Kaziuka",
-   "title": "Chief Architect · SoftServe Inc. · EAW04",
+   "title": "Chief Architect · SoftServe Inc.",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={48115B0D-BF85-43FD-AB01-E93C49395E2B}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={48115B0D-BF85-43FD-AB01-E93C49395E2B}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "9272DD69-2FF5-4740-A8E7-62D386B3D4E5",
    "name": "Kevin Kline",
-   "title": "Senior Staff Technical Marketing Manager · SolarWinds · DPT02",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2025/orlando/Speaker-Photos/Kevin_Kline_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={9272DD69-2FF5-4740-A8E7-62D386B3D4E5}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Senior Staff Technical Marketing Manager · SolarWinds",
+   "photo": "https://live360events.com/-/media/ECG/live360/2025/orlando/Speaker-Photos/Kevin_Kline_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={9272DD69-2FF5-4740-A8E7-62D386B3D4E5}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "CAC37DB1-5557-4862-85A5-210D865F868A",
    "name": "Chris Klug",
-   "title": "Chief Over‑Engineering Officer · Active Solution · VSH05",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Klug_Chris_web.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={CAC37DB1-5557-4862-85A5-210D865F868A}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Chief Over‑Engineering Officer · Active Solution",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Klug_Chris_web.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={CAC37DB1-5557-4862-85A5-210D865F868A}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "C881A187-FCDA-44F7-AB94-973F3FBB3276",
    "name": "Veronika Kolesnikova",
-   "title": "Microsoft MVP (AI) · Principal AI Engineer · Artificial Intelligence Live! Panel Discussion: Governance for Agentic AI",
+   "title": "Microsoft MVP (AI) · Principal AI Engineer",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={C881A187-FCDA-44F7-AB94-973F3FBB3276}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={C881A187-FCDA-44F7-AB94-973F3FBB3276}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "A5C2099E-7CA7-4186-9084-1747FC2CB70D",
    "name": "Robert Kraczek",
-   "title": "Global Strategist · One Identity · TMT03",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Kraczek_Robert_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={A5C2099E-7CA7-4186-9084-1747FC2CB70D}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Global Strategist · One Identity",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Kraczek_Robert_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={A5C2099E-7CA7-4186-9084-1747FC2CB70D}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "8380481A-C4C4-4644-866C-118A9985BDD1",
    "name": "Mads Kristensen",
-   "title": "Principal Product Manager, Visual Studio · Microsoft · Visual Studio Live! Keynote: You, Visual Studio, and AI: Building What Comes Next",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Kristensen_Mads_2.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={8380481A-C4C4-4644-866C-118A9985BDD1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Principal Product Manager, Visual Studio · Microsoft",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Kristensen_Mads_2.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={8380481A-C4C4-4644-866C-118A9985BDD1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "89D0AAE3-69C0-4120-9DE7-7812BCEDDEC7",
    "name": "Deborah Kurata",
-   "title": "Microsoft MVP and Google Developer Expert (GDE) · Consultant, Speaker, Author · VSW09",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Kurata_Deborah_web.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={89D0AAE3-69C0-4120-9DE7-7812BCEDDEC7}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Microsoft MVP and Google Developer Expert (GDE) · Consultant, Speaker, Author",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Kurata_Deborah_web.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={89D0AAE3-69C0-4120-9DE7-7812BCEDDEC7}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "63CD2DEA-FF53-44AF-9CB1-AB97B09FADFB",
    "name": "Mayuri Lahane",
-   "title": "Software Engineer, AI Enthusiast · AIT08 · Talk to AI Better: Advanced Prompt Engineering in Action",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/TechMentor/2026/redmond/Speaker-Photos/Lahane_Mayuri_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={63CD2DEA-FF53-44AF-9CB1-AB97B09FADFB}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Software Engineer, AI Enthusiast",
+   "photo": "https://live360events.com/-/media/ECG/TechMentor/2026/redmond/Speaker-Photos/Lahane_Mayuri_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={63CD2DEA-FF53-44AF-9CB1-AB97B09FADFB}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "B53D1D57-57E4-4185-8A8F-E21DC8A45EFA",
    "name": "Sami Laiho",
-   "title": "Chief Research Officer · Adminize · CRW03",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Laiho_Sami_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={B53D1D57-57E4-4185-8A8F-E21DC8A45EFA}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Chief Research Officer · Adminize",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Laiho_Sami_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={B53D1D57-57E4-4185-8A8F-E21DC8A45EFA}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "D938376E-65F8-4D45-873D-FF9B7507CE50",
    "name": "Thomas LaRock",
-   "title": "Data Professional and Consultant · Data Platform Live! Panel Discussion: AI Is Coming for the Data Team: Which Roles Change First? · DPW08",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2018/orlando/Speaker-Photos/LaRock_Thomas.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={D938376E-65F8-4D45-873D-FF9B7507CE50}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Data Professional and Consultant",
+   "photo": "https://live360events.com/-/media/ECG/live360/2018/orlando/Speaker-Photos/LaRock_Thomas.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={D938376E-65F8-4D45-873D-FF9B7507CE50}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "25B0180B-6859-40C2-9236-E4430A9DC300",
    "name": "Thomas LeBlanc",
    "title": "Microsoft MVP · Business Intelligence Architect · SHI International Corp.",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={25B0180B-6859-40C2-9236-E4430A9DC300}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={25B0180B-6859-40C2-9236-E4430A9DC300}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "5541CF31-F196-401B-A37D-A311CD976ED4",
    "name": "Rockford Lhotka",
-   "title": "VP of Strategy · Xebia · AI Enterprise Architecture Live! Panel Discussion: From Pilots to Platforms - The Architecture Decisions That Make AI Work",
+   "title": "VP of Strategy · Xebia",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={5541CF31-F196-401B-A37D-A311CD976ED4}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={5541CF31-F196-401B-A37D-A311CD976ED4}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "CB268E56-64E3-40D3-9D3B-8DA5A72ECD65",
    "name": "AJ Linder",
-   "title": "Solutions Architect · One Identity · TMT03",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Linder_AJ_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={CB268E56-64E3-40D3-9D3B-8DA5A72ECD65}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Solutions Architect · One Identity",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Linder_AJ_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={CB268E56-64E3-40D3-9D3B-8DA5A72ECD65}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "DC897EAD-C978-4002-A876-9D1720258F5B",
    "name": "Markus Lintuala",
-   "title": "Public Cloud and Security Hero · CRH01 · Death of the VPN: Zero Trust Connectivity with Global Secure Access",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2025/orlando/Speaker-Photos/Lintuala_Markus_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={DC897EAD-C978-4002-A876-9D1720258F5B}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Public Cloud and Security Hero",
+   "photo": "https://live360events.com/-/media/ECG/live360/2025/orlando/Speaker-Photos/Lintuala_Markus_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={DC897EAD-C978-4002-A876-9D1720258F5B}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "45C19A46-2FA8-4763-8E37-A7E03D3723F6",
    "name": "Leonard Lobel",
    "title": "MVP · CTO · Sleek Technologies, Inc.",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Lobel_Leonard_web.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={45C19A46-2FA8-4763-8E37-A7E03D3723F6}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Lobel_Leonard_web.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={45C19A46-2FA8-4763-8E37-A7E03D3723F6}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "8606699E-3EE1-4033-9E21-05566D041A2A",
    "name": "Meagan Longoria",
-   "title": "Data Analytics Architect · ProcureSQL · DPW05",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Longoria_Meagan_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={8606699E-3EE1-4033-9E21-05566D041A2A}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Data Analytics Architect · ProcureSQL",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Longoria_Meagan_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={8606699E-3EE1-4033-9E21-05566D041A2A}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "72292635-776C-4670-A3E2-9FB8CDBE9CAB",
    "name": "Josh Luedeman",
-   "title": "Principal Engineering Manager · Microsoft · DPW04",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2018/orlando/Speaker-Photos/Luedeman_Josh.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={72292635-776C-4670-A3E2-9FB8CDBE9CAB}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Principal Engineering Manager · Microsoft",
+   "photo": "https://live360events.com/-/media/ECG/live360/2018/orlando/Speaker-Photos/Luedeman_Josh.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={72292635-776C-4670-A3E2-9FB8CDBE9CAB}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "BDEF4E84-015A-4A22-B45D-D4EF64DDB5FF",
    "name": "Andy Malone",
-   "title": "Worldwide Speaker, YouTuber, Tech Instructor, Author · CRT02 · The Day the Hacker Stood Still – Microsoft Entra ID Security Deep Dive",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2024/orlando/Speaker-Photos/Malone_Andy_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={BDEF4E84-015A-4A22-B45D-D4EF64DDB5FF}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Worldwide Speaker, YouTuber, Tech Instructor, Author",
+   "photo": "https://live360events.com/-/media/ECG/live360/2024/orlando/Speaker-Photos/Malone_Andy_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={BDEF4E84-015A-4A22-B45D-D4EF64DDB5FF}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "97F8868F-1219-4F1A-AFD3-FD2F8E6D2316",
    "name": "Derek Melber",
    "title": "21X Microsoft MVP in Active Directory, Group Policy, and Security · Strategic Advisor · Enterprise Identity",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Melber_Derek_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={97F8868F-1219-4F1A-AFD3-FD2F8E6D2316}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Melber_Derek_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={97F8868F-1219-4F1A-AFD3-FD2F8E6D2316}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "96ACDB41-EF1A-4416-9DB8-7B624A471BC6",
    "name": "Mark Michaelis",
    "title": "Microsoft Regional Director and MVP · Chief Technical Architect, Founder, Author · IntelliTect",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Michaelis_Mark_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={96ACDB41-EF1A-4416-9DB8-7B624A471BC6}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Michaelis_Mark_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={96ACDB41-EF1A-4416-9DB8-7B624A471BC6}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "E3F08CCE-1F4F-4AB0-9E94-837B82CD6770",
    "name": "Derek Michals",
-   "title": "IT Professional · CRT05 · Fast Focus: Feel the Burn: Staying Sane in a 24/7 IT World",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Derek_Michals_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={E3F08CCE-1F4F-4AB0-9E94-837B82CD6770}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "IT Professional",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Derek_Michals_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={E3F08CCE-1F4F-4AB0-9E94-837B82CD6770}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "80A61F64-892E-4CA7-85D3-CAB53A2D4969",
    "name": "Ken Muse",
-   "title": "Staff DevOps Architect · GitHub · Artificial Intelligence Live! Panel Discussion: Governance for Agentic AI",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Muse_Ken_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={80A61F64-892E-4CA7-85D3-CAB53A2D4969}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Staff DevOps Architect · GitHub",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Muse_Ken_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={80A61F64-892E-4CA7-85D3-CAB53A2D4969}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "C7975737-779C-4848-B00B-F57F9CED4D1D",
    "name": "Ted Neward",
-   "title": "Principal · Neward and Associates · VST16",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Neward_Ted_web.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={C7975737-779C-4848-B00B-F57F9CED4D1D}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Principal · Neward and Associates",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Neward_Ted_web.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={C7975737-779C-4848-B00B-F57F9CED4D1D}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "EFEA9D51-656C-4F6D-8BEC-2FF2BE20A3F1",
    "name": "Michael Niehaus",
-   "title": "Programme Director and Master Inventor · 2Pint Software · TMW07",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Niehaus_Michael_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={EFEA9D51-656C-4F6D-8BEC-2FF2BE20A3F1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Programme Director and Master Inventor · 2Pint Software",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Niehaus_Michael_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={EFEA9D51-656C-4F6D-8BEC-2FF2BE20A3F1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "36D77A10-B596-4519-82BD-32454E1896AB",
    "name": "Jerry Nixon",
-   "title": "SQL Server Product Manager · Microsoft · VSW14",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Nixon_Jerry_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={36D77A10-B596-4519-82BD-32454E1896AB}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "SQL Server Product Manager · Microsoft",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Nixon_Jerry_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={36D77A10-B596-4519-82BD-32454E1896AB}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "91B00F7E-91E1-4F39-9CCE-B81AC971B019",
    "name": "Matt Nunn",
-   "title": "Lead Product Marketing Manager – AI and Developers · Snowflake · AIT06",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Nunn_Matt_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={91B00F7E-91E1-4F39-9CCE-B81AC971B019}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Lead Product Marketing Manager – AI and Developers · Snowflake",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Nunn_Matt_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={91B00F7E-91E1-4F39-9CCE-B81AC971B019}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "8184EF16-20B4-43E0-81E5-E8712D5AED8D",
    "name": "Mike O'Neill",
-   "title": "Senior Cloud Solution Architect · Microsoft · TMH08",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Oneill_Mike_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={8184EF16-20B4-43E0-81E5-E8712D5AED8D}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Senior Cloud Solution Architect · Microsoft",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Oneill_Mike_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={8184EF16-20B4-43E0-81E5-E8712D5AED8D}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "1183EADE-8287-41C2-940E-8059E5C57202",
    "name": "John O'Neill, Sr.",
-   "title": "Chief Innovation Officer · Azure Innovators · TMT01",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/ONeill_John_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={1183EADE-8287-41C2-940E-8059E5C57202}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Chief Innovation Officer · Azure Innovators",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/ONeill_John_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={1183EADE-8287-41C2-940E-8059E5C57202}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "50A353CD-D502-4D6B-87D1-AEDB604EDA91",
    "name": "Jay Palermo",
-   "title": "Account Executive · Exclaimer · Exclaimer Demo Theater - See Centralized Email Signature Management in Action",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Palermo_Jay_Exclaimer_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={50A353CD-D502-4D6B-87D1-AEDB604EDA91}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Account Executive · Exclaimer",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Palermo_Jay_Exclaimer_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={50A353CD-D502-4D6B-87D1-AEDB604EDA91}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "2642BBD4-D0D3-4030-972E-CEB10601F264",
    "name": "Carey Payette",
-   "title": "Principal Engineer · Financial Finesse · Artificial Intelligence Live! Panel Discussion: Governance for Agentic AI",
+   "title": "Principal Engineer · Financial Finesse",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={2642BBD4-D0D3-4030-972E-CEB10601F264}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={2642BBD4-D0D3-4030-972E-CEB10601F264}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "9D7F0FF1-B815-4F37-A840-701D0136E975",
    "name": "Mark Perry",
-   "title": "Senior Developer · HHMI · VSH11",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Perry_Mark_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={9D7F0FF1-B815-4F37-A840-701D0136E975}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Senior Developer · HHMI",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Perry_Mark_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={9D7F0FF1-B815-4F37-A840-701D0136E975}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "C948F4DB-5E99-4032-BB75-E8E89B8A1870",
    "name": "David Pless",
-   "title": "Principal Program Manager · Microsoft · DPH04",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Pless_David_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={C948F4DB-5E99-4032-BB75-E8E89B8A1870}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Principal Program Manager · Microsoft",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Pless_David_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={C948F4DB-5E99-4032-BB75-E8E89B8A1870}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "A5BC1D7C-F9A2-4A08-B64B-7B6247F137FA",
    "name": "Ponilango Ponraj",
-   "title": "SAP Consultant – Digital Manufacturing Solutions · SHOUBII · EAT03",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Ponraj_Ponilango_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={A5BC1D7C-F9A2-4A08-B64B-7B6247F137FA}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "SAP Consultant – Digital Manufacturing Solutions · SHOUBII",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Ponraj_Ponilango_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={A5BC1D7C-F9A2-4A08-B64B-7B6247F137FA}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "1C85236A-C9F8-4E55-996B-27CBB4698162",
    "name": "Gary Pretty",
-   "title": "Principal Product Manager, Microsoft Copilot Studio · Microsoft · TMF01",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Pretty_Gary_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={1C85236A-C9F8-4E55-996B-27CBB4698162}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Principal Product Manager, Microsoft Copilot Studio · Microsoft",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Pretty_Gary_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={1C85236A-C9F8-4E55-996B-27CBB4698162}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "734014EB-9025-4C61-AE16-609750A00564",
    "name": "Jeff Prosise",
-   "title": "Senior AI Adviser · Artificial Intelligence Live! & AI Enterprise Architecture Live! Keynote: Death by Tool Calls - Solving the #1 Problem in Agentic AI",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Prosise_Jeff_388_389.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={734014EB-9025-4C61-AE16-609750A00564}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Senior AI Adviser",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Prosise_Jeff_388_389.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={734014EB-9025-4C61-AE16-609750A00564}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "AC23F2B8-E6A9-4962-9CF4-9828950DC16B",
    "name": "Shoubith Rajeswaran",
-   "title": "Robotics Engineer – Digital Manufacturing Solutions · SHOUBII · EAT03",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Rajeswaran_Shoubith_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={AC23F2B8-E6A9-4962-9CF4-9828950DC16B}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Robotics Engineer – Digital Manufacturing Solutions · SHOUBII",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Rajeswaran_Shoubith_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={AC23F2B8-E6A9-4962-9CF4-9828950DC16B}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "5E414C23-4FE7-43D0-815C-517E93E2ED1B",
    "name": "Anjali Ramalingam",
-   "title": "AI & Data Engineer – Digital Manufacturing Solutions · SHOUBII · EAT03",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Ramalingam_Anjali_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={5E414C23-4FE7-43D0-815C-517E93E2ED1B}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "AI & Data Engineer – Digital Manufacturing Solutions · SHOUBII",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Ramalingam_Anjali_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={5E414C23-4FE7-43D0-815C-517E93E2ED1B}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "95C3FFE4-8822-4028-A91E-A1DA3A6BF980",
    "name": "Brian A. Randell",
-   "title": "Partner · MCW Technologies · VST13",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2021/orlando/Speaker-Photos/Randell_Brian_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={95C3FFE4-8822-4028-A91E-A1DA3A6BF980}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Partner · MCW Technologies",
+   "photo": "https://live360events.com/-/media/ECG/live360/2021/orlando/Speaker-Photos/Randell_Brian_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={95C3FFE4-8822-4028-A91E-A1DA3A6BF980}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "B512D1DB-4216-4F19-BE1B-DC337C25308A",
    "name": "Ashley Rivera",
-   "title": "Data and Automation Architect · EAT02 · An Interactive Whiteboard Session — Three Real-World AI Scenarios",
+   "title": "Data and Automation Architect",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={B512D1DB-4216-4F19-BE1B-DC337C25308A}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={B512D1DB-4216-4F19-BE1B-DC337C25308A}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "C0554A5D-23A7-4450-8B6F-4370566FF03B",
    "name": "Dewain Robinson",
-   "title": "Principal Program Manager · Microsoft · TMF01",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2021/orlando/Speaker-Photos/Robinson_Dewain.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={C0554A5D-23A7-4450-8B6F-4370566FF03B}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Principal Program Manager · Microsoft",
+   "photo": "https://live360events.com/-/media/ECG/live360/2021/orlando/Speaker-Photos/Robinson_Dewain.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={C0554A5D-23A7-4450-8B6F-4370566FF03B}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "7E1557B8-212A-4FAE-893E-0AD3F0D27BFC",
    "name": "Stephen L. Rose",
-   "title": "AI Adoption and Change Management Strategy Consultant · CRH05 · Copilot- A Guide to Hacking, Managing, Securing Your Data",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Rose_Stephen_388_389.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={7E1557B8-212A-4FAE-893E-0AD3F0D27BFC}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "AI Adoption and Change Management Strategy Consultant",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Rose_Stephen_388_389.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={7E1557B8-212A-4FAE-893E-0AD3F0D27BFC}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "59144891-4E36-44ED-B947-7E8C14E41998",
    "name": "Rajeswaran Sababathy",
-   "title": "CEO · SHOUBII · EAT03",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Sababathy_Rajeswaran_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={59144891-4E36-44ED-B947-7E8C14E41998}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "CEO · SHOUBII",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Sababathy_Rajeswaran_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={59144891-4E36-44ED-B947-7E8C14E41998}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "3D8DDC1D-B723-4C50-8DB8-41D9E6E0E2CF",
    "name": "Bradley Schacht",
-   "title": "Principal Program Manager, Microsoft Fabric CAT · Microsoft · Data Platform Live! Keynote: Microsoft Fabric - The Foundation for Enterprise AI and Data",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/schacht_bradley_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={3D8DDC1D-B723-4C50-8DB8-41D9E6E0E2CF}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Principal Program Manager, Microsoft Fabric CAT · Microsoft",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/schacht_bradley_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={3D8DDC1D-B723-4C50-8DB8-41D9E6E0E2CF}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "43EAB32B-6336-427E-993F-C984E3BB8D52",
    "name": "Stefan Schörling",
-   "title": "Cloud Security and Infra Geek · Onevinn AB · CRT07",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Schorling_Stefan_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={43EAB32B-6336-427E-993F-C984E3BB8D52}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Cloud Security and Infra Geek · Onevinn AB",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Schorling_Stefan_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={43EAB32B-6336-427E-993F-C984E3BB8D52}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "848BF3EC-E236-4F6B-83EF-69E7153C58F6",
    "name": "David Seis",
-   "title": "DBA · Straight Path Solutions · DPF01",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Seis_David_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={848BF3EC-E236-4F6B-83EF-69E7153C58F6}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "DBA · Straight Path Solutions",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Seis_David_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={848BF3EC-E236-4F6B-83EF-69E7153C58F6}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "05C9740D-9770-4309-B3CF-94967ABA5989",
    "name": "Tatu Seppälä",
    "title": "Microsoft MVP Security · Security Architect · Sulava",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Seppala_Tatu_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={05C9740D-9770-4309-B3CF-94967ABA5989}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Seppala_Tatu_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={05C9740D-9770-4309-B3CF-94967ABA5989}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "A2B01461-6EF2-4720-B82C-A23458321AF4",
    "name": "Heather Severino",
-   "title": "Founder · TeachUTech · TMT06",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Severino_Heather_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={A2B01461-6EF2-4720-B82C-A23458321AF4}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Founder · TeachUTech",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Severino_Heather_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={A2B01461-6EF2-4720-B82C-A23458321AF4}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "7F7BBA89-D138-4273-93C6-4953E69AAA73",
    "name": "Don Shin",
-   "title": "Founder and CEO · CrossComm · EAH02",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Shin_Don_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={7F7BBA89-D138-4273-93C6-4953E69AAA73}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Founder and CEO · CrossComm",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Shin_Don_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={7F7BBA89-D138-4273-93C6-4953E69AAA73}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "8CA8AFD4-971D-40D4-9AFE-69571D88B5B1",
    "name": "Samantha St-Louis",
-   "title": "AI Solutions Lead · Global Knowledge · AI Enterprise Architecture Live! Panel Discussion: From Pilots to Platforms - The Architecture Decisions That Make AI Work",
+   "title": "AI Solutions Lead · Global Knowledge",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={8CA8AFD4-971D-40D4-9AFE-69571D88B5B1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={8CA8AFD4-971D-40D4-9AFE-69571D88B5B1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "E7700023-46EE-42A7-B2FA-A6154BE5C20D",
    "name": "Lino Tadros",
-   "title": "Founder & Principal Architect · The Training Boss · DPW02",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Tadros_Lino_388.png",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={E7700023-46EE-42A7-B2FA-A6154BE5C20D}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Founder & Principal Architect · The Training Boss",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Tadros_Lino_388.png",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={E7700023-46EE-42A7-B2FA-A6154BE5C20D}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "5A9B1A3E-0700-4A06-9F6F-EF7C7FE4AF35",
    "name": "Daniel Taylor",
-   "title": "Sr. Cloud Solution Architect · Microsoft · TMH11",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/taylor_daniel_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={5A9B1A3E-0700-4A06-9F6F-EF7C7FE4AF35}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Sr. Cloud Solution Architect · Microsoft",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/taylor_daniel_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={5A9B1A3E-0700-4A06-9F6F-EF7C7FE4AF35}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "82FA6862-DD17-478B-9428-5456AAA85FBA",
    "name": "Alex Thissen",
-   "title": "Architect, Lead Developer, and Mentor · VSW16 · Creating an Observable Cloud Platform and Application Landscape with Azure",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Thissen_Alex_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={82FA6862-DD17-478B-9428-5456AAA85FBA}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Architect, Lead Developer, and Mentor",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Thissen_Alex_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={82FA6862-DD17-478B-9428-5456AAA85FBA}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "9E219ABC-B8FE-46D5-9A2F-CA222C4C2069",
    "name": "Tyler Tomlinson",
-   "title": "Account Executive · Threatlocker · ThreatLocker Demo Theater: Zero Trust Controls at the Endpoint",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Threatlocker_Tomlinson_Tyler_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={9E219ABC-B8FE-46D5-9A2F-CA222C4C2069}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Account Executive · Threatlocker",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Threatlocker_Tomlinson_Tyler_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={9E219ABC-B8FE-46D5-9A2F-CA222C4C2069}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "D454D8F2-EF6E-432B-925E-2D20E8628D9C",
    "name": "Michael Van Horenbeeck",
-   "title": "CEO · “The Collective” · CRT09",
+   "title": "CEO · “The Collective”",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={D454D8F2-EF6E-432B-925E-2D20E8628D9C}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={D454D8F2-EF6E-432B-925E-2D20E8628D9C}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "7A4C30AF-EBEE-4705-A869-0B641BBE60AA",
    "name": "René van Osnabrugge",
-   "title": "Consulting Director · Xebia · VSH03",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/vanOsnabrugge_Rene_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={7A4C30AF-EBEE-4705-A869-0B641BBE60AA}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Consulting Director · Xebia",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/vanOsnabrugge_Rene_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={7A4C30AF-EBEE-4705-A869-0B641BBE60AA}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "E5449164-48EF-4A9B-BAC3-FA90FBD97121",
    "name": "Amber Vanderburg",
-   "title": "Founder · Pathwayz Group · VSH02",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/EventSpeakerPhotos/Vanderburg_Amber_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={E5449164-48EF-4A9B-BAC3-FA90FBD97121}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Founder · Pathwayz Group",
+   "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Vanderburg_Amber_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={E5449164-48EF-4A9B-BAC3-FA90FBD97121}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "2945E1F9-2458-4D6A-80CD-9273BD34FE93",
    "name": "Ben Welton",
-   "title": "AI Product GTM Manager · Rubrik · Rubrik Demo Theater -Operational Trust in AI — Control, Integrity, Recovery at Machine Speed",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2026/orlando/Speaker-Photos/Rubrik_Welton_Ben_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={2945E1F9-2458-4D6A-80CD-9273BD34FE93}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "AI Product GTM Manager · Rubrik",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Rubrik_Welton_Ben_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={2945E1F9-2458-4D6A-80CD-9273BD34FE93}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "8E925393-48B3-497B-A499-732891798BDB",
    "name": "Sarah Wimberley",
-   "title": "AI Enterprise Architecture Live! Panel Discussion: From Pilots to Platforms - The Architecture Decisions That Make AI Work · EAH01 · From Spider-Sense to Systems Sense: Navigating Ethical AI",
+   "title": "",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={8E925393-48B3-497B-A499-732891798BDB}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={8E925393-48B3-497B-A499-732891798BDB}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "E269AD0C-F23B-4D9C-8ED7-2BDCEC737228",
    "name": "Buck Woody",
-   "title": "Chief Data Officer · Straight Path Solutions · Data Platform Live! Panel Discussion: AI Is Coming for the Data Team: Which Roles Change First?",
+   "title": "Chief Data Officer · Straight Path Solutions",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={E269AD0C-F23B-4D9C-8ED7-2BDCEC737228}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={E269AD0C-F23B-4D9C-8ED7-2BDCEC737228}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "C98C9F83-9956-4D45-890B-8B55A6A75DD3",
    "name": "Jim Wooley",
-   "title": "Senior Delivery Principal · Slalom Consulting · VSH04",
+   "title": "Senior Delivery Principal · Slalom Consulting",
    "photo": null,
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={C98C9F83-9956-4D45-890B-8B55A6A75DD3}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={C98C9F83-9956-4D45-890B-8B55A6A75DD3}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "53B096A7-5ACF-454B-ACC2-C48E35FB56AB",
    "name": "Bi Yue Xu",
-   "title": "Principal Security Cloud Solution Architect · Microsoft · TMH12",
-   "photo": "https://live360events.com/events/orlando-2026/speakers/-/media/ECG/live360/2024/orlando/Speaker-Photos/Xu_Bi_Yue_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker Window.aspx?SpeakerId={53B096A7-5ACF-454B-ACC2-C48E35FB56AB}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+   "title": "Principal Security Cloud Solution Architect · Microsoft",
+   "photo": "https://live360events.com/-/media/ECG/live360/2024/orlando/Speaker-Photos/Xu_Bi_Yue_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={53B096A7-5ACF-454B-ACC2-C48E35FB56AB}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   }
  ]
 }
