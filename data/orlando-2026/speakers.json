@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29T10:03Z",
+ "updated": "2026-10-29T13:02Z",
  "speakers": [
   {
    "id": "983A905C-D641-4561-9971-431F9A4DEA44",
@@ -26,14 +26,14 @@
    "id": "CCF79F2C-A6A7-49F0-B76B-49BF59CC6693",
    "name": "Sam Basu",
    "title": "Lead Developer Advocate · Uno Platform",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/VSLive/2020/VirtCon/Basu_Sam.png",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={CCF79F2C-A6A7-49F0-B76B-49BF59CC6693}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "EB5DA6F7-D534-4CBC-9D48-5741A765B379",
    "name": "Jason Beres",
    "title": "Chief Operating Officer · Infragistics",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/VSLive/2026/redmond/Beres_Jason_388.png",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={EB5DA6F7-D534-4CBC-9D48-5741A765B379}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
@@ -89,7 +89,7 @@
    "id": "7BD081A0-0AE2-4EB9-857A-260EF06D4D56",
    "name": "Eric D. Boyd",
    "title": "Founder and CEO · responsiveX",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/VSLive/2024/chicago/Boyd_Eric_2024_388.jpg",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={7BD081A0-0AE2-4EB9-857A-260EF06D4D56}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
@@ -124,7 +124,7 @@
    "id": "7299C03D-C05D-4F4C-A6E2-1A2261428695",
    "name": "Kayla Cinnamon",
    "title": "Senior AI Developer Tools Advocate · Microsoft",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/VSLive/2026/redmond/Cinnamon_Kayla_388.jpg",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={7299C03D-C05D-4F4C-A6E2-1A2261428695}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
@@ -236,21 +236,21 @@
    "id": "1F8B17B7-89EF-4ABA-A0E2-7C773DD8B186",
    "name": "Jon Galloway",
    "title": "Principal Program Manager, Developer Division Community Team · Microsoft",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/VSLive/2019/lasvegas/Speakers/Galloway_Jon.png",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={1F8B17B7-89EF-4ABA-A0E2-7C773DD8B186}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "FD78AE65-0EF4-48AE-B44E-893E66E524E8",
    "name": "Maarten Goet",
    "title": "Microsoft MVP & RD",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/live360/2023/orlando/Goet_Maarten_388.jpg",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={FD78AE65-0EF4-48AE-B44E-893E66E524E8}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "BA21854D-0186-42E9-B16A-D0CAE7A4C99E",
    "name": "Mickey Gousset",
    "title": "Staff DevOps Architect · GitHub",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/VSLive/2018/redmond/Speakers/Gousset_Mickey.png",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={BA21854D-0186-42E9-B16A-D0CAE7A4C99E}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
@@ -341,7 +341,7 @@
    "id": "48115B0D-BF85-43FD-AB01-E93C49395E2B",
    "name": "Alex Kaziuka",
    "title": "Chief Architect · SoftServe Inc.",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Kaziuka_Alex_388.jpg",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={48115B0D-BF85-43FD-AB01-E93C49395E2B}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
@@ -362,7 +362,7 @@
    "id": "C881A187-FCDA-44F7-AB94-973F3FBB3276",
    "name": "Veronika Kolesnikova",
    "title": "Microsoft MVP (AI) · Principal AI Engineer",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Kolesnikova_Veronika_388.png",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={C881A187-FCDA-44F7-AB94-973F3FBB3276}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
@@ -411,14 +411,14 @@
    "id": "25B0180B-6859-40C2-9236-E4430A9DC300",
    "name": "Thomas LeBlanc",
    "title": "Microsoft MVP · Business Intelligence Architect · SHI International Corp.",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/VSLive/2018/austin/Speakers/LeBlanc_Thomas.png",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={25B0180B-6859-40C2-9236-E4430A9DC300}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "5541CF31-F196-401B-A37D-A311CD976ED4",
    "name": "Rockford Lhotka",
    "title": "VP of Strategy · Xebia",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/VSLive/2023/lasvegas/Lhotka_Rocky_22_388.jpg",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={5541CF31-F196-401B-A37D-A311CD976ED4}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
@@ -544,7 +544,7 @@
    "id": "2642BBD4-D0D3-4030-972E-CEB10601F264",
    "name": "Carey Payette",
    "title": "Principal Engineer · Financial Finesse",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/live360/2022/orlando/Speakers/Payette_Carey_388.png",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={2642BBD4-D0D3-4030-972E-CEB10601F264}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
@@ -607,7 +607,7 @@
    "id": "B512D1DB-4216-4F19-BE1B-DC337C25308A",
    "name": "Ashley Rivera",
    "title": "Data and Automation Architect",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Rivera_Ashley_388.jpg",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={B512D1DB-4216-4F19-BE1B-DC337C25308A}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
@@ -677,7 +677,7 @@
    "id": "8CA8AFD4-971D-40D4-9AFE-69571D88B5B1",
    "name": "Samantha St-Louis",
    "title": "AI Solutions Lead · Global Knowledge",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/St_louis_Samantha_388.jpg",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={8CA8AFD4-971D-40D4-9AFE-69571D88B5B1}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
@@ -712,7 +712,7 @@
    "id": "D454D8F2-EF6E-432B-925E-2D20E8628D9C",
    "name": "Michael Van Horenbeeck",
    "title": "CEO · “The Collective”",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/live360/2022/orlando/Speakers/Van-Horenbeeck_Michael_388.png",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={D454D8F2-EF6E-432B-925E-2D20E8628D9C}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
@@ -740,21 +740,21 @@
    "id": "8E925393-48B3-497B-A499-732891798BDB",
    "name": "Sarah Wimberley",
    "title": "",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Wimberley_Sarah_388.png",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={8E925393-48B3-497B-A499-732891798BDB}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "E269AD0C-F23B-4D9C-8ED7-2BDCEC737228",
    "name": "Buck Woody",
    "title": "Chief Data Officer · Straight Path Solutions",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Woody_Buck_388.jpg",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={E269AD0C-F23B-4D9C-8ED7-2BDCEC737228}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "C98C9F83-9956-4D45-890B-8B55A6A75DD3",
    "name": "Jim Wooley",
    "title": "Senior Delivery Principal · Slalom Consulting",
-   "photo": null,
+   "photo": "https://live360events.com/-/media/ECG/VSLive/2018/austin/Speakers/Wooley_Jim.png",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={C98C9F83-9956-4D45-890B-8B55A6A75DD3}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
