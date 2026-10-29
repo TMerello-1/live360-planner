@@ -1,5 +1,5 @@
 // Offline-Unterstützung für Startseite und alle Konferenzen: App-Dateien vorab cachen, Seite "network first", Schriften "stale while revalidate"
-const VERSION = "v34";
+const VERSION = "v35";
 const APP = `planner-${VERSION}`;
 const FONTS = "planner-fonts";
 const ASSETS = ["./", "./index.html", "./conferences.json", "./manifest.webmanifest", "./pwa.js", "./updates.js", "./conf.js", "./sync.js", "./vendor/qrcode.js", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png", "./orlando-2026/", "./orlando-2026/index.html", "./san-diego-2026/", "./san-diego-2026/index.html"];
@@ -40,7 +40,7 @@ self.addEventListener("fetch", e => {
   if (req.mode === "navigate") {
     // Startseite und jede Konferenz haben ihre eigene Seite: unter ihrem Pfad (ohne ?…) cachen
     const key = url.origin + url.pathname.replace(/\/$/, "/index.html");
-    e.respondWith(fetch(req)
+    e.respondWith(fetch(req, { cache: "no-cache" })
       .then(r => { if (r.ok) { const copy = r.clone(); caches.open(APP).then(c => c.put(key, copy)); } return r; })
       .catch(() => caches.match(key).then(hit => hit || caches.match("./index.html"))));
     return;

@@ -26,7 +26,7 @@
   const host = document.querySelector(".update-row");
   if (host) host.append(row); else document.querySelector(".brand .sub").after(row);
   const box = row.querySelector("#conf-home"), sel = row.querySelector("#conf-go");
-  let list = [{ id: CONF.id, name: CONF.name }];
+  let list = CONF.list || [{ id: CONF.id, name: CONF.name }];
 
   // Noch keine Wahl gespeichert: die erste geöffnete Konferenz wird die Startkonferenz
   if (!get()) set({ redirect: true, conf: CONF.id });

@@ -30,10 +30,13 @@ HEAD = """<!doctype html>
 <body>
 """
 
-# Konferenzseiten
+# Liste der Konferenzen für Startseite und Konferenzwahl
+listing = [{k: c[k] for k in ("id", "name", "dates", "start", "end", "active")} for c in confs]
+
+# Konferenzseiten (mit eingebauter Konferenzliste, damit "Wechseln" nicht von einer gecachten conferences.json abhängt)
 for c in confs:
     conf = {"id": c["id"], "name": c["name"], "storageKey": c["storageKey"], "gistFile": c["gistFile"],
-            "home": "../", "data": f"../data/{c['id']}/"}
+            "home": "../", "data": f"../data/{c['id']}/", "list": listing}
     body = (root / "conferences" / c["id"] / "planner.html").read_text(encoding="utf-8")
     head = HEAD.format(home="../", extra=f"<script>window.CONF = {json.dumps(conf, ensure_ascii=False)};</script>\n")
     tail = "\n" + "".join(f'<script src="../{js}"></script>\n' for js in ("updates.js", "sync.js", "conf.js", "pwa.js")) + "</body>\n</html>\n"
@@ -42,8 +45,6 @@ for c in confs:
     out.write_text(head + body + tail, encoding="utf-8")
     print(out.relative_to(root), "built")
 
-# Liste der Konferenzen für Startseite und Konferenzwahl
-listing = [{k: c[k] for k in ("id", "name", "dates", "start", "end", "active")} for c in confs]
 (root / "conferences.json").write_text(json.dumps({"conferences": listing}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 # Startseite: öffnet die gemerkte Konferenz (Haken "Diese Konferenz beim Start öffnen"), sonst die Auswahl.
