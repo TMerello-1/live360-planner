@@ -36,7 +36,7 @@ for c in confs:
             "home": "../", "data": f"../data/{c['id']}/"}
     body = (root / "conferences" / c["id"] / "planner.html").read_text(encoding="utf-8")
     head = HEAD.format(home="../", extra=f"<script>window.CONF = {json.dumps(conf, ensure_ascii=False)};</script>\n")
-    tail = "\n" + "".join(f'<script src="../{js}"></script>\n' for js in ("updates.js", "conf.js", "sync.js", "pwa.js")) + "</body>\n</html>\n"
+    tail = "\n" + "".join(f'<script src="../{js}"></script>\n' for js in ("updates.js", "sync.js", "conf.js", "pwa.js")) + "</body>\n</html>\n"
     out = root / c["id"] / "index.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(head + body + tail, encoding="utf-8")
