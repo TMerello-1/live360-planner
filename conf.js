@@ -44,5 +44,5 @@
   sel.onchange = () => { if (sel.value) location.href = CONF.home + sel.value; };
   window.addEventListener("planner-lang", draw);
   draw();
-  fetch(CONF.home + "conferences.json").then(r => r.ok ? r.json() : null).then(d => { if (d && d.conferences) { list = d.conferences; draw(); } }).catch(() => {});
+  fetch(CONF.home + "conferences.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(d => { if (d && d.conferences) { list = d.conferences; draw(); } }).catch(() => {});
 })();

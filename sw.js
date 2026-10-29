@@ -1,11 +1,11 @@
 // Offline-Unterstützung für Startseite und alle Konferenzen: App-Dateien vorab cachen, Seite "network first", Schriften "stale while revalidate"
-const VERSION = "v33";
+const VERSION = "v34";
 const APP = `planner-${VERSION}`;
 const FONTS = "planner-fonts";
 const ASSETS = ["./", "./index.html", "./conferences.json", "./manifest.webmanifest", "./pwa.js", "./updates.js", "./conf.js", "./sync.js", "./vendor/qrcode.js", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png", "./orlando-2026/", "./orlando-2026/index.html", "./san-diego-2026/", "./san-diego-2026/index.html"];
 
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(APP).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(APP).then(c => c.addAll(ASSETS.map(u => new Request(u, { cache: "reload" })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener("activate", e => {
@@ -29,6 +29,13 @@ self.addEventListener("fetch", e => {
   }
   if (url.origin !== location.origin) return;
   if (url.pathname.includes("/data/")) return; // Programmdaten immer frisch aus dem Netz
+  if (url.pathname.endsWith("/conferences.json")) {
+    // Konferenzliste zuerst aus dem Netz, damit neue Konferenzen sofort in "Wechseln" auftauchen
+    e.respondWith(fetch(req, { cache: "no-cache" })
+      .then(r => { if (r.ok) { const copy = r.clone(); caches.open(APP).then(c => c.put(req, copy)); } return r; })
+      .catch(() => caches.match(req)));
+    return;
+  }
 
   if (req.mode === "navigate") {
     // Startseite und jede Konferenz haben ihre eigene Seite: unter ihrem Pfad (ohne ?…) cachen
