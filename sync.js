@@ -6,7 +6,7 @@
     syncIntro: "Deine gemerkten Sessions werden in einem geheimen Gist (einer kleinen privaten Datei) in deinem GitHub-Konto gespeichert und laufen automatisch zwischen deinen Geräten mit.",
     syncStep1: "1. Token erstellen: Link öffnen, ganz unten „Generate token“ tippen und den Token kopieren. Nur das Recht „gist“ ist angehakt.",
     syncOpenGh: "Token bei GitHub erstellen ↗",
-    syncStep2: "2. Token hier einfügen (oder den Verbindungslink eines anderen Geräts):", syncConnect: "Verbinden", syncBadToken: "GitHub hat den Token abgelehnt. Bitte prüfen.",
+    syncStep2: "2. Token hier einfügen (oder den Verbindungslink eines anderen Geräts):", syncConnect: "Verbinden", syncBadToken: "GitHub hat den Token abgelehnt. Bitte prüfen.", syncRejected: "Token abgelehnt – neu verbinden", syncRejectedText: "GitHub hat den gespeicherten Token abgelehnt (abgelaufen oder widerrufen). Dein Plan im Gist bleibt erhalten: erstelle einen neuen Token und füge ihn unten ein, dann geht es mit demselben Gist weiter.",
     syncOn: "Sync ist an. Änderungen gehen automatisch an deine anderen Geräte.", syncNow: "Jetzt synchronisieren",
     syncPair: "Weiteres Gerät verbinden", syncPairText: "Diesen Code mit dem anderen Gerät scannen oder den Link dort öffnen. Er enthält deinen Token, also nicht weitergeben. Für die Homescreen-App auf dem iPhone: Link kopieren und dort unter „Sync“ einfügen.",
     syncCopyLink: "Link kopieren", syncLinkCopied: "Link kopiert", syncDisconnect: "Sync auf diesem Gerät beenden",
@@ -18,7 +18,7 @@
     syncIntro: "Your saved sessions are stored in a secret Gist (a small private file) in your GitHub account and stay in sync across your devices automatically.",
     syncStep1: "1. Create a token: open the link, tap “Generate token” at the bottom and copy the token. Only the “gist” permission is ticked.",
     syncOpenGh: "Create token on GitHub ↗",
-    syncStep2: "2. Paste the token here (or a connect link from another device):", syncConnect: "Connect", syncBadToken: "GitHub rejected the token. Please check it.",
+    syncStep2: "2. Paste the token here (or a connect link from another device):", syncConnect: "Connect", syncBadToken: "GitHub rejected the token. Please check it.", syncRejected: "Token rejected – reconnect", syncRejectedText: "GitHub rejected the saved token (expired or revoked). Your plan in the Gist is safe: create a new token and paste it below to carry on with the same Gist.",
     syncOn: "Sync is on. Changes go to your other devices automatically.", syncNow: "Sync now",
     syncPair: "Connect another device", syncPairText: "Scan this code with the other device or open the link there. It contains your token, so don't share it. For the home-screen app on iPhone: copy the link and paste it into Sync there.",
     syncCopyLink: "Copy link", syncLinkCopied: "Link copied", syncDisconnect: "Stop syncing on this device",
@@ -70,7 +70,7 @@
   }
 
   async function sync() {
-    if (!cfg || busy || !navigator.onLine) return;
+    if (!cfg || cfg.rejected || busy || !navigator.onLine) return;
     busy = true; failed = false; label();
     try {
       if (!cfg.gist) { cfg.gist = await findGist(); saveCfg(); }
@@ -103,7 +103,8 @@
       lastSync = Date.now(); store.set("syncAt", lastSync);
     } catch (e) {
       failed = true;
-      if (e.status === 401) { cfg = null; saveCfg(); toast(t("syncBadToken")); }
+      // Abgelehnter Token: Verbindung (mit Gist) behalten und um einen neuen Token bitten, statt alles zu vergessen
+      if (e.status === 401) { cfg.rejected = true; saveCfg(); toast(t("syncBadToken")); }
     } finally {
       busy = false; label();
     }
@@ -119,7 +120,7 @@
 
   function label() {
     btn.textContent = (cfg ? "⟳ " : "") + t("sync");
-    status.textContent = !cfg ? t("syncOff") : busy ? t("syncBusy") : failed ? t("syncErr")
+    status.textContent = !cfg ? t("syncOff") : cfg.rejected ? t("syncRejected") : busy ? t("syncBusy") : failed ? t("syncErr")
       : lastSync ? t("syncOk", new Date(lastSync).toLocaleTimeString(LANG === "de" ? "de-DE" : "en-US", { hour: "2-digit", minute: "2-digit" })) : "";
   }
   label();
@@ -132,12 +133,13 @@
     pop.style.setProperty("--c", "var(--accent)");
     pop.innerHTML = `<button class="x" id="pop-x" aria-label="${t("close")}">×</button>
       <h2 id="pop-title"><span id="sync-pop"></span>${t("syncTitle")}</h2>
-      ${!cfg ? `<p>${t("syncIntro")}</p>
+      ${!cfg || cfg.rejected ? `<p>${cfg ? t("syncRejectedText") : t("syncIntro")}</p>
         <p>${t("syncStep1")}</p>
         <p><a class="btn" href="${TOKEN_URL}" target="_blank" rel="noopener">${t("syncOpenGh")}</a></p>
         <p>${t("syncStep2")}</p>
         <div style="display:flex;gap:8px;flex-wrap:wrap"><input id="sync-token" type="password" autocomplete="off" spellcheck="false" placeholder="ghp_…" style="flex:1;min-width:0;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font:inherit;background:var(--bg);color:var(--fg)"><button class="btn primary" id="sync-connect">${t("syncConnect")}</button></div>
-        <div class="note" id="sync-msg"></div>`
+        <div class="note" id="sync-msg"></div>
+        ${cfg ? `<p><button class="link-btn" id="sync-off" style="color:var(--danger)">${t("syncDisconnect")}</button></p>` : ""}`
       : `<p>${t("syncOn")}</p>
         <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" id="sync-now">${t("syncNow")}</button><button class="btn" id="sync-pair">${t("syncPair")}</button></div>
         ${showPair ? `<div><p class="note">${t("syncPairText")}</p><div id="sync-qr" style="background:#fff;padding:10px;display:inline-block;border-radius:8px"></div><p><button class="btn" id="sync-copy">${t("syncCopyLink")}</button></p></div>` : ""}
@@ -145,7 +147,7 @@
     document.getElementById("pop-bg").hidden = false;
     document.body.classList.add("noscroll");
     const $p = s => pop.querySelector(s);
-    if (!cfg) {
+    if (!cfg || cfg.rejected) {
       $p("#sync-connect").onclick = async () => {
         const raw = $p("#sync-token").value.trim();
         if (!raw) return;
@@ -154,11 +156,13 @@
         const lm = raw.match(/sync=([^&\s]+)/);
         if (lm) try { const d = JSON.parse(atob(decodeURIComponent(lm[1]))); token = d.t; gist = d.g || null; } catch {}
         $p("#sync-connect").disabled = true; $p("#sync-msg").textContent = t("syncBusy");
-        cfg = { token, gist };
+        const prev = cfg;
+        cfg = { token, gist: gist || (prev && prev.gist) || null };
         try { await api("/gists?per_page=1"); saveCfg(); await sync(); openPop(); }
-        catch { cfg = null; $p("#sync-msg").textContent = t("syncBadToken"); $p("#sync-connect").disabled = false; }
+        catch { cfg = prev; $p("#sync-msg").textContent = t("syncBadToken"); $p("#sync-connect").disabled = false; }
       };
       $p("#sync-token").focus();
+      if ($p("#sync-off")) $p("#sync-off").onclick = () => { cfg = null; saveCfg(); label(); openPop(); };
     } else {
       $p("#sync-now").onclick = () => sync();
       $p("#sync-pair").onclick = () => openPop(true);
