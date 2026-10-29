@@ -24,7 +24,7 @@
   const total = ch => Object.values(ch).reduce((a, l) => a + l.length, 0);
 
   function showResult(ch) {
-    const lines = [["rooms", "chRooms"], ["times", "chTimes"], ["titles", "chTitles"], ["speakers", "chSpeakers"], ["added", "chAdded"], ["removed", "chRemoved"]]
+    const lines = [["codes", "chRenum"], ["rooms", "chRooms"], ["times", "chTimes"], ["titles", "chTitles"], ["speakers", "chSpeakers"], ["added", "chAdded"], ["removed", "chRemoved"]]
       .filter(([k]) => ch[k].length).map(([k, key]) => `<li>${t(key, ch[k].length)}</li>`);
     const mine = [...new Set(Object.values(ch).flat())].filter(s => picked.has(s.id));
     const withRoom = SESSIONS.filter(s => s.room).length;
@@ -45,7 +45,7 @@
     if (!silent) { btn.disabled = true; btn.textContent = t("checking"); }
     try {
       const r = await fetch("data/sessions.json?t=" + Date.now(), { cache: "no-store" });
-      let ch = { rooms: [], times: [], titles: [], speakers: [], added: [], removed: [] };
+      let ch = { codes: [], rooms: [], times: [], titles: [], speakers: [], added: [], removed: [] };
       let redraw = false;
       if (r.ok) {
         const data = await r.json();

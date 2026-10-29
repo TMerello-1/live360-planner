@@ -667,14 +667,36 @@ const BASE_DATE = "2026-10-19";
 // Übernimmt neue Daten aus data/sessions.json (Räume, Zeiten, Titel, neue/entfallene Punkte).
 // Gibt zurück, was sich gegenüber dem aktuellen Stand geändert hat.
 function applyUpdates(data) {
-  const ch = { rooms: [], times: [], titles: [], speakers: [], added: [], removed: [] };
+  const ch = { codes: [], rooms: [], times: [], titles: [], speakers: [], added: [], removed: [] };
   if (!data || !Array.isArray(data.sessions)) return ch;
   const byUrl = new Map(SESSIONS.filter(s => s.url).map(s => [s.url.toLowerCase(), s]));
   const seen = new Set();
-  for (const n of data.sessions) {
-    if (!n || !n.url || n.start == null || n.end == null) continue;
+  const items = data.sessions.filter(n => n && n.url && n.start != null && n.end != null);
+  const newUrls = new Set(items.map(n => n.url.toLowerCase()));
+  // Umnummerierung: neue Adresse, aber gleicher Titel (oder gleiche Sprecher und Zeit, oder gleiche Nummer und Zeit) wie eine Session,
+  // deren alte Adresse verschwunden ist. Die Session behält ihre id, damit Merkliste und Markierungen bleiben.
+  const norm = x => (x || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  const orphans = SESSIONS.filter(s => s.url && !newUrls.has(s.url.toLowerCase()));
+  const fresh = items.filter(n => !byUrl.has(n.url.toLowerCase()));
+  const renum = new Map();
+  // Stärkste Übereinstimmung zuerst über alle Kandidaten: Titel, dann Sprecher + Zeit, dann Nummer + Zeit
+  for (const same of [
+    (s, n) => norm(s.title) === norm(cleanTitle(n.title || "")),
+    (s, n) => { const sp = norm((n.speakers || []).join(", ")); return sp && norm(s.speakers) === sp && s.start === n.start && s.end === n.end; },
+    (s, n) => n.code && s.code === n.code && s.start === n.start,
+  ]) for (const n of fresh) {
+    if (renum.has(n)) continue;
+    const k = orphans.findIndex(s => s.day === n.day && same(s, n));
+    if (k >= 0) renum.set(n, orphans.splice(k, 1)[0]);
+  }
+  const renumbered = n => renum.get(n) || null;
+  for (const n of items) {
     let s = byUrl.get(n.url.toLowerCase());
     if (!s && n.code && BY_ID[n.day + ":" + n.code] && !BY_ID[n.day + ":" + n.code].url) { s = BY_ID[n.day + ":" + n.code]; s.url = n.url; }
+    if (!s && (s = renumbered(n))) {
+      byUrl.delete(s.url.toLowerCase()); s.url = n.url; byUrl.set(n.url.toLowerCase(), s);
+      if ((n.code || "") !== s.code) { s.oldCode = s.code; s.code = n.code || ""; ch.codes.push(s); }
+    }
     const speakers = (n.speakers || []).join(", ");
     if (!s) {
       const code = n.code || "";
@@ -694,7 +716,7 @@ function applyUpdates(data) {
     }
     seen.add(s.url.toLowerCase());
   }
-  const covered = new Set(data.sessions.map(n => n.day));
+  const covered = new Set(items.map(n => n.day));
   for (const s of SESSIONS) if (s.url && covered.has(s.day) && !seen.has(s.url.toLowerCase()) && !s.removed) { s.removed = true; ch.removed.push(s); }
   rebuildSlots();
   return ch;
@@ -722,7 +744,7 @@ const I18N = {
     coveredBy: x => "Belegt durch " + x, free: "Noch frei", choices: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " zur Auswahl", look: "Ansehen →", onlyOpt: "Einzige Option",
     dayStats: (p, f) => `${p} gemerkt · ${f} frei`,
     nItems: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte"), ends: x => "Ende " + x,
-    pickedHere: "Gemerkt in diesem Slot:", topics: "Themen", speakers: "Sprecher", spkSearch: "Sprecher oder Firma suchen …", nSessions: n => n + (n === 1 ? " Session" : " Sessions"), spkSessions: "Sessions auf dieser Konferenz", officialProfile: "Offizielles Profil ↗", noProfile: "Noch kein offizielles Profil gelistet", noHitsDay: d => "Keine Treffer am " + d, decidedFor: x => "Entschieden für " + x + " (Muss ich sehen)", chosenOver: x => "Gewählt statt " + x, onlyFree: "Nur freie Slots", allFilled: "Alle Slots an diesem Tag sind belegt.", onlyMust: "Nur „Muss ich sehen“", onlyChanged: "Geändert", filtersBtn: "Filter", allDaysTab: "Alle", allDaysRange: "15.–20.", allDaysNote: (n, d) => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " an " + d + (d === 1 ? " Tag" : " Tagen") + " · alle Tage mit deinen Filtern", chgNote: n => n + (n === 1 ? " geänderter Programmpunkt" : " geänderte Programmpunkte") + " seit „Gesehen“, alle Tage", chgSeen: "Als gesehen markieren", chgCleared: "Änderungen als gesehen markiert", chgShow: "Geänderte Sessions zeigen", chg_added: "Neu", chg_times: "Neue Zeit", chg_rooms: "Neuer Raum", chg_titles: "Neuer Titel", chg_speakers: "Neue Sprecher", mustTag: "Muss ich sehen", mustSet: "Muss ich sehen", mustUndo: "Nicht mehr „Muss ich sehen“", mustOn: "Als „Muss ich sehen“ markiert", mustOff: "Markierung entfernt", moreN: n => "+" + n + " weitere", fewer: "weniger", showNope: "„Kein Interesse“ zeigen", nopeTag: "Kein Interesse", nopeSet: "Kein Interesse", nopeUndo: "Doch interessant", nopeUndoShort: "↺ Doch interessant", nopeOn: "Als „Kein Interesse“ markiert und ausgeblendet", nopeOff: "Wieder sichtbar", nopeHidden: n => n + " mit „Kein Interesse“ ausgeblendet · zeigen", noneLeft: "Alle Optionen mit „Kein Interesse“ markiert", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
+    pickedHere: "Gemerkt in diesem Slot:", topics: "Themen", speakers: "Sprecher", spkSearch: "Sprecher oder Firma suchen …", nSessions: n => n + (n === 1 ? " Session" : " Sessions"), spkSessions: "Sessions auf dieser Konferenz", officialProfile: "Offizielles Profil ↗", noProfile: "Noch kein offizielles Profil gelistet", noHitsDay: d => "Keine Treffer am " + d, decidedFor: x => "Entschieden für " + x + " (Muss ich sehen)", chosenOver: x => "Gewählt statt " + x, onlyFree: "Nur freie Slots", allFilled: "Alle Slots an diesem Tag sind belegt.", onlyMust: "Nur „Muss ich sehen“", onlyChanged: "Geändert", filtersBtn: "Filter", allDaysTab: "Alle", allDaysRange: "15.–20.", allDaysNote: (n, d) => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " an " + d + (d === 1 ? " Tag" : " Tagen") + " · alle Tage mit deinen Filtern", chgNote: n => n + (n === 1 ? " geänderter Programmpunkt" : " geänderte Programmpunkte") + " seit „Gesehen“, alle Tage", chgSeen: "Als gesehen markieren", chgCleared: "Änderungen als gesehen markiert", chgShow: "Geänderte Sessions zeigen", chg_added: "Neu", chg_codes: "Neue Nummer", chRenum: n => n + (n === 1 ? " Session umnummeriert" : " Sessions umnummeriert"), wasCode: c => "früher " + c, chg_times: "Neue Zeit", chg_rooms: "Neuer Raum", chg_titles: "Neuer Titel", chg_speakers: "Neue Sprecher", mustTag: "Muss ich sehen", mustSet: "Muss ich sehen", mustUndo: "Nicht mehr „Muss ich sehen“", mustOn: "Als „Muss ich sehen“ markiert", mustOff: "Markierung entfernt", moreN: n => "+" + n + " weitere", fewer: "weniger", showNope: "„Kein Interesse“ zeigen", nopeTag: "Kein Interesse", nopeSet: "Kein Interesse", nopeUndo: "Doch interessant", nopeUndoShort: "↺ Doch interessant", nopeOn: "Als „Kein Interesse“ markiert und ausgeblendet", nopeOff: "Wieder sichtbar", nopeHidden: n => n + " mit „Kein Interesse“ ausgeblendet · zeigen", noneLeft: "Alle Optionen mit „Kein Interesse“ markiert", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
     about: "Worum es geht", learn: "Du lernst", noDescEvent: "Für diesen Programmpunkt gibt es keine Beschreibung.", noDesc: "Zu dieser Session gibt es noch keine Beschreibung.",
     close: "Schließen", official: "Offizielle Seite öffnen ↗", summaryNote: "Kurzfassung der offiziellen Beschreibung (englisch), Stand 19.10.2026.",
     nothingYet: "Noch nichts gemerkt.", cleared: "Plan geleert", selectCopy: "Text markiert, jetzt kopieren", copied: "Plan kopiert", overlapMark: "⚠ Überschneidung",
@@ -758,7 +780,7 @@ const I18N = {
     coveredBy: x => "Taken by " + x, free: "Still free", choices: n => n + (n === 1 ? " item" : " items") + " to choose from", look: "View →", onlyOpt: "Only option",
     dayStats: (p, f) => `${p} saved · ${f} free`,
     nItems: n => n + (n === 1 ? " item" : " items"), ends: x => "ends " + x,
-    pickedHere: "Saved in this slot:", topics: "Topics", speakers: "Speakers", spkSearch: "Search speakers or companies …", nSessions: n => n + (n === 1 ? " session" : " sessions"), spkSessions: "Sessions at this conference", officialProfile: "Official profile ↗", noProfile: "No official profile listed yet", noHitsDay: d => "No matches on " + d, decidedFor: x => "Decided for " + x + " (must see)", chosenOver: x => "Chosen over " + x, onlyFree: "Free slots only", allFilled: "Every slot on this day is filled.", onlyMust: "Must see only", onlyChanged: "Changed", filtersBtn: "Filters", allDaysTab: "All", allDaysRange: "Nov 15–20", allDaysNote: (n, d) => n + (n === 1 ? " item" : " items") + " on " + d + (d === 1 ? " day" : " days") + " · all days with your filters", chgNote: n => n + (n === 1 ? " changed item" : " changed items") + " since you last marked them seen, all days", chgSeen: "Mark as seen", chgCleared: "Changes marked as seen", chgShow: "Show changed sessions", chg_added: "New", chg_times: "New time", chg_rooms: "New room", chg_titles: "New title", chg_speakers: "New speakers", mustTag: "Must see", mustSet: "Must see", mustUndo: "Remove must see", mustOn: "Marked as must see", mustOff: "Must see removed", moreN: n => "+" + n + " more", fewer: "fewer", showNope: "Show not interested", nopeTag: "Not interested", nopeSet: "Not interested", nopeUndo: "Interested again", nopeUndoShort: "↺ Interested again", nopeOn: "Marked as not interested and hidden", nopeOff: "Visible again", nopeHidden: n => n + " not interested hidden · show", noneLeft: "All options marked not interested", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
+    pickedHere: "Saved in this slot:", topics: "Topics", speakers: "Speakers", spkSearch: "Search speakers or companies …", nSessions: n => n + (n === 1 ? " session" : " sessions"), spkSessions: "Sessions at this conference", officialProfile: "Official profile ↗", noProfile: "No official profile listed yet", noHitsDay: d => "No matches on " + d, decidedFor: x => "Decided for " + x + " (must see)", chosenOver: x => "Chosen over " + x, onlyFree: "Free slots only", allFilled: "Every slot on this day is filled.", onlyMust: "Must see only", onlyChanged: "Changed", filtersBtn: "Filters", allDaysTab: "All", allDaysRange: "Nov 15–20", allDaysNote: (n, d) => n + (n === 1 ? " item" : " items") + " on " + d + (d === 1 ? " day" : " days") + " · all days with your filters", chgNote: n => n + (n === 1 ? " changed item" : " changed items") + " since you last marked them seen, all days", chgSeen: "Mark as seen", chgCleared: "Changes marked as seen", chgShow: "Show changed sessions", chg_added: "New", chg_codes: "New number", chRenum: n => n + (n === 1 ? " session renumbered" : " sessions renumbered"), wasCode: c => "was " + c, chg_times: "New time", chg_rooms: "New room", chg_titles: "New title", chg_speakers: "New speakers", mustTag: "Must see", mustSet: "Must see", mustUndo: "Remove must see", mustOn: "Marked as must see", mustOff: "Must see removed", moreN: n => "+" + n + " more", fewer: "fewer", showNope: "Show not interested", nopeTag: "Not interested", nopeSet: "Not interested", nopeUndo: "Interested again", nopeUndoShort: "↺ Interested again", nopeOn: "Marked as not interested and hidden", nopeOff: "Visible again", nopeHidden: n => n + " not interested hidden · show", noneLeft: "All options marked not interested", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
     about: "What it's about", learn: "You'll learn", noDescEvent: "There is no description for this item.", noDesc: "There is no description for this session yet.",
     close: "Close", official: "Open official page ↗", summaryNote: "Summary of the official description, as of Oct 19, 2026.",
     nothingYet: "Nothing saved yet.", cleared: "Plan cleared", selectCopy: "Text selected, copy it now", copied: "Plan copied", overlapMark: "⚠ overlap",
@@ -805,6 +827,13 @@ let picked = new Set(store.get("picked", []).filter(id => BY_ID[id]));
 let nope = new Set(store.get("nope", []).filter(id => BY_ID[id])); // "Kein Interesse"
 // Änderungen aus Programm-Updates, die noch nicht als gesehen markiert sind: id -> Arten (added, times, rooms, titles, speakers, removed)
 let changed = store.get("changed", {});
+for (const id of Object.keys(changed)) {
+  const s = BY_ID[id];
+  if (!s) delete changed[id];
+  else if (changed[id].includes("removed") && !s.removed) changed[id] = s.oldCode ? ["codes"] : changed[id].filter(k => k !== "removed");
+  if (changed[id] && !changed[id].length) delete changed[id];
+}
+store.set("changed", changed);
 function noteChanges(ch) {
   for (const [k, list] of Object.entries(ch)) for (const s of list) {
     const kinds = changed[s.id] || (changed[s.id] = []);
@@ -815,7 +844,7 @@ function noteChanges(ch) {
 }
 function clearChanges() { changed = {}; store.set("changed", changed); state.onlyChanged = false; saveUI(); syncInputs(); render(); }
 const isChanged = s => !!(changed[s.id] && changed[s.id].length);
-const chgTags = s => (changed[s.id] || []).filter(k => k !== "removed").map(k => `<span class="tag chg">${t("chg_" + k)}</span>`).join("");
+const chgTags = s => (changed[s.id] || []).filter(k => k !== "removed").map(k => `<span class="tag chg"${k === "codes" && s.oldCode ? ` title="${t("wasCode", s.oldCode)}"` : ""}>${t("chg_" + k)}${k === "codes" && s.oldCode ? ` · ${t("wasCode", s.oldCode)}` : ""}</span>`).join("");
 let must = new Set(store.get("must", []).filter(id => BY_ID[id])); // "Muss ich sehen"
 let state = Object.assign({ view: "prog", day: 17, cmpDay: 17, cmpStart: null, back: "prog", q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false, showNope: false, onlyMust: false, onlyFree: false, onlyChanged: false, filtersOpen: !matchMedia("(max-width: 700px)").matches }, store.get("ui", {}));
 if (!state.lang) state.lang = /^de\b/i.test(navigator.language || "") ? "de" : "en";
