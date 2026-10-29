@@ -1,3 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b6e8a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Live360 Plan">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<script>window.CONF = {"id": "orlando-2026", "name": "Live! 360 Orlando 2026", "storageKey": "l360or26", "gistFile": "live360-orlando-2026-plan.json", "home": "../", "data": "../data/orlando-2026/"};</script>
+</head>
+<body>
 <title>Live! 360 Orlando Planer</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -817,9 +833,11 @@ rebuildSlots();
 function slotAt(day, start) { return SLOTS[day].find(x => x.start === start); }
 
 // Zustand
+// Speicher je Konferenz: die Web-App setzt window.CONF (siehe build.py), die Claude-Version nimmt Orlando 2026
+const STORE_KEY = ((window.CONF && window.CONF.storageKey) || "l360or26") + ":";
 const store = {
-  get(k, d) { try { const v = localStorage.getItem("l360or26:" + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
-  set(k, v) { try { localStorage.setItem("l360or26:" + k, JSON.stringify(v)); } catch {} },
+  get(k, d) { try { const v = localStorage.getItem(STORE_KEY + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(STORE_KEY + k, JSON.stringify(v)); } catch {} },
 };
 // Zuletzt geladene Programm-Updates (nur in der installierbaren Version) gleich anwenden
 const cachedData = store.get("data", null);
@@ -1390,3 +1408,10 @@ $("#lang-de").onclick = () => setLang("de");
 $("#lang-en").onclick = () => setLang("en");
 applyLang(); syncInputs(); renderTrackChips(); render();
 </script>
+
+<script src="../updates.js"></script>
+<script src="../conf.js"></script>
+<script src="../sync.js"></script>
+<script src="../pwa.js"></script>
+</body>
+</html>

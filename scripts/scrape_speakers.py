@@ -1,4 +1,6 @@
-"""Liest die offizielle Sprecherliste von Live! 360 Orlando 2026 und schreibt data/speakers.json.
+"""Liest die offizielle Sprecherliste einer Live! 360-Konferenz und schreibt data/<id>/speakers.json.
+
+Aufruf: python3 scripts/scrape_speakers.py <conference-id>  (Angaben aus conferences/<id>/config.json)
 
 Läuft in GitHub Actions zusammen mit scrape.py. Nur Standardbibliothek.
 Gespeichert werden nur Fakten aus der Liste (Name, Titel/Firma, Foto-Adresse, Link zum offiziellen
@@ -14,8 +16,20 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin
 
-LIST_URL = "https://live360events.com/events/orlando-2026/speakers/speaker-list.aspx"
-OUT = Path(__file__).resolve().parent.parent / "data" / "speakers.json"
+def load_conf():
+    """Konferenz aus conferences/<id>/config.json; Kennung als Argument, sonst die einzige aktive."""
+    root = Path(__file__).resolve().parent.parent
+    ids = sys.argv[1:] or [p.parent.name for p in sorted(root.glob("conferences/*/config.json"))
+                           if json.loads(p.read_text(encoding="utf-8")).get("active")]
+    if len(ids) != 1:
+        raise SystemExit("usage: %s <conference-id>  (active: %s)" % (sys.argv[0], ", ".join(ids)))
+    conf = json.loads((root / "conferences" / ids[0] / "config.json").read_text(encoding="utf-8"))
+    return conf, root / "data" / conf["id"]
+
+
+CONF, DATA_DIR = load_conf()
+LIST_URL = CONF["speakerList"]
+OUT = DATA_DIR / "speakers.json"
 ID_RE = re.compile(r"SpeakerId=(?:%7B|\{)([0-9A-Fa-f-]{36})(?:%7D|\})", re.I)
 PHOTO_RE = re.compile(r"/-/media/|speakerphoto|speaker-photos", re.I)
 SESSION_RE = re.compile(r"^[A-Z]{2,6}\d{2}$|Live!|Demo Theater|Panel Discussion|Keynote", re.I)
@@ -122,7 +136,7 @@ def main():
         print(json.dumps(s, ensure_ascii=False))
     if len(speakers) < 20:
         raise SystemExit("too few speakers parsed, keeping the old file")
-    OUT.parent.mkdir(exist_ok=True)
+    OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ"), "speakers": speakers},
                               ensure_ascii=False, indent=1), encoding="utf-8")
 

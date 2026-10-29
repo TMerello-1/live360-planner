@@ -1,8 +1,8 @@
-// Offline-Unterstützung: App-Dateien vorab cachen, Seite "network first", Schriften "stale while revalidate"
-const VERSION = "v26";
+// Offline-Unterstützung für Startseite und alle Konferenzen: App-Dateien vorab cachen, Seite "network first", Schriften "stale while revalidate"
+const VERSION = "v27";
 const APP = `planner-${VERSION}`;
 const FONTS = "planner-fonts";
-const ASSETS = ["./", "./index.html", "./manifest.webmanifest", "./pwa.js", "./updates.js", "./sync.js", "./vendor/qrcode.js", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png"];
+const ASSETS = ["./", "./index.html", "./conferences.json", "./manifest.webmanifest", "./pwa.js", "./updates.js", "./conf.js", "./sync.js", "./vendor/qrcode.js", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png", "./orlando-2026/", "./orlando-2026/index.html"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(APP).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
@@ -31,9 +31,11 @@ self.addEventListener("fetch", e => {
   if (url.pathname.includes("/data/")) return; // Programmdaten immer frisch aus dem Netz
 
   if (req.mode === "navigate") {
+    // Startseite und jede Konferenz haben ihre eigene Seite: unter ihrem Pfad (ohne ?…) cachen
+    const key = url.origin + url.pathname.replace(/\/$/, "/index.html");
     e.respondWith(fetch(req)
-      .then(r => { const copy = r.clone(); caches.open(APP).then(c => c.put("./index.html", copy)); return r; })
-      .catch(() => caches.match("./index.html")));
+      .then(r => { if (r.ok) { const copy = r.clone(); caches.open(APP).then(c => c.put(key, copy)); } return r; })
+      .catch(() => caches.match(key).then(hit => hit || caches.match("./index.html"))));
     return;
   }
   e.respondWith(caches.match(req).then(hit => hit || fetch(req)));

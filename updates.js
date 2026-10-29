@@ -1,5 +1,6 @@
-// "Nach Updates suchen": lädt data/sessions.json (täglich per GitHub Action aktualisiert) und übernimmt Änderungen
+// "Nach Updates suchen": lädt data/<id>/sessions.json (täglich per GitHub Action aktualisiert) und übernimmt Änderungen
 (() => {
+  const DATA = (window.CONF && CONF.data) || "data/";
   const row = document.createElement("div");
   row.className = "update-row";
   row.innerHTML = '<button class="link-btn" id="check-updates"></button><span class="asof" id="data-asof"></span>';
@@ -44,7 +45,7 @@
   async function check(silent) {
     if (!silent) { btn.disabled = true; btn.textContent = t("checking"); }
     try {
-      const r = await fetch("data/sessions.json?t=" + Date.now(), { cache: "no-store" });
+      const r = await fetch(DATA + "sessions.json?t=" + Date.now(), { cache: "no-store" });
       let ch = { codes: [], rooms: [], times: [], titles: [], speakers: [], added: [], removed: [] };
       let redraw = false;
       if (r.ok) {
@@ -60,7 +61,7 @@
       } else if (r.status !== 404) throw new Error(r.status);
       // Sprecherliste (Titel, Foto, Profil-Link) gleich mit aktualisieren
       try {
-        const rs = await fetch("data/speakers.json?t=" + Date.now(), { cache: "no-store" });
+        const rs = await fetch(DATA + "speakers.json?t=" + Date.now(), { cache: "no-store" });
         if (rs.ok) {
           const sp = await rs.json();
           const prev = store.get("speakers", null);

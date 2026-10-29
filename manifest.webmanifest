@@ -1,7 +1,7 @@
 {
-  "name": "Live! 360 Orlando 2026 Planer",
+  "name": "Live! 360 Planer",
   "short_name": "Live360 Plan",
-  "description": "Persönlicher Sessionplaner für Live! 360 Orlando 2026",
+  "description": "Persönlicher Sessionplaner für Live! 360-Konferenzen",
   "lang": "de",
   "start_url": "./",
   "scope": "./",

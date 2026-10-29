@@ -1,4 +1,6 @@
-"""Liest die offizielle Sessionliste von Live! 360 Orlando 2026 und schreibt data/sessions.json.
+"""Liest die offizielle Sessionliste einer Live! 360-Konferenz und schreibt data/<id>/sessions.json.
+
+Aufruf: python3 scripts/scrape.py <conference-id>  (Angaben aus conferences/<id>/config.json)
 
 Läuft in GitHub Actions (siehe .github/workflows/update-sessions.yml). Nur Standardbibliothek.
 Die Seite listet Räume derzeit noch nicht; sobald sie auftauchen (auf der Liste oder der
@@ -14,9 +16,21 @@ from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 
-BASE = "https://live360events.com/events/orlando-2026/sessions/"
-DAYS = {15: "sunday", 16: "monday", 17: "tuesday", 18: "wednesday", 19: "thursday", 20: "friday"}
-OUT = Path(__file__).resolve().parent.parent / "data" / "sessions.json"
+def load_conf():
+    """Konferenz aus conferences/<id>/config.json; Kennung als Argument, sonst die einzige aktive."""
+    root = Path(__file__).resolve().parent.parent
+    ids = sys.argv[1:] or [p.parent.name for p in sorted(root.glob("conferences/*/config.json"))
+                           if json.loads(p.read_text(encoding="utf-8")).get("active")]
+    if len(ids) != 1:
+        raise SystemExit("usage: %s <conference-id>  (active: %s)" % (sys.argv[0], ", ".join(ids)))
+    conf = json.loads((root / "conferences" / ids[0] / "config.json").read_text(encoding="utf-8"))
+    return conf, root / "data" / conf["id"]
+
+
+CONF, DATA_DIR = load_conf()
+BASE = CONF["sessionsBase"]
+DAYS = {int(k): v for k, v in CONF["days"].items()}
+OUT = DATA_DIR / "sessions.json"
 
 TIME_RE = re.compile(r"(\d{1,2}:\d{2}\s*[ap]\.?m\.?)\s*[-–]\s*(\d{1,2}:\d{2}\s*[ap]\.?m\.?)", re.I)
 CODE_RE = re.compile(r"\b([A-Z]{2}(?:HOL|[MTWHF])\d{2})\b")
@@ -172,7 +186,7 @@ def main():
     if old.get("sessions") == sessions:
         print("No changes.", file=sys.stderr)
         return
-    OUT.parent.mkdir(exist_ok=True)
+    OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ"), "sessions": sessions},
                               ensure_ascii=False, indent=1), encoding="utf-8")
     print("Wrote", OUT, file=sys.stderr)

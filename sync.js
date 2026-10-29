@@ -25,9 +25,15 @@
     syncPaired: "Device connected, syncing your plan", syncPlanUpdated: "Plan updated from another device",
   });
 
-  const FILE = "live360-orlando-2026-plan.json";
+  const FILE = (window.CONF && CONF.gistFile) || "live360-orlando-2026-plan.json";
   const TOKEN_URL = "https://github.com/settings/tokens/new?scopes=gist&description=Live360%20Planner%20sync";
-  let cfg = store.get("sync", null); // { token, gist }
+  // { token, gist } je Konferenz; der Token gilt für alle Konferenzen, damit man nur einmal koppeln muss
+  const TOKEN_KEY = "l360:syncToken";
+  const shared = () => { try { return localStorage.getItem(TOKEN_KEY); } catch { return null; } };
+  const share = c => { try { c && c.token ? localStorage.setItem(TOKEN_KEY, c.token) : localStorage.removeItem(TOKEN_KEY); } catch {} };
+  let cfg = store.get("sync", null) || (shared() ? { token: shared(), gist: null } : null);
+  const saveCfg = () => { store.set("sync", cfg); share(cfg); };
+  share(cfg);
   let log = store.get("syncLog", {}); // id -> [1|0, ms] für Gemerkte, "x:"+id für "Kein Interesse", "m:"+id für "Muss ich sehen"
   let lastSync = store.get("syncAt", 0), busy = false, failed = false, timer = 0;
 
@@ -59,7 +65,7 @@
       if (hit) return hit.id;
       if (list.length < 100) break;
     }
-    const g = await api("/gists", { method: "POST", body: JSON.stringify({ public: false, description: "Live! 360 Orlando 2026 planner (sync)", files: { [FILE]: { content: JSON.stringify({ v: 1, items: {} }) } } }) });
+    const g = await api("/gists", { method: "POST", body: JSON.stringify({ public: false, description: ((window.CONF && CONF.name) || "Live! 360 Orlando 2026") + " planner (sync)", files: { [FILE]: { content: JSON.stringify({ v: 1, items: {} }) } } }) });
     return g.id;
   }
 
@@ -67,7 +73,7 @@
     if (!cfg || busy || !navigator.onLine) return;
     busy = true; failed = false; label();
     try {
-      if (!cfg.gist) { cfg.gist = await findGist(); store.set("sync", cfg); }
+      if (!cfg.gist) { cfg.gist = await findGist(); saveCfg(); }
       let remote = {};
       try {
         const g = await api("/gists/" + cfg.gist);
@@ -76,7 +82,7 @@
         remote = (JSON.parse(text || "{}").items) || {};
       } catch (e) {
         if (e.status !== 404) throw e;
-        cfg.gist = await findGist(); store.set("sync", cfg);
+        cfg.gist = await findGist(); saveCfg();
       }
       // Pro Session gewinnt die jüngere Änderung
       const merged = { ...remote };
@@ -96,7 +102,7 @@
       lastSync = Date.now(); store.set("syncAt", lastSync);
     } catch (e) {
       failed = true;
-      if (e.status === 401) { cfg = null; store.set("sync", null); toast(t("syncBadToken")); }
+      if (e.status === 401) { cfg = null; saveCfg(); toast(t("syncBadToken")); }
     } finally {
       busy = false; label();
     }
@@ -148,20 +154,20 @@
         if (lm) try { const d = JSON.parse(atob(decodeURIComponent(lm[1]))); token = d.t; gist = d.g || null; } catch {}
         $p("#sync-connect").disabled = true; $p("#sync-msg").textContent = t("syncBusy");
         cfg = { token, gist };
-        try { await api("/gists?per_page=1"); store.set("sync", cfg); await sync(); openPop(); }
+        try { await api("/gists?per_page=1"); saveCfg(); await sync(); openPop(); }
         catch { cfg = null; $p("#sync-msg").textContent = t("syncBadToken"); $p("#sync-connect").disabled = false; }
       };
       $p("#sync-token").focus();
     } else {
       $p("#sync-now").onclick = () => sync();
       $p("#sync-pair").onclick = () => openPop(true);
-      $p("#sync-off").onclick = () => { cfg = null; store.set("sync", null); label(); openPop(); };
+      $p("#sync-off").onclick = () => { cfg = null; saveCfg(); label(); openPop(); };
       if (showPair) {
         const link = pairLink();
         $p("#sync-copy").onclick = () => { try { navigator.clipboard.writeText(link).then(() => toast(t("syncLinkCopied"))); } catch {} };
         const draw = () => { const q = qrcode(0, "M"); q.addData(link); q.make(); $p("#sync-qr").innerHTML = q.createSvgTag({ cellSize: 4, margin: 0 }); };
         if (window.qrcode) draw();
-        else { const s = document.createElement("script"); s.src = "vendor/qrcode.js"; s.onload = draw; document.head.append(s); }
+        else { const s = document.createElement("script"); s.src = ((window.CONF && CONF.home) || "") + "vendor/qrcode.js"; s.onload = draw; document.head.append(s); }
       }
     }
   }
@@ -173,7 +179,7 @@
     if (!m) return;
     try {
       const d = JSON.parse(atob(decodeURIComponent(m[1])));
-      if (d.t) { cfg = { token: d.t, gist: d.g || null }; store.set("sync", cfg); toast(t("syncPaired")); }
+      if (d.t) { cfg = { token: d.t, gist: d.g || null }; saveCfg(); toast(t("syncPaired")); }
     } catch {}
     history.replaceState(null, "", location.pathname + location.search);
   }

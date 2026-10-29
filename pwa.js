@@ -1,7 +1,7 @@
 // Installierbarkeit: Service Worker registrieren und einen "Installieren"-Knopf anbieten
 (() => {
   if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
+    window.addEventListener("load", () => navigator.serviceWorker.register(((window.CONF && CONF.home) || "./") + "sw.js").catch(() => {}));
   }
 
   const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;

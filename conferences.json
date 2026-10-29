@@ -1,0 +1,15 @@
+{
+ "conferences": [
+  {
+   "id": "orlando-2026",
+   "name": "Live! 360 Orlando 2026",
+   "dates": {
+    "en": "November 15–20, 2026",
+    "de": "15.–20. November 2026"
+   },
+   "start": "2026-11-15",
+   "end": "2026-11-20",
+   "active": true
+  }
+ ]
+}

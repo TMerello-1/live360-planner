@@ -1,0 +1,14 @@
+{
+  "id": "orlando-2026",
+  "name": "Live! 360 Orlando 2026",
+  "dates": { "en": "November 15–20, 2026", "de": "15.–20. November 2026" },
+  "start": "2026-11-15",
+  "end": "2026-11-20",
+  "active": true,
+  "site": "https://live360events.com/events/orlando-2026/",
+  "sessionsBase": "https://live360events.com/events/orlando-2026/sessions/",
+  "speakerList": "https://live360events.com/events/orlando-2026/speakers/speaker-list.aspx",
+  "days": { "15": "sunday", "16": "monday", "17": "tuesday", "18": "wednesday", "19": "thursday", "20": "friday" },
+  "storageKey": "l360or26",
+  "gistFile": "live360-orlando-2026-plan.json"
+}
