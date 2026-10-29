@@ -31,8 +31,8 @@ CONF, DATA_DIR = load_conf()
 LIST_URL = CONF["speakerList"]
 OUT = DATA_DIR / "speakers.json"
 ID_RE = re.compile(r"SpeakerId=(?:%7B|\{)([0-9A-Fa-f-]{36})(?:%7D|\})", re.I)
-PHOTO_RE = re.compile(r"/-/media/|speakerphoto|speaker-photos", re.I)
-SESSION_RE = re.compile(r"^[A-Z]{2,6}\d{2}$|Live!|Demo Theater|Panel Discussion|Keynote", re.I)
+PHOTO_RE = re.compile(r"(?:^|/)-/media/|speakerphoto|speaker-photos", re.I)
+SESSION_RE = re.compile(r"^[A-Z]{1,6}\d{2}$|Live!|Demo Theater|Panel Discussion|Keynote", re.I)
 NOISE_RE = re.compile(r"^(view|more|bio|sessions?|read more|speaker|profile|details|close|×)\b.*$", re.I)
 
 

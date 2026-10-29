@@ -1,0 +1,215 @@
+{
+ "updated": "2026-10-29T12:30Z",
+ "speakers": [
+  {
+   "id": "5C49CD6D-D4A7-4C4F-8311-20FB96CF4841",
+   "name": "Alvin Ashcraft",
+   "title": "Senior Content Developer · Microsoft",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Ashcraft_Alvin_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={5C49CD6D-D4A7-4C4F-8311-20FB96CF4841}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "454D2618-7D2B-4F2D-94CF-635A356E9E87",
+   "name": "Chris Ayers",
+   "title": "Senior SRE · Microsoft",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Ayers_Chris_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={454D2618-7D2B-4F2D-94CF-635A356E9E87}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "CCF79F2C-A6A7-49F0-B76B-49BF59CC6693",
+   "name": "Sam Basu",
+   "title": "Lead Developer Advocate · Uno Platform",
+   "photo": "https://vslive.com/-/media/ECG/VSLive/2020/VirtCon/Basu_Sam.png",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={CCF79F2C-A6A7-49F0-B76B-49BF59CC6693}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "A1CBBE06-7C0E-4F70-9190-CA0F36C5FB04",
+   "name": "Prashant G Bhoyar",
+   "title": "AI Architect in the Office of the CTO · AIS",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Bhoyar_Prashant_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={A1CBBE06-7C0E-4F70-9190-CA0F36C5FB04}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "E5E198A0-7C9F-4382-97DD-07DEE85F58B7",
+   "name": "Jason Bock",
+   "title": "MVP (C#) · Staff Software Engineer · Rocket Mortgage",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Bock_Jason_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={E5E198A0-7C9F-4382-97DD-07DEE85F58B7}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "5D170A9D-A59D-4FB2-AEA9-DE36E44423F9",
+   "name": "Hazel Bohon",
+   "title": "Software Engineer · Particular",
+   "photo": "https://vslive.com/-/media/ECG/VSLive/2025/sandiego/speakers/bohon_hazel_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={5D170A9D-A59D-4FB2-AEA9-DE36E44423F9}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "7BD081A0-0AE2-4EB9-857A-260EF06D4D56",
+   "name": "Eric D. Boyd",
+   "title": "Founder and CEO · responsiveX",
+   "photo": "https://vslive.com/-/media/ECG/VSLive/2024/chicago/Boyd_Eric_2024_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={7BD081A0-0AE2-4EB9-857A-260EF06D4D56}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "6E2C63C7-4CE7-4F7F-B6C5-D306749723A1",
+   "name": "Tony Champion",
+   "title": "President · Champion DS",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Champion-Tony_388.png",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={6E2C63C7-4CE7-4F7F-B6C5-D306749723A1}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "3CF8D375-17EF-45BB-8C49-E3B7F3E7391C",
+   "name": "Denny Cherry",
+   "title": "Owner and Principal Consultant · Denny Cherry & Associates Consulting",
+   "photo": "https://vslive.com/-/media/ECG/live360/2018/orlando/Speaker-Photos/Cherry_Denny.png",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={3CF8D375-17EF-45BB-8C49-E3B7F3E7391C}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "89536929-0F6E-4F6F-9BD0-310918D7D3D1",
+   "name": "Allen Conway",
+   "title": "Microsoft MVP · Principal Consultant · Xebia",
+   "photo": "https://vslive.com/-/media/ECG/live360/2018/orlando/Speaker-Photos/Conway_Allen.png",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={89536929-0F6E-4F6F-9BD0-310918D7D3D1}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "7F767BAC-D254-4F97-8EA1-69ABE67652B0",
+   "name": "Roy Cornelissen",
+   "title": "Cloud Solution Architect · Xebia",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Cornelissen_Roy_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={7F767BAC-D254-4F97-8EA1-69ABE67652B0}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "168C06BE-5D40-4ACB-A772-FA46AB8C0E2A",
+   "name": "Benjamin Day",
+   "title": "Author, Trainer, Developer",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Day_Ben_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={168C06BE-5D40-4ACB-A772-FA46AB8C0E2A}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "0B329109-CBDE-4BA7-8269-B264F07F7C3B",
+   "name": "Marcel de Vries",
+   "title": "Global MD & CTO · Xebia",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/de-Vries_Marcel_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={0B329109-CBDE-4BA7-8269-B264F07F7C3B}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "121E7E67-E731-441E-8A64-C0B1E4E8DC83",
+   "name": "Alon Fliess",
+   "title": "Founder · ZioNet",
+   "photo": "https://vslive.com/-/media/ECG/live360/2021/orlando/Speaker-Photos/Fliess_Alon.png",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={121E7E67-E731-441E-8A64-C0B1E4E8DC83}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "1F8B17B7-89EF-4ABA-A0E2-7C773DD8B186",
+   "name": "Jon Galloway",
+   "title": "Principal Program Manager, Developer Division Community Team · Microsoft",
+   "photo": "https://vslive.com/-/media/ECG/VSLive/2019/lasvegas/Speakers/Galloway_Jon.png",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={1F8B17B7-89EF-4ABA-A0E2-7C773DD8B186}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "BB27902A-07EF-4B01-ACD7-0BE090C08A12",
+   "name": "Esteban Garcia",
+   "title": "Microsoft MVP, Microsoft Regional Director · Head of GitHub AI Services · Lantern",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Garcia_Esteban_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={BB27902A-07EF-4B01-ACD7-0BE090C08A12}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "4C87D26C-B4F0-4929-AAAA-DBCE8389AE3C",
+   "name": "Philip Japikse",
+   "title": "Microsoft MVP, ASPInsider, MCSD, PSM II, PSD and PST · CTO/Chief Architect, Author, Speaker · Pintas & Mullins",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Japikse_Phil_web.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={4C87D26C-B4F0-4929-AAAA-DBCE8389AE3C}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "C45B4523-348F-41B1-B989-5E52266F1D8F",
+   "name": "Steve Jones",
+   "title": "The Voice of the DBA",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Jones_Steve_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={C45B4523-348F-41B1-B989-5E52266F1D8F}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "8380481A-C4C4-4644-866C-118A9985BDD1",
+   "name": "Mads Kristensen",
+   "title": "Principal Product Manager, Visual Studio · Microsoft",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Kristensen_Mads_2.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={8380481A-C4C4-4644-866C-118A9985BDD1}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "89D0AAE3-69C0-4120-9DE7-7812BCEDDEC7",
+   "name": "Deborah Kurata",
+   "title": "Microsoft MVP and Google Developer Expert (GDE) · Consultant, Speaker, Author",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Kurata_Deborah_web.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={89D0AAE3-69C0-4120-9DE7-7812BCEDDEC7}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "63CD2DEA-FF53-44AF-9CB1-AB97B09FADFB",
+   "name": "Mayuri Lahane",
+   "title": "Software Engineer, AI Enthusiast",
+   "photo": "https://vslive.com/-/media/ECG/TechMentor/2026/redmond/Speaker-Photos/Lahane_Mayuri_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={63CD2DEA-FF53-44AF-9CB1-AB97B09FADFB}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "5541CF31-F196-401B-A37D-A311CD976ED4",
+   "name": "Rockford Lhotka",
+   "title": "VP of Strategy · Xebia",
+   "photo": "https://vslive.com/-/media/ECG/VSLive/2023/lasvegas/Lhotka_Rocky_22_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={5541CF31-F196-401B-A37D-A311CD976ED4}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "C7975737-779C-4848-B00B-F57F9CED4D1D",
+   "name": "Ted Neward",
+   "title": "Principal · Neward and Associates",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Neward_Ted_web.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={C7975737-779C-4848-B00B-F57F9CED4D1D}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "95C3FFE4-8822-4028-A91E-A1DA3A6BF980",
+   "name": "Brian A. Randell",
+   "title": "Partner · MCW Technologies",
+   "photo": "https://vslive.com/-/media/ECG/live360/2021/orlando/Speaker-Photos/Randell_Brian_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={95C3FFE4-8822-4028-A91E-A1DA3A6BF980}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "AEEE3537-4625-45AA-9168-ADC1C104AA2F",
+   "name": "Manpreet Singh",
+   "title": "Senior Architect · Cognizant",
+   "photo": "https://vslive.com/-/media/ECG/VSLive/2026/sandiego/Singh_Manpreet_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={AEEE3537-4625-45AA-9168-ADC1C104AA2F}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "7A4C30AF-EBEE-4705-A869-0B641BBE60AA",
+   "name": "René van Osnabrugge",
+   "title": "Consulting Director · Xebia",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/vanOsnabrugge_Rene_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={7A4C30AF-EBEE-4705-A869-0B641BBE60AA}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "E5449164-48EF-4A9B-BAC3-FA90FBD97121",
+   "name": "Amber Vanderburg",
+   "title": "Founder · Pathwayz Group",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Vanderburg_Amber_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={E5449164-48EF-4A9B-BAC3-FA90FBD97121}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "E569062B-D06E-4070-9C59-9B6BE9DB14F4",
+   "name": "Derek Wade",
+   "title": "Senior Consultant · responsiveX",
+   "photo": "https://vslive.com/-/media/ECG/EventSpeakerPhotos/Wade_Derek_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={E569062B-D06E-4070-9C59-9B6BE9DB14F4}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "60F2F875-A965-48F3-A8CD-E88CE9E21162",
+   "name": "Dan Wahlin",
+   "title": "Principal Cloud Developer Advocate · Microsoft",
+   "photo": "https://vslive.com/-/media/ECG/live360/2024/orlando/Speaker-Photos/Wahlin_Dan_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={60F2F875-A965-48F3-A8CD-E88CE9E21162}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  },
+  {
+   "id": "6501C1AA-71AA-4491-920E-DB43E5252924",
+   "name": "Bob Ward",
+   "title": "Principal Architect, Microsoft Azure Data · Microsoft",
+   "photo": "https://vslive.com/-/media/ECG/live360/2021/orlando/Speaker-Photos/Ward_Bob_388.jpg",
+   "url": "https://vslive.com/events/san-diego-2026/Speakers/Speaker%20Window.aspx?SpeakerId={6501C1AA-71AA-4491-920E-DB43E5252924}&ID={220B5FAC-97FE-4E7C-B367-D05A0F99B0B2}"
+  }
+ ]
+}

@@ -14,7 +14,7 @@
 <title>Live! 360 Planner</title>
 <script>
 (() => {
-  const confs = ["orlando-2026"], active = ["orlando-2026"];
+  const confs = ["orlando-2026", "san-diego-2026"], active = ["orlando-2026"];
   let pref = null; try { pref = JSON.parse(localStorage.getItem("l360:home")); } catch {}
   const target = pref ? (pref.redirect && confs.includes(pref.conf) ? pref.conf : null) : (active.length === 1 ? active[0] : null);
   if (target && !/[?&]list\b/.test(location.search)) location.replace(target + "/" + location.hash);
@@ -39,6 +39,7 @@
   <h1>Live! 360 Planner</h1>
   <p data-de="Wähle eine Konferenz. Mit dem Haken „Diese Konferenz beim Start öffnen“ in der Konferenz landest du künftig direkt dort.">Pick a conference. Tick "Open this conference on start" inside a conference to go straight there next time.</p>
     <a class="conf" href="orlando-2026/"><b>Live! 360 Orlando 2026</b><span data-de="15.–20. November 2026">November 15–20, 2026</span></a>
+    <a class="conf" href="san-diego-2026/"><b>VSLive! San Diego 2026</b><span data-de="14.–18. September 2026">September 14–18, 2026</span></a>
 </main>
 <script>
   if (/^de\b/i.test(navigator.language)) document.querySelectorAll("[data-de]").forEach(e => e.textContent = e.dataset.de);

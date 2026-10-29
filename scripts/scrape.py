@@ -33,7 +33,7 @@ DAYS = {int(k): v for k, v in CONF["days"].items()}
 OUT = DATA_DIR / "sessions.json"
 
 TIME_RE = re.compile(r"(\d{1,2}:\d{2}\s*[ap]\.?m\.?)\s*[-–]\s*(\d{1,2}:\d{2}\s*[ap]\.?m\.?)", re.I)
-CODE_RE = re.compile(r"\b([A-Z]{2}(?:HOL|[MTWHF])\d{2})\b")
+CODE_RE = re.compile(r"\b((?:[A-Z]{2})?(?:HOL|[MTWHF])\d{2})\b")  # Live! 360: VST01, DPHOL01; VSLive!: T01, HOL01
 ROOM_LABEL_RE = re.compile(r"\b(?:Room|Location|Raum)\s*:\s*([^\n|]{2,60})", re.I)
 ROOM_WORD_RE = re.compile(r"\b(Salon|Ballroom|Hall|Room|Lagoon|Pacific|Oceana|Islands?|Sails|Bay|Suite|Pavilion|Palms)\b", re.I)
 SKIP_TEXT_RE = re.compile(r"^(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)\b|Royal Pacific Resort|^\W*$", re.I)
@@ -170,7 +170,7 @@ def main():
         day = parse_day(num, html)
         print(f"{name}: {len(day)} entries", file=sys.stderr)
         sessions.extend(day)
-    if len(sessions) < 100:
+    if len(sessions) < 50:
         sys.exit(f"Only {len(sessions)} sessions parsed; page layout probably changed. Not writing.")
     for s in sessions:
         s["url"] = f"{BASE}{DAYS[s['day']]}/{s['slug']}.aspx"

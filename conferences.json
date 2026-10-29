@@ -10,6 +10,17 @@
    "start": "2026-11-15",
    "end": "2026-11-20",
    "active": true
+  },
+  {
+   "id": "san-diego-2026",
+   "name": "VSLive! San Diego 2026",
+   "dates": {
+    "en": "September 14–18, 2026",
+    "de": "14.–18. September 2026"
+   },
+   "start": "2026-09-14",
+   "end": "2026-09-18",
+   "active": false
   }
  ]
 }

@@ -1,0 +1,14 @@
+{
+  "id": "san-diego-2026",
+  "name": "VSLive! San Diego 2026",
+  "dates": { "en": "September 14–18, 2026", "de": "14.–18. September 2026" },
+  "start": "2026-09-14",
+  "end": "2026-09-18",
+  "active": false,
+  "site": "https://vslive.com/events/san-diego-2026/",
+  "sessionsBase": "https://vslive.com/events/san-diego-2026/sessions/",
+  "speakerList": "https://vslive.com/events/san-diego-2026/speakers/speaker-list.aspx",
+  "days": { "14": "monday", "15": "tuesday", "16": "wednesday", "17": "thursday", "18": "friday" },
+  "storageKey": "l360sd26",
+  "gistFile": "live360-san-diego-2026-plan.json"
+}

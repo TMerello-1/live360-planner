@@ -1,0 +1,1152 @@
+{
+ "updated": "2026-10-29T12:30Z",
+ "sessions": [
+  {
+   "day": 14,
+   "slug": "registration",
+   "title": "Pre-Conference Hands-On Lab Registration - Coffee and Morning Pastries",
+   "code": "",
+   "start": 450,
+   "end": 540,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/monday/registration.aspx",
+   "id": "14:registration"
+  },
+  {
+   "day": 14,
+   "slug": "hol01-2day-hol-python-and-ai-d1",
+   "title": "2-Day Hands-On Lab: Elevate Your Career with Python and AI - Day 1: Getting Started with Python",
+   "code": "HOL01",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Eric D. Boyd"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/monday/hol01-2day-hol-python-and-ai-d1.aspx",
+   "id": "14:HOL01"
+  },
+  {
+   "day": 14,
+   "slug": "hol02-microsoft-agent-framework",
+   "title": "Hands-On Lab: Unlock the Potential of AI in Your Applications with Microsoft Agent Framework",
+   "code": "HOL02",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Roy Cornelissen",
+    "Marcel de Vries",
+    "René van Osnabrugge"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/monday/hol02-microsoft-agent-framework.aspx",
+   "id": "14:HOL02"
+  },
+  {
+   "day": 14,
+   "slug": "hol03-mvc-app-copilot",
+   "title": "Hands-On Lab: Build an ASP.NET Core MVC App and EF Core with Copilot in a Day",
+   "code": "HOL03",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Philip Japikse"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/monday/hol03-mvc-app-copilot.aspx",
+   "id": "14:HOL03"
+  },
+  {
+   "day": 14,
+   "slug": "hol04-intelligent-apps",
+   "title": "Hands-On Lab: Building Intelligent .NET Applications with AI, MCP, GitHub Copilot SDK, and Agents",
+   "code": "HOL04",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Jon Galloway"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/monday/hol04-intelligent-apps.aspx",
+   "id": "14:HOL04"
+  },
+  {
+   "day": 14,
+   "slug": "mix-mingle",
+   "title": "Mix & Mingle @ VSLive!",
+   "code": "",
+   "start": 1125,
+   "end": 1200,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/monday/mix-mingle.aspx",
+   "id": "14:mix-mingle"
+  },
+  {
+   "day": 15,
+   "slug": "registration",
+   "title": "Registration - Coffee and Morning Pastries",
+   "code": "",
+   "start": 420,
+   "end": 480,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/registration.aspx",
+   "id": "15:registration"
+  },
+  {
+   "day": 15,
+   "slug": "t01-blazor-part-1",
+   "title": "Microsoft Blazor Zero to Success Part 1",
+   "code": "T01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Rockford Lhotka"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t01-blazor-part-1.aspx",
+   "id": "15:T01"
+  },
+  {
+   "day": 15,
+   "slug": "t02-azure-ai-foundry",
+   "title": "Building Intelligent Agents with Azure AI Foundry: From Idea to Enterprise-Ready Solutions",
+   "code": "T02",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Manpreet Singh"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t02-azure-ai-foundry.aspx",
+   "id": "15:T02"
+  },
+  {
+   "day": 15,
+   "slug": "t03-data-store",
+   "title": "Choosing the Right Data Store",
+   "code": "T03",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Denny Cherry"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t03-data-store.aspx",
+   "id": "15:T03"
+  },
+  {
+   "day": 15,
+   "slug": "t04-c-sharp",
+   "title": "What's New in C#",
+   "code": "T04",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Jason Bock"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t04-c-sharp.aspx",
+   "id": "15:T04"
+  },
+  {
+   "day": 15,
+   "slug": "t05-blazor-part-2",
+   "title": "Microsoft Blazor Zero to Success Part 2",
+   "code": "T05",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Rockford Lhotka"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t05-blazor-part-2.aspx",
+   "id": "15:T05"
+  },
+  {
+   "day": 15,
+   "slug": "t06-python",
+   "title": "Busy .NET Developer's Guide to Python",
+   "code": "T06",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Ted Neward"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t06-python.aspx",
+   "id": "15:T06"
+  },
+  {
+   "day": 15,
+   "slug": "t07-uno-platform",
+   "title": "Design & Develop True Cross-Platform .NET Apps with Uno Platform",
+   "code": "T07",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Sam Basu"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t07-uno-platform.aspx",
+   "id": "15:T07"
+  },
+  {
+   "day": 15,
+   "slug": "t08--microservices",
+   "title": "Microservices for Pragmatists",
+   "code": "T08",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Hazel Bohon"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t08--microservices.aspx",
+   "id": "15:T08"
+  },
+  {
+   "day": 15,
+   "slug": "am-break",
+   "title": "Coffee Break - Visit Exhibitors",
+   "code": "",
+   "start": 645,
+   "end": 675,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/am-break.aspx",
+   "id": "15:am-break"
+  },
+  {
+   "day": 15,
+   "slug": "keynote-vs-ai",
+   "title": "Keynote: You, Visual Studio, and AI: Rethinking the Inner Loop",
+   "code": "",
+   "start": 675,
+   "end": 735,
+   "speakers": [
+    "Mads Kristensen"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/keynote-vs-ai.aspx",
+   "id": "15:keynote-vs-ai"
+  },
+  {
+   "day": 15,
+   "slug": "lunch",
+   "title": "Lunch",
+   "code": "",
+   "start": 735,
+   "end": 795,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/lunch.aspx",
+   "id": "15:lunch"
+  },
+  {
+   "day": 15,
+   "slug": "t09-github-actions",
+   "title": "GitHub Actions in Action",
+   "code": "T09",
+   "start": 795,
+   "end": 870,
+   "speakers": [
+    "Marcel de Vries"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t09-github-actions.aspx",
+   "id": "15:T09"
+  },
+  {
+   "day": 15,
+   "slug": "t10-copilot-jarvis",
+   "title": "Build Your Own Copilot (Jarvis) 🤖 with Copilot Studio",
+   "code": "T10",
+   "start": 795,
+   "end": 870,
+   "speakers": [
+    "Manpreet Singh"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t10-copilot-jarvis.aspx",
+   "id": "15:T10"
+  },
+  {
+   "day": 15,
+   "slug": "t11-encrypting-data",
+   "title": "Where Should I Be Encrypting My Data",
+   "code": "T11",
+   "start": 795,
+   "end": 870,
+   "speakers": [
+    "Denny Cherry"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t11-encrypting-data.aspx",
+   "id": "15:T11"
+  },
+  {
+   "day": 15,
+   "slug": "t12-integrate-openai",
+   "title": "Integrate OpenAI, Communication, and Organizational Data Features into Line of Business Apps",
+   "code": "T12",
+   "start": 795,
+   "end": 870,
+   "speakers": [
+    "Dan Wahlin"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t12-integrate-openai.aspx",
+   "id": "15:T12"
+  },
+  {
+   "day": 15,
+   "slug": "pm-break",
+   "title": "Networking Break - Visit Exhibitors",
+   "code": "",
+   "start": 870,
+   "end": 900,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/pm-break.aspx",
+   "id": "15:pm-break"
+  },
+  {
+   "day": 15,
+   "slug": "t13-aspnet-core",
+   "title": "Building Web Applications with ASP.NET Core",
+   "code": "T13",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Philip Japikse"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t13-aspnet-core.aspx",
+   "id": "15:T13"
+  },
+  {
+   "day": 15,
+   "slug": "t14-local-genai-model",
+   "title": "Running a Local GenAI Model on Your Laptop",
+   "code": "T14",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Steve Jones"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t14-local-genai-model.aspx",
+   "id": "15:T14"
+  },
+  {
+   "day": 15,
+   "slug": "t15-design-to-code",
+   "title": "Design to Code for .NET Developers",
+   "code": "T15",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Sam Basu"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t15-design-to-code.aspx",
+   "id": "15:T15"
+  },
+  {
+   "day": 15,
+   "slug": "t16-performance-in-net",
+   "title": "Improving Performance in .NET",
+   "code": "T16",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Jason Bock"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/t16-performance-in-net.aspx",
+   "id": "15:T16"
+  },
+  {
+   "day": 15,
+   "slug": "welcome-reception",
+   "title": "San Diego Waterfront Welcome Reception - West Bay Beach",
+   "code": "",
+   "start": 975,
+   "end": 1050,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/tuesday/welcome-reception.aspx",
+   "id": "15:welcome-reception"
+  },
+  {
+   "day": 16,
+   "slug": "registration",
+   "title": "Registration - Coffee and Morning Pastries",
+   "code": "",
+   "start": 450,
+   "end": 480,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/registration.aspx",
+   "id": "16:registration"
+  },
+  {
+   "day": 16,
+   "slug": "w01-test-automation",
+   "title": "Maintainable and Scalable Test Automation with Playwright Cloud Services",
+   "code": "W01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Marcel de Vries"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w01-test-automation.aspx",
+   "id": "16:W01"
+  },
+  {
+   "day": 16,
+   "slug": "w02-multiplatform-apps",
+   "title": "Create Multi-platform Apps with .NET MAUI and the MAUI Community Toolkit",
+   "code": "W02",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Alvin Ashcraft"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w02-multiplatform-apps.aspx",
+   "id": "16:W02"
+  },
+  {
+   "day": 16,
+   "slug": "w03-write-code",
+   "title": "You’re Not Paid to Write Code",
+   "code": "W03",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Tony Champion"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w03-write-code.aspx",
+   "id": "16:W03"
+  },
+  {
+   "day": 16,
+   "slug": "w04-restful-services",
+   "title": "Building RESTful Services with ASP.NET Core",
+   "code": "W04",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Philip Japikse"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w04-restful-services.aspx",
+   "id": "16:W04"
+  },
+  {
+   "day": 16,
+   "slug": "w05-angular",
+   "title": "Angular’s Signal Forms and Model-first Validation",
+   "code": "W05",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Deborah Kurata"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w05-angular.aspx",
+   "id": "16:W05"
+  },
+  {
+   "day": 16,
+   "slug": "w06-git-storytelling",
+   "title": "Git Storytelling: Crafting a Git Commit History your Future Self will Thank You For",
+   "code": "W06",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Roy Cornelissen"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w06-git-storytelling.aspx",
+   "id": "16:W06"
+  },
+  {
+   "day": 16,
+   "slug": "w07-app-development",
+   "title": "Using Data API Builder to Speed Up Application Development",
+   "code": "W07",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Steve Jones"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w07-app-development.aspx",
+   "id": "16:W07"
+  },
+  {
+   "day": 16,
+   "slug": "w08-mcp-magic",
+   "title": "MCP Magic",
+   "code": "W08",
+   "start": 570,
+   "end": 645,
+   "speakers": [
+    "Rockford Lhotka"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w08-mcp-magic.aspx",
+   "id": "16:W08"
+  },
+  {
+   "day": 16,
+   "slug": "am-break",
+   "title": "Coffee Break - Visit Exhibitors",
+   "code": "",
+   "start": 645,
+   "end": 675,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/am-break.aspx",
+   "id": "16:am-break"
+  },
+  {
+   "day": 16,
+   "slug": "lunch",
+   "title": "Table Topic Lunch",
+   "code": "",
+   "start": 735,
+   "end": 795,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/lunch.aspx",
+   "id": "16:lunch"
+  },
+  {
+   "day": 16,
+   "slug": "wed-keynote-microsoft-databases",
+   "title": "Wednesday Keynote: Microsoft Databases: Architecting Cloud Native and AI Driven Applications",
+   "code": "",
+   "start": 675,
+   "end": 735,
+   "speakers": [
+    "Bob Ward"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/wed-keynote-microsoft-databases.aspx",
+   "id": "16:wed-keynote-microsoft-databases"
+  },
+  {
+   "day": 16,
+   "slug": "pm-break",
+   "title": "Sponsored Break - Exhibitor Raffle @ 2:15 pm (Must be present to win)",
+   "code": "",
+   "start": 845,
+   "end": 900,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/pm-break.aspx",
+   "id": "16:pm-break"
+  },
+  {
+   "day": 16,
+   "slug": "w09-ff-angular-signals",
+   "title": "Fast Focus: Mastering Angular Signals and the Resource API",
+   "code": "W09",
+   "start": 795,
+   "end": 815,
+   "speakers": [
+    "Deborah Kurata"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w09-ff-angular-signals.aspx",
+   "id": "16:W09"
+  },
+  {
+   "day": 16,
+   "slug": "w10-ff-messaging-patterns",
+   "title": "Fast Focus: Messaging Patterns for Distributed Systems on Azure",
+   "code": "W10",
+   "start": 795,
+   "end": 815,
+   "speakers": [
+    "Tony Champion"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w10-ff-messaging-patterns.aspx",
+   "id": "16:W10"
+  },
+  {
+   "day": 16,
+   "slug": "w11-ff-cli",
+   "title": "Fast Focus: Why YOU Should Use a CLI as a .NET Dev",
+   "code": "W11",
+   "start": 795,
+   "end": 815,
+   "speakers": [
+    "Brian A. Randell"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w11-ff-cli.aspx",
+   "id": "16:W11"
+  },
+  {
+   "day": 16,
+   "slug": "w12-ff-jupyter-notebooks",
+   "title": "Fast Focus: Jupyter Notebooks in VS Code",
+   "code": "W12",
+   "start": 825,
+   "end": 845,
+   "speakers": [
+    "Eric D. Boyd"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w12-ff-jupyter-notebooks.aspx",
+   "id": "16:W12"
+  },
+  {
+   "day": 16,
+   "slug": "w13-ff-api-versioning",
+   "title": "Fast Focus: API Versioning",
+   "code": "W13",
+   "start": 825,
+   "end": 845,
+   "speakers": [
+    "Philip Japikse"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w13-ff-api-versioning.aspx",
+   "id": "16:W13"
+  },
+  {
+   "day": 16,
+   "slug": "w14-ff-ai-dev-gallery",
+   "title": "Fast Focus: Explore Windows AI Dev Options with the AI Dev Gallery",
+   "code": "W14",
+   "start": 825,
+   "end": 845,
+   "speakers": [
+    "Alvin Ashcraft"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w14-ff-ai-dev-gallery.aspx",
+   "id": "16:W14"
+  },
+  {
+   "day": 16,
+   "slug": "w15-web-assembly",
+   "title": "Busy Developer's Guide to Web Assembly",
+   "code": "W15",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Ted Neward"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w15-web-assembly.aspx",
+   "id": "16:W15"
+  },
+  {
+   "day": 16,
+   "slug": "w16-copilot-vs-code",
+   "title": "Getting Started with GitHub Copilot in VS Code",
+   "code": "W16",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Mayuri Lahane"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w16-copilot-vs-code.aspx",
+   "id": "16:W16"
+  },
+  {
+   "day": 16,
+   "slug": "w17-visibility",
+   "title": "Visibility is a Technical Skill",
+   "code": "W17",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Tony Champion"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w17-visibility.aspx",
+   "id": "16:W17"
+  },
+  {
+   "day": 16,
+   "slug": "w18-monte-carlo",
+   "title": "Monte Carlo & Throughput: Putting Estimation Theater to Bed",
+   "code": "W18",
+   "start": 900,
+   "end": 975,
+   "speakers": [
+    "Benjamin Day"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w18-monte-carlo.aspx",
+   "id": "16:W18"
+  },
+  {
+   "day": 16,
+   "slug": "w19-fullstack-with-copilot",
+   "title": "Full-Stack with a Side of Copilot: Building and Deploying an App the AI-Accelerated Way",
+   "code": "W19",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Esteban Garcia"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w19-fullstack-with-copilot.aspx",
+   "id": "16:W19"
+  },
+  {
+   "day": 16,
+   "slug": "w20-agentic-revolution",
+   "title": "The Agentic Revolution: From Code Builders to System Rulers",
+   "code": "W20",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Alon Fliess"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w20-agentic-revolution.aspx",
+   "id": "16:W20"
+  },
+  {
+   "day": 16,
+   "slug": "w21-navigating-your-career",
+   "title": "Navigating Your Career as a Software Engineer",
+   "code": "W21",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Allen Conway"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w21-navigating-your-career.aspx",
+   "id": "16:W21"
+  },
+  {
+   "day": 16,
+   "slug": "w22-azure-horizondb",
+   "title": "Architecting Data Driven AI Applications with Azure HorizonDB",
+   "code": "W22",
+   "start": 990,
+   "end": 1065,
+   "speakers": [
+    "Bob Ward"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/w22-azure-horizondb.aspx",
+   "id": "16:W22"
+  },
+  {
+   "day": 16,
+   "slug": "out-on-the-town",
+   "title": "Out On The Town – A Night in San Diego You Won’t Forget!",
+   "code": "",
+   "start": 1095,
+   "end": 1335,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/wednesday/out-on-the-town.aspx",
+   "id": "16:out-on-the-town"
+  },
+  {
+   "day": 17,
+   "slug": "registration",
+   "title": "Registration - Coffee and Morning Pastries",
+   "code": "",
+   "start": 450,
+   "end": 480,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/registration.aspx",
+   "id": "17:registration"
+  },
+  {
+   "day": 17,
+   "slug": "h01-kubernetes-for-devs",
+   "title": "Kubernetes for Developers",
+   "code": "H01",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Dan Wahlin"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h01-kubernetes-for-devs.aspx",
+   "id": "17:H01"
+  },
+  {
+   "day": 17,
+   "slug": "h02-intelligent-apps",
+   "title": "Build Intelligent Apps with WinUI, Phi Silica and Foundry on Windows",
+   "code": "H02",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Alvin Ashcraft"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h02-intelligent-apps.aspx",
+   "id": "17:H02"
+  },
+  {
+   "day": 17,
+   "slug": "h03-github-projects",
+   "title": "GitHub Projects: Project Management for Devs Who Hate Project Management",
+   "code": "H03",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Benjamin Day"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h03-github-projects.aspx",
+   "id": "17:H03"
+  },
+  {
+   "day": 17,
+   "slug": "h04-modern-software-factory",
+   "title": "Orchestrating the Modern Software Factory: GitHub as the Intelligent Control Plane",
+   "code": "H04",
+   "start": 480,
+   "end": 555,
+   "speakers": [
+    "Esteban Garcia"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h04-modern-software-factory.aspx",
+   "id": "17:H04"
+  },
+  {
+   "day": 17,
+   "slug": "am-break",
+   "title": "Coffee Break",
+   "code": "",
+   "start": 555,
+   "end": 585,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/am-break.aspx",
+   "id": "17:am-break"
+  },
+  {
+   "day": 17,
+   "slug": "h05-zero-trust-apis",
+   "title": "Building Practical Zero Trust APIs with .NET 10 and Azure",
+   "code": "H05",
+   "start": 585,
+   "end": 660,
+   "speakers": [
+    "Roy Cornelissen"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h05-zero-trust-apis.aspx",
+   "id": "17:H05"
+  },
+  {
+   "day": 17,
+   "slug": "h06-prompt-engineering",
+   "title": "Talk to AI Better: Advanced Prompt Engineering in Action",
+   "code": "H06",
+   "start": 585,
+   "end": 660,
+   "speakers": [
+    "Mayuri Lahane"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h06-prompt-engineering.aspx",
+   "id": "17:H06"
+  },
+  {
+   "day": 17,
+   "slug": "h07-silent-question",
+   "title": "The Silent Question: What If Technology Disrupts My Role?",
+   "code": "H07",
+   "start": 585,
+   "end": 660,
+   "speakers": [
+    "René van Osnabrugge"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h07-silent-question.aspx",
+   "id": "17:H07"
+  },
+  {
+   "day": 17,
+   "slug": "h08-agentic-systems",
+   "title": "Developing Agentic Systems in .NET: From Concept to Code",
+   "code": "H08",
+   "start": 585,
+   "end": 660,
+   "speakers": [
+    "Alon Fliess"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h08-agentic-systems.aspx",
+   "id": "17:H08"
+  },
+  {
+   "day": 17,
+   "slug": "h09-productive-net-dev",
+   "title": "Be A More Productive .NET Dev with VS Code, Visual Studio, and the CLI",
+   "code": "H09",
+   "start": 675,
+   "end": 750,
+   "speakers": [
+    "Brian A. Randell"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h09-productive-net-dev.aspx",
+   "id": "17:H09"
+  },
+  {
+   "day": 17,
+   "slug": "h10-multimodal-agents",
+   "title": "Build Multimodal Agents to Talk with your Data & Take Actions using Azure SQL, Cosmos DB, Azure AI",
+   "code": "H10",
+   "start": 675,
+   "end": 750,
+   "speakers": [
+    "Prashant G Bhoyar"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h10-multimodal-agents.aspx",
+   "id": "17:H10"
+  },
+  {
+   "day": 17,
+   "slug": "h11-fabric-pipelines",
+   "title": "Developer’s Guide to Fabric Pipelines & Data Engineering Workflows",
+   "code": "H11",
+   "start": 675,
+   "end": 750,
+   "speakers": [
+    "Eric D. Boyd",
+    "Derek Wade"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h11-fabric-pipelines.aspx",
+   "id": "17:H11"
+  },
+  {
+   "day": 17,
+   "slug": "h12-code-reviews",
+   "title": "VAR, AI Referees, and the Future of Code Reviews",
+   "code": "H12",
+   "start": 675,
+   "end": 750,
+   "speakers": [
+    "Amber Vanderburg"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h12-code-reviews.aspx",
+   "id": "17:H12"
+  },
+  {
+   "day": 17,
+   "slug": "lunch",
+   "title": "Lunch",
+   "code": "",
+   "start": 750,
+   "end": 810,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/lunch.aspx",
+   "id": "17:lunch"
+  },
+  {
+   "day": 17,
+   "slug": "h13-debugging",
+   "title": "Debugging Like a Coach: Fixing Team Bugs Before They Crash the Game",
+   "code": "H13",
+   "start": 810,
+   "end": 885,
+   "speakers": [
+    "Amber Vanderburg"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h13-debugging.aspx",
+   "id": "17:H13"
+  },
+  {
+   "day": 17,
+   "slug": "h14-ai-software-lifecycle",
+   "title": "The AI-Powered Software Development Lifecycle",
+   "code": "H14",
+   "start": 810,
+   "end": 885,
+   "speakers": [
+    "René van Osnabrugge"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h14-ai-software-lifecycle.aspx",
+   "id": "17:H14"
+  },
+  {
+   "day": 17,
+   "slug": "h15-azure-sql",
+   "title": "The Developers Guide to Azure SQL Hyperscale",
+   "code": "H15",
+   "start": 810,
+   "end": 885,
+   "speakers": [
+    "Bob Ward"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h15-azure-sql.aspx",
+   "id": "17:H15"
+  },
+  {
+   "day": 17,
+   "slug": "h16-aspire-13",
+   "title": "Aspire 13: One AppHost, Many Languages, Fewer Headaches?",
+   "code": "H16",
+   "start": 810,
+   "end": 885,
+   "speakers": [
+    "Chris Ayers"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h16-aspire-13.aspx",
+   "id": "17:H16"
+  },
+  {
+   "day": 17,
+   "slug": "pm-break",
+   "title": "Afternoon Break",
+   "code": "",
+   "start": 885,
+   "end": 915,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/pm-break.aspx",
+   "id": "17:pm-break"
+  },
+  {
+   "day": 17,
+   "slug": "h17-azure-resiliency",
+   "title": "Ensuring Azure Resiliency",
+   "code": "H17",
+   "start": 915,
+   "end": 990,
+   "speakers": [
+    "Chris Ayers"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h17-azure-resiliency.aspx",
+   "id": "17:H17"
+  },
+  {
+   "day": 17,
+   "slug": "h18-agent-ai-systems",
+   "title": "Multi-Agent AI Systems with Microsoft Foundry, Copilot Studio, Fabric, Microsoft Agent Framework",
+   "code": "H18",
+   "start": 915,
+   "end": 990,
+   "speakers": [
+    "Prashant G Bhoyar"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h18-agent-ai-systems.aspx",
+   "id": "17:H18"
+  },
+  {
+   "day": 17,
+   "slug": "h19-architecting-with-ms-fabric",
+   "title": "Lakehouses, Warehouses, and OneLake Explained: Architecting with Microsoft Fabric",
+   "code": "H19",
+   "start": 915,
+   "end": 990,
+   "speakers": [
+    "Eric D. Boyd",
+    "Derek Wade"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h19-architecting-with-ms-fabric.aspx",
+   "id": "17:H19"
+  },
+  {
+   "day": 17,
+   "slug": "h20-typescript",
+   "title": "TypeScript: Moving Beyond the Basics",
+   "code": "H20",
+   "start": 915,
+   "end": 990,
+   "speakers": [
+    "Allen Conway"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/thursday/h20-typescript.aspx",
+   "id": "17:H20"
+  },
+  {
+   "day": 18,
+   "slug": "registration",
+   "title": "Post-Conference Workshop Registration - Coffee and Morning Pastries",
+   "code": "",
+   "start": 450,
+   "end": 480,
+   "speakers": [],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/friday/registration.aspx",
+   "id": "18:registration"
+  },
+  {
+   "day": 18,
+   "slug": "hol01-2day-hol-python-and-ai-d2",
+   "title": "2-Day Hands-On Lab: Elevate Your Career with Python and AI - Day 2: Introduction to Artificial Intelligence Using Python",
+   "code": "HOL01",
+   "start": 480,
+   "end": 1020,
+   "speakers": [
+    "Eric D. Boyd"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/friday/hol01-2day-hol-python-and-ai-d2.aspx",
+   "id": "18:HOL01"
+  },
+  {
+   "day": 18,
+   "slug": "f02-wks-blazor",
+   "title": "Workshop: Building Blazor Applications",
+   "code": "F02",
+   "start": 480,
+   "end": 1020,
+   "speakers": [
+    "Allen Conway",
+    "Rockford Lhotka"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/friday/f02-wks-blazor.aspx",
+   "id": "18:F02"
+  },
+  {
+   "day": 18,
+   "slug": "f03-wks-platform-engineering",
+   "title": "Workshop: Secure AI Engineering and DevOps for .NET Developers on Azure",
+   "code": "F03",
+   "start": 480,
+   "end": 1020,
+   "speakers": [
+    "Brian A. Randell"
+   ],
+   "room": "",
+   "url": "https://vslive.com/events/san-diego-2026/sessions/friday/f03-wks-platform-engineering.aspx",
+   "id": "18:F03"
+  }
+ ]
+}
