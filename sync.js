@@ -89,7 +89,8 @@
       for (const [id, v] of Object.entries(log)) if (!merged[id] || v[1] > merged[id][1]) merged[id] = v;
       const before = [...keys()].sort().join();
       log = merged; store.set("syncLog", log);
-      const on = Object.keys(log).filter(k => log[k][0]);
+      const fx = typeof fixId === "function" ? fixId : (k => k);  // alte ids auf heutige abbilden
+      const on = Object.keys(log).filter(k => log[k][0]).map(k => /^[xm]:/.test(k) ? k.slice(0, 2) + fx(k.slice(2)) : fx(k));
       picked = new Set(on.filter(k => BY_ID[k]));
       nope = new Set(on.filter(k => k.startsWith("x:") && BY_ID[k.slice(2)]).map(k => k.slice(2)));
       must = new Set(on.filter(k => k.startsWith("m:") && BY_ID[k.slice(2)]).map(k => k.slice(2)));

@@ -826,8 +826,14 @@ const store = {
 // Zuletzt geladene Programm-Updates (nur in der installierbaren Version) gleich anwenden
 const cachedData = store.get("data", null);
 if (cachedData) applyUpdates(cachedData);
-let picked = new Set(store.get("picked", []).filter(id => BY_ID[id]));
-let nope = new Set(store.get("nope", []).filter(id => BY_ID[id])); // "Kein Interesse"
+// ids, die vor der Erkennung von Umnummerierungen (29.10.2026) vergeben wurden, auf die heutigen abbilden
+const ID_ALIAS = {"17:DPT08+":"17:DPT08","17:AIT05+":"17:AIT05","17:TMT11+":"17:TMT13","17:TMT13+":"17:TMT11","18:TMW04+":"18:TMW05","18:TMW05+":"18:TMW04","18:VSW14+":"18:VSW16","18:VSW16+":"18:VSW14","18:TMW10+":"18:TMW12","18:TMW12+":"18:TMW10","19:VSH13+":"19:VSH13"};
+const fixId = id => BY_ID[id] ? id : (ID_ALIAS[id] && BY_ID[ID_ALIAS[id]] ? ID_ALIAS[id] : id);
+const loadIds = k => store.get(k, []).map(fixId).filter(id => BY_ID[id]);
+// Unbekannte ids beim Speichern behalten, statt sie stillschweigend zu verlieren
+const unknownIds = k => store.get(k, []).filter(id => !BY_ID[fixId(id)]);
+let picked = new Set(loadIds("picked"));
+let nope = new Set(loadIds("nope")); // "Kein Interesse"
 // Änderungen aus Programm-Updates, die noch nicht als gesehen markiert sind: id -> Arten (added, times, rooms, titles, speakers, removed)
 let changed = store.get("changed", {});
 for (const id of Object.keys(changed)) {
@@ -848,7 +854,7 @@ function noteChanges(ch) {
 function clearChanges() { changed = {}; store.set("changed", changed); state.onlyChanged = false; saveUI(); syncInputs(); render(); }
 const isChanged = s => !!(changed[s.id] && changed[s.id].length);
 const chgTags = s => (changed[s.id] || []).filter(k => k !== "removed").map(k => `<span class="tag chg"${k === "codes" && s.oldCode ? ` title="${t("wasCode", s.oldCode)}"` : ""}>${t("chg_" + k)}${k === "codes" && s.oldCode ? ` · ${t("wasCode", s.oldCode)}` : ""}</span>`).join("");
-let must = new Set(store.get("must", []).filter(id => BY_ID[id])); // "Muss ich sehen"
+let must = new Set(loadIds("must")); // "Muss ich sehen"
 let state = Object.assign({ view: "prog", day: 17, cmpDay: 17, cmpStart: null, back: "prog", q: "", slot: "", kind: "", tracks: [], onlyPicked: false, hideEvents: false, showNope: false, onlyMust: false, onlyFree: false, onlyChanged: false, filtersOpen: !matchMedia("(max-width: 700px)").matches }, store.get("ui", {}));
 if (!state.lang) state.lang = /^de\b/i.test(navigator.language || "") ? "de" : "en";
 LANG = state.lang === "en" ? "en" : "de";
@@ -863,7 +869,7 @@ function applyLang() {
   window.dispatchEvent(new CustomEvent("planner-lang", { detail: LANG }));
 }
 function setLang(l) { LANG = state.lang = l; saveUI(); applyLang(); renderTrackChips(); render(); if (openInfo.current) openInfo(openInfo.current); }
-function savePicked() { store.set("picked", [...picked]); store.set("nope", [...nope]); store.set("must", [...must]); }
+function savePicked() { store.set("picked", [...picked, ...unknownIds("picked")]); store.set("nope", [...nope, ...unknownIds("nope")]); store.set("must", [...must, ...unknownIds("must")]); }
 
 function overlaps(a, b) { return a.day === b.day && !a.removed && !b.removed && a.start < b.end && b.start < a.end; }
 // Eine gemerkte "Muss ich sehen"-Session entscheidet ihre Überschneidungen. Konflikt bleibt nur, wenn beide markiert sind
