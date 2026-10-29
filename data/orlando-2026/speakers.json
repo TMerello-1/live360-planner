@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28T12:55Z",
+ "updated": "2026-10-29T10:03Z",
  "speakers": [
   {
    "id": "983A905C-D641-4561-9971-431F9A4DEA44",
@@ -268,6 +268,13 @@
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={688D3845-96D7-4256-8212-BDA79CF99191}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
+   "id": "CF3BD62C-1FDA-4F0C-932D-F0AD52E85FBA",
+   "name": "Sayed Ibrahim Hashimi",
+   "title": "Product Manager · JetBrains",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Jetbrains_sayedhaheadshot_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={CF3BD62C-1FDA-4F0C-932D-F0AD52E85FBA}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+  },
+  {
    "id": "C5B03684-D168-48AB-BF08-5B055A99FED3",
    "name": "Myron Helgering",
    "title": "Microsoft MVP · Technology Lead Security · Pink Elephant",
@@ -301,13 +308,6 @@
    "title": "Microsoft Worldwide RD, Microsoft MVP-Artificial Intelligence · Founder, InterKnowlogy & Actus/VSBLTY · CTO, Gopher Hole Productions",
    "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Huckaby_Tim.png",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={9C15F2C0-46DC-4575-8909-1B27CBCA79BE}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
-  },
-  {
-   "id": "CF3BD62C-1FDA-4F0C-932D-F0AD52E85FBA",
-   "name": "Sayed Ibrahim Ibrahim",
-   "title": "Product Manager · JetBrains",
-   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Jetbrains_sayedhaheadshot_388.jpg",
-   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={CF3BD62C-1FDA-4F0C-932D-F0AD52E85FBA}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "4C87D26C-B4F0-4929-AAAA-DBCE8389AE3C",
