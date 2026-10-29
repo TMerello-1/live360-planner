@@ -4,6 +4,9 @@
     window.addEventListener("load", () => navigator.serviceWorker.register(((window.CONF && CONF.home) || "./") + "sw.js").catch(() => {}));
   }
 
+  // Den Browser bitten, die gespeicherten Daten (Merkliste, Sync-Verbindung) nicht bei Platzmangel zu löschen
+  try { if (navigator.storage && navigator.storage.persist) navigator.storage.persisted().then(p => p || navigator.storage.persist()); } catch {}
+
   const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
   if (standalone) return;
 
