@@ -1260,13 +1260,28 @@ function addPopBack() {
 function closeInfo() { popStack.length = 0; $("#pop-bg").hidden = true; document.body.classList.remove("noscroll"); const id = openInfo.current; openInfo.current = null; const b = id && document.querySelector(`[data-info="${CSS.escape(id)}"]`); if (b) b.focus(); }
 document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#pop-bg").hidden) closeInfo(); });
 
+// Zurück-Geste des Handys: jedes offene Popup und jeder Schritt darin bekommt einen Verlaufseintrag
+const popHist = { depth: 0, skip: 0, push() { try { history.pushState({ pop: ++this.depth }, ""); } catch {} } };
+new MutationObserver(() => {
+  const open = !$("#pop-bg").hidden;
+  if (open && !popHist.depth) popHist.push();
+  else if (!open && popHist.depth) { popHist.skip++; history.go(-popHist.depth); popHist.depth = 0; }
+}).observe($("#pop-bg"), { attributes: true, attributeFilter: ["hidden"] });
+window.addEventListener("popstate", () => {
+  if (popHist.skip) { popHist.skip--; return; }
+  if ($("#pop-bg").hidden || !popHist.depth) return;
+  popHist.depth--;
+  if (popStack.length && popHist.depth) openInfo(popStack.pop());
+  else { popHist.depth = 0; closeInfo(); }
+});
+
 // Ereignisse
 document.addEventListener("click", e => {
   if (e.target.id === "pop-bg" || e.target.closest("#pop-x")) { closeInfo(); return; }
-  if (e.target.closest("#pop-back")) { openInfo(popStack.pop()); return; }
+  if (e.target.closest("#pop-back")) { if (popHist.depth > 1) history.back(); else openInfo(popStack.pop()); return; }
   // Aus dem Popup heraus weiter zu Session oder Sprecher: aktuelle Ansicht für "Zurück" merken
   const nav = e.target.closest("#pop [data-info], #pop [data-speaker]");
-  if (nav && openInfo.current) { const to = nav.dataset.info || "spk:" + nav.dataset.speaker; if (to !== openInfo.current) popStack.push(openInfo.current); }
+  if (nav && openInfo.current) { const to = nav.dataset.info || "spk:" + nav.dataset.speaker; if (to !== openInfo.current) { popStack.push(openInfo.current); popHist.push(); } }
   const info = e.target.closest("[data-info]");
   if (info) { openInfo(info.dataset.info); return; }
   const pick = e.target.closest("[data-pick]");
