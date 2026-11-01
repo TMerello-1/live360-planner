@@ -199,7 +199,7 @@ main { padding-block: 4px 48px; }
 .gap { grid-column: 2; font-size: 0.78rem; color: var(--muted); padding: 2px 0 2px 16px; border-left: 2px dotted var(--line); margin-left: 6px; }
 .jump-now { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 15; border: 0; border-radius: 999px; padding: 10px 16px; background: var(--accent); color: var(--accent-ink); font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 14px rgb(0 0 0 / 0.18); }
 body.has-now .wrap { padding-bottom: 64px; }
-.slot.now { background: color-mix(in srgb, var(--accent) 7%, transparent); box-shadow: inset 3px 0 0 var(--accent); }
+.slot.now, .tl-item.now { background: color-mix(in srgb, var(--accent) 7%, transparent); box-shadow: inset 3px 0 0 var(--accent); }
 .now-badge { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-family: var(--font-body, inherit); font-size: 0.72rem; font-weight: 600; }
 .now-line { display: flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.78rem; font-weight: 600; margin: 4px 0; }
 .now-line::after { content: ""; flex: 1; border-top: 2px solid var(--accent); }
@@ -1068,23 +1068,30 @@ function confNow() {
   if (y !== EVENT_YM[0] || mo !== EVENT_YM[1] || !DAYS.some(x => x.num === d)) return null;
   return { day: d, min: h * 60 + mi };
 }
-// Laufende Slots markieren; ohne laufenden Slot eine "Jetzt"-Linie vor dem nächsten. Gibt das Ziel zum Hinscrollen zurück.
+// Laufende Zeilen markieren (Programm: Slots, Mein Plan: Zeitleiste); ohne laufende eine "Jetzt"-Linie vor der nächsten.
+// Gibt das Ziel zum Hinscrollen in der aktuellen Ansicht zurück.
+function markIn(rowSel, timeSel, now) {
+  const rows = [...document.querySelectorAll(`${rowSel}[data-day="${now.day}"]`)];
+  const cur = rows.filter(e => +e.dataset.start <= now.min && now.min < +e.dataset.end);
+  for (const e of cur) { e.classList.add("now"); const tm = e.querySelector(timeSel); if (tm && tm.firstChild) tm.firstChild.after(Object.assign(document.createElement("span"), { className: "now-badge", textContent: t("nowLbl") })); }
+  if (cur.length) return cur[0];
+  const next = rows.find(e => +e.dataset.start > now.min);
+  if (next) { next.insertAdjacentHTML("beforebegin", `<div class="now-line">${t("nowLbl")} ${fmt(now.min)}</div>`); return next.previousElementSibling; }
+  return rows[rows.length - 1] || null;
+}
 function markNow() {
   const now = confNow();
   $("#jump-now").hidden = !now; document.body.classList.toggle("has-now", !!now);
   $("#jump-now").textContent = "⏱ " + t("nowLbl");
   $("#jump-now").setAttribute("aria-label", t("jumpNow"));
-  document.querySelectorAll("#list .now-line, #list .now-badge").forEach(e => e.remove());
-  document.querySelectorAll("#list .slot.now").forEach(e => e.classList.remove("now"));
+  document.querySelectorAll(".now-line, .now-badge").forEach(e => e.remove());
+  document.querySelectorAll(".slot.now, .tl-item.now").forEach(e => e.classList.remove("now"));
   if (!now) return null;
-  const secs = [...document.querySelectorAll(`#list .slot[data-day="${now.day}"]`)];
-  const cur = secs.filter(e => +e.dataset.start <= now.min && now.min < +e.dataset.end);
-  for (const e of cur) { e.classList.add("now"); e.querySelector(".slot-time").firstChild.after(Object.assign(document.createElement("span"), { className: "now-badge", textContent: t("nowLbl") })); }
-  if (cur.length) return cur[0];
-  const next = secs.find(e => +e.dataset.start > now.min);
-  if (next) { next.insertAdjacentHTML("beforebegin", `<div class="now-line">${t("nowLbl")} ${fmt(now.min)}</div>`); return next.previousElementSibling; }
-  return secs[secs.length - 1] || null;
+  const prog = markIn("#list .slot", ".slot-time", now), plan = markIn("#plan-list .tl-item", ".tl-time", now);
+  return state.view === "plan" ? plan : prog;
 }
+// Während der Konferenz zählt der eigene Plan: mit gemerkten Sessions heute geht es zu "Mein Plan", sonst ins Programm
+const planToday = now => [...picked].some(id => BY_ID[id].day === now.day);
 function scrollToNow() {
   const el = markNow(); if (!el) return;
   window.scrollTo(0, window.scrollY + el.getBoundingClientRect().top - $("header.top").getBoundingClientRect().bottom - 8);
@@ -1145,20 +1152,22 @@ function renderPlan() {
     const free = state.onlyFree;
     const html = rows.map(r => {
       if (r.ev && free) return "";
-      if (r.ev) return `<div class="tl-item"><div class="tl-time">${fmt(r.ev.start)}<small>${t("until", fmt(r.ev.end))}</small></div>${cardHTML(r.ev, { plan: true })}</div>`;
+      if (r.ev) return `<div class="tl-item" data-day="${d.num}" data-start="${r.ev.start}" data-end="${r.ev.end}"><div class="tl-time">${fmt(r.ev.start)}<small>${t("until", fmt(r.ev.end))}</small></div>${cardHTML(r.ev, { plan: true })}</div>`;
       const sl = r.sl;
       const here = mine.filter(s => s.kind !== "Event" && s.start === sl.start);
       const cover = mine.filter(s => s.kind !== "Event" && s.start !== sl.start && s.start < sl.end && sl.start < s.end);
       const opts = sl.items.filter(s => !nope.has(s.id));
+      const at = `data-day="${d.num}" data-start="${sl.start}" data-end="${sl.end}"`;
       const time = `<div class="tl-time">${fmt(sl.start)}<small>${t("until", fmt(sl.end))}</small>${opts.length > 1 ? `<button class="slot-link" data-slot="${d.num}:${sl.start}">${t("options", opts.length)}</button>` : ""}</div>`;
       if (free && (here.length || cover.length)) return "";
-      if (here.length) return here.map((s, i) => `<div class="tl-item">${i ? "<div></div>" : time}${cardHTML(s, { plan: true })}</div>`).join("");
-      if (cover.length) return `<div class="tl-item">${time}<div class="covered">${t("coveredBy", cover.map(c => esc(c.code || c.title)).join(", "))}</div></div>`;
-      if (opts.length === 1) return `<div class="tl-item">${time}${cardHTML(opts[0], { plan: true, only: true })}</div>`;
-      return `<div class="tl-item">${time}<button class="slot-empty" data-slot="${d.num}:${sl.start}"><span><b>${t("free")}</b><br>${opts.length ? t("choices", opts.length) : t("noneLeft")}${opts.some(s => must.has(s.id)) ? `<br><span class="must-note">! ${t("mustTag")}: ${opts.filter(s => must.has(s.id)).map(s => esc(s.code || s.title)).join(", ")}</span>` : ""}</span><span class="go">${t("look")}</span></button></div>`;
+      if (here.length) return here.map((s, i) => `<div class="tl-item" ${at}>${i ? "<div></div>" : time}${cardHTML(s, { plan: true })}</div>`).join("");
+      if (cover.length) return `<div class="tl-item" ${at}>${time}<div class="covered">${t("coveredBy", cover.map(c => esc(c.code || c.title)).join(", "))}</div></div>`;
+      if (opts.length === 1) return `<div class="tl-item" ${at}>${time}${cardHTML(opts[0], { plan: true, only: true })}</div>`;
+      return `<div class="tl-item" ${at}>${time}<button class="slot-empty" data-slot="${d.num}:${sl.start}"><span><b>${t("free")}</b><br>${opts.length ? t("choices", opts.length) : t("noneLeft")}${opts.some(s => must.has(s.id)) ? `<br><span class="must-note">! ${t("mustTag")}: ${opts.filter(s => must.has(s.id)).map(s => esc(s.code || s.title)).join(", ")}</span>` : ""}</span><span class="go">${t("look")}</span></button></div>`;
     }).join("");
     return `<section class="plan-day${mine.length ? "" : " no-pick"}"><h2>${DAY_NAME[d.num]}, ${t("dateLong", d.num)} <small>${t("dayStats", mine.length, freeCount)}${dp.length ? ` · <button class="conf-link" style="color:var(--danger)" data-conf="${[...new Set(dp.flat().map(x => x.id))].join(",")}">${t("overlaps", dp.length)} →</button>` : ""}</small></h2><div class="tl">${html || `<div class="covered">${t("allFilled")}</div>`}</div></section>`;
   }).join("");
+  markNow();
 }
 
 function descHTML(s) {
@@ -1470,13 +1479,15 @@ $("#lang-de").onclick = () => setLang("de");
 $("#lang-en").onclick = () => setLang("en");
 // Während der Konferenz: Programm öffnet auf heute beim aktuellen Slot (nur beim ersten Laden), "Jetzt"-Knopf
 const startNow = confNow();
-if (startNow) Object.assign(state, { view: "prog", day: startNow.day, allDays: false, slot: "" });
+if (startNow) Object.assign(state, { view: planToday(startNow) ? "plan" : "prog", day: startNow.day, allDays: false, slot: "" });
 applyLang(); syncInputs(); renderTrackChips(); render();
 if (startNow) requestAnimationFrame(() => scrollToNow());
 $("#jump-now").onclick = () => {
   const now = confNow(); if (!now) return;
   if (!$("#pop-bg").hidden) closeInfo();
-  Object.assign(state, { view: "prog", day: now.day, allDays: false, slot: "" }); saveUI(); render(); scrollToNow();
+  // In "Mein Plan" bleibt man im Plan, im Programm im Programm; aus anderen Ansichten in den Plan, wenn heute etwas gemerkt ist
+  const view = state.view === "prog" ? "prog" : planToday(now) ? "plan" : "prog";
+  Object.assign(state, { view, day: now.day, allDays: false, slot: "" }); saveUI(); render(); scrollToNow();
 };
 setInterval(markNow, 60000);
 </script>
