@@ -197,6 +197,12 @@ main { padding-block: 4px 48px; }
 .tl-time { font-family: var(--font-mono); font-size: 0.85rem; font-variant-numeric: tabular-nums; padding-top: 12px; }
 .tl-time small { display: block; color: var(--muted); }
 .gap { grid-column: 2; font-size: 0.78rem; color: var(--muted); padding: 2px 0 2px 16px; border-left: 2px dotted var(--line); margin-left: 6px; }
+.jump-now { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 15; border: 0; border-radius: 999px; padding: 10px 16px; background: var(--accent); color: var(--accent-ink); font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 14px rgb(0 0 0 / 0.18); }
+body.has-now .wrap { padding-bottom: 64px; }
+.slot.now { background: color-mix(in srgb, var(--accent) 7%, transparent); box-shadow: inset 3px 0 0 var(--accent); }
+.now-badge { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-family: var(--font-body, inherit); font-size: 0.72rem; font-weight: 600; }
+.now-line { display: flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.78rem; font-weight: 600; margin: 4px 0; }
+.now-line::after { content: ""; flex: 1; border-top: 2px solid var(--accent); }
 .toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--fg); color: var(--bg); padding: 8px 14px; border-radius: 8px; font-size: 0.88rem; z-index: 20; }
 /* Leere Slots im Plan */
 .slot-empty { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; text-align: left; border: 1.5px dashed var(--line); border-radius: var(--radius); background: transparent; padding: 12px 14px; color: var(--muted); }
@@ -369,6 +375,7 @@ footer a { color: var(--muted); }
   <footer><span data-i18n="src1"></span> <a href="https://live360events.com/events/orlando-2026/sessions/session-list.aspx" target="_blank" rel="noopener" data-i18n="src2"></a><span data-i18n="src3"></span></footer>
 </div>
 <div class="toast" id="toast" hidden></div>
+<button class="jump-now" id="jump-now" hidden></button>
 <div class="pop-backdrop" id="pop-bg" hidden><div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="pop-title"></div></div>
 
 <script>
@@ -773,7 +780,7 @@ const I18N = {
     coveredBy: x => "Belegt durch " + x, free: "Noch frei", choices: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " zur Auswahl", look: "Ansehen →", onlyOpt: "Einzige Option",
     dayStats: (p, f) => `${p} gemerkt · ${f} frei`,
     nItems: n => n + (n === 1 ? " Programmpunkt" : " Programmpunkte"), ends: x => "Ende " + x,
-    pickedHere: "Gemerkt in diesem Slot:", topics: "Themen", speakers: "Sprecher", spkSearch: "Sprecher oder Firma suchen …", nSessions: n => n + (n === 1 ? " Session" : " Sessions"), spkSessions: "Sessions auf dieser Konferenz", officialProfile: "Offizielles Profil ↗", noProfile: "Noch kein offizielles Profil gelistet", noHitsDay: d => "Keine Treffer am " + d, decidedFor: x => "Entschieden für " + x + " (Muss ich sehen)", chosenOver: x => "Gewählt statt " + x, onlyFree: "Nur freie Slots", allFilled: "Alle Slots an diesem Tag sind belegt.", onlyMust: "Nur „Muss ich sehen“", onlyChanged: "Geändert", filtersBtn: "Filter", allDaysTab: "Alle", allDaysRange: "15.–20.", allDaysNote: (n, d) => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " an " + d + (d === 1 ? " Tag" : " Tagen") + " · alle Tage mit deinen Filtern", chgNote: n => n + (n === 1 ? " geänderter Programmpunkt" : " geänderte Programmpunkte") + " seit „Gesehen“, alle Tage", chgSeen: "Als gesehen markieren", chgCleared: "Änderungen als gesehen markiert", chgShow: "Geänderte Sessions zeigen", popBack: x => "← Zurück zu " + x, chg_added: "Neu", chg_codes: "Neue Nummer", chRenum: n => n + (n === 1 ? " Session umnummeriert" : " Sessions umnummeriert"), wasCode: c => "früher " + c, chg_times: "Neue Zeit", chg_rooms: "Neuer Raum", chg_titles: "Neuer Titel", chg_speakers: "Neue Sprecher", mustTag: "Muss ich sehen", mustSet: "Muss ich sehen", mustUndo: "Nicht mehr „Muss ich sehen“", mustOn: "Als „Muss ich sehen“ markiert", mustOff: "Markierung entfernt", moreN: n => "+" + n + " weitere", fewer: "weniger", showNope: "„Kein Interesse“ zeigen", nopeTag: "Kein Interesse", nopeSet: "Kein Interesse", nopeUndo: "Doch interessant", nopeUndoShort: "↺ Doch interessant", nopeOn: "Als „Kein Interesse“ markiert und ausgeblendet", nopeOff: "Wieder sichtbar", nopeHidden: n => n + " mit „Kein Interesse“ ausgeblendet · zeigen", noneLeft: "Alle Optionen mit „Kein Interesse“ markiert", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
+    pickedHere: "Gemerkt in diesem Slot:", topics: "Themen", speakers: "Sprecher", spkSearch: "Sprecher oder Firma suchen …", nSessions: n => n + (n === 1 ? " Session" : " Sessions"), spkSessions: "Sessions auf dieser Konferenz", officialProfile: "Offizielles Profil ↗", noProfile: "Noch kein offizielles Profil gelistet", noHitsDay: d => "Keine Treffer am " + d, decidedFor: x => "Entschieden für " + x + " (Muss ich sehen)", chosenOver: x => "Gewählt statt " + x, onlyFree: "Nur freie Slots", allFilled: "Alle Slots an diesem Tag sind belegt.", onlyMust: "Nur „Muss ich sehen“", nowLbl: "Jetzt", jumpNow: "Zur aktuellen Uhrzeit springen", onlyChanged: "Geändert", filtersBtn: "Filter", allDaysTab: "Alle", allDaysRange: "15.–20.", allDaysNote: (n, d) => n + (n === 1 ? " Programmpunkt" : " Programmpunkte") + " an " + d + (d === 1 ? " Tag" : " Tagen") + " · alle Tage mit deinen Filtern", chgNote: n => n + (n === 1 ? " geänderter Programmpunkt" : " geänderte Programmpunkte") + " seit „Gesehen“, alle Tage", chgSeen: "Als gesehen markieren", chgCleared: "Änderungen als gesehen markiert", chgShow: "Geänderte Sessions zeigen", popBack: x => "← Zurück zu " + x, chg_added: "Neu", chg_codes: "Neue Nummer", chRenum: n => n + (n === 1 ? " Session umnummeriert" : " Sessions umnummeriert"), wasCode: c => "früher " + c, chg_times: "Neue Zeit", chg_rooms: "Neuer Raum", chg_titles: "Neuer Titel", chg_speakers: "Neue Sprecher", mustTag: "Muss ich sehen", mustSet: "Muss ich sehen", mustUndo: "Nicht mehr „Muss ich sehen“", mustOn: "Als „Muss ich sehen“ markiert", mustOff: "Markierung entfernt", moreN: n => "+" + n + " weitere", fewer: "weniger", showNope: "„Kein Interesse“ zeigen", nopeTag: "Kein Interesse", nopeSet: "Kein Interesse", nopeUndo: "Doch interessant", nopeUndoShort: "↺ Doch interessant", nopeOn: "Als „Kein Interesse“ markiert und ausgeblendet", nopeOff: "Wieder sichtbar", nopeHidden: n => n + " mit „Kein Interesse“ ausgeblendet · zeigen", noneLeft: "Alle Optionen mit „Kein Interesse“ markiert", cmpConflictTitle: n => n + " Sessions überschneiden sich", cmpConflictHint: "Behalte eine und entferne die anderen.", cmpConflictDone: "Keine Überschneidung mehr.", overlapParen: "(Überschneidung)", blockedBy: x => `Dieser Slot ist bereits belegt durch <b>${x}</b>.`, nothingHere: "Für diesen Slot hast du noch nichts gemerkt.",
     about: "Worum es geht", learn: "Du lernst", noDescEvent: "Für diesen Programmpunkt gibt es keine Beschreibung.", noDesc: "Zu dieser Session gibt es noch keine Beschreibung.",
     close: "Schließen", official: "Offizielle Seite öffnen ↗", summaryNote: "Kurzfassung der offiziellen Beschreibung (englisch), Stand 19.10.2026.",
     nothingYet: "Noch nichts gemerkt.", cleared: "Plan geleert", selectCopy: "Text markiert, jetzt kopieren", copied: "Plan kopiert", overlapMark: "⚠ Überschneidung",
@@ -809,7 +816,7 @@ const I18N = {
     coveredBy: x => "Taken by " + x, free: "Still free", choices: n => n + (n === 1 ? " item" : " items") + " to choose from", look: "View →", onlyOpt: "Only option",
     dayStats: (p, f) => `${p} saved · ${f} free`,
     nItems: n => n + (n === 1 ? " item" : " items"), ends: x => "ends " + x,
-    pickedHere: "Saved in this slot:", topics: "Topics", speakers: "Speakers", spkSearch: "Search speakers or companies …", nSessions: n => n + (n === 1 ? " session" : " sessions"), spkSessions: "Sessions at this conference", officialProfile: "Official profile ↗", noProfile: "No official profile listed yet", noHitsDay: d => "No matches on " + d, decidedFor: x => "Decided for " + x + " (must see)", chosenOver: x => "Chosen over " + x, onlyFree: "Free slots only", allFilled: "Every slot on this day is filled.", onlyMust: "Must see only", onlyChanged: "Changed", filtersBtn: "Filters", allDaysTab: "All", allDaysRange: "Nov 15–20", allDaysNote: (n, d) => n + (n === 1 ? " item" : " items") + " on " + d + (d === 1 ? " day" : " days") + " · all days with your filters", chgNote: n => n + (n === 1 ? " changed item" : " changed items") + " since you last marked them seen, all days", chgSeen: "Mark as seen", chgCleared: "Changes marked as seen", chgShow: "Show changed sessions", popBack: x => "← Back to " + x, chg_added: "New", chg_codes: "New number", chRenum: n => n + (n === 1 ? " session renumbered" : " sessions renumbered"), wasCode: c => "was " + c, chg_times: "New time", chg_rooms: "New room", chg_titles: "New title", chg_speakers: "New speakers", mustTag: "Must see", mustSet: "Must see", mustUndo: "Remove must see", mustOn: "Marked as must see", mustOff: "Must see removed", moreN: n => "+" + n + " more", fewer: "fewer", showNope: "Show not interested", nopeTag: "Not interested", nopeSet: "Not interested", nopeUndo: "Interested again", nopeUndoShort: "↺ Interested again", nopeOn: "Marked as not interested and hidden", nopeOff: "Visible again", nopeHidden: n => n + " not interested hidden · show", noneLeft: "All options marked not interested", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
+    pickedHere: "Saved in this slot:", topics: "Topics", speakers: "Speakers", spkSearch: "Search speakers or companies …", nSessions: n => n + (n === 1 ? " session" : " sessions"), spkSessions: "Sessions at this conference", officialProfile: "Official profile ↗", noProfile: "No official profile listed yet", noHitsDay: d => "No matches on " + d, decidedFor: x => "Decided for " + x + " (must see)", chosenOver: x => "Chosen over " + x, onlyFree: "Free slots only", allFilled: "Every slot on this day is filled.", onlyMust: "Must see only", nowLbl: "Now", jumpNow: "Jump to the current time", onlyChanged: "Changed", filtersBtn: "Filters", allDaysTab: "All", allDaysRange: "Nov 15–20", allDaysNote: (n, d) => n + (n === 1 ? " item" : " items") + " on " + d + (d === 1 ? " day" : " days") + " · all days with your filters", chgNote: n => n + (n === 1 ? " changed item" : " changed items") + " since you last marked them seen, all days", chgSeen: "Mark as seen", chgCleared: "Changes marked as seen", chgShow: "Show changed sessions", popBack: x => "← Back to " + x, chg_added: "New", chg_codes: "New number", chRenum: n => n + (n === 1 ? " session renumbered" : " sessions renumbered"), wasCode: c => "was " + c, chg_times: "New time", chg_rooms: "New room", chg_titles: "New title", chg_speakers: "New speakers", mustTag: "Must see", mustSet: "Must see", mustUndo: "Remove must see", mustOn: "Marked as must see", mustOff: "Must see removed", moreN: n => "+" + n + " more", fewer: "fewer", showNope: "Show not interested", nopeTag: "Not interested", nopeSet: "Not interested", nopeUndo: "Interested again", nopeUndoShort: "↺ Interested again", nopeOn: "Marked as not interested and hidden", nopeOff: "Visible again", nopeHidden: n => n + " not interested hidden · show", noneLeft: "All options marked not interested", cmpConflictTitle: n => n + " overlapping sessions", cmpConflictHint: "Keep one and remove the others.", cmpConflictDone: "No overlap anymore.", overlapParen: "(overlap)", blockedBy: x => `This slot is already taken by <b>${x}</b>.`, nothingHere: "You haven't saved anything for this slot yet.",
     about: "What it's about", learn: "You'll learn", noDescEvent: "There is no description for this item.", noDesc: "There is no description for this session yet.",
     close: "Close", official: "Open official page ↗", summaryNote: "Summary of the official description, as of Oct 19, 2026.",
     nothingYet: "Nothing saved yet.", cleared: "Plan cleared", selectCopy: "Text selected, copy it now", copied: "Plan copied", overlapMark: "⚠ overlap",
@@ -1047,6 +1054,41 @@ function renderFold() {
   $("#fold").setAttribute("aria-expanded", state.filtersOpen);
   $("#fold-n").textContent = n ? n : "";
 }
+// Uhrzeit am Konferenzort; zum Testen ?now=2026-11-17T10:40
+const EVENT_TZ = "America/New_York", EVENT_YM = [2026, 11];
+function confNow() {
+  let y, mo, d, h, mi;
+  const fake = new URLSearchParams(location.search).get("now");
+  if (fake && /^\d{4}-\d\d-\d\dT\d\d:\d\d$/.test(fake)) [y, mo, d, h, mi] = fake.split(/[-T:]/).map(Number);
+  else {
+    const p = {};
+    for (const x of new Intl.DateTimeFormat("en-US", { timeZone: EVENT_TZ, year: "numeric", month: "numeric", day: "numeric", hour: "numeric", minute: "numeric", hourCycle: "h23" }).formatToParts(new Date())) p[x.type] = +x.value;
+    [y, mo, d, h, mi] = [p.year, p.month, p.day, p.hour, p.minute];
+  }
+  if (y !== EVENT_YM[0] || mo !== EVENT_YM[1] || !DAYS.some(x => x.num === d)) return null;
+  return { day: d, min: h * 60 + mi };
+}
+// Laufende Slots markieren; ohne laufenden Slot eine "Jetzt"-Linie vor dem nächsten. Gibt das Ziel zum Hinscrollen zurück.
+function markNow() {
+  const now = confNow();
+  $("#jump-now").hidden = !now; document.body.classList.toggle("has-now", !!now);
+  $("#jump-now").textContent = "⏱ " + t("nowLbl");
+  $("#jump-now").setAttribute("aria-label", t("jumpNow"));
+  document.querySelectorAll("#list .now-line, #list .now-badge").forEach(e => e.remove());
+  document.querySelectorAll("#list .slot.now").forEach(e => e.classList.remove("now"));
+  if (!now) return null;
+  const secs = [...document.querySelectorAll(`#list .slot[data-day="${now.day}"]`)];
+  const cur = secs.filter(e => +e.dataset.start <= now.min && now.min < +e.dataset.end);
+  for (const e of cur) { e.classList.add("now"); e.querySelector(".slot-time").firstChild.after(Object.assign(document.createElement("span"), { className: "now-badge", textContent: t("nowLbl") })); }
+  if (cur.length) return cur[0];
+  const next = secs.find(e => +e.dataset.start > now.min);
+  if (next) { next.insertAdjacentHTML("beforebegin", `<div class="now-line">${t("nowLbl")} ${fmt(now.min)}</div>`); return next.previousElementSibling; }
+  return secs[secs.length - 1] || null;
+}
+function scrollToNow() {
+  const el = markNow(); if (!el) return;
+  window.scrollTo(0, window.scrollY + el.getBoundingClientRect().top - $("header.top").getBoundingClientRect().bottom - 8);
+}
 function renderProgram() {
   renderFold();
   renderTopics();
@@ -1062,6 +1104,7 @@ function renderProgram() {
   $("#day-banner").innerHTML = state.onlyChanged ? `<div class="search-note">${t("chgNote", list.length)} · <button class="link-btn" data-chg-seen>${t("chgSeen")}</button></div>` : state.q.trim() ? `<div class="search-note">${t("searchAll", list.length, new Set(list.map(s => s.day)).size)}</div>` : global ? `<div class="search-note">${t("allDaysNote", list.length, new Set(list.map(s => s.day)).size)}</div>` : pairs.length ? `<div class="banner"><span><b>${t("overlaps", pairs.length)}</b> ${t("onThisDay")}: ${pairs.map(([a, b]) => `<button class="conf-link" data-conf="${a.id},${b.id}">${esc(a.code || a.title)} ↔ ${esc(b.code || b.title)}</button>`).join(" · ")}</span></div>` : "";
   if (!list.length) {
     $("#list").innerHTML = `<div class="empty"><h2>${t("noHits")}</h2><p>${t(global ? "noHitsAll" : "noHitsText")}</p></div>`;
+    markNow();
     return;
   }
   const groups = new Map();
@@ -1076,9 +1119,10 @@ function renderProgram() {
     items.sort((a, b) => must.has(b.id) - must.has(a.id) || order[a.kind] - order[b.kind] || trackOrder.indexOf(a.track) - trackOrder.indexOf(b.track) || a.code.localeCompare(b.code));
     const ends = [...new Set(items.map(i => i.end))];
     const sl = slotAt(day, start);
-    return `${head}<section class="slot"><div class="slot-time">${fmt(start)}<small>${ends.length === 1 ? t("until", fmt(ends[0])) : t("items", items.length)}</small>${sl && sl.items.length > 1 ? `<button class="slot-link" data-slot="${day}:${start}">${t("compare")}</button>` : ""}</div>
+    return `${head}<section class="slot" data-day="${day}" data-start="${start}" data-end="${Math.max(...ends)}"><div class="slot-time">${fmt(start)}<small>${ends.length === 1 ? t("until", fmt(ends[0])) : t("items", items.length)}</small>${sl && sl.items.length > 1 ? `<button class="slot-link" data-slot="${day}:${start}">${t("compare")}</button>` : ""}</div>
       <div class="cards">${items.map(s => cardHTML(s)).join("")}</div></section>`;
   }).join("");
+  markNow();
 }
 
 function renderPlan() {
@@ -1424,7 +1468,17 @@ function syncInputs() {
 }
 $("#lang-de").onclick = () => setLang("de");
 $("#lang-en").onclick = () => setLang("en");
+// Während der Konferenz: Programm öffnet auf heute beim aktuellen Slot (nur beim ersten Laden), "Jetzt"-Knopf
+const startNow = confNow();
+if (startNow) Object.assign(state, { view: "prog", day: startNow.day, allDays: false, slot: "" });
 applyLang(); syncInputs(); renderTrackChips(); render();
+if (startNow) requestAnimationFrame(() => scrollToNow());
+$("#jump-now").onclick = () => {
+  const now = confNow(); if (!now) return;
+  if (!$("#pop-bg").hidden) closeInfo();
+  Object.assign(state, { view: "prog", day: now.day, allDays: false, slot: "" }); saveUI(); render(); scrollToNow();
+};
+setInterval(markNow, 60000);
 </script>
 
 <script src="../updates.js"></script>
