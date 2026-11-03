@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29T10:03Z",
+ "updated": "2026-11-03T14:15Z",
  "sessions": [
   {
    "day": 15,
@@ -12,20 +12,6 @@
    "room": "",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/registration.aspx",
    "id": "15:registration"
-  },
-  {
-   "day": 15,
-   "slug": "dphol01-hol-modern-apps-with-sql",
-   "title": "Hands-On Lab: Building Modern Applications with SQL Server 2025 - AI and New Developer Features",
-   "code": "DPHOL01",
-   "start": 540,
-   "end": 1080,
-   "speakers": [
-    "Leonard Lobel"
-   ],
-   "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/dphol01-hol-modern-apps-with-sql.aspx",
-   "id": "15:DPHOL01"
   },
   {
    "day": 15,
@@ -112,6 +98,20 @@
    "room": "",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/crhol01-hol-incident-response.aspx",
    "id": "15:CRHOL01"
+  },
+  {
+   "day": 15,
+   "slug": "dphol01-hol-modern-apps-with-sql",
+   "title": "Hands-On Lab: Building Modern Applications with SQL Server 2025 - AI and New Developer Features",
+   "code": "DPHOL01",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Leonard Lobel"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/dphol01-hol-modern-apps-with-sql.aspx",
+   "id": "15:DPHOL01"
   },
   {
    "day": 15,
@@ -3266,11 +3266,13 @@
   {
    "day": 19,
    "slug": "eah04-agentic-design-patterns",
-   "title": "Agentic Design Patterns: When, Why, and How to Use Them",
+   "title": "Agentic Design Patterns",
    "code": "EAH04",
    "start": 870,
    "end": 945,
-   "speakers": [],
+   "speakers": [
+    "Rockford Lhotka"
+   ],
    "room": "",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/eah04-agentic-design-patterns.aspx",
    "id": "19:EAH04"
