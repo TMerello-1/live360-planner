@@ -1,6 +1,13 @@
 {
- "updated": "2026-11-04T14:34Z",
+ "updated": "2026-11-05T14:42Z",
  "speakers": [
+  {
+   "id": "D8A41552-7109-465B-A7CC-11A1BCB72BB5",
+   "name": "Nolan Adams",
+   "title": "Automation Engineer · Aiden Technologies",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Aiden_Adams_Nolan_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={D8A41552-7109-465B-A7CC-11A1BCB72BB5}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+  },
   {
    "id": "983A905C-D641-4561-9971-431F9A4DEA44",
    "name": "Greg Altman",

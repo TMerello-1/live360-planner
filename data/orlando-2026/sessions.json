@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T14:15Z",
+ "updated": "2026-11-05T14:42Z",
  "sessions": [
   {
    "day": 15,
@@ -1923,6 +1923,20 @@
    "room": "",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/exclaimer-demo.aspx",
    "id": "18:exclaimer-demo"
+  },
+  {
+   "day": 18,
+   "slug": "aiden-demo",
+   "title": "Aiden Demo Theater: Wiped to Working. A Ransomware Rebuild, Start to Finish",
+   "code": "",
+   "start": 670,
+   "end": 685,
+   "speakers": [
+    "Nolan Adams"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiden-demo.aspx",
+   "id": "18:aiden-demo"
   },
   {
    "day": 18,
