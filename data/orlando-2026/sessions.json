@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T14:42Z",
+ "updated": "2026-11-07T13:01Z",
  "sessions": [
   {
    "day": 15,
@@ -573,8 +573,8 @@
    "start": 555,
    "end": 630,
    "speakers": [
-    "AJ Linder",
-    "Robert Kraczek"
+    "Robert Kraczek",
+    "AJ Lindner"
    ],
    "room": "",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt03-from-nightmare-to-enterprise-governance.aspx",
