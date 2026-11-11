@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T14:53Z",
+ "updated": "2026-11-11T14:22Z",
  "sessions": [
   {
    "day": 15,
@@ -57,21 +57,6 @@
   },
   {
    "day": 15,
-   "slug": "aihol02-hol-ms-agent-framework",
-   "title": "Hands-On Lab: Unlock the Potential of AI in Your Applications with Microsoft Agent Framework",
-   "code": "AIHOL02",
-   "start": 540,
-   "end": 1080,
-   "speakers": [
-    "Marcel de Vries",
-    "Roy Cornelissen"
-   ],
-   "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/aihol02-hol-ms-agent-framework.aspx",
-   "id": "15:AIHOL02"
-  },
-  {
-   "day": 15,
    "slug": "vshol03-hol-essential-c",
    "title": "Hands-On Lab: Essential C# for .NET Devs",
    "code": "VSHOL03",
@@ -83,21 +68,6 @@
    "room": "",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/vshol03-hol-essential-c.aspx",
    "id": "15:VSHOL03"
-  },
-  {
-   "day": 15,
-   "slug": "crhol01-hol-incident-response",
-   "title": "Hands-On Lab: Incident Response - with Defender Boys",
-   "code": "CRHOL01",
-   "start": 540,
-   "end": 1080,
-   "speakers": [
-    "Mattias Borg",
-    "Stefan Schörling"
-   ],
-   "room": "",
-   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/crhol01-hol-incident-response.aspx",
-   "id": "15:CRHOL01"
   },
   {
    "day": 15,
@@ -129,6 +99,21 @@
   },
   {
    "day": 15,
+   "slug": "aihol02-hol-ms-agent-framework",
+   "title": "Hands-On Lab: Unlock the Potential of AI in Your Applications with Microsoft Agent Framework",
+   "code": "AIHOL02",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Marcel de Vries",
+    "Roy Cornelissen"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/aihol02-hol-ms-agent-framework.aspx",
+   "id": "15:AIHOL02"
+  },
+  {
+   "day": 15,
    "slug": "eahol01-hol-ai-agents",
    "title": "Hands-On Lab: Unlocking Strategic Advantage - A Full-Day Workshop on AI Agents",
    "code": "EAHOL01",
@@ -140,6 +125,21 @@
    "room": "",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/eahol01-hol-ai-agents.aspx",
    "id": "15:EAHOL01"
+  },
+  {
+   "day": 15,
+   "slug": "crhol01-hol-incident-response",
+   "title": "Hands-On Lab: Incident Response - with Defender Boys",
+   "code": "CRHOL01",
+   "start": 540,
+   "end": 1080,
+   "speakers": [
+    "Mattias Borg",
+    "Stefan Schörling"
+   ],
+   "room": "",
+   "url": "https://live360events.com/events/orlando-2026/sessions/sunday/crhol01-hol-incident-response.aspx",
+   "id": "15:CRHOL01"
   },
   {
    "day": 16,
