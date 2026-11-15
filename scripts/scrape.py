@@ -28,6 +28,7 @@ def load_conf():
 
 
 CONF, DATA_DIR = load_conf()
+CONF_DIR = Path(__file__).resolve().parent.parent / "conferences" / CONF["id"]
 BASE = CONF["sessionsBase"]
 DAYS = {int(k): v for k, v in CONF["days"].items()}
 OUT = DATA_DIR / "sessions.json"
@@ -179,6 +180,13 @@ def main():
     with ThreadPoolExecutor(8) as ex:
         for s, room in zip(missing, ex.map(lambda s: room_from_detail(s["url"]), missing)):
             s["room"] = room
+    # Räume aus dem gedruckten Programm (conferences/<id>/rooms.json), solange die Website keine nennt
+    fallback = CONF_DIR / "rooms.json"
+    if fallback.exists():
+        known = json.loads(fallback.read_text(encoding="utf-8")).get("rooms", {})
+        for s in sessions:
+            if not s["room"] and s["id"] in known:
+                s["room"] = known[s["id"]]
     rooms = sum(1 for s in sessions if s["room"])
     print(f"{len(sessions)} sessions, {rooms} with a room", file=sys.stderr)
 

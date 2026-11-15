@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T14:22Z",
+ "updated": "2026-11-15T15:01Z",
  "sessions": [
   {
    "day": 15,
@@ -23,7 +23,7 @@
    "speakers": [
     "Tony Champion"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/vshol01-modern-apis.aspx",
    "id": "15:VSHOL01"
   },
@@ -37,7 +37,7 @@
    "speakers": [
     "Eric D. Boyd"
    ],
-   "room": "",
+   "room": "Oceana 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/aihol01-hol-python-ai1.aspx",
    "id": "15:AIHOL01"
   },
@@ -51,7 +51,7 @@
    "speakers": [
     "Philip Japikse"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/vshol02-hol-build-an-asp,-d-,net-core-mvc-app.aspx",
    "id": "15:VSHOL02"
   },
@@ -65,7 +65,7 @@
    "speakers": [
     "Ted Neward"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/vshol03-hol-essential-c.aspx",
    "id": "15:VSHOL03"
   },
@@ -79,7 +79,7 @@
    "speakers": [
     "Leonard Lobel"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/dphol01-hol-modern-apps-with-sql.aspx",
    "id": "15:DPHOL01"
   },
@@ -93,7 +93,7 @@
    "speakers": [
     "John O'Neill, Sr."
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/tmhol01-hol-pki-from-scratch.aspx",
    "id": "15:TMHOL01"
   },
@@ -108,7 +108,7 @@
     "Marcel de Vries",
     "Roy Cornelissen"
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/aihol02-hol-ms-agent-framework.aspx",
    "id": "15:AIHOL02"
   },
@@ -122,7 +122,7 @@
    "speakers": [
     "Prashant G Bhoyar"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/eahol01-hol-ai-agents.aspx",
    "id": "15:EAHOL01"
   },
@@ -137,7 +137,7 @@
     "Mattias Borg",
     "Stefan Schörling"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/sunday/crhol01-hol-incident-response.aspx",
    "id": "15:CRHOL01"
   },
@@ -164,7 +164,7 @@
     "Allen Conway",
     "Rockford Lhotka"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/vsm01-workshop-microsoft-blazor.aspx",
    "id": "16:VSM01"
   },
@@ -179,7 +179,7 @@
     "Billy Hollis",
     "Gary Bailey"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/vsm02-workshop-design.aspx",
    "id": "16:VSM02"
   },
@@ -194,7 +194,7 @@
     "Mickey Gousset",
     "Ken Muse"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/vsm03-workshop-team-development.aspx",
    "id": "16:VSM03"
   },
@@ -209,7 +209,7 @@
     "Kayla Cinnamon",
     "Jon Galloway"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/vsm04-workshop-mastering-ai-development.aspx",
    "id": "16:VSM04"
   },
@@ -227,7 +227,7 @@
     "Bradley Schacht",
     "Daniel Taylor"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/dpm01-wksp-microsoft-fabric.aspx",
    "id": "16:DPM01"
   },
@@ -241,7 +241,7 @@
    "speakers": [
     "Denny Cherry"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/dpm02-wksp-sql-and-azure-sql.aspx",
    "id": "16:DPM02"
   },
@@ -256,7 +256,7 @@
     "Sander Berkouwer",
     "Michael Van Horenbeeck"
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/tmm01-workshop-conquering-ad.aspx",
    "id": "16:TMM01"
   },
@@ -270,7 +270,7 @@
    "speakers": [
     "Aidan Finn"
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/tmm02-workshop-defender-for-cloud-and-azure-arc.aspx",
    "id": "16:TMM02"
   },
@@ -284,7 +284,7 @@
    "speakers": [
     "Eric D. Boyd"
    ],
-   "room": "",
+   "room": "Oceana 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/aihol01-hol-python-ai2.aspx",
    "id": "16:AIHOL01"
   },
@@ -299,7 +299,7 @@
     "Brian A. Randell",
     "Matt Nunn"
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/aim01-wksp-building-ai.aspx",
    "id": "16:AIM01"
   },
@@ -313,7 +313,7 @@
    "speakers": [
     "Andreas Erben"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/eam01-wksp-building-stuff-with-genai.aspx",
    "id": "16:EAM01"
   },
@@ -328,7 +328,7 @@
     "Émile Cabot",
     "Dave Kawula"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/crm01-workshop-defender-xdr.aspx",
    "id": "16:CRM01"
   },
@@ -342,7 +342,7 @@
    "speakers": [
     "Andy Malone"
    ],
-   "room": "",
+   "room": "Banda Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/crm02-workshop-quantum-cryptography.aspx",
    "id": "16:CRM02"
   },
@@ -354,7 +354,7 @@
    "start": 1065,
    "end": 1095,
    "speakers": [],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/first-timers-forum.aspx",
    "id": "16:first-timers-forum"
   },
@@ -366,7 +366,7 @@
    "start": 1110,
    "end": 1200,
    "speakers": [],
-   "room": "",
+   "room": "Hard Rock Cafe, Universal CityWalk",
    "url": "https://live360events.com/events/orlando-2026/sessions/monday/mix-and-mingle.aspx",
    "id": "16:mix-and-mingle"
   },
@@ -380,7 +380,7 @@
    "speakers": [
     "Philip Japikse"
    ],
-   "room": "",
+   "room": "Royal Pacific Shuttle Stop",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/lace-up.aspx",
    "id": "17:lace-up"
   },
@@ -406,7 +406,7 @@
    "speakers": [
     "Mads Kristensen"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vsl-key-vs-ai.aspx",
    "id": "17:vsl-key-vs-ai"
   },
@@ -420,7 +420,7 @@
    "speakers": [
     "Bradley Schacht"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpl-keynote.aspx",
    "id": "17:dpl-keynote"
   },
@@ -434,7 +434,7 @@
    "speakers": [
     "John O'Neill, Sr."
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tm-key-account-compromised.aspx",
    "id": "17:tm-key-account-compromised"
   },
@@ -448,7 +448,7 @@
    "speakers": [
     "Jeff Prosise"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ail_aieal-keynote.aspx",
    "id": "17:ail_aieal-keynote"
   },
@@ -462,7 +462,7 @@
    "speakers": [
     "Philip Japikse"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst01-building-web-applications.aspx",
    "id": "17:VST01"
   },
@@ -476,7 +476,7 @@
    "speakers": [
     "Billy Hollis"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst02-observing-and-learning-from-users.aspx",
    "id": "17:VST02"
   },
@@ -490,7 +490,7 @@
    "speakers": [
     "Benjamin Day"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst03-branches-that-dont-suck.aspx",
    "id": "17:VST03"
   },
@@ -504,7 +504,7 @@
    "speakers": [
     "Ted Neward"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst04-python.aspx",
    "id": "17:VST04"
   },
@@ -518,7 +518,7 @@
    "speakers": [
     "Matt Nunn"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt01-data-for-ai.aspx",
    "id": "17:DPT01"
   },
@@ -533,7 +533,7 @@
     "Tee Dargie",
     "Kevin Kline"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt02-cloud-cost-optimization.aspx",
    "id": "17:DPT02"
   },
@@ -547,7 +547,7 @@
    "speakers": [
     "John O'Neill, Sr."
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt01-passwordless.aspx",
    "id": "17:TMT01"
   },
@@ -561,7 +561,7 @@
    "speakers": [
     "Aidan Finn"
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt02-beyond-azure.aspx",
    "id": "17:TMT02"
   },
@@ -576,7 +576,7 @@
     "Robert Kraczek",
     "AJ Lindner"
    ],
-   "room": "",
+   "room": "Oceana 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt03-from-nightmare-to-enterprise-governance.aspx",
    "id": "17:TMT03"
   },
@@ -590,7 +590,7 @@
    "speakers": [
     "Brian A. Randell"
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait01-ai-dev-nation.aspx",
    "id": "17:AIT01"
   },
@@ -604,7 +604,7 @@
    "speakers": [
     "Kevin Feasel"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait02-ai-integration.aspx",
    "id": "17:AIT02"
   },
@@ -618,7 +618,7 @@
    "speakers": [
     "Rockford Lhotka"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/eat01-architecture-agents.aspx",
    "id": "17:EAT01"
   },
@@ -633,7 +633,7 @@
     "Mattias Borg",
     "Stefan Schörling"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt01-defender-xdr.aspx",
    "id": "17:CRT01"
   },
@@ -647,7 +647,7 @@
    "speakers": [
     "Andy Malone"
    ],
-   "room": "",
+   "room": "Banda Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt02-microsoft-entra-id.aspx",
    "id": "17:CRT02"
   },
@@ -659,7 +659,7 @@
    "start": 630,
    "end": 660,
    "speakers": [],
-   "room": "",
+   "room": "Expo Hall",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/am-break.aspx",
    "id": "17:am-break"
   },
@@ -673,7 +673,7 @@
    "speakers": [
     "Tyler Tomlinson"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/threatlocker-demo.aspx",
    "id": "17:threatlocker-demo"
   },
@@ -689,7 +689,7 @@
     "Jon Galloway",
     "Jason Beres"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/l360keynote-agents-ai.aspx",
    "id": "17:l360keynote-agents-ai"
   },
@@ -701,7 +701,7 @@
    "start": 735,
    "end": 780,
    "speakers": [],
-   "room": "",
+   "room": "Oceana Ballroom",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/lunch.aspx",
    "id": "17:lunch"
   },
@@ -713,7 +713,7 @@
    "start": 780,
    "end": 825,
    "speakers": [],
-   "room": "",
+   "room": "Expo Hall",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dessert-break.aspx",
    "id": "17:dessert-break"
   },
@@ -727,7 +727,7 @@
    "speakers": [
     "Jeffrey T. Fritz"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/progress-demo.aspx",
    "id": "17:progress-demo"
   },
@@ -741,7 +741,7 @@
    "speakers": [
     "Ben Welton"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/rubrik-demo.aspx",
    "id": "17:rubrik-demo"
   },
@@ -755,7 +755,7 @@
    "speakers": [
     "Mickey Gousset"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst05-ff-git-tips.aspx",
    "id": "17:VST05"
   },
@@ -769,7 +769,7 @@
    "speakers": [
     "Philip Japikse"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst06-ff-api-documentation.aspx",
    "id": "17:VST06"
   },
@@ -783,7 +783,7 @@
    "speakers": [
     "Jim Wooley"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst07-ff-ef-core.aspx",
    "id": "17:VST07"
   },
@@ -797,7 +797,7 @@
    "speakers": [
     "Benjamin Day"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst08-ff-mocking-with-moq.aspx",
    "id": "17:VST08"
   },
@@ -811,7 +811,7 @@
    "speakers": [
     "Bradley Ball"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt03-ff-dba-guide.aspx",
    "id": "17:DPT03"
   },
@@ -825,7 +825,7 @@
    "speakers": [
     "Meagan Longoria"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt04-ff-fabric-mirroring-for-sql.aspx",
    "id": "17:DPT04"
   },
@@ -839,7 +839,7 @@
    "speakers": [
     "Émile Cabot"
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt04-ff-intune.aspx",
    "id": "17:TMT04"
   },
@@ -853,7 +853,7 @@
    "speakers": [
     "Greg Altman"
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt05-ff-simplifying-vm.aspx",
    "id": "17:TMT05"
   },
@@ -867,7 +867,7 @@
    "speakers": [
     "Prashant G Bhoyar"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait03-ff-microsoft-foundry.aspx",
    "id": "17:AIT03"
   },
@@ -883,7 +883,7 @@
     "Rockford Lhotka",
     "Ashley Rivera"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/eat02-interactive.aspx",
    "id": "17:EAT02"
   },
@@ -897,7 +897,7 @@
    "speakers": [
     "John O'Neill, Sr."
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt03-ff-five-checks-in-five-minutes.aspx",
    "id": "17:CRT03"
   },
@@ -911,7 +911,7 @@
    "speakers": [
     "Dave Kawula"
    ],
-   "room": "",
+   "room": "Banda Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt04-ff-cyber-security-awareness.aspx",
    "id": "17:CRT04"
   },
@@ -925,7 +925,7 @@
    "speakers": [
     "Brian A. Randell"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst09-ff-azure-devops-v-github.aspx",
    "id": "17:VST09"
   },
@@ -939,7 +939,7 @@
    "speakers": [
     "Allen Conway"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst10-ff-modern-web-ui.aspx",
    "id": "17:VST10"
   },
@@ -953,7 +953,7 @@
    "speakers": [
     "Tony Champion"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst11-ff-visibility.aspx",
    "id": "17:VST11"
   },
@@ -967,7 +967,7 @@
    "speakers": [
     "Jason Bock"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst12-ff-unsafe-code.aspx",
    "id": "17:VST12"
   },
@@ -981,7 +981,7 @@
    "speakers": [
     "Leonard Lobel"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt05-ff-sql-temporal-tables.aspx",
    "id": "17:DPT05"
   },
@@ -995,7 +995,7 @@
    "speakers": [
     "Denny Cherry"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt06-ff-sql-multiple-indexes.aspx",
    "id": "17:DPT06"
   },
@@ -1009,7 +1009,7 @@
    "speakers": [
     "Heather Severino"
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt06-ff-task-management.aspx",
    "id": "17:TMT06"
   },
@@ -1023,7 +1023,7 @@
    "speakers": [
     "Karinne Bessette"
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt07-ff-azure-storage.aspx",
    "id": "17:TMT07"
   },
@@ -1037,7 +1037,7 @@
    "speakers": [
     "Buck Woody"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait04-ff-ai-prompting.aspx",
    "id": "17:AIT04"
   },
@@ -1051,7 +1051,7 @@
    "speakers": [
     "Derek Michals"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt05-ff-feel-the-burn.aspx",
    "id": "17:CRT05"
   },
@@ -1065,7 +1065,7 @@
    "speakers": [
     "Myron Helgering"
    ],
-   "room": "",
+   "room": "Banda Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt06-ff-cross-tenant-access.aspx",
    "id": "17:CRT06"
   },
@@ -1077,7 +1077,7 @@
    "start": 875,
    "end": 900,
    "speakers": [],
-   "room": "",
+   "room": "Expo Hall",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/pm-break.aspx",
    "id": "17:pm-break"
   },
@@ -1091,7 +1091,7 @@
    "speakers": [
     "Brian A. Randell"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst13-agentic-devops.aspx",
    "id": "17:VST13"
   },
@@ -1105,7 +1105,7 @@
    "speakers": [
     "Rockford Lhotka"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst14-build-a-ui.aspx",
    "id": "17:VST14"
   },
@@ -1119,7 +1119,7 @@
    "speakers": [
     "Mads Kristensen"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst15-visual-studio-tips.aspx",
    "id": "17:VST15"
   },
@@ -1133,7 +1133,7 @@
    "speakers": [
     "Ted Neward"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst16-guide-to-go.aspx",
    "id": "17:VST16"
   },
@@ -1147,7 +1147,7 @@
    "speakers": [
     "Leonard Lobel"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt07-devs-in-sql.aspx",
    "id": "17:DPT07"
   },
@@ -1161,7 +1161,7 @@
    "speakers": [
     "Buck Woody"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt08-governance-without-gridlock.aspx",
    "id": "17:DPT08"
   },
@@ -1175,7 +1175,7 @@
    "speakers": [
     "Heather Severino"
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt08-new-microsoft-365.aspx",
    "id": "17:TMT08"
   },
@@ -1189,7 +1189,7 @@
    "speakers": [
     "Sander Berkouwer"
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt09-windows-server-2025.aspx",
    "id": "17:TMT09"
   },
@@ -1203,7 +1203,7 @@
    "speakers": [
     "Tony Joy"
    ],
-   "room": "",
+   "room": "Oceana 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt10-modernizing-hyperv.aspx",
    "id": "17:TMT10"
   },
@@ -1218,7 +1218,7 @@
     "Ken Muse",
     "Mickey Gousset"
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait05-response-from-github-copilot.aspx",
    "id": "17:AIT05"
   },
@@ -1232,7 +1232,7 @@
    "speakers": [
     "Matt Nunn"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait06-universe-software-dev.aspx",
    "id": "17:AIT06"
   },
@@ -1249,7 +1249,7 @@
     "Shoubith Rajeswaran",
     "Rajeswaran Sababathy"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/eat03-ai-data-automation.aspx",
    "id": "17:EAT03"
   },
@@ -1264,7 +1264,7 @@
     "Mattias Borg",
     "Stefan Schörling"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt07-agents-in-2026.aspx",
    "id": "17:CRT07"
   },
@@ -1278,7 +1278,7 @@
    "speakers": [
     "Maarten Goet"
    ],
-   "room": "",
+   "room": "Banda Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt08-microsoft-defender.aspx",
    "id": "17:CRT08"
   },
@@ -1292,7 +1292,7 @@
    "speakers": [
     "Jason Bock"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst17-new-in-c.aspx",
    "id": "17:VST17"
   },
@@ -1306,7 +1306,7 @@
    "speakers": [
     "Angela Dugan"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst18-imposter-syndrome.aspx",
    "id": "17:VST18"
   },
@@ -1320,7 +1320,7 @@
    "speakers": [
     "Jim Wooley"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst19-too-late-for-tdd.aspx",
    "id": "17:VST19"
   },
@@ -1334,7 +1334,7 @@
    "speakers": [
     "Billy Hollis"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/vst20-advanced-ui.aspx",
    "id": "17:VST20"
   },
@@ -1348,7 +1348,7 @@
    "speakers": [
     "Thomas LeBlanc"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt09-enhancing-power-bi.aspx",
    "id": "17:DPT09"
   },
@@ -1363,7 +1363,7 @@
     "Bradley Schacht",
     "Daniel Taylor"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/dpt10-mastering-fabric-security.aspx",
    "id": "17:DPT10"
   },
@@ -1377,7 +1377,7 @@
    "speakers": [
     "Derek Melber"
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt11-securing-ad.aspx",
    "id": "17:TMT11"
   },
@@ -1391,7 +1391,7 @@
    "speakers": [
     "Aidan Finn"
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt12-azure.aspx",
    "id": "17:TMT12"
   },
@@ -1405,7 +1405,7 @@
    "speakers": [
     "Heather Severino"
    ],
-   "room": "",
+   "room": "Oceana 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/tmt13-new-outlook.aspx",
    "id": "17:TMT13"
   },
@@ -1419,7 +1419,7 @@
    "speakers": [
     "Kevin Feasel"
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait07-foundry-for-dev.aspx",
    "id": "17:AIT07"
   },
@@ -1433,7 +1433,7 @@
    "speakers": [
     "Mayuri Lahane"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/ait08-adv-prompt-engineering.aspx",
    "id": "17:AIT08"
   },
@@ -1447,7 +1447,7 @@
    "speakers": [
     "Ashley Rivera"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/eat04-designing-data.aspx",
    "id": "17:EAT04"
   },
@@ -1461,7 +1461,7 @@
    "speakers": [
     "Michael Van Horenbeeck"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt09-ad-is-not-the-problem.aspx",
    "id": "17:CRT09"
   },
@@ -1475,7 +1475,7 @@
    "speakers": [
     "Sami Laiho"
    ],
-   "room": "",
+   "room": "Banda Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt10-cybercrime.aspx",
    "id": "17:CRT10"
   },
@@ -1487,7 +1487,7 @@
    "start": 1065,
    "end": 1140,
    "speakers": [],
-   "room": "",
+   "room": "Expo Hall (Pacifica 7)",
    "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/welcome-reception.aspx",
    "id": "17:welcome-reception"
   },
@@ -1513,7 +1513,7 @@
    "speakers": [
     "Allen Conway"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw01-typescript.aspx",
    "id": "18:VSW01"
   },
@@ -1527,7 +1527,7 @@
    "speakers": [
     "Angela Dugan"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw02-human-skills-in-an-ai-world.aspx",
    "id": "18:VSW02"
   },
@@ -1541,7 +1541,7 @@
    "speakers": [
     "Jason Bock"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw03--net-applications.aspx",
    "id": "18:VSW03"
   },
@@ -1555,7 +1555,7 @@
    "speakers": [
     "Benjamin Day"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw04-agileish.aspx",
    "id": "18:VSW04"
   },
@@ -1569,7 +1569,7 @@
    "speakers": [
     "Joseph D'Antoni"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw01-fabric-architected-framework.aspx",
    "id": "18:DPW01"
   },
@@ -1583,7 +1583,7 @@
    "speakers": [
     "Lino Tadros"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw02-vectorization.aspx",
    "id": "18:DPW02"
   },
@@ -1598,7 +1598,7 @@
     "Greg Altman",
     "Cristal Kawula"
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw01-public-speaker.aspx",
    "id": "18:TMW01"
   },
@@ -1612,7 +1612,7 @@
    "speakers": [
     "Michael Niehaus"
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw02-os-deployment.aspx",
    "id": "18:TMW02"
   },
@@ -1626,7 +1626,7 @@
    "speakers": [
     "Karinne Bessette"
    ],
-   "room": "",
+   "room": "Oceana 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw03-newsletter-playbook.aspx",
    "id": "18:TMW03"
   },
@@ -1640,7 +1640,7 @@
    "speakers": [
     "Prashant G Bhoyar"
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw01-intelligent-agents.aspx",
    "id": "18:AIW01"
   },
@@ -1654,7 +1654,7 @@
    "speakers": [
     "Kayla Cinnamon"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw02-github-copilot.aspx",
    "id": "18:AIW02"
   },
@@ -1668,7 +1668,7 @@
    "speakers": [
     "Alex Thissen"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/eaw01-cloudnative-architectures.aspx",
    "id": "18:EAW01"
   },
@@ -1682,7 +1682,7 @@
    "speakers": [
     "Sami Laiho"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw01-zerotrust-networking-access.aspx",
    "id": "18:CRW01"
   },
@@ -1696,7 +1696,7 @@
    "speakers": [
     "Dave Kawula"
    ],
-   "room": "",
+   "room": "Banda Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw02-building-a-secure-disaster-attested-network.aspx",
    "id": "18:CRW02"
   },
@@ -1710,7 +1710,7 @@
    "speakers": [
     "Deborah Kurata"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw05-mastering-angular-signals.aspx",
    "id": "18:VSW05"
   },
@@ -1724,7 +1724,7 @@
    "speakers": [
     "Chad Green"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw06-microservices.aspx",
    "id": "18:VSW06"
   },
@@ -1738,7 +1738,7 @@
    "speakers": [
     "Marcel de Vries"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw07-mcp-with-net.aspx",
    "id": "18:VSW07"
   },
@@ -1753,7 +1753,7 @@
     "Adam Eldred",
     "Brandon Bigford"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw08-ai-from-every-angle.aspx",
    "id": "18:VSW08"
   },
@@ -1767,7 +1767,7 @@
    "speakers": [
     "Thomas LeBlanc"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw03-dataflows.aspx",
    "id": "18:DPW03"
   },
@@ -1782,7 +1782,7 @@
     "Josh Luedeman",
     "Daniel Taylor"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw04-paas-saas-vms.aspx",
    "id": "18:DPW04"
   },
@@ -1796,7 +1796,7 @@
    "speakers": [
     "Derek Melber"
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw04-ad-basics.aspx",
    "id": "18:TMW04"
   },
@@ -1810,7 +1810,7 @@
    "speakers": [
     "Jeffery Hicks"
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw05-powershell-scripting.aspx",
    "id": "18:TMW05"
   },
@@ -1824,7 +1824,7 @@
    "speakers": [
     "Michael Niehaus"
    ],
-   "room": "",
+   "room": "Oceana 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw06-windows-11.aspx",
    "id": "18:TMW06"
   },
@@ -1838,7 +1838,7 @@
    "speakers": [
     "Carey Payette"
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw03-ai-systems-azure.aspx",
    "id": "18:AIW03"
   },
@@ -1852,7 +1852,7 @@
    "speakers": [
     "Mark Perry"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw04-claude-code.aspx",
    "id": "18:AIW04"
   },
@@ -1866,7 +1866,7 @@
    "speakers": [
     "Samantha St-Louis"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/eaw02-ai-pilots-to-platforms.aspx",
    "id": "18:EAW02"
   },
@@ -1880,7 +1880,7 @@
    "speakers": [
     "Sami Laiho"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw03-hack-windows.aspx",
    "id": "18:CRW03"
   },
@@ -1894,7 +1894,7 @@
    "speakers": [
     "Derek Michals"
    ],
-   "room": "",
+   "room": "Banda Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw04-service-desk.aspx",
    "id": "18:CRW04"
   },
@@ -1906,7 +1906,7 @@
    "start": 645,
    "end": 690,
    "speakers": [],
-   "room": "",
+   "room": "Expo Hall",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/am-break.aspx",
    "id": "18:am-break"
   },
@@ -1920,7 +1920,7 @@
    "speakers": [
     "Jay Palermo"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/exclaimer-demo.aspx",
    "id": "18:exclaimer-demo"
   },
@@ -1934,7 +1934,7 @@
    "speakers": [
     "Nolan Adams"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiden-demo.aspx",
    "id": "18:aiden-demo"
   },
@@ -1948,7 +1948,7 @@
    "speakers": [
     "Tim Huckaby"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/l360-keynote-ai-on-air.aspx",
    "id": "18:l360-keynote-ai-on-air"
   },
@@ -1960,7 +1960,7 @@
    "start": 750,
    "end": 810,
    "speakers": [],
-   "room": "",
+   "room": "Oceana Ballroom",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/lunch.aspx",
    "id": "18:lunch"
   },
@@ -1974,7 +1974,7 @@
    "speakers": [
     "Sayed Ibrahim Hashimi"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/jetbrains-demo.aspx",
    "id": "18:jetbrains-demo"
   },
@@ -1988,7 +1988,7 @@
    "speakers": [
     "Deborah Kurata"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw09-angulars-signal-forms.aspx",
    "id": "18:VSW09"
   },
@@ -2002,7 +2002,7 @@
    "speakers": [
     "Chad Green"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw10-serverless-design.aspx",
    "id": "18:VSW10"
   },
@@ -2017,7 +2017,7 @@
     "Mickey Gousset",
     "Ken Muse"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw11-irresponsible-ai.aspx",
    "id": "18:VSW11"
   },
@@ -2031,7 +2031,7 @@
    "speakers": [
     "Jason Beres"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw12-ai-powered-design.aspx",
    "id": "18:VSW12"
   },
@@ -2045,7 +2045,7 @@
    "speakers": [
     "Meagan Longoria"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw05-using-ai-for-power-bi.aspx",
    "id": "18:DPW05"
   },
@@ -2059,7 +2059,7 @@
    "speakers": [
     "Joseph D'Antoni"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw06-git-good.aspx",
    "id": "18:DPW06"
   },
@@ -2073,7 +2073,7 @@
    "speakers": [
     "Michael Niehaus"
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw07-windows-autopilot.aspx",
    "id": "18:TMW07"
   },
@@ -2087,7 +2087,7 @@
    "speakers": [
     "Jeffery Hicks"
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw08-scripting.aspx",
    "id": "18:TMW08"
   },
@@ -2101,7 +2101,7 @@
    "speakers": [
     "Alex de Jong"
    ],
-   "room": "",
+   "room": "Oceana 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw09-purview.aspx",
    "id": "18:TMW09"
   },
@@ -2115,7 +2115,7 @@
    "speakers": [
     "Prashant G Bhoyar"
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw05-securing-ai.aspx",
    "id": "18:AIW05"
   },
@@ -2129,7 +2129,7 @@
    "speakers": [
     "Kayla Cinnamon"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw06-copilot-predictable.aspx",
    "id": "18:AIW06"
   },
@@ -2143,7 +2143,7 @@
    "speakers": [
     "Eric D. Boyd"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/eaw03-ai-in-ea.aspx",
    "id": "18:EAW03"
   },
@@ -2157,7 +2157,7 @@
    "speakers": [
     "Myron Helgering"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw05-dlp-controls.aspx",
    "id": "18:CRW05"
   },
@@ -2171,7 +2171,7 @@
    "speakers": [
     "Tatu Seppälä"
    ],
-   "room": "",
+   "room": "Banda Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw06-purview-data-security.aspx",
    "id": "18:CRW06"
   },
@@ -2183,7 +2183,7 @@
    "start": 915,
    "end": 975,
    "speakers": [],
-   "room": "",
+   "room": "Expo Hall",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/pm-break.aspx",
    "id": "18:pm-break"
   },
@@ -2197,7 +2197,7 @@
    "speakers": [
     "Allen Conway"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw13-blazor-web-apps.aspx",
    "id": "18:VSW13"
   },
@@ -2211,7 +2211,7 @@
    "speakers": [
     "Jerry Nixon"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw14-database-patterns.aspx",
    "id": "18:VSW14"
   },
@@ -2225,7 +2225,7 @@
    "speakers": [
     "Sam Basu"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw15-hybrid-apps.aspx",
    "id": "18:VSW15"
   },
@@ -2239,7 +2239,7 @@
    "speakers": [
     "Alex Thissen"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/vsw16-creating-an-observable-cloud-platform.aspx",
    "id": "18:VSW16"
   },
@@ -2253,7 +2253,7 @@
    "speakers": [
     "Meagan Longoria"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw07-ai-improve-accessibility.aspx",
    "id": "18:DPW07"
   },
@@ -2267,7 +2267,7 @@
    "speakers": [
     "Thomas LaRock"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dpw08-locking-blocking.aspx",
    "id": "18:DPW08"
   },
@@ -2281,7 +2281,7 @@
    "speakers": [
     "Maarten Goet"
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw10-project-perception.aspx",
    "id": "18:TMW10"
   },
@@ -2295,7 +2295,7 @@
    "speakers": [
     "Alex de Jong"
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw11-the-ai-powered-soc.aspx",
    "id": "18:TMW11"
   },
@@ -2309,7 +2309,7 @@
    "speakers": [
     "Michael Niehaus"
    ],
-   "room": "",
+   "room": "Oceana 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/tmw12-powershell-7.aspx",
    "id": "18:TMW12"
   },
@@ -2323,7 +2323,7 @@
    "speakers": [
     "Mayuri Lahane"
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw07-vibe-coding.aspx",
    "id": "18:AIW07"
   },
@@ -2337,7 +2337,7 @@
    "speakers": [
     "Jon Galloway"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/aiw08-ai-features.aspx",
    "id": "18:AIW08"
   },
@@ -2351,7 +2351,7 @@
    "speakers": [
     "Alex Kaziuka"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/eaw04-architecting-ai.aspx",
    "id": "18:EAW04"
   },
@@ -2365,7 +2365,7 @@
    "speakers": [
     "Myron Helgering"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw07-unmanaged-devices.aspx",
    "id": "18:CRW07"
   },
@@ -2379,7 +2379,7 @@
    "speakers": [
     "Tatu Seppälä"
    ],
-   "room": "",
+   "room": "Banda Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw08-mind-the-gap.aspx",
    "id": "18:CRW08"
   },
@@ -2391,7 +2391,7 @@
    "start": 1170,
    "end": 1260,
    "speakers": [],
-   "room": "",
+   "room": "Wantilan Luau Pavilion",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/dessert-luau.aspx",
    "id": "18:dessert-luau"
   },
@@ -2417,7 +2417,7 @@
    "speakers": [
     "Sam Basu"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh01-uno-platform-and-ai.aspx",
    "id": "19:VSH01"
   },
@@ -2431,7 +2431,7 @@
    "speakers": [
     "Amber Vanderburg"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh02-ai-in-leadership.aspx",
    "id": "19:VSH02"
   },
@@ -2445,7 +2445,7 @@
    "speakers": [
     "René van Osnabrugge"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh03-ai-powered-software-dev-lifecycle.aspx",
    "id": "19:VSH03"
   },
@@ -2459,7 +2459,7 @@
    "speakers": [
     "Jim Wooley"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh04-c-roslyn.aspx",
    "id": "19:VSH04"
   },
@@ -2473,7 +2473,7 @@
    "speakers": [
     "Ginger Grant"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph01-mcp-servers.aspx",
    "id": "19:DPH01"
   },
@@ -2487,7 +2487,7 @@
    "speakers": [
     "Bradley Ball"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph02-microsoft-fabric.aspx",
    "id": "19:DPH02"
   },
@@ -2501,7 +2501,7 @@
    "speakers": [
     "John O'Neill, Sr."
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh01-mastering-microsoft-copilot.aspx",
    "id": "19:TMH01"
   },
@@ -2515,7 +2515,7 @@
    "speakers": [
     "Mike O'Neill"
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh02-powershell-function.aspx",
    "id": "19:TMH02"
   },
@@ -2529,7 +2529,7 @@
    "speakers": [
     "Richard Hicks"
    ],
-   "room": "",
+   "room": "Oceana 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh03-pki-implementation.aspx",
    "id": "19:TMH03"
   },
@@ -2544,7 +2544,7 @@
     "Mickey Gousset",
     "Ken Muse"
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih01-customizing-ai.aspx",
    "id": "19:AIH01"
   },
@@ -2558,7 +2558,7 @@
    "speakers": [
     "Don Shin"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih02-agentops.aspx",
    "id": "19:AIH02"
   },
@@ -2572,7 +2572,7 @@
    "speakers": [
     "Sarah Wimberley"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/eah01-ethical-ai.aspx",
    "id": "19:EAH01"
   },
@@ -2586,7 +2586,7 @@
    "speakers": [
     "Markus Lintuala"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh01-death-of-the-vpn.aspx",
    "id": "19:CRH01"
   },
@@ -2600,7 +2600,7 @@
    "speakers": [
     "Tatu Seppälä"
    ],
-   "room": "",
+   "room": "Banda Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh02-dlp-solution.aspx",
    "id": "19:CRH02"
   },
@@ -2614,7 +2614,7 @@
    "speakers": [
     "Chris Klug"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh05-aspire.aspx",
    "id": "19:VSH05"
   },
@@ -2628,7 +2628,7 @@
    "speakers": [
     "Robert Bogue"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh06-workflow-automation.aspx",
    "id": "19:VSH06"
   },
@@ -2642,7 +2642,7 @@
    "speakers": [
     "Mark Michaelis"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh07-learning-to-program.aspx",
    "id": "19:VSH07"
   },
@@ -2656,7 +2656,7 @@
    "speakers": [
     "Marcel de Vries"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh08-maintainable-and-scalable-test-automation.aspx",
    "id": "19:VSH08"
   },
@@ -2670,7 +2670,7 @@
    "speakers": [
     "Andrew Brust"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph03-making-fabric-data-ai.aspx",
    "id": "19:DPH03"
   },
@@ -2684,7 +2684,7 @@
    "speakers": [
     "David Pless"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph04-azure-sql-virtual-machine.aspx",
    "id": "19:DPH04"
   },
@@ -2698,7 +2698,7 @@
    "speakers": [
     "Stephen L. Rose"
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh04-copilot-clarity.aspx",
    "id": "19:TMH04"
   },
@@ -2712,7 +2712,7 @@
    "speakers": [
     "John O'Neill, Sr."
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh05-pki-is-not-dead.aspx",
    "id": "19:TMH05"
   },
@@ -2726,7 +2726,7 @@
    "speakers": [
     "Richard Hicks"
    ],
-   "room": "",
+   "room": "Oceana 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh06-moving-to-zero-trust.aspx",
    "id": "19:TMH06"
   },
@@ -2740,7 +2740,7 @@
    "speakers": [
     "Veronika Kolesnikova"
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih03-microsoft-foundry.aspx",
    "id": "19:AIH03"
   },
@@ -2754,7 +2754,7 @@
    "speakers": [
     "Brian A. Randell"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih04-local-ai-dev.aspx",
    "id": "19:AIH04"
   },
@@ -2768,7 +2768,7 @@
    "speakers": [
     "Don Shin"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/eah02-agentic-ai-integration.aspx",
    "id": "19:EAH02"
   },
@@ -2782,7 +2782,7 @@
    "speakers": [
     "Markus Lintuala"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh03-from-chaos-to-control.aspx",
    "id": "19:CRH03"
   },
@@ -2796,7 +2796,7 @@
    "speakers": [
     "Guillermo Fisher"
    ],
-   "room": "",
+   "room": "Banda Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh04-hardening-ci-cd-pipelines.aspx",
    "id": "19:CRH04"
   },
@@ -2813,7 +2813,7 @@
     "Amber Vanderburg",
     "Angela Dugan"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsl-panel-careers-in-the-age-of-ai.aspx",
    "id": "19:vsl-panel-careers-in-the-age-of-ai"
   },
@@ -2830,7 +2830,7 @@
     "Buck Woody",
     "Thomas LaRock"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dpl-panel.aspx",
    "id": "19:dpl-panel"
   },
@@ -2847,7 +2847,7 @@
     "John O'Neill, Sr.",
     "Dave Kawula"
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tm-panel-will-ai-take-my-job.aspx",
    "id": "19:tm-panel-will-ai-take-my-job"
   },
@@ -2864,7 +2864,7 @@
     "Carey Payette",
     "Andrew Brust"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/ail-panel.aspx",
    "id": "19:ail-panel"
   },
@@ -2881,7 +2881,7 @@
     "Sarah Wimberley",
     "Rockford Lhotka"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aiea-panel.aspx",
    "id": "19:aiea-panel"
   },
@@ -2899,7 +2899,7 @@
     "Tatu Seppälä",
     "Sami Laiho"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/cyber-panel-ai-security-arms-race.aspx",
    "id": "19:cyber-panel-ai-security-arms-race"
   },
@@ -2911,7 +2911,7 @@
    "start": 720,
    "end": 780,
    "speakers": [],
-   "room": "",
+   "room": "Oceana Ballroom",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/lunch.aspx",
    "id": "19:lunch"
   },
@@ -2923,7 +2923,7 @@
    "start": 720,
    "end": 780,
    "speakers": [],
-   "room": "",
+   "room": "Pacifica 7",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/wit-lunch.aspx",
    "id": "19:wit-lunch"
   },
@@ -2937,7 +2937,7 @@
    "speakers": [
     "Chris Klug"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh09-azure-auth.aspx",
    "id": "19:VSH09"
   },
@@ -2951,7 +2951,7 @@
    "speakers": [
     "Amber Vanderburg"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh10-elevate-your-eq.aspx",
    "id": "19:VSH10"
   },
@@ -2965,7 +2965,7 @@
    "speakers": [
     "Mark Perry"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh11-agentic-devops.aspx",
    "id": "19:VSH11"
   },
@@ -2979,7 +2979,7 @@
    "speakers": [
     "Roy Cornelissen"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh12-practical-zero-trust-apis.aspx",
    "id": "19:VSH12"
   },
@@ -2993,7 +2993,7 @@
    "speakers": [
     "Andrew Brust"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph05-fabric-intelligence.aspx",
    "id": "19:DPH05"
   },
@@ -3007,7 +3007,7 @@
    "speakers": [
     "David Pless"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph06-sql-server-performance-monitoring.aspx",
    "id": "19:DPH06"
   },
@@ -3021,7 +3021,7 @@
    "speakers": [
     "Alex de Jong"
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh07-buildabot-workshop.aspx",
    "id": "19:TMH07"
   },
@@ -3035,7 +3035,7 @@
    "speakers": [
     "Mike O'Neill"
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh08-ms-graph-api.aspx",
    "id": "19:TMH08"
   },
@@ -3049,7 +3049,7 @@
    "speakers": [
     "Maarten Goet"
    ],
-   "room": "",
+   "room": "Oceana 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh09-decade-ransomware.aspx",
    "id": "19:TMH09"
   },
@@ -3063,7 +3063,7 @@
    "speakers": [
     "Veronika Kolesnikova"
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih05-multimodal-ai-solutions.aspx",
    "id": "19:AIH05"
   },
@@ -3077,7 +3077,7 @@
    "speakers": [
     "René van Osnabrugge"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih06-technology-disrupts.aspx",
    "id": "19:AIH06"
   },
@@ -3091,7 +3091,7 @@
    "speakers": [
     "Tony Champion"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/eah03-architecting-azure.aspx",
    "id": "19:EAH03"
   },
@@ -3105,7 +3105,7 @@
    "speakers": [
     "Stephen L. Rose"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh05-copilot.aspx",
    "id": "19:CRH05"
   },
@@ -3119,7 +3119,7 @@
    "speakers": [
     "Guillermo Fisher"
    ],
-   "room": "",
+   "room": "Banda Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh06-security-controls.aspx",
    "id": "19:CRH06"
   },
@@ -3133,7 +3133,7 @@
    "speakers": [
     "Jerry Nixon"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh13-sql-nosql.aspx",
    "id": "19:VSH13"
   },
@@ -3147,7 +3147,7 @@
    "speakers": [
     "Philip Japikse"
    ],
-   "room": "",
+   "room": "Pacifica 12",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh14-asp-net-core-services.aspx",
    "id": "19:VSH14"
   },
@@ -3161,7 +3161,7 @@
    "speakers": [
     "Robert Bogue"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh15-business-problems-to-ai-success.aspx",
    "id": "19:VSH15"
   },
@@ -3175,7 +3175,7 @@
    "speakers": [
     "Mark Michaelis"
    ],
-   "room": "",
+   "room": "Java Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/vsh16-beyond-the-dom.aspx",
    "id": "19:VSH16"
   },
@@ -3189,7 +3189,7 @@
    "speakers": [
     "Ginger Grant"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph07-tsql-notebooks.aspx",
    "id": "19:DPH07"
   },
@@ -3203,7 +3203,7 @@
    "speakers": [
     "Thomas LaRock"
    ],
-   "room": "",
+   "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/dph08-sql-server-2025.aspx",
    "id": "19:DPH08"
   },
@@ -3217,7 +3217,7 @@
    "speakers": [
     "Stephen L. Rose"
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh10-create-copilot-agents.aspx",
    "id": "19:TMH10"
   },
@@ -3231,7 +3231,7 @@
    "speakers": [
     "Daniel Taylor"
    ],
-   "room": "",
+   "room": "Oceana 3",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh11-clarity-in-the-chaos.aspx",
    "id": "19:TMH11"
   },
@@ -3245,7 +3245,7 @@
    "speakers": [
     "Bi Yue Xu"
    ],
-   "room": "",
+   "room": "Oceana 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/tmh12-prompts-to-agents.aspx",
    "id": "19:TMH12"
   },
@@ -3259,7 +3259,7 @@
    "speakers": [
     "Carey Payette"
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih07-ai-on-azure.aspx",
    "id": "19:AIH07"
   },
@@ -3273,7 +3273,7 @@
    "speakers": [
     "Eric D. Boyd"
    ],
-   "room": "",
+   "room": "Pacifica 6",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/aih08-spec-kit.aspx",
    "id": "19:AIH08"
   },
@@ -3287,7 +3287,7 @@
    "speakers": [
     "Rockford Lhotka"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/eah04-agentic-design-patterns.aspx",
    "id": "19:EAH04"
   },
@@ -3301,7 +3301,7 @@
    "speakers": [
     "Guillermo Fisher"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh07-securing-cloud-native-apps.aspx",
    "id": "19:CRH07"
   },
@@ -3315,7 +3315,7 @@
    "speakers": [
     "Myron Helgering"
    ],
-   "room": "",
+   "room": "Banda Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/crh08-creating-classifiers.aspx",
    "id": "19:CRH08"
   },
@@ -3327,7 +3327,7 @@
    "start": 960,
    "end": 1020,
    "speakers": [],
-   "room": "",
+   "room": "Pacifica 6 & 7",
    "url": "https://live360events.com/events/orlando-2026/sessions/thursday/wrap-party.aspx",
    "id": "19:wrap-party"
   },
@@ -3353,7 +3353,7 @@
    "speakers": [
     "Chris Klug"
    ],
-   "room": "",
+   "room": "Pacifica 9 & 10",
    "url": "https://live360events.com/events/orlando-2026/sessions/friday/vsf01-workshop-web-development.aspx",
    "id": "20:VSF01"
   },
@@ -3367,7 +3367,7 @@
    "speakers": [
     "Brian A. Randell"
    ],
-   "room": "",
+   "room": "Pacifica 11",
    "url": "https://live360events.com/events/orlando-2026/sessions/friday/vsf02-workshop-azure.aspx",
    "id": "20:VSF02"
   },
@@ -3382,7 +3382,7 @@
     "David Seis",
     "Buck Woody"
    ],
-   "room": "",
+   "room": "Coral Sea 1",
    "url": "https://live360events.com/events/orlando-2026/sessions/friday/dpf01-hol-wksp-postgresql.aspx",
    "id": "20:DPF01"
   },
@@ -3397,7 +3397,7 @@
     "Dewain Robinson",
     "Gary Pretty"
    ],
-   "room": "",
+   "room": "Oceana 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/friday/tmf01-workshop-building-agents.aspx",
    "id": "20:TMF01"
   },
@@ -3412,7 +3412,7 @@
     "Loek Duys",
     "Alex Thissen"
    ],
-   "room": "",
+   "room": "Pacifica 3 & 4",
    "url": "https://live360events.com/events/orlando-2026/sessions/friday/aif01-howksp-mcp-server-dev.aspx",
    "id": "20:AIF01"
   },
@@ -3426,7 +3426,7 @@
    "speakers": [
     "Lino Tadros"
    ],
-   "room": "",
+   "room": "Pacifica 1 & 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/friday/eaf01-hol-wrks-microsoft-agent.aspx",
    "id": "20:EAF01"
   },
@@ -3440,7 +3440,7 @@
    "speakers": [
     "Markus Lintuala"
    ],
-   "room": "",
+   "room": "Timor Sea",
    "url": "https://live360events.com/events/orlando-2026/sessions/friday/crf01-workshop-entra-id-ecosystem.aspx",
    "id": "20:CRF01"
   }
