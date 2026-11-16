@@ -1442,7 +1442,8 @@ document.addEventListener("click", e => {
   if (go) { state.view = go.dataset.go; saveUI(); render(); }
 });
 $("#v-prog").onclick = () => { state.view = "prog"; saveUI(); render(); };
-$("#v-plan").onclick = () => { state.view = "plan"; saveUI(); render(); window.scrollTo(0, 0); };
+// "Mein Plan" öffnet während der Konferenz bei der aktuellen Uhrzeit, sonst oben
+$("#v-plan").onclick = () => { state.view = "plan"; saveUI(); render(); if (confNow()) scrollToNow(); else window.scrollTo(0, 0); };
 $("#v-spk").onclick = () => { state.view = "spk"; saveUI(); render(); window.scrollTo(0, 0); };
 $("#spk-q").oninput = () => renderSpeakers();
 $("#cmp-back").onclick = () => { state.view = state.back || "plan"; state.cmpIds = null; saveUI(); render(); restoreAnchor(); };
@@ -1513,6 +1514,13 @@ $("#jump-now").onclick = () => {
   Object.assign(state, { view, day: now.day, allDays: false, slot: "" }); saveUI(); render(); scrollToNow();
 };
 setInterval(markNow, 60000);
+// Zurück in die App nach mind. 10 Min.: in "Mein Plan" wieder zur aktuellen Uhrzeit (kein Popup offen)
+let hiddenAt = 0;
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") { hiddenAt = Date.now(); return; }
+  if (hiddenAt && Date.now() - hiddenAt >= 600000 && state.view === "plan" && $("#pop-bg").hidden && confNow()) { render(); scrollToNow(); }
+  hiddenAt = 0;
+});
 </script>
 
 <script src="../updates.js"></script>
