@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T15:46Z",
+ "updated": "2026-11-17T16:01Z",
  "speakers": [
   {
    "id": "D8A41552-7109-465B-A7CC-11A1BCB72BB5",
@@ -203,6 +203,13 @@
    "title": "Director of Enterprise Technology Architecture · CompuNet",
    "photo": "https://live360events.com/-/media/ECG/EventSpeakerPhotos/Eldred_Adam_388.jpg",
    "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={C7F1FD9E-F349-4A57-94A1-02C991668F16}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
+  },
+  {
+   "id": "903A2B08-D222-479D-AEB1-1A361468A5C4",
+   "name": "Angelina Elycheva",
+   "title": "Customer Success Engineer · JetBrains",
+   "photo": "https://live360events.com/-/media/ECG/live360/2026/orlando/Speaker-Photos/Elycheva_Angelina_388.jpg",
+   "url": "https://live360events.com/events/orlando-2026/Speakers/Speaker%20Window.aspx?SpeakerId={903A2B08-D222-479D-AEB1-1A361468A5C4}&ID={4E150660-6301-4532-8D9E-40F6EA92AB54}"
   },
   {
    "id": "B9504E06-F007-41D2-A337-8DED872A2886",

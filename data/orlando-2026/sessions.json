@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T15:01Z",
+ "updated": "2026-11-17T16:01Z",
  "sessions": [
   {
    "day": 15,
@@ -1972,7 +1972,8 @@
    "start": 815,
    "end": 830,
    "speakers": [
-    "Sayed Ibrahim Hashimi"
+    "Sayed Ibrahim Hashimi",
+    "Angelina Elycheva"
    ],
    "room": "Coral Sea 2",
    "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/jetbrains-demo.aspx",
