@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T16:01Z",
+ "updated": "2026-11-18T15:42Z",
  "sessions": [
   {
    "day": 15,
@@ -1467,8 +1467,8 @@
   },
   {
    "day": 17,
-   "slug": "crt10-cybercrime",
-   "title": "Forward to the Past and Back to the Future - Cybercrime in 2025 and Beyond",
+   "slug": "crt10-hack-windows",
+   "title": "11 Ways to Hack Windows 11",
    "code": "CRT10",
    "start": 990,
    "end": 1065,
@@ -1476,7 +1476,7 @@
     "Sami Laiho"
    ],
    "room": "Banda Sea",
-   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt10-cybercrime.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/tuesday/crt10-hack-windows.aspx",
    "id": "17:CRT10"
   },
   {
@@ -1674,8 +1674,8 @@
   },
   {
    "day": 18,
-   "slug": "crw01-zerotrust-networking-access",
-   "title": "ZeroTrust Networking Access - Why Everyone Needs to Adopt It",
+   "slug": "crw01-cybersecurity",
+   "title": "Forward to the Past and Back to Future - Cybersecurity in 2026 and Beyond",
    "code": "CRW01",
    "start": 480,
    "end": 555,
@@ -1683,7 +1683,7 @@
     "Sami Laiho"
    ],
    "room": "Timor Sea",
-   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw01-zerotrust-networking-access.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw01-cybersecurity.aspx",
    "id": "18:CRW01"
   },
   {
@@ -1872,8 +1872,8 @@
   },
   {
    "day": 18,
-   "slug": "crw03-hack-windows",
-   "title": "11 Ways to Hack Windows 11",
+   "slug": "crw03-zerotrust-networking-access",
+   "title": "ZeroTrust Networking Access - Why Everyone Needs to Adopt It",
    "code": "CRW03",
    "start": 570,
    "end": 645,
@@ -1881,7 +1881,7 @@
     "Sami Laiho"
    ],
    "room": "Timor Sea",
-   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw03-hack-windows.aspx",
+   "url": "https://live360events.com/events/orlando-2026/sessions/wednesday/crw03-zerotrust-networking-access.aspx",
    "id": "18:CRW03"
   },
   {
